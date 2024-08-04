@@ -1,0 +1,22 @@
+#hero {
+    animation: gradient 15s ease infinite;;
+    background: linear-gradient(
+        45deg, 
+        rgb(var(--color-primary-lighter) / 0.2) 10%,
+        rgb(var(--color-dark) / 1) 30%,
+        rgb(var(--color-primary-lighter) / 0.2) 50%
+    );
+    background-size: 400% 400%
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
