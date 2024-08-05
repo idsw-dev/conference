@@ -25,25 +25,29 @@ export default () => {
     setInterval(() => updateCountdown(), 1000);
 
     return (
-        <div className="countdown lg:grid-cols-1 gap-5 justify-center text-white flex text-6xl mb-16">
-            <div className="countdown-item relative days">
-                <span>{dayLeft.days}</span>
-                <span className="countdown-desc text-sm absolute -bottom-8 left-[50%] -translate-x-1/2">DAYS</span>
+        <div className="countdown gap-5 justify-center text-white flex text-6xl mb-16 flex-wrap flex-col lg:flex-row">
+            <div className="flex gap-10 items-center">
+                <div className="countdown-item relative days mb-12">
+                    <span>{dayLeft.days.toString().padStart(2, '0')}</span>
+                    <span className="countdown-desc text-sm absolute -bottom-8 left-[50%] -translate-x-1/2">DAYS</span>
+                </div>
+                <span>:</span>
+                <div className="countdown-item relative hours mb-12">
+                    <span>{dayLeft.hours.toString().padStart(2, '0')}</span>
+                    <span className="countdown-desc text-sm absolute -bottom-8 left-[50%] -translate-x-1/2">HOURS</span>
+                </div>
             </div>
-            <span>:</span>
-            <div className="countdown-item relative hours">
-                <span>{dayLeft.hours.toString().padStart(2, '0')}</span>
-                <span className="countdown-desc text-sm absolute -bottom-8 left-[50%] -translate-x-1/2">HOURS</span>
-            </div>
-            <span>:</span>
-            <div className="countdown-item relative mins">
-                <span>{dayLeft.mins.toString().padStart(2, '0')}</span>
-                <span className="countdown-desc text-sm absolute -bottom-8 left-[50%] -translate-x-1/2">MINUTES</span>
-            </div>
-            <span>:</span>
-            <div className="countdown-item relative secs">
-                <span>{dayLeft.secs.toString().padStart(2, '0')}</span>
-                <span className="countdown-desc text-sm absolute -bottom-8 left-[50%] -translate-x-1/2">SECONDS</span>
+            <span className="hidden md:block">:</span>
+            <div className="flex gap-10 items-start">
+                <div className="countdown-item relative mins">
+                    <span>{dayLeft.mins.toString().padStart(2, '0')}</span>
+                    <span className="countdown-desc text-sm absolute -bottom-8 left-[50%] -translate-x-1/2">MINUTES</span>
+                </div>
+                <span>:</span>
+                <div className="countdown-item relative secs">
+                    <span>{dayLeft.secs.toString().padStart(2, '0')}</span>
+                    <span className="countdown-desc text-sm absolute -bottom-8 left-[50%] -translate-x-1/2">SECONDS</span>
+                </div>
             </div>
         </div>
     )
