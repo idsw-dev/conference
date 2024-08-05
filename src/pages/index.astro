@@ -1,5 +1,6 @@
 ---
-import Timer from "../components/Timer.tsx";
+import Timer from "../components/Timer.tsx"
+import Button from "../components/Button/Button.tsx"
 import MainLayout from "../layouts/MainLayout.astro";
 import '../styles/landing.css';
 ---
@@ -7,8 +8,12 @@ import '../styles/landing.css';
 	<section id="hero" class="min-h-screen flex  items-center justify-center">
 		<div class="container">
 			<div id="hero-text">
-				<h1 class="text-white text-7xl text-center font-bold mb-8">COMING SOON!</h1>
+				<h1 class="text-white text-7xl text-center font-bold mb-8 max-w-[1000px] mx-auto w-full">Indonesia Software Developer Conference 2024</h1>
 				<Timer client:only="react"/>
+				<h2 class="text-body text-3xl text-white text-center font-thin text-opacity-80 mb-16">(COMING SOON)</h2>
+				<div class="buttons flex justify-center">
+					<Button color="glass"> Apply to be a speaker</Button>
+				</div>
 			</div>
 		</div>
 	</section>
