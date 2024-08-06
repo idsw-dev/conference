@@ -1,20 +1,28 @@
 @tailwind base;
 @layer base {
-    :root {
-        --color-primary: 15 76 117;
-        --color-primary-light: 50 130 184;
-        --color-primary-lighter: 187 225 250;
-        --color-dark: 8 7 22;
-        --color-text: 255 255 255;
-    }
+  :root {
+    --color-primary: 15 76 117;
+    --color-primary-light: 50 130 184;
+    --color-primary-lighter: 187 225 250;
+    --color-dark: 8 7 22;
+    --color-text: 255 255 255;
+  }
 
-    .bg-glass {
-        background: linear-gradient(45deg, rgba(255 255 255 / .05), rgba(255 255 255 / .2));
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-    }
+  .bg-glass {
+    background: linear-gradient(
+      45deg,
+      rgba(255 255 255 / 0.05),
+      rgba(255 255 255 / 0.2)
+    );
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
 
-    .bg-glass-bright {
-        background: linear-gradient(45deg, rgba(255 255 255 / .2), rgba(255 255 255 / .3));
-    }
+  .bg-glass-bright {
+    background: linear-gradient(
+      45deg,
+      rgba(255 255 255 / 0.2),
+      rgba(255 255 255 / 0.3)
+    );
+  }
 }

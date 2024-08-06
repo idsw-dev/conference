@@ -1,22 +1,23 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header/Header.astro";
-import '../styles/global.css';
-import '../styles/tailwind.css';
+import "../styles/global.css";
+import "../styles/tailwind.css";
 ---
+
 <html lang="en" class="dark">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>IDSW</title>
-	</head>
-	<body class="">
-        <!-- <Header/> -->
-        <main>
-            <slot/>
-        </main>
-        <Footer/>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>IDSW</title>
+  </head>
+  <body class="">
+    <!-- <Header/> -->
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
