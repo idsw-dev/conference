@@ -1,6 +1,6 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header/Header.astro";
+import "@fontsource/inter";
+
 import "../styles/global.css";
 import "../styles/tailwind.css";
 ---
@@ -13,11 +13,11 @@ import "../styles/tailwind.css";
     <meta name="generator" content={Astro.generator} />
     <title>IDSW</title>
   </head>
-  <body class="">
+  <body>
     <!-- <Header/> -->
     <main>
       <slot />
     </main>
-    <Footer />
+    <!-- <Footer /> -->
   </body>
 </html>
