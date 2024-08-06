@@ -1,7 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-export default () => {
-    const date = new Date(2024, 11, 17, 9, 0, 0);
+type TimerProps = {
+    date: Date;
+} & React.HTMLProps<HTMLDivElement>;
+
+function formatNumber(number: number) {
+    return number.toString().padStart(2, "0");
+}
+
+export default function Timer({ date, ...props }: TimerProps) {
     let now = new Date();
 
     const [dayLeft, setDayLeft] = useState({
@@ -10,46 +17,42 @@ export default () => {
         mins: 0,
         secs: 0,
     });
-    const updateCountdown = () => {
-        console.log("ste");
+
+    function updateCountdown() {
         now = new Date();
         const diff = date.getTime() - now.getTime();
-        console.log(diff);
+
         setDayLeft({
             days: Math.floor(diff / (1000 * 60 * 60 * 24)),
             hours: Math.floor(diff / (1000 * 60 * 60)) % 24,
             mins: Math.floor(diff / (1000 * 60)) % 24,
             secs: Math.floor((diff / 1000) % 60),
         });
-    };
-    useEffect(() => updateCountdown(), [])
+    }
+
     setInterval(() => updateCountdown(), 1000);
 
     return (
-        <div className="countdown gap-5 justify-center text-white flex text-6xl mb-16 flex-wrap flex-col lg:flex-row">
-            <div className="flex gap-10 items-start justify-center">
-                <div className="countdown-item relative days mb-12">
-                    <span>{dayLeft.days.toString().padStart(2, '0')}</span>
-                    <span className="countdown-desc text-sm absolute -bottom-8 left-[50%] -translate-x-1/2">DAYS</span>
-                </div>
-                <span>:</span>
-                <div className="countdown-item relative hours mb-12">
-                    <span>{dayLeft.hours.toString().padStart(2, '0')}</span>
-                    <span className="countdown-desc text-sm absolute -bottom-8 left-[50%] -translate-x-1/2">HOURS</span>
-                </div>
+        <div className="flex gap-4 text-2xl text-gray-400" {...props}>
+            <div className="flex flex-col items-center gap-2">
+                <span>{formatNumber(dayLeft.days)}</span>
+                <span className="text-xs text-gray-300">DAYS</span>
             </div>
-            <span className="hidden md:block">:</span>
-            <div className="flex gap-10 items-start justify-center">
-                <div className="countdown-item relative mins">
-                    <span>{dayLeft.mins.toString().padStart(2, '0')}</span>
-                    <span className="countdown-desc text-sm absolute -bottom-8 left-[50%] -translate-x-1/2">MINUTES</span>
-                </div>
-                <span>:</span>
-                <div className="countdown-item relative secs">
-                    <span>{dayLeft.secs.toString().padStart(2, '0')}</span>
-                    <span className="countdown-desc text-sm absolute -bottom-8 left-[50%] -translate-x-1/2">SECONDS</span>
-                </div>
+            <div className="text-gray-300">:</div>
+            <div className="flex flex-col items-center gap-2">
+                <span>{formatNumber(dayLeft.hours)}</span>
+                <span className="text-xs text-gray-300">HOURS</span>
+            </div>
+            <div className="text-gray-300">:</div>
+            <div className="flex flex-col items-center gap-2">
+                <span>{formatNumber(dayLeft.mins)}</span>
+                <span className="text-xs text-gray-300">MINUTES</span>
+            </div>
+            <div className="text-gray-300">:</div>
+            <div className="flex flex-col items-center gap-2">
+                <span>{formatNumber(dayLeft.secs)}</span>
+                <span className="text-xs text-gray-300">SECONDS</span>
             </div>
         </div>
-    )
+    );
 }
