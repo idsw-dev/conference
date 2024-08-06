@@ -26,7 +26,7 @@ export default () => {
 
     return (
         <div className="countdown gap-5 justify-center text-white flex text-6xl mb-16 flex-wrap flex-col lg:flex-row">
-            <div className="flex gap-10 items-center">
+            <div className="flex gap-10 items-start justify-center">
                 <div className="countdown-item relative days mb-12">
                     <span>{dayLeft.days.toString().padStart(2, '0')}</span>
                     <span className="countdown-desc text-sm absolute -bottom-8 left-[50%] -translate-x-1/2">DAYS</span>
@@ -38,7 +38,7 @@ export default () => {
                 </div>
             </div>
             <span className="hidden md:block">:</span>
-            <div className="flex gap-10 items-start">
+            <div className="flex gap-10 items-start justify-center">
                 <div className="countdown-item relative mins">
                     <span>{dayLeft.mins.toString().padStart(2, '0')}</span>
                     <span className="countdown-desc text-sm absolute -bottom-8 left-[50%] -translate-x-1/2">MINUTES</span>
