@@ -16,6 +16,9 @@ importers:
       "@astrojs/tailwind":
         specifier: ^5.1.0
         version: 5.1.0(astro@4.13.1(typescript@5.5.4))(tailwindcss@3.4.7)
+      "@fontsource/inter":
+        specifier: ^5.0.20
+        version: 5.0.20
       "@fontsource/twinkle-star":
         specifier: ^5.0.20
         version: 5.0.20
@@ -625,6 +628,12 @@ packages:
         integrity: sha512-BsWiH1yFGjXXS2yvrf5LyuoSIIbPrGUWob917o+BTKuZ7qJdxX8aJLRxs1fS9n6r7vESrq1OUqb68dANcFXuQQ==,
       }
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
+
+  "@fontsource/inter@5.0.20":
+    resolution:
+      {
+        integrity: sha512-rtw2F7xfM7rJmmnncXnR4ADr5wXsp4GyN1O1jmQJ1PMjAK+bm620/ZkQkeOYOkGoa09OksGinOeMA+Mkt6K9PQ==,
+      }
 
   "@fontsource/twinkle-star@5.0.20":
     resolution:
@@ -5480,6 +5489,8 @@ snapshots:
   "@eslint/js@9.8.0": {}
 
   "@eslint/object-schema@2.1.4": {}
+
+  "@fontsource/inter@5.0.20": {}
 
   "@fontsource/twinkle-star@5.0.20": {}
 

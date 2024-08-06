@@ -1,3 +1,5 @@
+import defaultTheme from "tailwindcss/defaultTheme";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -13,6 +15,9 @@ export default {
         text: "rgb(var(--color-text) / <alpha-value>)",
         dark: "rgb(var(--color-dark) / <alpha-value>)",
       },
+    },
+    fontFamily: {
+      sans: ["Inter", ...defaultTheme.fontFamily.sans],
     },
   },
   plugins: [],

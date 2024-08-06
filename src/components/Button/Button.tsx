@@ -15,7 +15,7 @@ const buttonColors: Record<Color, string> = {
 };
 
 export default function Button({ children, color = "primary", href }: Props) {
-  const btnClass = `${buttonColors[color]} focus:ring-4 focus:ring-blue-300 font-medium rounded-lg inline-block text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none`;
+  const btnClass = `${buttonColors[color]} focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg inline-block text-sm px-8 py-3 me-1 focus:outline-none transition`;
   return (
     <span>
       {href ? (
