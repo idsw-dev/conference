@@ -13,6 +13,7 @@ export default {
       colors: {
         primary: "rgb(var(--color-primary) / <alpha-value>)",
         text: "rgb(var(--color-text) / <alpha-value>)",
+        body: "rgb(var(--color-body) / <alpha-value>)",
         dark: "rgb(var(--color-dark) / <alpha-value>)",
       },
     },

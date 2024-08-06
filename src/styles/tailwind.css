@@ -6,8 +6,18 @@
     --color-primary-lighter: 187 225 250;
     --color-dark: 8 7 22;
     --color-text: 255 255 255;
+    --color-body: 230 230 230;
   }
 
+  .bg-glass {
+    background: linear-gradient(
+      45deg,
+      rgba(255 255 255 / 0.05),
+      rgba(255 255 255 / 0.2)
+    );
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
   .bg-glass {
     background: linear-gradient(
       45deg,
@@ -26,3 +36,4 @@
     );
   }
 }
+
