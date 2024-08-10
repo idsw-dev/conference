@@ -1,6 +1,6 @@
 ---
 import "@fontsource/inter";
-
+import PostHog from "../components/posthog.astro";
 import "../styles/global.css";
 import "../styles/tailwind.css";
 ---
@@ -12,6 +12,7 @@ import "../styles/tailwind.css";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>IDSW</title>
+    <PostHog />
   </head>
   <body>
     <!-- <Header/> -->
