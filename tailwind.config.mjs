@@ -14,11 +14,11 @@ export default {
         primary: "rgb(var(--color-primary) / <alpha-value>)",
         text: "rgb(var(--color-text) / <alpha-value>)",
         body: "rgb(var(--color-body) / <alpha-value>)",
-        dark: "rgb(var(--color-dark) / <alpha-value>)",
+        "primary-dark": "rgb(var(--color-primary-dark) / <alpha-value>)",
       },
     },
     fontFamily: {
-      sans: ["Inter", ...defaultTheme.fontFamily.sans],
+      sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
     },
   },
   plugins: [],

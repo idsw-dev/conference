@@ -1,24 +1,9 @@
-#hero {
-  animation: gradient 15s ease infinite;
-  background: radial-gradient(
-      circle at center,
-      rgb(var(--color-primary-lighter) / 0.08) 0,
-      rgb(var(--color-primary-lighter) / 0.02),
-      transparent 800px
-    ),
-    linear-gradient(
-      45deg,
-      rgb(var(--color-primary-light) / 0.2) 0%,
-      rgb(var(--color-primary-light) / 0.2) 5%,
-      rgb(var(--color-primary-lighter) / 0.2) 5%,
-      rgb(var(--color-primary-lighter) / 0.2) 10%,
-      rgb(var(--color-dark) / 1) 10%,
-      rgb(var(--color-dark) / 1) 90%,
-      rgb(var(--color-primary-lighter) / 0.2) 90%,
-      rgb(var(--color-primary-lighter) / 0.2) 95%,
-      rgb(var(--color-primary-light) / 0.2) 95%
-    );
-  /* background-size: 400% 400% */
+.timer-area {
+  background: linear-gradient(
+    35deg,
+    rgba(165, 202, 255, 10%),
+    rgba(165, 202, 255, 5%)
+  );
 }
 
 @keyframes gradient {
