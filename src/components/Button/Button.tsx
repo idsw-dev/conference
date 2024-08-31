@@ -16,7 +16,7 @@ const buttonColors: Record<Color, string> = {
 };
 
 export default function Button({ children, color = "primary", href, className }: Props) {
-  const btnClass = `${buttonColors[color]} ${className} focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg inline-block text-sm px-8 py-3 me-1 focus:outline-none transition`;
+  const btnClass = `${buttonColors[color]} ${className} focus:ring-4 focus:ring-blue-300 font-semibold rounded-xl inline-block text-sm px-8 py-3 me-1 focus:outline-none transition`;
   if (href) {
     return (
       <a href={href} className={btnClass} >

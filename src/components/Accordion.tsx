@@ -1,9 +1,7 @@
 import { useState } from "react";
+import type { Faq } from "../@types/faq";
 type Props = {
-  data: {
-    title: string;
-    content: string;
-  }[];
+  data: Faq[];
 }
 
 
@@ -14,10 +12,12 @@ export default function Accordion({ data, ...props }: Props) {
       {data.map((accordion, i) => (
         <div className="accordion-item">
           <a className="accordion-title block p-5 bg-[#F3F8FF] border border-[#B8CAE3]" onClick={() => setOpenIndex(i)}>
-            {accordion.title}
+            {accordion.question}
           </a>
-          <div className={`accordion-content p-5 bg-white border border-[#B8CAE3] transition duration-200  ${openIndex == i ? 'h-full' : 'h-0 p-0 overflow-hidden'}`}>
-            {accordion.content}
+          <div className={`accordion-content  bg-white border border-[#B8CAE3] transition-[max-height] duration-200  overflow-hidden  ${openIndex == i ? 'max-h-[100px]' : 'max-h-0 p-0'}`}>
+            <div className="accordion-content-padding p-5">
+              {accordion.answer}
+            </div>
           </div>
         </div>
       ))}

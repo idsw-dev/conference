@@ -4,39 +4,22 @@ import Timer from "../components/Timer";
 import Accordion from "../components/Accordion";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/landing.css";
-
+import type { Faq } from "../@types/faq";
 const eventDate = new Date(2024, 10, 17, 9, 0, 0);
-const faq = [
-  {
-    title: "Why should I come to this event?",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id  semper turpis. Sed sit amet libero a nisl ultrices congue. In scelerisque,  quam tincidunt suscipit viverra, magna enim vehicula mi, sit amet  bibendum purus est ut ipsum. Sed bibendum porta pulvinar. ",
-  },
-  {
-    title: "Why should I come to this event?",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id  semper turpis. Sed sit amet libero a nisl ultrices congue. In scelerisque,  quam tincidunt suscipit viverra, magna enim vehicula mi, sit amet  bibendum purus est ut ipsum. Sed bibendum porta pulvinar. ",
-  },
-  {
-    title: "Why should I come to this event?",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id  semper turpis. Sed sit amet libero a nisl ultrices congue. In scelerisque,  quam tincidunt suscipit viverra, magna enim vehicula mi, sit amet  bibendum purus est ut ipsum. Sed bibendum porta pulvinar. ",
-  },
-  {
-    title: "Why should I come to this event?",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id  semper turpis. Sed sit amet libero a nisl ultrices congue. In scelerisque,  quam tincidunt suscipit viverra, magna enim vehicula mi, sit amet  bibendum purus est ut ipsum. Sed bibendum porta pulvinar. ",
-  },
-];
+const faq = import.meta.glob("../data/faq.json", { eager: true });
+
+const faqData: Faq[] = Object.values(faq).map(
+  (item) => (item as any).default,
+)[0];
 ---
 
 <MainLayout>
   <section id="hero" class="flex">
     <div class="flex flex-wrap">
       <div
-        class="hero-left flex items-end gap-10 px-16 py-24 lg:block lg:w-1/3"
+        class="hero-left flex flex-grow items-end gap-10 px-16 py-24 lg:block lg:w-1/3"
       >
-        <img src="/logo.svg" alt="" class="w-44 lg:mb-8" />
+        <img src="/logo.svg" alt="" class="w-80 lg:mb-8" />
         <div class="hero-text">
           <h1 class="mb-3 text-3xl font-bold md:text-4xl">
             Indonesia Software Developer Conference
@@ -46,36 +29,38 @@ const faq = [
         </div>
       </div>
       <div
-        class="hero-right flex-col bg-primary-dark px-8 py-24 text-white lg:w-2/3 lg:px-16"
+        class="hero-right max-w-[913px] flex-col bg-primary-dark px-8 py-24 text-white lg:w-2/3 lg:px-16"
       >
         <div class="container">
           <div
-            class="timer-area mb-12 flex items-center justify-center px-10 py-12 lg:py-24"
+            class="timer-area mb-12 flex items-center justify-center rounded-lg px-10 py-12 lg:py-24"
           >
             <Timer
               client:only="react"
               date={eventDate}
-              className="text-xl md:gap-5 md:text-xl xl:gap-12 xl:text-2xl"
+              className="text-xl md:gap-5 md:text-xl xl:gap-10 xl:text-2xl"
             />
           </div>
           <div class="flex flex-col gap-5 lg:flex-row">
-            <p class="w-full text-balance text-2xl font-extralight lg:w-2/3">
+            <p class="w-full text-balance text-[22px] font-light lg:w-2/3">
               Join us for the first annual conference for Indonesia software
               developers, where you can hear thought-provoking keynotes from
               industry leaders and network with fellow developers.
             </p>
-            <Button color="primary" className="flex-grow xl:text-2xl"
-              >Get Tickets</Button
-            >
+            <div class="flex flex-grow flex-col py-5">
+              <Button color="primary" className="flex-grow xl:text-2xl">
+                Get Tickets
+              </Button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
   <section id="faq" class="flex">
-    <div class="flex w-full flex-wrap">
+    <div class="flex w-full flex-wrap md:flex-nowrap">
       <div
-        class="faq-left flex items-end gap-10 bg-primary-dark px-16 py-24 lg:block lg:w-1/3"
+        class="faq-left flex items-end bg-primary-dark px-16 py-24 lg:block lg:w-1/3 lg:min-w-[610px]"
       >
         <div class="faq-text text-white">
           <h1 class="mb-3 text-3xl font-bold md:text-4xl">
@@ -87,9 +72,11 @@ const faq = [
           </p>
         </div>
       </div>
-      <div class="faq-right flex-col bg-[#E7F1FF] px-8 py-24 lg:w-2/3 lg:px-16">
-        <Accordion data={faq} client:load />
+      <div
+        class="faq-right flex-shrink flex-col bg-[#E7F1FF] px-8 py-24 lg:px-16"
+      >
+        <Accordion data={faqData} client:load />
       </div>
     </div>
   </section>
-</MainLayout>
+</MainLayout>; ---

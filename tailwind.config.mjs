@@ -10,6 +10,9 @@ export default {
       padding: "1rem",
     },
     extend: {
+      transitionProperty: {
+        "max-height": "max-height",
+      },
       colors: {
         primary: "rgb(var(--color-primary) / <alpha-value>)",
         text: "rgb(var(--color-text) / <alpha-value>)",
