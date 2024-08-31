@@ -33,23 +33,23 @@ export default function Timer({ date, ...props }: TimerProps) {
     setInterval(() => updateCountdown(), 1000);
 
     return (
-        <div  {...props} className={`flex gap-4 ${props.className}`}>
-            <div className="flex flex-col items-center gap-5">
+        <div  {...props} className={`flex gap-8 md:gap-4 flex-wrap ${props.className}`}>
+            <div className="flex md:flex-col xflex-row items-center gap-5">
                 <span className="font-bold text-[40px]">{formatNumber(dayLeft.days)}</span>
                 <span className="text-[24px]">DAYS</span>
             </div>
             <div className="hidden lg:block">:</div>
-            <div className="flex flex-col items-center gap-5">
+            <div className="flex md:flex-col items-center gap-5">
                 <span className="font-bold text-[40px]">{formatNumber(dayLeft.hours)}</span>
                 <span className="text-[24px]">HOURS</span>
             </div>
             <div className="hidden lg:block">:</div>
-            <div className="flex flex-col items-center gap-5">
+            <div className="flex md:flex-col items-center gap-5">
                 <span className="font-bold text-[40px]">{formatNumber(dayLeft.mins)}</span>
                 <span className="text-[24px]">MINUTES</span>
             </div>
             <div className="hidden lg:block">:</div>
-            <div className="flex flex-col items-center gap-5">
+            <div className="flex md:flex-col items-center gap-5">
                 <span className="font-bold text-[40px]">{formatNumber(dayLeft.secs)}</span>
                 <span className="text-[24px]">SECONDS</span>
             </div>
