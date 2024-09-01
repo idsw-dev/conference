@@ -7,7 +7,12 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "1rem",
+      padding: "0",
+      screens: {
+        "xl": "1272px",
+        "lg": "1000px",
+        "md": "768px",
+      },
     },
     extend: {
       transitionProperty: {

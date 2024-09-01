@@ -8,72 +8,62 @@ import type { Faq } from "../@types/faq";
 const eventDate = new Date(2024, 10, 17, 9, 0, 0);
 const faq = import.meta.glob("../data/faq.json", { eager: true });
 
-const faqData: Faq[] = Object.values(faq).map(
-  (item) => (item as any).default,
-)[0];
+const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
 ---
 
 <MainLayout>
   <section id="hero">
-    <div class="flex flex-wrap">
-      <div
-        class="hero-left flex flex-grow flex-wrap items-end gap-10 px-8 py-24 lg:block lg:w-1/3 lg:px-16"
-      >
-        <img src="/logo.svg" alt="" class="w-80 lg:mb-8" />
-        <div class="hero-text">
-          <h1 class="mb-3 text-3xl font-bold md:text-4xl">
-            Indonesia Software Developer Conference
-          </h1>
-          <p>16-17th November, 2024</p>
-          <p>GetCourse Hall, Jakarta Selatan</p>
+    <div class="container">
+      <div class="grid grid-cols-12">
+        <div class="hero-left col-span-12 flex flex-grow flex-wrap items-end gap-10 py-24 lg:col-span-4 lg:block">
+          <img src="/logo.svg" alt="" class="grid-col w-[320px] lg:mb-8" />
+          <div class="hero-text">
+            <h1 class="mb-3 text-3xl font-bold xl:text-4xl">Indonesia Software Developer Conference</h1>
+            <p>16-17th November, 2024</p>
+            <p>GetCourse Hall, Jakarta Selatan</p>
+          </div>
         </div>
-      </div>
-      <div
-        class="hero-right w-full flex-col bg-primary-dark px-8 py-24 text-white lg:w-2/3 lg:max-w-[913px] lg:px-16"
-      >
         <div
-          class="timer-area mb-12 flex items-center justify-center rounded-lg px-10 py-12 lg:py-24"
-        >
-          <Timer
-            client:only="react"
-            date={eventDate}
-            className="text-xl md:gap-5 md:text-xl xl:gap-10 xl:text-2xl"
-          />
-        </div>
-        <div class="flex flex-col gap-5 lg:flex-row">
-          <p class="w-full text-balance text-[22px] font-light lg:w-2/3">
-            Join us for the first annual conference for Indonesia software
-            developers, where you can hear thought-provoking keynotes from
-            industry leaders and network with fellow developers.
-          </p>
-          <div class="flex flex-grow flex-col py-5">
-            <Button color="primary" className="flex-grow xl:text-2xl">
-              Get Tickets
-            </Button>
+          class="hero-right relative col-span-12 col-start-1 grid grid-cols-subgrid flex-col py-24 text-white lg:col-span-8 lg:col-start-5">
+          <div class="bg-to-end bg-primary-dark"></div>
+          <div class="col-start-1 -col-end-1 lg:col-start-2">
+            <div class="timer-area mb-12 flex items-center justify-center rounded-lg px-10 py-12 lg:py-24">
+              <Timer
+                client:only="react"
+                date={eventDate}
+                className="text-xl md:gap-5 md:text-xl xl:gap-10 xl:text-2xl"
+              />
+            </div>
+            <div class="flex flex-col gap-5 lg:flex-row">
+              <p class="text-balance text-[22px] font-light">
+                Join us for the first annual conference for Indonesia software developers, where you can hear
+                thought-provoking keynotes from industry leaders and network with fellow developers.
+              </p>
+              <div class="flex flex-grow flex-col py-5">
+                <Button color="primary" className="flex-grow xl:text-2xl"> Get Tickets </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section id="faq" class="flex w-full">
-    <div class="flex w-full flex-wrap lg:flex-nowrap">
-      <div
-        class="faq-left flex w-full items-end bg-primary-dark px-8 py-24 lg:block lg:w-1/3 lg:min-w-[610px] lg:px-16"
-      >
-        <div class="faq-text text-white">
-          <h1 class="mb-3 text-3xl font-bold md:text-4xl">
-            Frequently Asked Questions
-          </h1>
-          <p class="text-gray-200">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            id semper turpis. Sed sit amet libero.
-          </p>
+  <section id="faq" class="">
+    <div class="container">
+      <div class="gap-100 grid grid-cols-12">
+        <div class="faq-left relative col-span-12 items-end py-24 pr-8 lg:col-span-4 lg:block">
+          <div class="bg-to-start bg-primary-dark"></div>
+          <div class="faq-text text-white">
+            <h1 class="mb-3 text-3xl font-bold md:text-4xl">Frequently Asked Questions</h1>
+            <p class="text-xl text-gray-400">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id semper turpis. Sed sit amet libero.
+            </p>
+          </div>
         </div>
-      </div>
-      <div
-        class="faq-right flex-shrink flex-col bg-[#E7F1FF] px-8 py-24 lg:px-16"
-      >
-        <Accordion data={faqData} client:load />
+        <div class="faq-right relative col-span-12 flex-shrink flex-col px-8 py-24 lg:col-span-8 lg:px-16">
+          <div class="bg-to-end bg-[#E7F1FF]"></div>
+          <Accordion data={faqData} client:load />
+        </div>
       </div>
     </div>
   </section>

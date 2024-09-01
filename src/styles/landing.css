@@ -6,6 +6,40 @@
   );
 }
 
+.bg-to-end {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10000px;
+  transform: translateX(-50%);
+  height: 100%;
+  z-index: -1;
+}
+.bg-to-start {
+  left: 0;
+  right: unset;
+  position: absolute;
+  top: 0;
+  width: 10000px;
+  transform: translateX(-50%);
+  height: 100%;
+  z-index: -1;
+}
+
+@media screen and (min-width: 1024px) {
+  .bg-to-end {
+    width: 10000px;
+    transform: translateX(0);
+  }
+  .bg-to-start {
+    width: 10000px;
+    transform: translateX(0);
+  }
+  .container > .grid {
+    gap: 1rem;
+  }
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
