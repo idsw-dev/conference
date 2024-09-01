@@ -48,23 +48,40 @@ const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0
       </div>
     </div>
   </section>
-  <section id="faq" class="">
+  <section id="about" class="bg-gradient-to-b from-[#030E1C] to-[#061C3C] text-white">
     <div class="container">
-      <div class="gap-100 grid grid-cols-12">
-        <div class="faq-left relative col-span-12 items-end py-24 pr-8 lg:col-span-4 lg:block">
-          <div class="bg-to-start bg-primary-dark"></div>
-          <div class="faq-text text-white">
-            <h1 class="mb-3 text-3xl font-bold md:text-4xl">Frequently Asked Questions</h1>
-            <p class="text-xl text-gray-400">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id semper turpis. Sed sit amet libero.
-            </p>
-          </div>
+      <div class="grid grid-cols-12">
+        <div class="about-left col-span-12 gap-10 py-16 pb-0 lg:col-span-4 lg:block">
+          <h2 class="text-[50px] font-bold">Built by the Community</h2>
         </div>
-        <div class="faq-right relative col-span-12 flex-shrink flex-col px-8 py-24 lg:col-span-8 lg:px-16">
-          <div class="bg-to-end bg-[#E7F1FF]"></div>
-          <Accordion data={faqData} client:load />
+        <div
+          class="about-right relative col-span-12 col-start-1 grid grid-cols-subgrid flex-col py-16 text-white lg:col-span-8 lg:col-start-5">
+          <p class="col-span-12 text-2xl leading-10 lg:col-span-8 lg:col-start-2">
+            IDSW is Indonesia’s first software developer conference. Organized by <b>Perkodi</b> and <b
+              >various tech communities</b
+            >, its mission is to offer annual in-depth sessions on the most important and new technologies.
+          </p>
         </div>
       </div>
     </div>
   </section>
-</MainLayout>; ---
+</MainLayout>
+<section id="faq" class="">
+  <div class="container">
+    <div class="gap-100 grid grid-cols-12">
+      <div class="faq-left relative col-span-12 items-end py-24 pr-8 lg:col-span-4 lg:block">
+        <div class="bg-to-start bg-primary-dark"></div>
+        <div class="faq-text text-white">
+          <h1 class="mb-3 text-3xl font-bold md:text-4xl">Frequently Asked Questions</h1>
+          <p class="text-xl text-gray-400">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id semper turpis. Sed sit amet libero.
+          </p>
+        </div>
+      </div>
+      <div class="faq-right relative col-span-12 flex-shrink flex-col px-8 py-24 lg:col-span-8 lg:px-16">
+        <div class="bg-to-end bg-[#E7F1FF]"></div>
+        <Accordion data={faqData} client:load />
+      </div>
+    </div>
+  </div>
+</section>
