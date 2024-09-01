@@ -1,45 +1,70 @@
 ---
 import Button from "../components/Button/Button";
 import Timer from "../components/Timer";
+import Accordion from "../components/Accordion";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/landing.css";
-
+import type { Faq } from "../@types/faq";
 const eventDate = new Date(2024, 10, 17, 9, 0, 0);
+const faq = import.meta.glob("../data/faq.json", { eager: true });
+
+const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
 ---
 
 <MainLayout>
-  <section id="hero" class="flex min-h-dvh items-center justify-center">
-    <div class="container mx-auto flex flex-col items-center gap-8">
-      <div class="flex flex-col items-center gap-4 text-center">
-        <span
-          class="rounded-full border border-white/40 bg-white/10 px-4 py-2 text-sm text-white/80"
-          >16-17th November, 2024 • Jakarta, ID</span
-        >
-        <h1 class="text-center text-4xl font-semibold text-white">
-          Indonesia Software Developer Conference 2024
-        </h1>
-      </div>
-      <div class="flex flex-col gap-4">
-        <Timer client:only="react" date={eventDate} />
-        <div class="flex items-center justify-center gap-2 text-gray-300">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            ><path
-              fill="currentColor"
-              d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8m-.22-13h-.06c-.4 0-.72.32-.72.72v4.72c0 .35.18.68.49.86l4.15 2.49c.34.2.78.1.98-.24a.71.71 0 0 0-.25-.99l-3.87-2.3V7.72c0-.4-.32-.72-.72-.72"
-            ></path></svg
-          >
-          <h2 class="text-sm uppercase">Left until the event starts</h2>
+  <section id="hero">
+    <div class="container">
+      <div class="grid grid-cols-12">
+        <div class="hero-left col-span-12 flex flex-grow flex-wrap items-end gap-10 py-24 lg:col-span-4 lg:block">
+          <img src="/logo.svg" alt="" class="grid-col w-[320px] lg:mb-8" />
+          <div class="hero-text">
+            <h1 class="mb-3 text-3xl font-bold xl:text-4xl">Indonesia Software Developer Conference</h1>
+            <p>16-17th November, 2024</p>
+            <p>GetCourse Hall, Jakarta Selatan</p>
+          </div>
         </div>
-      </div>
-      <div class="buttons flex justify-center gap-5">
-        <a href="https://www.papercall.io/idsw-2024" target="_blank"
-          ><Button color="glass">Apply to be a speaker</Button></a
-        >
+        <div
+          class="hero-right relative col-span-12 col-start-1 grid grid-cols-subgrid flex-col py-24 text-white lg:col-span-8 lg:col-start-5">
+          <div class="bg-to-end bg-primary-dark"></div>
+          <div class="col-start-1 -col-end-1 lg:col-start-2">
+            <div class="timer-area mb-12 flex items-center justify-center rounded-lg px-10 py-12 lg:py-24">
+              <Timer
+                client:only="react"
+                date={eventDate}
+                className="text-xl md:gap-5 md:text-xl xl:gap-10 xl:text-2xl"
+              />
+            </div>
+            <div class="flex flex-col gap-5 lg:flex-row">
+              <p class="text-balance text-[22px] font-light">
+                Join us for the first annual conference for Indonesia software developers, where you can hear
+                thought-provoking keynotes from industry leaders and network with fellow developers.
+              </p>
+              <div class="flex flex-grow flex-col py-5">
+                <Button color="primary" className="flex-grow xl:text-2xl"> Get Tickets </Button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-</MainLayout>
+  <section id="faq" class="">
+    <div class="container">
+      <div class="gap-100 grid grid-cols-12">
+        <div class="faq-left relative col-span-12 items-end py-24 pr-8 lg:col-span-4 lg:block">
+          <div class="bg-to-start bg-primary-dark"></div>
+          <div class="faq-text text-white">
+            <h1 class="mb-3 text-3xl font-bold md:text-4xl">Frequently Asked Questions</h1>
+            <p class="text-xl text-gray-400">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id semper turpis. Sed sit amet libero.
+            </p>
+          </div>
+        </div>
+        <div class="faq-right relative col-span-12 flex-shrink flex-col px-8 py-24 lg:col-span-8 lg:px-16">
+          <div class="bg-to-end bg-[#E7F1FF]"></div>
+          <Accordion data={faqData} client:load />
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>; ---

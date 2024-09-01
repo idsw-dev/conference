@@ -33,25 +33,25 @@ export default function Timer({ date, ...props }: TimerProps) {
     setInterval(() => updateCountdown(), 1000);
 
     return (
-        <div className="flex gap-4 text-2xl text-gray-400" {...props}>
-            <div className="flex flex-col items-center gap-2">
-                <span>{formatNumber(dayLeft.days)}</span>
-                <span className="text-xs text-gray-300">DAYS</span>
+        <div  {...props} className={`flex gap-8 xl:gap-4 flex-wrap ${props.className}`}>
+            <div className="flex md:flex-col flex-row items-center gap-5">
+                <span className="font-bold text-3xl text-[40px]">{formatNumber(dayLeft.days)}</span>
+                <span className="text-xl xl:text-2xl">DAYS</span>
             </div>
-            <div className="text-gray-300">:</div>
-            <div className="flex flex-col items-center gap-2">
-                <span>{formatNumber(dayLeft.hours)}</span>
-                <span className="text-xs text-gray-300">HOURS</span>
+            <div className="hidden lg:block">:</div>
+            <div className="flex md:flex-col items-center gap-5">
+                <span className="font-bold text-3xl text-[40px]">{formatNumber(dayLeft.hours)}</span>
+                <span className="text-xl xl:text-2xl">HOURS</span>
             </div>
-            <div className="text-gray-300">:</div>
-            <div className="flex flex-col items-center gap-2">
-                <span>{formatNumber(dayLeft.mins)}</span>
-                <span className="text-xs text-gray-300">MINUTES</span>
+            <div className="hidden lg:block">:</div>
+            <div className="flex md:flex-col items-center gap-5">
+                <span className="font-bold text-3xl text-[40px]">{formatNumber(dayLeft.mins)}</span>
+                <span className="text-xl xl:text-2xl">MINUTES</span>
             </div>
-            <div className="text-gray-300">:</div>
-            <div className="flex flex-col items-center gap-2">
-                <span>{formatNumber(dayLeft.secs)}</span>
-                <span className="text-xs text-gray-300">SECONDS</span>
+            <div className="hidden lg:block">:</div>
+            <div className="flex md:flex-col items-center gap-5">
+                <span className="font-bold text-3xl text-[40px]">{formatNumber(dayLeft.secs)}</span>
+                <span className="text-xl xl:text-2xl">SECONDS</span>
             </div>
         </div>
     );
