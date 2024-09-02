@@ -15,7 +15,7 @@ const image = images[imageURL];
 ---
 
 <div
-  class="event-card col-span-12 mb-8 grid grid-cols-subgrid grid-rows-[auto,1fr] bg-gradient-to-r from-[#2F4D78] to-[#28456F] text-white">
+  class="event-card col-span-12 mb-8 grid grid-cols-subgrid grid-rows-[auto,1fr] bg-gradient-to-r from-[#2F4D78] to-[#28456F] text-white lg:grid-rows-1">
   <div class="event-card-image col-span-4 col-start-1 row-span-2 lg:col-span-2">
     <Image src={image()} alt={data.speaker.name} width={200} height={200} class:list={["h-full w-full object-cover"]} />
   </div>
@@ -28,7 +28,7 @@ const image = images[imageURL];
     </p>
   </div>
   <div
-    class="event-card-content col-span-7 col-start-5 ml-5 border-t border-t-white border-opacity-50 py-4 lg:col-span-3 lg:col-start-5 lg:ml-0">
+    class="event-card-content lg:border-t-none border-t-none col-span-7 col-start-5 ml-5 border-t-white border-opacity-50 py-4 lg:col-span-3 lg:col-start-5 lg:ml-0">
     <h3 class="event-card-title mb-3 text-xl font-bold">
       {data.event.title}
     </h3>
@@ -52,7 +52,7 @@ const image = images[imageURL];
       left: -1rem;
       width: 1px;
       height: 80%;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.507);
     }
   }
   @media screen and (min-width: 1400px) {
