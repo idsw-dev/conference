@@ -13,7 +13,6 @@ const agenda = import.meta.glob("../data/agenda.json", { eager: true });
 
 const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
 const agendaData: Agenda[] = Object.values(agenda).map((item) => (item as any).default)[0];
-console.log(agendaData);
 ---
 
 <MainLayout>
