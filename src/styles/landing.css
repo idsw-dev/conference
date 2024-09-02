@@ -33,6 +33,8 @@
   }
   .bg-to-start {
     width: 10000px;
+    left: unset;
+    right: -1rem;
     transform: translateX(0);
   }
   .container > .grid {
