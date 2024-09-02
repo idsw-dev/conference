@@ -3,12 +3,17 @@ import Button from "../components/Button/Button";
 import Timer from "../components/Timer";
 import Accordion from "../components/Accordion";
 import MainLayout from "../layouts/MainLayout.astro";
-import "../styles/landing.css";
 import type { Faq } from "../@types/faq";
+import type { Agenda } from "../@types/agenda";
+import "../styles/landing.css";
+import EventCard from "../components/EventCard.astro";
 const eventDate = new Date(2024, 10, 17, 9, 0, 0);
 const faq = import.meta.glob("../data/faq.json", { eager: true });
+const agenda = import.meta.glob("../data/agenda.json", { eager: true });
 
 const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
+const agendaData: Agenda[] = Object.values(agenda).map((item) => (item as any).default)[0];
+console.log(agendaData);
 ---
 
 <MainLayout>
@@ -48,6 +53,28 @@ const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0
       </div>
     </div>
   </section>
+  <section id="agenda" class="bg-gradient-to-br from-[#0A2B5B] to-[#22406B]">
+    <div class="container">
+      <div class="gap-100 grid grid-cols-12">
+        <div class="agenda-left relative col-span-12 items-end py-24 pb-0 lg:col-span-3 lg:block">
+          <div class="bg-to-start bg-primary-dark"></div>
+          <div class="agenda-text text-white">
+            <h1 class="mb-12 text-3xl font-bold lg:text-7xl">Event Agenda</h1>
+            <div class="flex flex-col gap-5 text-left">
+              <button class="w-full bg-[#1C7AFF] p-5 text-left text-2xl font-bold">First Day</button>
+              <button class="w-full bg-gradient-to-r from-[#A5CAFF22] to-[#28467055] p-5 text-left text-2xl font-bold">
+                Second Day
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="agenda-right relative col-span-12 grid flex-shrink grid-cols-subgrid flex-col py-24 lg:col-span-8 lg:col-start-5">
+          {agendaData.map((agenda) => <EventCard data={agenda} />)}
+        </div>
+      </div>
+    </div>
+  </section>
   <section id="faq" class="">
     <div class="container">
       <div class="gap-100 grid grid-cols-12">
@@ -67,4 +94,4 @@ const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0
       </div>
     </div>
   </section>
-</MainLayout>; ---
+</MainLayout>

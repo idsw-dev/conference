@@ -10,7 +10,7 @@ export default function Accordion({ data, ...props }: Props) {
   return (
     <div className="accordion">
       {data.map((accordion, i) => (
-        <div className="accordion-item">
+        <div className="accordion-item" key={i}>
           <a className="accordion-title block p-5 bg-[#F3F8FF] border border-[#B8CAE3]" onClick={() => setOpenIndex(i)}>
             {accordion.question}
           </a>
