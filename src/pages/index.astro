@@ -85,8 +85,7 @@ const agendaData: Agenda[] = Object.values(agenda).map((item) => (item as any).d
             </div>
           </div>
         </div>
-        <div
-          class="agenda-right relative col-span-12 grid flex-shrink grid-cols-subgrid flex-col py-24 lg:col-span-8 lg:col-start-5">
+        <div class="agenda-right relative col-span-12 grid flex-shrink grid-cols-subgrid flex-col py-24 lg:col-start-5">
           {agendaData.map((agenda) => <EventCard data={agenda} />)}
         </div>
       </div>
