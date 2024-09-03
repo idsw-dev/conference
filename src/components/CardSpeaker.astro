@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import type { Speaker } from "../@types/speakers";
+
+interface Props {
+  data: Speaker;
+}
+
+const { data }: Props = Astro.props;
+const imageURL = "../images" + data.image;
+const images = import.meta.glob<{ default: ImageMetadata }>("../images/speakers/*.{png,jpg,jpeg,svg,webp}");
+if (!images[imageURL])
+  throw new Error(`"${imageURL}" does not exist in glob: "src/images/speakers/*.{jpeg,jpg,png,gif}"`);
+const image = images[imageURL];
+---
+
+<div class="card mb-8">
+  <div class="card-image bg-[#0A2650]">
+    <Image src={image()} alt={data.name} width={200} height={200} class:list={["h-full w-full object-cover"]} />
+  </div>
+  <div class="card-content mt-3 text-white">
+    <div class="card-title text-2xl font-bold">{data.name}</div>
+    <div class="card-subtitle text-lg font-semibold">{data.title}</div>
+  </div>
+</div>

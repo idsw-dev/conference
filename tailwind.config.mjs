@@ -21,6 +21,7 @@ export default {
       colors: {
         primary: "rgb(var(--color-primary) / <alpha-value>)",
         text: "rgb(var(--color-text) / <alpha-value>)",
+        lightblue: "#1C7AFF",
         body: "rgb(var(--color-body) / <alpha-value>)",
         "primary-dark": "rgb(var(--color-primary-dark) / <alpha-value>)",
       },

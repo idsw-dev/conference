@@ -7,12 +7,16 @@ import type { Faq } from "../@types/faq";
 import type { Agenda } from "../@types/agenda";
 import "../styles/landing.css";
 import EventCard from "../components/EventCard.astro";
+import type { Speaker } from "../@types/speakers";
+import CardSpeaker from "../components/CardSpeaker.astro";
 const eventDate = new Date(2024, 10, 17, 9, 0, 0);
 const faq = import.meta.glob("../data/faq.json", { eager: true });
 const agenda = import.meta.glob("../data/agenda.json", { eager: true });
+const speakers = import.meta.glob("../data/speakers.json", { eager: true });
 
 const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
 const agendaData: Agenda[] = Object.values(agenda).map((item) => (item as any).default)[0];
+const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as any).default)[0];
 ---
 
 <MainLayout>
@@ -72,13 +76,13 @@ const agendaData: Agenda[] = Object.values(agenda).map((item) => (item as any).d
   </section>
   <section id="agenda" class="bg-gradient-to-br from-[#0A2B5B] to-[#22406B]">
     <div class="container">
-      <div class="gap-100 grid grid-cols-12">
+      <div class="grid grid-cols-12">
         <div class="agenda-left relative col-span-12 items-end py-24 pb-0 lg:col-span-3 lg:block">
           <div class="bg-to-start bg-primary-dark"></div>
           <div class="agenda-text text-white">
             <h1 class="mb-12 text-3xl font-bold lg:text-7xl">Event Agenda</h1>
             <div class="flex flex-col gap-5 text-left">
-              <button class="w-full bg-[#1C7AFF] p-5 text-left text-2xl font-bold">First Day</button>
+              <button class="bg-lightblue w-full p-5 text-left text-2xl font-bold">First Day</button>
               <button class="w-full bg-gradient-to-r from-[#A5CAFF22] to-[#28467055] p-5 text-left text-2xl font-bold">
                 Second Day
               </button>
@@ -91,9 +95,33 @@ const agendaData: Agenda[] = Object.values(agenda).map((item) => (item as any).d
       </div>
     </div>
   </section>
+  <section id="speakers">
+    <div class="container">
+      <div class="grid grid-cols-12">
+        <div class="faq-left relative col-span-12 items-end py-24 pr-8 lg:col-span-4 lg:block">
+          <div class="bg-to-start bg-lightblue">
+            <img
+              src="/logo-white.svg"
+              alt=""
+              class="grid-col absolute -bottom-8 right-4 hidden w-[520px] lg:mb-8 lg:block"
+            />
+          </div>
+          <div class="faq-text text-white">
+            <h1 class="mb-3 text-3xl font-bold md:text-6xl">Our Esteemed Speakers</h1>
+          </div>
+        </div>
+        <div class="faq-right relative col-span-12 flex-shrink flex-col bg-primary-dark px-8 py-24 lg:col-span-8">
+          <div class="bg-to-end bg-primary-dark"></div>
+          <div class="speakers grid grid-cols-2 gap-5 lg:grid-cols-4">
+            {speakersData.map((speaker) => <CardSpeaker data={speaker} />)}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section id="faq" class="">
     <div class="container">
-      <div class="gap-100 grid grid-cols-12">
+      <div class="grid grid-cols-12">
         <div class="faq-left relative col-span-12 items-end py-24 pr-8 lg:col-span-4 lg:block">
           <div class="bg-to-start bg-primary-dark"></div>
           <div class="faq-text text-white">
