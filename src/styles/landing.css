@@ -25,6 +25,9 @@
   height: 100%;
   z-index: -1;
 }
+.scrolled .menu-link {
+  @apply text-primary-dark transition duration-200;
+}
 
 @media screen and (min-width: 1024px) {
   .bg-to-end {
