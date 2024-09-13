@@ -18,8 +18,8 @@ const image = images[imageURL];
   <div class="card-image bg-[#0A2650]">
     <Image src={image()} alt={data.name} width={200} height={200} class:list={["h-full w-full object-cover"]} />
   </div>
-  <div class="card-content mt-3 text-white">
-    <div class="card-title text-2xl font-bold">{data.name}</div>
-    <div class="card-subtitle text-lg font-semibold">{data.title}</div>
+  <div class="card-content mt-3">
+    <div class="card-title text-2xl font-bold text-white">{data.name}</div>
+    <div class="card-subtitle text-lg font-semibold text-gray-400">{data.title}</div>
   </div>
 </div>

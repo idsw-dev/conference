@@ -20,35 +20,37 @@ const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as a
 ---
 
 <MainLayout>
-  <section id="hero">
+  <section id="hero" class="min-h-full">
     <div class="container">
       <div class="grid grid-cols-12">
         <div class="hero-left col-span-12 flex flex-grow flex-wrap items-end gap-10 py-24 lg:col-span-4 lg:block">
           <img src="/logo.svg" alt="" class="grid-col w-[320px] lg:mb-8" />
-          <div class="hero-text">
+          <div class="hero-text text-gray- flex flex-col gap-4">
             <h1 class="mb-3 text-3xl font-bold xl:text-4xl">Indonesia Software Developer Conference</h1>
-            <p>16-17th November, 2024</p>
-            <p>GetCourse Hall, Jakarta Selatan</p>
+            <div class="flex flex-col items-start gap-2 text-lg">
+              <p>16-17th November, 2024</p>
+              <a href="https://maps.app.goo.gl/yu2vU1EhWSZ2Gxse9" class="underline">GetCourse Hall, Jakarta Selatan</a>
+            </div>
           </div>
         </div>
         <div
-          class="hero-right relative col-span-12 col-start-1 grid grid-cols-subgrid flex-col py-24 text-white lg:col-span-8 lg:col-start-5">
+          class="hero-right relative col-span-12 col-start-1 grid grid-cols-subgrid flex-col py-28 text-white lg:col-span-8 lg:col-start-5">
           <div class="bg-to-end bg-primary-dark"></div>
           <div class="col-start-1 -col-end-1 lg:col-start-2">
-            <div class="timer-area mb-12 flex items-center justify-center rounded-lg px-10 py-12 lg:py-24">
+            <div class="timer-area mb-12 flex items-center justify-center px-10 py-12 lg:py-24">
               <Timer
                 client:only="react"
                 date={eventDate}
                 className="text-xl md:gap-5 md:text-xl xl:gap-10 xl:text-2xl"
               />
             </div>
-            <div class="flex flex-col gap-5 lg:flex-row">
-              <p class="text-balance text-[22px] font-light">
+            <div class="flex flex-col gap-6 lg:flex-row">
+              <p class="text-balance text-xl font-light text-gray-400 lg:text-start">
                 Join us for the first annual conference for Indonesia software developers, where you can hear
                 thought-provoking keynotes from industry leaders and network with fellow developers.
               </p>
-              <div class="flex flex-grow flex-col py-5">
-                <Button color="primary" className="flex-grow xl:text-2xl"> Get Tickets </Button>
+              <div class="flex">
+                <Button color="primary" className="min-w-44 flex-grow text-xl xl:text-2xl"> Get Tickets </Button>
               </div>
             </div>
           </div>
@@ -57,39 +59,42 @@ const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as a
     </div>
   </section>
 
-  <section id="about" class="bg-gradient-to-b from-[#030E1C] to-[#061C3C] text-white">
+  <section id="about" class="bg-gradient-to-b from-[#030E1C] to-[#061C3C] py-12">
     <div class="container">
       <div class="grid grid-cols-12">
         <div class="about-left col-span-12 gap-10 py-16 pb-0 lg:col-span-4 lg:block">
-          <h2 class="text-[50px] font-bold">Built by the Community</h2>
+          <h2 class="text-3xl font-bold text-gray-400 md:text-5xl">Built by the Community</h2>
         </div>
         <div
-          class="about-right relative col-span-12 col-start-1 grid grid-cols-subgrid flex-col py-16 text-white lg:col-span-8 lg:col-start-5">
-          <p class="col-span-12 text-2xl leading-10 lg:col-span-8 lg:col-start-2">
-            IDSW is Indonesia’s first software developer conference. Organized by <b>Perkodi</b> and <b
-              >various tech communities</b
-            >, its mission is to offer annual in-depth sessions on the most important and new technologies.
+          class="about-right relative col-span-12 col-start-1 grid grid-cols-subgrid flex-col py-16 lg:col-span-8 lg:col-start-5">
+          <p class="col-span-12 text-xl leading-10 text-gray-200 md:text-2xl lg:col-span-8 lg:col-start-2">
+            IDSW is Indonesia's first software developer conference.<br /><br />Organized by <a
+              href="https://perkodi.org/"
+              class="font-semibold underline">Perkodi</a
+            > and <span class="font-semibold">various tech communities</span>, its mission is to offer annual in-depth
+            sessions on the most important and new technologies.
           </p>
         </div>
       </div>
     </div>
   </section>
-  <section id="agenda" class="bg-gradient-to-br from-[#0A2B5B] to-[#22406B]">
+  <section id="agenda" class="bg-gradient-to-br from-[#0A2B5B] to-[#22406B] py-24">
     <div class="container">
       <div class="grid grid-cols-12">
-        <div class="agenda-left relative col-span-12 items-end py-24 pb-0 lg:col-span-3 lg:block">
+        <div class="agenda-left relative col-span-12 items-end pb-0 lg:col-span-3 lg:block">
           <div class="bg-to-start bg-primary-dark"></div>
           <div class="agenda-text text-white">
-            <h1 class="mb-12 text-3xl font-bold lg:text-7xl">Event Agenda</h1>
+            <h1 class="mb-12 text-3xl font-bold lg:text-5xl">Event Agenda</h1>
             <div class="flex flex-col gap-5 text-left">
-              <button class="bg-lightblue w-full p-5 text-left text-2xl font-bold">First Day</button>
-              <button class="w-full bg-gradient-to-r from-[#A5CAFF22] to-[#28467055] p-5 text-left text-2xl font-bold">
+              <button class="w-full bg-lightblue p-5 text-left text-2xl font-bold">First Day</button>
+              <button
+                class="w-full bg-white/10 p-5 text-left text-2xl font-bold text-white/60 transition hover:bg-lightblue/20 hover:text-white/80">
                 Second Day
               </button>
             </div>
           </div>
         </div>
-        <div class="agenda-right relative col-span-12 grid flex-shrink grid-cols-subgrid flex-col py-24 lg:col-start-5">
+        <div class="agenda-right relative col-span-12 grid flex-shrink grid-cols-subgrid flex-col lg:col-start-5">
           {agendaData.map((agenda) => <EventCard data={agenda} />)}
         </div>
       </div>
@@ -107,7 +112,7 @@ const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as a
             />
           </div>
           <div class="faq-text text-white">
-            <h1 class="mb-3 text-3xl font-bold md:text-6xl">Our Esteemed Speakers</h1>
+            <h1 class="mb-3 text-3xl font-bold md:text-5xl">Our Esteemed Speakers</h1>
           </div>
         </div>
         <div class="faq-right relative col-span-12 flex-shrink flex-col bg-primary-dark px-8 py-24 lg:col-span-8">
@@ -125,10 +130,8 @@ const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as a
         <div class="faq-left relative col-span-12 items-end py-24 pr-8 lg:col-span-4 lg:block">
           <div class="bg-to-start bg-primary-dark"></div>
           <div class="faq-text text-white">
-            <h1 class="mb-3 text-3xl font-bold md:text-4xl">Frequently Asked Questions</h1>
-            <p class="text-xl text-gray-400">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id semper turpis. Sed sit amet libero.
-            </p>
+            <h1 class="mb-3 text-3xl font-bold md:text-5xl">FAQ</h1>
+            <p class="text-lg text-gray-400">Frequently Asked Questions</p>
           </div>
         </div>
         <div class="faq-right relative col-span-12 flex-shrink flex-col px-8 py-24 lg:col-span-8 lg:px-16">
