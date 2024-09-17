@@ -1,74 +1,26 @@
 [
-    {
-        "question": "What is IDSW 2024?",
-        "answer": "IDSW 2024 is the Indonesia Software Developer Conference, a community-driven event focusing on software engineering, architecture, AI, and more. It's organized by PERKODI and various tech communities."
-    },
-    {
-        "question": "When and where will IDSW 2024 take place?",
-        "answer": "The event will be held on November 16-17, 2024, GetCourse Hall, Jakarta, Indonesia."
-    },
-    {
-        "question": "How can I register for the event?",
-        "answer": "Registration details will be available on the official website. Tickets will be offered for in-person attendees."
-    },
-    {
-        "question": "Who should attend IDSW 2024?",
-        "answer": "The conference is ideal for software developers, engineers, product managers, and tech enthusiasts interested in the latest industry trends."
-    },
-    {
-        "question": "What topics will be covered?",
-        "answer": "Topics include product engineering, software architecture, artificial intelligence, machine learning, and other cutting-edge technologies."
-    },
-    {
-        "question": "How can I submit a talk or workshop proposal?",
-        "answer": "Submit your proposal through the PaperCall.io platform by October 12, 2024."
-    },
-    {
-        "question": "What are the event formats (online/offline)?",
-        "answer": "IDSW 2024 will be an offline event, allowing physical attendance in Jakarta."
-    },
-    {
-        "question": "Is there a code of conduct?",
-        "answer": "Yes, IDSW 2024 will enforce a code of conduct to ensure a respectful and inclusive environment for all participants."
-    },
-    {
-        "question": "What sponsorship opportunities are available?",
-        "answer": "Sponsorship details are available upon inquiry, offering various benefits to companies that partner with the event."
-    },
-    {
-        "question": "Who are the organizers and partners?",
-        "answer": "The event is organized by PERKODI in collaboration with multiple tech communities across Indonesia."
-    },
-    {
-        "question": "Will there be networking opportunities?",
-        "answer": "Yes, there will be dedicated sessions for networking in person, to connect with fellow professionals."
-    },
-    {
-        "question": "How can I stay updated on the event?",
-        "answer": "Follow the event's official channels, including the website and social media, for the latest updates."
-    },
-    {
-        "question": "How can I register for the event?",
-        "answer": "Registration is conducted online. You can reserve your spot by filling out the registration form on our event page."
-    },
-    {
-        "question": "Are food and beverage services will be provided during events?",
-        "answer": "Various snacks and beverages will be available throughout the event. If you have specific dietary requirements, please inform us in advance."
-    },
-    {
-        "question": "Is there a refund policy in case I need to cancel my attendance?",
-        "answer": "Unfortunately, no, there isn't a refund policy for cancellations."
-    },
-    {
-        "question": "Can I transfer my ticket to someone else?",
-        "answer": "Yes, ticket transfers are permitted. Please contact our support team at least [insert timeframe] prior to the event with the details of the person to whom you'd like to transfer your ticket, and we'll assist you with the process."
-    },
-    {
-        "question": "Where can I find the latest information about this event?",
-        "answer": "You can find the latest information about this event right here on our social page! We'll be posting updates regularly."
-    },
-    {
-        "question": "What should I bring on the day of the event?",
-        "answer": "Ensure to bring your registration confirmation and identification. If you have any specific inquiries, please contact us."
-    }
+  {
+    "question": "How can I register for the event?",
+    "answer": "Registration is conducted online. You can reserve your spot by filling out the registration form on our event page."
+  },
+  {
+    "question": "Are food and beverage services will be provided during events?",
+    "answer": "Various snacks and beverages will be available throughout the event. If you have specific dietary requirements, please inform us in advance."
+  },
+  {
+    "question": "Is there a refund policy in case I need to cancel my attendance?",
+    "answer": "Unfortunately, no, there isn't a refund policy for cancellations."
+  },
+  {
+    "question": "Can I transfer my ticket to someone else?",
+    "answer": "Yes, ticket transfers are permitted. Please contact our support team at least [insert timeframe] prior to the event with the details of the person to whom you'd like to transfer your ticket, and we'll assist you with the process."
+  },
+  {
+    "question": "Where can I find the latest information about this event?",
+    "answer": "You can find the latest information about this event right here on our social page! We'll be posting updates regularly."
+  },
+  {
+    "question": "What should I bring on the day of the event?",
+    "answer": "Ensure to bring your registration confirmation and identification. If you have any specific inquiries, please contact us."
+  }
 ]
