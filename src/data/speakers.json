@@ -1,52 +1,10 @@
 [
-    {
-        "name": "John Doe",
-        "title": "COO, Gojek",
-        "image": "/speakers/john-doe.png"
-    },
-    {
-        "name": "John Doe",
-        "title": "COO, Gojek",
-        "image": "/speakers/john-doe.png"
-    },
-    {
-        "name": "John Doe",
-        "title": "COO, Gojek",
-        "image": "/speakers/john-doe.png"
-    },
-    {
-        "name": "John Doe",
-        "title": "COO, Gojek",
-        "image": "/speakers/john-doe.png"
-    },
-    {
-        "name": "John Doe",
-        "title": "COO, Gojek",
-        "image": "/speakers/john-doe.png"
-    },
-    {
-        "name": "John Doe",
-        "title": "COO, Gojek",
-        "image": "/speakers/john-doe.png"
-    },
-    {
-        "name": "John Doe",
-        "title": "COO, Gojek",
-        "image": "/speakers/john-doe.png"
-    },
-    {
-        "name": "John Doe",
-        "title": "COO, Gojek",
-        "image": "/speakers/john-doe.png"
-    },
-    {
-        "name": "John Doe",
-        "title": "COO, Gojek",
-        "image": "/speakers/john-doe.png"
-    },
-    {
-        "name": "John Doe",
-        "title": "COO, Gojek",
-        "image": "/speakers/john-doe.png"
+  {
+    "name": "Listiarso Wastuargo",
+    "title": "Keynote Speaker",
+    "image": "/speakers/listiarso.jpg",
+    "social": {
+      "x": "https://x.com/lwastuargo"
     }
+  }
 ]
