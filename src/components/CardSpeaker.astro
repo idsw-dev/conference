@@ -19,7 +19,9 @@ const image = images[imageURL];
     <Image src={image()} alt={data.name} width={200} height={200} class:list={["h-full w-full object-cover"]} />
   </div>
   <div class="card-content mt-3">
-    <div class="card-title text-2xl font-bold text-white">{data.name}</div>
-    <div class="card-subtitle text-lg font-semibold text-gray-400">{data.title}</div>
+    <div class="card-title mb-1 text-base font-bold text-white lg:text-2xl">{data.name}</div>
+    <div class="card-subtitle text-sm font-semibold text-gray-200 lg:text-lg">{data.title}</div>
+    <hr class="my-2 border-[#204985]" />
+    <div class="card-subtitle text-sm text-gray-200 lg:text-lg">{data.role}</div>
   </div>
 </div>
