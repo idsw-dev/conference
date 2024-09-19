@@ -45,9 +45,9 @@ function IconChevronBottom() {
       <path
         fill="none"
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
         d="M30 12L16 24L2 12"
       ></path>
     </svg>

@@ -68,9 +68,9 @@ export default function Header() {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M1 1h15M1 7h15M1 13h15"
               ></path>
             </svg>
@@ -81,7 +81,7 @@ export default function Header() {
           >
             <ul className="mt-4 flex flex-col rounded-lg border bg-white p-4 font-medium dark:border-gray-700 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-transparent md:p-0 rtl:space-x-reverse">
               {menus.map((menu) => (
-                <li>
+                <li key={menu.name}>
                   <a
                     href={menu.href}
                     onClick={() => setIsOpen(!isOpen)}
