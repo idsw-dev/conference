@@ -116,35 +116,48 @@ const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as a
           Got tech insights to share? Submit your paper and contribute to engaging discussions on the latest trends and
           innovations.
         </div>
-        <div class="expertise-button lg: relative col-span-12 flex items-center lg:col-span-3 lg:pl-12">
+        <div class="expertise-button lg: relative col-span-12 mt-5 flex items-start lg:col-span-3 lg:pl-12">
           <Button
             color="primary"
             className="min-w-44 flex-shrink text-xl xl:text-2xl"
-            href="https://www.loket.com/event/idsw2024">
+            href="https://www.papercall.io/idsw-2024">
             Learn More
           </Button>
         </div>
       </div>
     </div>
   </section>
-  <section id="speakers">
+  <section id="speakers" class="">
     <div class="container">
       <div class="grid grid-cols-12">
-        <div class="faq-left relative col-span-12 items-end py-24 pr-8 lg:col-span-4 lg:block">
-          <div class="bg-to-start bg-lightblue">
-            <!-- <img
+        <div
+          class="speakers-left relative col-span-12 items-end py-8 lg:col-span-4 lg:block lg:min-h-[1000px] lg:py-24">
+          <div class="bg-to-start -translate-y-3 bg-lightblue">
+            <img
               src="/logo-white.svg"
               alt=""
-              class="grid-col absolute -bottom-8 right-4 hidden w-[520px] lg:mb-8 lg:block"
-            /> -->
+              class="grid-col absolute -bottom-8 right-0 hidden w-[520px] lg:mb-8 lg:block"
+            />
           </div>
           <div class="faq-text text-white">
-            <h1 class="mb-3 text-3xl font-bold md:text-5xl">Our Esteemed Speakers</h1>
+            <h1 class="mb-0 w-2/3 text-2xl font-bold !leading-normal md:mb-8 md:text-3xl lg:text-4xl">
+              Our Esteemed Speakers
+            </h1>
+            <p class="hidden text-xl leading-relaxed opacity-80 lg:block">
+              Discover valuable insights and perspectives from our distinguished speakers as they share their expertise,
+              experiences, and innovative ideas to inspire.
+            </p>
+            <img
+              src="/logo-white.svg"
+              alt=""
+              class="grid-col absolute -right-12 top-0 block h-full lg:mb-8 lg:hidden"
+            />
           </div>
         </div>
-        <div class="faq-right relative col-span-12 flex-shrink flex-col bg-primary-dark px-8 py-24 lg:col-span-8">
+        <div
+          class="speakers-right relative col-span-12 flex-shrink flex-col bg-primary-dark py-12 lg:col-span-8 lg:px-12">
           <div class="bg-to-end bg-primary-dark"></div>
-          <div class="speakers grid grid-cols-2 gap-5 lg:grid-cols-4">
+          <div class="speakers grid grid-cols-2 gap-5 md:grid-cols-3 xl:grid-cols-4">
             {speakersData.map((speaker) => <CardSpeaker data={speaker} />)}
           </div>
         </div>
