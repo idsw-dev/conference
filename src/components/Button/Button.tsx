@@ -24,7 +24,7 @@ export default function Button({
   const btnClass = `${buttonColors[color]} ${className} text-center focus:ring-4 focus:ring-blue-300 font-semibold inline-block text-sm px-8 py-6 me-1 focus:outline-none transition hover:bg-opacity-90`;
   if (href) {
     return (
-      <a href={href} className={btnClass}>
+      <a href={href} className={btnClass} target="_blank">
         {children}
       </a>
     );

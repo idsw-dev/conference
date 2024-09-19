@@ -45,7 +45,7 @@ const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as a
               />
             </div>
             <div class="flex flex-col gap-6 lg:flex-row">
-              <p class="text-balance text-xl font-light text-gray-400 lg:text-start">
+              <p class="text-balance text-xl font-light text-white opacity-80 lg:text-start">
                 Join us for the first annual conference for Indonesia software developers, where you can hear
                 thought-provoking keynotes from industry leaders and network with fellow developers.
               </p>
@@ -167,15 +167,16 @@ const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as a
   <section id="faq" class="">
     <div class="container">
       <div class="grid grid-cols-12">
-        <div class="faq-left relative col-span-12 items-end py-24 pr-8 lg:col-span-4 lg:block">
+        <div class="faq-left relative col-span-12 hidden items-end py-24 pr-8 lg:col-span-4 lg:block">
           <div class="bg-to-start bg-primary-dark"></div>
           <div class="faq-text text-white">
-            <h1 class="mb-3 text-3xl font-bold md:text-5xl">FAQ</h1>
-            <p class="text-lg text-gray-400">Frequently Asked Questions</p>
+            <h1 class="mb-3 text-3xl font-bold !leading-relaxed md:text-4xl">Frequently Asked Questions</h1>
+            <p class="text-lg text-gray-400">Everything you need to know about the event.</p>
           </div>
         </div>
-        <div class="faq-right relative col-span-12 flex-shrink flex-col px-8 py-24 lg:col-span-8 lg:px-16">
+        <div class="faq-right relative col-span-12 flex-shrink flex-col py-12 lg:col-span-8 lg:px-16 lg:py-24">
           <div class="bg-to-end bg-[#E7F1FF]"></div>
+          <h1 class="mb-8 text-3xl font-bold md:hidden">Frequently Asked Questions</h1>
           <Accordion data={faqData} client:load />
         </div>
       </div>
