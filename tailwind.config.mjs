@@ -7,18 +7,27 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "1rem",
+      padding: "2.5rem",
+      screens: {
+        xl: "1272px",
+        lg: "1000px",
+        md: "768px",
+      },
     },
     extend: {
+      transitionProperty: {
+        "max-height": "max-height",
+      },
       colors: {
         primary: "rgb(var(--color-primary) / <alpha-value>)",
         text: "rgb(var(--color-text) / <alpha-value>)",
+        lightblue: "#1C7AFF",
         body: "rgb(var(--color-body) / <alpha-value>)",
-        dark: "rgb(var(--color-dark) / <alpha-value>)",
+        "primary-dark": "rgb(var(--color-primary-dark) / <alpha-value>)",
       },
     },
     fontFamily: {
-      sans: ["Inter", ...defaultTheme.fontFamily.sans],
+      sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
     },
   },
   plugins: [],

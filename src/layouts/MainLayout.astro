@@ -1,8 +1,9 @@
 ---
-import "@fontsource/inter";
+import "@fontsource-variable/inter";
 import PostHog from "../components/posthog.astro";
 import "../styles/global.css";
 import "../styles/tailwind.css";
+import Header from "../components/Header.tsx";
 ---
 
 <html lang="en" class="dark">
@@ -15,7 +16,7 @@ import "../styles/tailwind.css";
     <PostHog />
   </head>
   <body>
-    <!-- <Header/> -->
+    <Header client:only="react" />
     <main>
       <slot />
     </main>

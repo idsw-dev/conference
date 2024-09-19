@@ -1,9 +1,9 @@
 @tailwind base;
 @layer base {
   :root {
-    --color-primary: 15 76 117;
-    --color-primary-light: 50 130 184;
-    --color-primary-lighter: 187 225 250;
+    --color-primary: 28 122 255;
+    --color-primary-dark: 6 28 60;
+    --color-primary-light: 187 225 250;
     --color-dark: 8 7 22;
     --color-text: 255 255 255;
     --color-body: 230 230 230;
@@ -36,4 +36,3 @@
     );
   }
 }
-

@@ -1,0 +1,32 @@
+[
+    {
+        "day": 1,
+        "speaker": {
+            "image": "/speakers/john-doe.png",
+            "name": "John Doe",
+            "title": "Software Engineer, Tokopedia",
+            "company": "Google"
+        },
+        "event": {
+            "title": "Kubernetes in Business",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id semper turpis. Sed sit amet libero a nisl ultrices congue.",
+            "time_start": "09:00 AM",
+            "time_end": "09:45 AM"
+        }
+    },
+    {
+        "day": 1,
+        "speaker": {
+            "image": "/speakers/john-doe.png",
+            "name": "John Doe",
+            "title": "Software Engineer, Tokopedia",
+            "company": "Google"
+        },
+        "event": {
+            "title": "Kubernetes in Business",
+            "description": "Lorem ipsum dolor sit amet.",
+            "time_start": "09:00 AM",
+            "time_end": "09:45 AM"
+        }
+    }
+]
