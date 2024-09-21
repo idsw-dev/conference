@@ -1,9 +1,8 @@
 ---
 import "@fontsource-variable/inter";
+import Header from "../components/Header";
 import PostHog from "../components/posthog.astro";
 import "../styles/global.css";
-import "../styles/tailwind.css";
-import Header from "../components/Header.tsx";
 ---
 
 <html lang="en" class="dark">
@@ -20,6 +19,5 @@ import Header from "../components/Header.tsx";
     <main>
       <slot />
     </main>
-    <!-- <Footer /> -->
   </body>
 </html>
