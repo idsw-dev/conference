@@ -2,41 +2,29 @@ import { useEffect, useRef, useState } from "react";
 
 export function useInterval(fn: () => void, interval: number) {
   const [active, setActive] = useState(false);
-  const intervalRef = useRef<number>();
-  const fnRef = useRef<() => void>();
+  const savedCallback = useRef(fn);
 
-  const start = () => {
-    setActive((old) => {
-      if (!old && !intervalRef.current) {
-        intervalRef.current = window.setInterval(fnRef.current!, interval);
-      }
-      return true;
-    });
-  };
+  // Update the saved callback if it changes
+  useEffect(() => {
+    savedCallback.current = fn;
+  }, [fn]);
 
-  const stop = () => {
-    setActive(false);
-    window.clearInterval(intervalRef.current);
-    intervalRef.current = undefined;
-  };
-
-  const toggle = () => {
+  useEffect(() => {
+    let id: number | undefined;
     if (active) {
-      stop();
-    } else {
-      start();
+      id = window.setInterval(() => savedCallback.current(), interval);
     }
-  };
+    // Cleanup the interval on unmount or when active/interval changes
+    return () => {
+      if (id !== undefined) {
+        window.clearInterval(id);
+      }
+    };
+  }, [active, interval]);
 
-  useEffect(() => {
-    fnRef.current = fn;
-    active && start();
-    return stop;
-  }, [fn, active, interval]);
-
-  useEffect(() => {
-    start();
-  }, []);
+  const start = () => setActive(true);
+  const stop = () => setActive(false);
+  const toggle = () => setActive((prev) => !prev);
 
   return { start, stop, toggle, active };
 }
