@@ -13,5 +13,6 @@
   ],
   "files.readonlyInclude": {
     "node_modules/**": true
-  }
+  },
+  "npm.packageManager": "pnpm"
 }
