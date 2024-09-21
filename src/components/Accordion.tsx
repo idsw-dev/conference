@@ -23,12 +23,12 @@ export default function Accordion({ data, ...props }: Props) {
   };
 
   return (
-    <div className="accordion flex flex-col gap-2">
+    <div className="accordion flex flex-col gap-2" {...props}>
       {data.map((accordion, i) => (
         <div className="accordion-item" key={i}>
           <div
             className="accordion-title flex cursor-pointer items-center border border-[#B8CAE3] bg-[#F3F8FF] p-5"
-            onClick={(e) => toggleAccordion(i)}
+            onClick={(_) => toggleAccordion(i)}
             onKeyDown={(e) => handleKeyDown(e, i)}
             aria-expanded={openIndex == i}
             aria-controls={`accordion-content-${i}`}
