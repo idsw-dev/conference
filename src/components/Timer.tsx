@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useInterval } from "../hooks/useInterval";
 
 type TimerProps = {
@@ -10,8 +10,6 @@ function formatNumber(number: number) {
 }
 
 export default function Timer({ date, ...props }: TimerProps) {
-  let now = new Date();
-
   const [dayLeft, setDayLeft] = useState({
     days: 0,
     hours: 0,
@@ -20,18 +18,22 @@ export default function Timer({ date, ...props }: TimerProps) {
   });
 
   function updateCountdown() {
-    now = new Date();
+    const now = new Date();
     const diff = date.getTime() - now.getTime();
 
     setDayLeft({
       days: Math.floor(diff / (1000 * 60 * 60 * 24)),
       hours: Math.floor(diff / (1000 * 60 * 60)) % 24,
-      mins: Math.floor(diff / (1000 * 60)) % 24,
+      mins: Math.floor(diff / (1000 * 60)) % 60,
       secs: Math.floor((diff / 1000) % 60),
     });
   }
 
-  useInterval(updateCountdown, 1000);
+  const { start } = useInterval(updateCountdown, 1000);
+
+  useEffect(() => {
+    start();
+  }, []);
 
   return (
     <div
