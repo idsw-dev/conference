@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useInterval } from "../hooks/useInterval";
 
 type TimerProps = {
   date: Date;
@@ -30,7 +31,7 @@ export default function Timer({ date, ...props }: TimerProps) {
     });
   }
 
-  setInterval(() => updateCountdown(), 1000);
+  useInterval(updateCountdown, 1000);
 
   return (
     <div
