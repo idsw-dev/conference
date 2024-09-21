@@ -7,12 +7,13 @@ interface Props {
 }
 
 const { data }: Props = Astro.props;
-const imageURL = `${data.speaker.image}`;
 const images = await Astro.glob<{ default: ImageMetadata }>("../data/images/speakers/*.{png,jpg,jpeg,svg,webp}");
-const image = images.find((img) => img.default.src.includes(imageURL));
+const image = images.find((img) => img.default.src.includes(data.speaker.imageName));
 
 if (!image) {
-  throw new Error(`"${imageURL}" does not exist in glob: "src/data/images/speakers/*.{png,jpg,jpeg,svg,webp}"`);
+  throw new Error(
+    `"${data.speaker.imageName}" does not exist in glob: "src/data/images/speakers/*.{png,jpg,jpeg,svg,webp}"`,
+  );
 }
 ---
 

@@ -2,7 +2,7 @@
   {
     "day": 1,
     "speaker": {
-      "image": "/speakers/john-doe.png",
+      "imageName": "john-doe",
       "name": "John Doe",
       "title": "Software Engineer, Tokopedia",
       "company": "Google"
@@ -17,7 +17,7 @@
   {
     "day": 1,
     "speaker": {
-      "image": "/speakers/john-doe.png",
+      "imageName": "john-doe",
       "name": "John Doe",
       "title": "Software Engineer, Tokopedia",
       "company": "Google"
