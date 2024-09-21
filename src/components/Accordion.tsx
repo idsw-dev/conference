@@ -8,12 +8,15 @@ export default function Accordion({ data, ...props }: Props) {
   const [openIndex, setOpenIndex] = useState(-1);
 
   const toggleAccordion = (index: number) => {
-    if (openIndex == index) setOpenIndex(-1)
-    else setOpenIndex(index)
-  }
+    if (openIndex == index) setOpenIndex(-1);
+    else setOpenIndex(index);
+  };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>, index: number) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+  const handleKeyDown = (
+    e: React.KeyboardEvent<HTMLDivElement>,
+    index: number,
+  ) => {
+    if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       toggleAccordion(index);
     }
@@ -32,7 +35,9 @@ export default function Accordion({ data, ...props }: Props) {
             tabIndex={0}
             role="button"
           >
-            <a className="flex-1" id={`accordion-title-${i}`}>{accordion.question}</a>
+            <a className="flex-1" id={`accordion-title-${i}`}>
+              {accordion.question}
+            </a>
             <div
               className={`accordion-icon ${openIndex == i ? "rotate-180 transform" : ""}`}
             >
