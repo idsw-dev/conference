@@ -31,7 +31,10 @@ export default function Timer({ date, ...props }: TimerProps) {
     });
   }
 
-  useInterval(updateCountdown, 1000);
+  const { start, active } = useInterval(updateCountdown, 1000);
+  if (!active) {
+    start();
+  }
 
   return (
     <div
