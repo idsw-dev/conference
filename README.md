@@ -1,18 +1,8 @@
-# Astro Starter Kit: Minimal
-
-```sh
-npm create astro@latest -- --template minimal
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+# IDSW Website
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+We use Astro, you'll see the following folders and files:
 
 ```text
 /
@@ -35,7 +25,7 @@ All commands are run from the root of the project, from a terminal:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install --force`     | Installs dependencies [1]                        |
+| `npm install`             | Installs dependencies                            |
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
@@ -45,10 +35,3 @@ All commands are run from the root of the project, from a terminal:
 ## Deployment
 
 We use Cloudflare Pages and it's CI/CD for deployment, ask our contributor for details.
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Notes
-[1] We need to use `--force` when doing `npm install` because of `eslint-plugin-jsx-a11y` doesn't support `eslint` version 9 yet, meanwhile Astro is already using `eslint` version 9. We will keep this behaviour until downstream dependencies resolved it.
