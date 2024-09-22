@@ -14,5 +14,5 @@
   "files.readonlyInclude": {
     "node_modules/**": true
   },
-  "npm.packageManager": "pnpm"
+  "npm.packageManager": "npm"
 }
