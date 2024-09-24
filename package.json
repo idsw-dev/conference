@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^8.0.0",
-    "eslint": "^9.8.0",
+    "eslint": "^9.11.0",
     "eslint-plugin-astro": "^1.2.4",
     "eslint-plugin-jsx-a11y": "^6.10.0",
     "prettier": "^3.3.3",
