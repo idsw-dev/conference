@@ -24,8 +24,8 @@ importers:
         specifier: ^5.0.20
         version: 5.0.20
       '@fontsource/twinkle-star':
-        specifier: ^5.0.20
-        version: 5.0.20
+        specifier: ^5.1.0
+        version: 5.1.0
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
@@ -448,8 +448,8 @@ packages:
   '@fontsource/inter@5.0.20':
     resolution: {integrity: sha512-rtw2F7xfM7rJmmnncXnR4ADr5wXsp4GyN1O1jmQJ1PMjAK+bm620/ZkQkeOYOkGoa09OksGinOeMA+Mkt6K9PQ==}
 
-  '@fontsource/twinkle-star@5.0.20':
-    resolution: {integrity: sha512-kVuvs1ohuYOheEEWwwp/GsfGOnEML8W7GBcuo/iLk0GQs5sPVXcJalVjzeV11RIUiWTEg53rfVxhUIVG5v/xCQ==}
+  '@fontsource/twinkle-star@5.1.0':
+    resolution: {integrity: sha512-j4zXPXlhLpduP59A9hsdleF+1ftXPo4TbeNRAxK1E9v6N5rV/BL0PNmQ1WSMhljfCopSEQsy168xMrEd9/9E4g==}
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -3455,7 +3455,7 @@ snapshots:
 
   '@fontsource/inter@5.0.20': {}
 
-  '@fontsource/twinkle-star@5.0.20': {}
+  '@fontsource/twinkle-star@5.1.0': {}
 
   '@humanwhocodes/module-importer@1.0.1': {}
 
