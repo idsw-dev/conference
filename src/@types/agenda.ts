@@ -1,7 +1,7 @@
 export interface Agenda {
   day: number;
   speaker: {
-    image: string;
+    imageName: string;
     name: string;
     title: string;
     company: string;

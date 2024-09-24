@@ -7,16 +7,17 @@ interface Props {
 }
 
 const { data }: Props = Astro.props;
-const imageURL = "../images" + data.image;
-const images = import.meta.glob<{ default: ImageMetadata }>("../images/speakers/*.{png,jpg,jpeg,svg,webp}");
-if (!images[imageURL])
-  throw new Error(`"${imageURL}" does not exist in glob: "src/images/speakers/*.{jpeg,jpg,png,gif}"`);
-const image = images[imageURL];
+const images = await Astro.glob<{ default: ImageMetadata }>("../data/images/speakers/*.{png,jpg,jpeg,svg,webp}");
+const image = images.find((img) => img.default.src.includes(data.imageName));
+
+if (!image) {
+  throw new Error(`"${data.imageName}" does not exist in glob: "src/data/images/speakers/*.{png,jpg,jpeg,svg,webp}"`);
+}
 ---
 
 <div class="card mb-8">
   <div class="card-image bg-[#0A2650]">
-    <Image src={image()} alt={data.name} width={200} height={200} class:list={["h-full w-full object-cover"]} />
+    <Image src={image.default} alt={data.name} width={200} height={200} class:list={["h-full w-full object-cover"]} />
   </div>
   <div class="card-content mt-3">
     <div class="card-title mb-1 text-base font-bold text-white lg:text-2xl">{data.name}</div>
