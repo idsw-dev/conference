@@ -1,20 +1,19 @@
 ---
-import Button from "../components/Button/Button";
-import Timer from "../components/Timer";
-import Accordion from "../components/Accordion";
-import MainLayout from "../layouts/MainLayout.astro";
+// import type { Agenda } from "../@types/agenda";
 import type { Faq } from "../@types/faq";
-import type { Agenda } from "../@types/agenda";
-import "../styles/landing.css";
 import type { Speaker } from "../@types/speakers";
+import Accordion from "../components/Accordion";
+import Button from "../components/Button";
 import CardSpeaker from "../components/CardSpeaker.astro";
+import Timer from "../components/Timer";
+import MainLayout from "../layouts/MainLayout.astro";
 const eventDate = new Date(2024, 10, 17, 9, 0, 0);
-const faq = import.meta.glob("../data/faq.json", { eager: true });
-const agenda = import.meta.glob("../data/agenda.json", { eager: true });
-const speakers = import.meta.glob("../data/speakers.json", { eager: true });
+const faq = await Astro.glob("../data/faq.json");
+// const agenda = await Astro.glob("../data/agenda.json");
+const speakers = await Astro.glob("../data/speakers.json");
 
 const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
-const agendaData: Agenda[] = Object.values(agenda).map((item) => (item as any).default)[0];
+// const agendaData: Agenda[] = Object.values(agenda).map((item) => (item as any).default)[0];
 const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as any).default)[0];
 ---
 

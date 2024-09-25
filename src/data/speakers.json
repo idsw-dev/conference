@@ -3,9 +3,18 @@
     "name": "Listiarso Wastuargo",
     "title": "Tech Entrepreneur",
     "role": "Keynote Speaker",
-    "image": "/speakers/listiarso.jpg",
+    "imageName": "listiarso",
     "social": {
       "x": "https://x.com/lwastuargo"
+    }
+  },
+  {
+    "name": "Theresia Tanzil",
+    "title": "Independent Researcher at Proses.ID",
+    "role": "Keynote Speaker",
+    "imageName": "tre",
+    "social": {
+      "x": "https://x.com/theresiatanzil"
     }
   }
 ]

@@ -8,31 +8,36 @@ export default function Accordion({ data, ...props }: Props) {
   const [openIndex, setOpenIndex] = useState(-1);
 
   const toggleAccordion = (index: number) => {
-    if (openIndex == index) setOpenIndex(-1)
-    else setOpenIndex(index)
-  }
+    if (openIndex == index) setOpenIndex(-1);
+    else setOpenIndex(index);
+  };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>, index: number) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+  const handleKeyDown = (
+    e: React.KeyboardEvent<HTMLDivElement>,
+    index: number,
+  ) => {
+    if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       toggleAccordion(index);
     }
   };
 
   return (
-    <div className="accordion flex flex-col gap-2">
+    <div className="accordion flex flex-col gap-2" {...props}>
       {data.map((accordion, i) => (
         <div className="accordion-item" key={i}>
           <div
             className="accordion-title flex cursor-pointer items-center border border-[#B8CAE3] bg-[#F3F8FF] p-5"
-            onClick={(e) => toggleAccordion(i)}
+            onClick={(_) => toggleAccordion(i)}
             onKeyDown={(e) => handleKeyDown(e, i)}
             aria-expanded={openIndex == i}
             aria-controls={`accordion-content-${i}`}
             tabIndex={0}
             role="button"
           >
-            <a className="flex-1" id={`accordion-title-${i}`}>{accordion.question}</a>
+            <a className="flex-1" id={`accordion-title-${i}`}>
+              {accordion.question}
+            </a>
             <div
               className={`accordion-icon ${openIndex == i ? "rotate-180 transform" : ""}`}
             >

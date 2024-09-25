@@ -1,4 +1,4 @@
-import type { Color } from "../../@types/components";
+import type { Color } from "../@types/components";
 
 interface Props {
   children: any;

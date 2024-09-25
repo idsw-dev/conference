@@ -1,6 +1,6 @@
 export interface Speaker {
   name: string;
   title: string;
-  image: string;
+  imageName: string;
   role: string;
 }
