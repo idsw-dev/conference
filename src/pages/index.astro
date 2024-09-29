@@ -21,21 +21,36 @@ const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as a
   <section id="hero" class="min-h-full">
     <div class="container">
       <div class="grid grid-cols-12">
-        <div class="hero-left col-span-12 flex flex-grow flex-wrap items-end gap-10 py-24 lg:col-span-4 lg:block">
+        <div
+          class="hero-left col-span-12 flex flex-grow flex-wrap items-end gap-10 pb-14 pt-24 md:py-24 lg:col-span-4 lg:block">
           <img src="/logo.svg" alt="" class="grid-col w-[320px] lg:mb-8" />
           <div class="hero-text text-gray- flex flex-col gap-4">
             <h1 class="mb-3 text-3xl font-bold">Indonesia Software Developer Conference</h1>
             <div class="flex flex-col items-start gap-2 text-lg">
-              <p>16-17th November, 2024</p>
-              <a href="https://maps.app.goo.gl/yu2vU1EhWSZ2Gxse9" class="underline">GetCourse Hall, Jakarta Selatan</a>
+              <p class="flex items-center gap-2">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M9.99 0C4.47 0 0 4.48 0 10C0 15.52 4.47 20 9.99 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 9.99 0ZM13.29 14.71L9 10.41V5H11V9.59L14.71 13.3L13.29 14.71Z"
+                    fill="black"></path>
+                </svg>
+                <span>16-17th November, 2024</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <svg width="20" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.92308 0C3.0956 0 0 3.13 0 7C0 8.74 0.494505 10.37 1.39451 11.84C2.33407 13.38 3.57033 14.7 4.51978 16.24C4.98461 16.99 5.32088 17.69 5.67692 18.5C5.93407 19.05 6.14176 20 6.92308 20C7.7044 20 7.91209 19.05 8.15934 18.5C8.52527 17.69 8.85165 16.99 9.31648 16.24C10.2659 14.71 11.5022 13.39 12.4418 11.84C13.3516 10.37 13.8462 8.74 13.8462 7C13.8462 3.13 10.7505 0 6.92308 0ZM6.92308 9.75C5.55824 9.75 4.45055 8.63 4.45055 7.25C4.45055 5.87 5.55824 4.75 6.92308 4.75C8.28791 4.75 9.3956 5.87 9.3956 7.25C9.3956 8.63 8.28791 9.75 6.92308 9.75Z"
+                    fill="black"></path>
+                </svg>
+                <a href="https://maps.app.goo.gl/yu2vU1EhWSZ2Gxse9">GetCourse Hall, Jakarta Selatan</a>
+              </p>
             </div>
           </div>
         </div>
         <div
-          class="hero-right relative col-span-12 col-start-1 grid grid-cols-subgrid flex-col py-28 text-white lg:col-span-8 lg:col-start-5">
+          class="hero-right relative col-span-12 col-start-1 grid grid-cols-subgrid flex-col py-14 text-white md:py-28 lg:col-span-8 lg:col-start-5">
           <div class="bg-to-end bg-primary-dark"></div>
           <div class="col-start-1 -col-end-1 lg:col-start-2">
-            <div class="timer-area mb-12 flex items-center justify-center px-10 py-12 lg:py-24">
+            <div class="timer-area mb-12 flex items-center justify-center rounded-lg px-10 py-12 lg:py-24">
               <Timer
                 client:only="react"
                 date={eventDate}
@@ -43,7 +58,7 @@ const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as a
               />
             </div>
             <div class="flex flex-col gap-6 lg:flex-row">
-              <p class="text-balance text-xl font-light text-white opacity-80 lg:text-start">
+              <p class="text-lg font-light text-white opacity-80 md:text-xl lg:text-start">
                 Join us for the first annual conference for Indonesia software developers, where you can hear
                 thought-provoking keynotes from industry leaders and network with fellow developers.
               </p>
@@ -65,13 +80,12 @@ const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as a
   <section id="about" class="bg-gradient-to-b from-[#030E1C] to-[#061C3C] py-12">
     <div class="container">
       <div class="grid grid-cols-12 items-center">
-        <div class="about-left col-span-12 mb-8 gap-10 pb-0 lg:col-span-4 lg:block">
+        <div class="about-left col-span-12 mb-8 gap-10 pb-0 lg:col-span-4 lg:mb-0 lg:block">
           <h2 class="text-2xl font-bold !leading-normal text-white md:text-5xl">Built by the Community</h2>
         </div>
         <div
           class="about-right relative col-span-12 col-start-1 grid grid-cols-subgrid flex-col lg:col-span-8 lg:col-start-5">
-          <p
-            class="col-span-12 text-sm !leading-relaxed text-gray-200 sm:text-xl md:text-2xl lg:col-span-8 lg:col-start-2">
+          <p class="col-span-12 text-sm !leading-relaxed text-gray-200 sm:text-xl lg:col-span-8 lg:col-start-2">
             IDSW is Indonesia's first software developer conference. Organized by <a
               href="https://perkodi.org/"
               class="font-semibold underline">Perkodi</a

@@ -1,0 +1,46 @@
+---
+import type { SocialMedia } from "../@types/social-media";
+
+const socialMediaJson = await Astro.glob("../data/social-media.json");
+const socialMedias: SocialMedia[] = Object.values(socialMediaJson).map((item) => (item as any).default)[0];
+---
+
+<footer class="bg-[#0B2B5B] py-12">
+  <div class="container">
+    <div class="grid grid-cols-12 items-start">
+      <div class="about-left col-span-12 mb-8 gap-10 pb-0 lg:col-span-3 lg:mb-0 lg:block">
+        <h2 class="text-2xl font-bold !leading-normal text-white md:text-4xl">Get in touch with us</h2>
+      </div>
+      <div
+        class="about-right relative col-span-12 col-start-1 grid grid-cols-subgrid flex-col lg:col-span-8 lg:col-start-5">
+        <div class="col-span-12 lg:col-span-8 lg:col-start-2">
+          <p class="mb-5 text-sm !leading-relaxed text-gray-200 sm:text-xl">
+            See the event update on our social media platforms and contact us if you have any questions.
+          </p>
+
+          <ul class="social-medias flex flex-wrap gap-3">
+            {
+              socialMedias.map((socmed) => (
+                <li class="social-media">
+                  <a
+                    target="_blank"
+                    href={socmed.url}
+                    class="social-media-link flex min-h-12 min-w-12 items-center rounded-lg p-3"
+                    title={socmed.name}>
+                    <img src={socmed.image} alt={socmed.name} />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .social-media-link {
+    @apply bg-[#0C3572];
+  }
+</style>
