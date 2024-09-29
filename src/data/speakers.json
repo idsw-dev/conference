@@ -4,32 +4,37 @@
     "title": "Tech Entrepreneur",
     "role": "Keynote Speaker",
     "imageName": "listiarso",
-    "social": {
-      "x": "https://x.com/lwastuargo"
-    }
+    "socialUrl": [
+      "https://x.com/lwastuargo",
+      "https://www.linkedin.com/in/lwastuargo/"
+    ]
   },
   {
     "name": "Theresia Tanzil",
     "title": "Independent Researcher at Proses.ID",
     "role": "Keynote Speaker",
     "imageName": "tre",
-    "social": {
-      "x": "https://x.com/theresiatanzil"
-    }
+    "socialUrl": [
+      "https://x.com/theresiatanzil",
+      "https://facebook.com/theresiatanzil",
+      "https://www.linkedin.com/in/theresiatanzil/"
+    ]
   },
   {
     "name": "Teguh Aprianto",
     "title": "Founder Ethical Hacker indonesia",
     "role": "Panelist",
     "imageName": "secgron",
-    "social": {
-      "x": "https://x.com/secgron"
-    }
+    "socialUrl": [
+      "https://x.com/secgron",
+      "https://www.linkedin.com/in/secgron"
+    ]
   },
   {
     "name": "TinTin",
     "title": "Independent Security Researcher",
     "role": "Panelist",
-    "imageName": "tintin"
+    "imageName": "tintin",
+    "socialUrl": []
   }
 ]
