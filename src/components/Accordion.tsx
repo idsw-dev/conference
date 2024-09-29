@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import type { Faq } from "../@types/faq";
 type Props = {
   data: Faq[];
@@ -6,9 +6,18 @@ type Props = {
 
 export default function Accordion({ data, ...props }: Props) {
   const [openIndex, setOpenIndex] = useState(-1);
+  const [heights, setHeights] = useState<number[]>([]);
+  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const newHeights = contentRefs.current.map(
+      (ref) => ref?.scrollHeight ?? 0
+    );
+    setHeights(newHeights);
+  }, [data]);
 
   const toggleAccordion = (index: number) => {
-    if (openIndex == index) setOpenIndex(-1);
+    if (openIndex === index) setOpenIndex(-1);
     else setOpenIndex(index);
   };
 
@@ -23,14 +32,14 @@ export default function Accordion({ data, ...props }: Props) {
   };
 
   return (
-    <div className="accordion flex flex-col gap-2" {...props}>
+    <div className="accordion flex flex-col" {...props}>
       {data.map((accordion, i) => (
         <div className="accordion-item" key={i}>
           <div
             className="accordion-title flex cursor-pointer items-center border border-[#B8CAE3] bg-[#F3F8FF] p-5"
-            onClick={(_) => toggleAccordion(i)}
+            onClick={() => toggleAccordion(i)}
             onKeyDown={(e) => handleKeyDown(e, i)}
-            aria-expanded={openIndex == i}
+            aria-expanded={openIndex === i}
             aria-controls={`accordion-content-${i}`}
             tabIndex={0}
             role="button"
@@ -39,7 +48,7 @@ export default function Accordion({ data, ...props }: Props) {
               {accordion.question}
             </a>
             <div
-              className={`accordion-icon ${openIndex == i ? "rotate-180 transform" : ""}`}
+              className={`accordion-icon ${openIndex === i ? "rotate-180 transform" : ""}`}
             >
               <IconChevronBottom />
             </div>
@@ -48,9 +57,13 @@ export default function Accordion({ data, ...props }: Props) {
             id={`accordion-content-${i}`}
             aria-labelledby={`accordion-title-${i}`}
             aria-hidden={i !== openIndex}
-            className={`accordion-content overflow-hidden border bg-white transition-[max-height] duration-200 ${openIndex == i ? "min-h-[100px]" : "h-0"}`}
+            className={`accordion-content overflow-hidden bg-white transition-[max-height] duration-300 ease-in-out ${openIndex === i ? 'border' : ''}`}
+            style={{ maxHeight: openIndex === i ? `${heights[i]}px` : '0px' }}
           >
-            <div className="accordion-content-padding px-4 py-4">
+            <div
+              className="accordion-content-padding px-4 py-4"
+              ref={(el) => (contentRefs.current[i] = el)}
+            >
               {accordion.answer}
             </div>
           </div>

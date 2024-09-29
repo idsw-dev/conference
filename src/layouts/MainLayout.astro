@@ -3,6 +3,7 @@ import "@fontsource-variable/inter";
 import Header from "../components/Header";
 import PostHog from "../components/posthog.astro";
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en" class="dark">
@@ -45,5 +46,6 @@ import "../styles/global.css";
     <main>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
