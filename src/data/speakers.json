@@ -16,5 +16,20 @@
     "social": {
       "x": "https://x.com/theresiatanzil"
     }
+  },
+  {
+    "name": "Teguh Aprianto",
+    "title": "Founder Ethical Hacker indonesia",
+    "role": "Panelist",
+    "imageName": "secgron",
+    "social": {
+      "x": "https://x.com/secgron"
+    }
+  },
+  {
+    "name": "TinTin",
+    "title": "Independent Security Researcher",
+    "role": "Panelist",
+    "imageName": "tintin"
   }
 ]
