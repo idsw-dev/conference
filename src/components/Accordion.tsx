@@ -10,9 +10,7 @@ export default function Accordion({ data, ...props }: Props) {
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const newHeights = contentRefs.current.map(
-      (ref) => ref?.scrollHeight ?? 0
-    );
+    const newHeights = contentRefs.current.map((ref) => ref?.scrollHeight ?? 0);
     setHeights(newHeights);
   }, [data]);
 
