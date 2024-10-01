@@ -35,6 +35,17 @@
     "title": "Independent Security Researcher",
     "role": "Panelist",
     "imageName": "tintin",
-    "socialUrl": ["https://x.com/tintinnya"]
+    "socialUrl": [
+      "https://x.com/tintinnya"
+    ]
+  },
+  {
+    "name": "Ibrahim Arief",
+    "title": "CTO Stealth AI Startup",
+    "role": "Keynote Speaker",
+    "imageName": "ibam",
+    "socialUrl": [
+      "https://x.com/ibamarief"
+    ]
   }
 ]

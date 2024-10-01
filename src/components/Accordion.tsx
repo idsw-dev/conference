@@ -10,9 +10,7 @@ export default function Accordion({ data, ...props }: Props) {
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const newHeights = contentRefs.current.map(
-      (ref) => ref?.scrollHeight ?? 0
-    );
+    const newHeights = contentRefs.current.map((ref) => ref?.scrollHeight ?? 0);
     setHeights(newHeights);
   }, [data]);
 
@@ -57,8 +55,8 @@ export default function Accordion({ data, ...props }: Props) {
             id={`accordion-content-${i}`}
             aria-labelledby={`accordion-title-${i}`}
             aria-hidden={i !== openIndex}
-            className={`accordion-content overflow-hidden bg-white transition-[max-height] duration-300 ease-in-out ${openIndex === i ? 'border' : ''}`}
-            style={{ maxHeight: openIndex === i ? `${heights[i]}px` : '0px' }}
+            className={`accordion-content overflow-hidden bg-white transition-[max-height] duration-300 ease-in-out ${openIndex === i ? "border" : ""}`}
+            style={{ maxHeight: openIndex === i ? `${heights[i]}px` : "0px" }}
           >
             <div
               className="accordion-content-padding px-4 py-4"
