@@ -24,5 +24,49 @@ if (!image) {
     <div class="card-subtitle text-sm font-semibold text-gray-200 lg:text-lg">{data.title}</div>
     <hr class="my-2 border-[#204985]" />
     <div class="card-subtitle text-sm text-gray-200 lg:text-lg">{data.role}</div>
+    <ul class="mt-2 flex flex-wrap gap-2">
+      {
+        data.socialUrl.map((url) => {
+          if (url.includes("x.com")) {
+            return (
+              <li>
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex min-h-8 min-w-8 items-center rounded bg-[#0C3572] p-2">
+                  <img src="/icons/x.svg" alt="X" class="h-4 w-4" />
+                </a>
+              </li>
+            );
+          } else if (url.includes("facebook.com")) {
+            return (
+              <li>
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex min-h-8 min-w-8 items-center rounded bg-[#0C3572] p-2">
+                  <img src="/icons/fb.svg" alt="Facebook" class="h-4 w-4" />
+                </a>
+              </li>
+            );
+          } else if (url.includes("linkedin.com")) {
+            return (
+              <li>
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex min-h-8 min-w-8 items-center rounded bg-[#0C3572] p-2">
+                  <img src="/icons/linkedin.svg" alt="LinkedIn" class="h-4 w-4" />
+                </a>
+              </li>
+            );
+          }
+          return null;
+        })
+      }
+    </ul>
   </div>
 </div>

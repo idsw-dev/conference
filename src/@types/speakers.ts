@@ -3,4 +3,5 @@ export interface Speaker {
   title: string;
   imageName: string;
   role: string;
+  socialUrl: string[];
 }
