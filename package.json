@@ -19,7 +19,7 @@
     "@fontsource-variable/inter": "^5.0.20",
     "@fontsource/inter": "^5.0.20",
     "@fontsource/twinkle-star": "^5.1.0",
-    "@types/react": "^18.3.3",
+    "@types/react": "^18.3.10",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.15.8",
     "posthog-js": "^1.165.1",
