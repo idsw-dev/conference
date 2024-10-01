@@ -30,6 +30,18 @@
     "name": "TinTin",
     "title": "Independent Security Researcher",
     "role": "Panelist",
-    "imageName": "tintin"
+    "imageName": "tintin",
+    "social": {
+      "x": "https://x.com/tintinnya"
+    }
+  },
+  {
+    "name": "Ibrahim Arief",
+    "title": "CTO Stealth AI Startup",
+    "role": "Keynote Speaker",
+    "imageName": "ibam",
+    "social": {
+      "x": "https://x.com/ibamarief"
+    }
   }
 ]
