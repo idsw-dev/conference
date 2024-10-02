@@ -35,9 +35,7 @@
     "title": "Independent Security Researcher",
     "role": "Panelist",
     "imageName": "tintin",
-    "socialUrl": [
-      "https://x.com/tintinnya"
-    ]
+    "socialUrl": ["https://x.com/tintinnya"]
   },
   {
     "name": "Ibrahim Arief",
@@ -47,6 +45,16 @@
     "socialUrl": [
       "https://x.com/ibamarief",
       "https://www.linkedin.com/in/ibrahimarief/"
+    ]
+  },
+  {
+    "name": "Imre Nagi",
+    "title": "Tech Lead at Goto Financial",
+    "role": "Keynote Speaker",
+    "imageName": "imre",
+    "socialUrl": [
+      "https://x.com/imrenagi",
+      "https://www.linkedin.com/in/imrenagi/"
     ]
   }
 ]
