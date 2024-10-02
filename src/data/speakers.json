@@ -49,12 +49,9 @@
   },
   {
     "name": "Imre Nagi",
-    "title": "Tech Lead at Goto Financial",
+    "title": "Migration Engineer",
     "role": "Keynote Speaker",
     "imageName": "imre",
-    "socialUrl": [
-      "https://x.com/imrenagi",
-      "https://www.linkedin.com/in/imrenagi/"
-    ]
+    "socialUrl": ["https://www.linkedin.com/in/imrenagi/"]
   }
 ]
