@@ -35,9 +35,7 @@
     "title": "Independent Security Researcher",
     "role": "Panelist",
     "imageName": "tintin",
-    "socialUrl": [
-      "https://x.com/tintinnya"
-    ]
+    "socialUrl": ["https://x.com/tintinnya"]
   },
   {
     "name": "Ibrahim Arief",
@@ -48,5 +46,12 @@
       "https://x.com/ibamarief",
       "https://www.linkedin.com/in/ibrahimarief/"
     ]
+  },
+  {
+    "name": "Imre Nagi",
+    "title": "Migration Engineer",
+    "role": "Keynote Speaker",
+    "imageName": "imre",
+    "socialUrl": ["https://www.linkedin.com/in/imrenagi/"]
   }
 ]
