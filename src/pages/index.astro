@@ -2,6 +2,7 @@
 // import type { Agenda } from "../@types/agenda";
 import type { Faq } from "../@types/faq";
 import type { Speaker } from "../@types/speakers";
+import type { Sponsor } from "../@types/sponsors";
 import Accordion from "../components/Accordion";
 import Button from "../components/Button";
 import CardSpeaker from "../components/CardSpeaker.astro";
@@ -11,10 +12,14 @@ const eventDate = new Date(2024, 10, 17, 9, 0, 0);
 const faq = await Astro.glob("../data/faq.json");
 // const agenda = await Astro.glob("../data/agenda.json");
 const speakers = await Astro.glob("../data/speakers.json");
+const sponsors = await Astro.glob("../data/sponsors.json");
 
 const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
 // const agendaData: Agenda[] = Object.values(agenda).map((item) => (item as any).default)[0];
 const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as any).default)[0];
+
+const sponsorsData: Sponsor[] = Object.values(sponsors).map((item) => (item as any).default)[0];
+const sponsorImages = await Astro.glob<{ default: ImageMetadata }>("../data/images/sponsors/*.{png,jpg,jpeg,svg,webp}");
 ---
 
 <MainLayout>
@@ -96,6 +101,32 @@ const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as a
       </div>
     </div>
   </section>
+
+  <section id="sponsors">
+    <div class="container">
+      <div class="relative grid grid-cols-12 items-center py-8 lg:py-0">
+        <div class="line-horizontal absolute bottom-5 left-0 hidden h-0.5 w-full bg-[#B8CAE3] lg:block"></div>
+        <div class="sponsors-left col-span-12 mb-8 gap-10 py-0 lg:col-span-4 lg:mb-0 lg:block lg:py-12">
+          <h2 class="text-2xl font-bold !leading-normal md:text-4xl">Event Sponsors</h2>
+        </div>
+        <div
+          class="sponsors-right relative col-span-12 col-start-1 flex flex-wrap items-center justify-normal gap-3 py-0 lg:col-span-8 lg:col-start-5 lg:justify-evenly lg:py-12">
+          <div class="line-up absolute bottom-0 left-0 hidden h-12 w-0.5 bg-[#B8CAE3] lg:block"></div>
+          {
+            sponsorsData.map((sponsor) => (
+              <a href={sponsor.url} target="_blank" title={sponsor.name}>
+                <img
+                  src={sponsorImages.find((s) => s.default.src.includes(sponsor.logo))?.default.src}
+                  alt={sponsor.name}
+                  class="h-[40px] w-auto md:h-[50px]"
+                />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- <section id="agenda" class="bg-gradient-to-br from-[#0A2B5B] to-[#22406B] py-24">
     <div class="container">
       <div class="grid grid-cols-12">
@@ -118,7 +149,7 @@ const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as a
       </div>
     </div>
   </section> -->
-  <section id="expertise">
+  <!-- <section id="expertise">
     <div class="container py-12">
       <div class="grid grid-cols-12">
         <div class="expertise-left relative col-span-12 items-end lg:col-span-4 lg:block">
@@ -139,7 +170,7 @@ const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as a
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <section id="speakers" class="">
     <div class="container">
       <div class="grid grid-cols-12">

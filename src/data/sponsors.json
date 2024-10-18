@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Apache Flink",
+        "logo": "flink.png",
+        "url": "https://flink.apache.org/"
+    },
+    {
+        "name": "Qiscus",
+        "logo": "qiscus.png",
+        "url": "https://qiscus.com/"
+    }
+]
