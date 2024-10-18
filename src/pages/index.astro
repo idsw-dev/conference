@@ -114,11 +114,13 @@ const sponsorImages = await Astro.glob<{ default: ImageMetadata }>("../data/imag
           <div class="line-up absolute bottom-0 left-0 hidden h-12 w-0.5 bg-[#B8CAE3] lg:block"></div>
           {
             sponsorsData.map((sponsor) => (
-              <img
-                src={sponsorImages.find((s) => s.default.src.includes(sponsor.logo))?.default.src}
-                alt={sponsor.name}
-                class="h-[40px] w-auto md:h-[50px]"
-              />
+              <a href={sponsor.url} target="_blank" title={sponsor.name}>
+                <img
+                  src={sponsorImages.find((s) => s.default.src.includes(sponsor.logo))?.default.src}
+                  alt={sponsor.name}
+                  class="h-[40px] w-auto md:h-[50px]"
+                />
+              </a>
             ))
           }
         </div>
