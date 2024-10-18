@@ -1,5 +1,6 @@
 ---
 // import type { Agenda } from "../@types/agenda";
+import { Image } from "astro:assets";
 import type { Faq } from "../@types/faq";
 import type { Speaker } from "../@types/speakers";
 import type { Sponsor } from "../@types/sponsors";
@@ -115,8 +116,8 @@ const sponsorImages = await Astro.glob<{ default: ImageMetadata }>("../data/imag
           {
             sponsorsData.map((sponsor) => (
               <a href={sponsor.url} target="_blank" title={sponsor.name}>
-                <img
-                  src={sponsorImages.find((s) => s.default.src.includes(sponsor.logo))?.default.src}
+                <Image
+                  src={sponsorImages.find((s) => s.default.src.includes(sponsor.logo))!.default}
                   alt={sponsor.name}
                   class="h-[40px] w-auto md:h-[50px]"
                 />
