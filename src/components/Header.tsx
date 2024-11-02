@@ -27,10 +27,6 @@ export default function Header() {
     //   href: "#agenda",
     // },
     {
-      name: "CFP",
-      href: "#expertise",
-    },
-    {
       name: "Speakers",
       href: "#speakers",
     },
