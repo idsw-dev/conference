@@ -53,5 +53,45 @@
     "role": "Keynote Speaker",
     "imageName": "imre",
     "socialUrl": ["https://www.linkedin.com/in/imrenagi/"]
+  },
+  {
+    "name": "M. Gilang Januar",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/mgilangjanuar/"]
+  },
+  {
+    "name": "Arief Rahmansyah",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/ariefr23/"]
+  },
+  {
+    "name": "Rizki Kelimutu",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/kelimuttu/"]
+  },
+  {
+    "name": "Kemal Elmizan",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/kemalelmizan/"]
+  },
+  {
+    "name": "Adityo Pratomo",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/kotakmakan/"]
+  },
+  {
+    "name": "Yohan Totting",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/tyohan/"]
+  },
+  {
+    "name": "Fandi Gunawan",
+    "role": "Speaker",
+    "socialUrl": ["https://www.linkedin.com/in/fandigunawan/"]
+  },
+  {
+    "name": "Rama Rahmanda",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/ramandann/"]
   }
 ]
