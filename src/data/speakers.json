@@ -56,42 +56,50 @@
   },
   {
     "name": "M. Gilang Januar",
+    "imageName": "default",
     "role": "Speaker",
     "socialUrl": ["https://x.com/mgilangjanuar/"]
   },
   {
     "name": "Arief Rahmansyah",
+    "imageName": "default",
     "role": "Speaker",
     "socialUrl": ["https://x.com/ariefr23/"]
   },
   {
     "name": "Rizki Kelimutu",
+    "imageName": "default",
     "role": "Speaker",
     "socialUrl": ["https://x.com/kelimuttu/"]
   },
   {
+    "imageName": "default",
     "name": "Kemal Elmizan",
     "role": "Speaker",
     "socialUrl": ["https://x.com/kemalelmizan/"]
   },
   {
     "name": "Adityo Pratomo",
+    "imageName": "default",
     "role": "Speaker",
     "socialUrl": ["https://x.com/kotakmakan/"]
   },
   {
     "name": "Yohan Totting",
+    "imageName": "default",
     "role": "Speaker",
     "socialUrl": ["https://x.com/tyohan/"]
   },
   {
     "name": "Fandi Gunawan",
+    "imageName": "default",
     "role": "Speaker",
     "socialUrl": ["https://www.linkedin.com/in/fandigunawan/"]
   },
   {
     "name": "Rama Rahmanda",
     "role": "Speaker",
+    "imageName": "default",
     "socialUrl": ["https://x.com/ramandann/"]
   }
 ]
