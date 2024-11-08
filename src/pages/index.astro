@@ -130,12 +130,6 @@ const sponsorImages = await Astro.glob<{ default: ImageMetadata }>("../data/imag
       </div>
     </div>
   </section>
-  <section id="agenda" class="bg-gradient-to-br from-[#0A2B5B] to-[#22406B] py-16">
-    <div class="container">
-      <AgendaData data={agendaData} client:load />
-    </div>
-  </section>
-
   <section id="speakers" class="">
     <div class="container">
       <div class="grid grid-cols-12">
@@ -173,6 +167,12 @@ const sponsorImages = await Astro.glob<{ default: ImageMetadata }>("../data/imag
       </div>
     </div>
   </section>
+  <section id="agenda" class="bg-gradient-to-br from-[#0A2B5B] to-[#22406B] py-16">
+    <div class="container">
+      <AgendaData data={agendaData} client:load />
+    </div>
+  </section>
+
   <section id="faq" class="">
     <div class="container">
       <div class="grid grid-cols-12">
