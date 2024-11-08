@@ -8,15 +8,17 @@ import Accordion from "../components/Accordion";
 import Button from "../components/Button";
 import CardSpeaker from "../components/CardSpeaker.astro";
 import Timer from "../components/Timer";
+import AgendaData from "../components/AgendaData";
 import MainLayout from "../layouts/MainLayout.astro";
+import type { Agenda } from "../@types/agenda";
 const eventDate = new Date(2024, 10, 17, 9, 0, 0);
 const faq = await Astro.glob("../data/faq.json");
-// const agenda = await Astro.glob("../data/agenda.json");
+const agenda = await Astro.glob("../data/agenda.json");
 const speakers = await Astro.glob("../data/speakers.json");
 const sponsors = await Astro.glob("../data/sponsors.json");
 
 const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
-// const agendaData: Agenda[] = Object.values(agenda).map((item) => (item as any).default)[0];
+const agendaData: Agenda[] = Object.values(agenda).map((item) => (item as any).default)[0];
 const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as any).default)[0];
 
 const sponsorsData: Sponsor[] = Object.values(sponsors).map((item) => (item as any).default)[0];
@@ -128,50 +130,12 @@ const sponsorImages = await Astro.glob<{ default: ImageMetadata }>("../data/imag
       </div>
     </div>
   </section>
-  <!-- <section id="agenda" class="bg-gradient-to-br from-[#0A2B5B] to-[#22406B] py-24">
+  <section id="agenda" class="bg-gradient-to-br from-[#0A2B5B] to-[#22406B] py-16">
     <div class="container">
-      <div class="grid grid-cols-12">
-        <div class="agenda-left relative col-span-12 items-end pb-0 lg:col-span-3 lg:block">
-          <div class="bg-to-start bg-primary-dark"></div>
-          <div class="agenda-text text-white">
-            <h2 class="mb-12 text-3xl font-bold lg:text-5xl">Event Agenda</h2>
-            <div class="flex flex-col gap-5 text-left">
-              <button class="w-full bg-lightblue p-5 text-left text-2xl font-bold">First Day</button>
-              <button
-                class="w-full bg-white/10 p-5 text-left text-2xl font-bold text-white/60 transition hover:bg-lightblue/20 hover:text-white/80">
-                Second Day
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="agenda-right relative col-span-12 grid flex-shrink grid-cols-subgrid flex-col lg:col-start-5">
-          {agendaData.map((agenda) => <EventCard data={agenda} />)}
-        </div>
-      </div>
+      <AgendaData data={agendaData} client:load />
     </div>
-  </section> -->
-  <!-- <section id="expertise">
-    <div class="container py-12">
-      <div class="grid grid-cols-12">
-        <div class="expertise-left relative col-span-12 items-end lg:col-span-4 lg:block">
-          <h2 class="mb-3 text-3xl font-bold !leading-relaxed lg:text-4xl">Share Your Expertise at IDSW 2024</h2>
-        </div>
-        <div
-          class="expertise-text relative col-span-12 mb-8 flex-shrink flex-col leading-relaxed lg:col-span-5 lg:text-xl lg:leading-9">
-          Got tech insights to share? Submit your paper and contribute to engaging discussions on the latest trends and
-          innovations.
-        </div>
-        <div class="expertise-button lg: relative col-span-12 mt-5 flex items-start lg:col-span-3 lg:pl-12">
-          <Button
-            color="primary"
-            className="min-w-44 flex-shrink rounded-2xl text-xl xl:text-2xl"
-            href="https://www.papercall.io/idsw-2024">
-            Learn More
-          </Button>
-        </div>
-      </div>
-    </div>
-  </section> -->
+  </section>
+
   <section id="speakers" class="">
     <div class="container">
       <div class="grid grid-cols-12">
