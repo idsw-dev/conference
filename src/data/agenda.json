@@ -14,6 +14,7 @@
         "time_end": "10:10",
         "title": "Opening",
         "speakers": [
+          "IDSW Committee Lead",
           "Platinum Sponsor Session"
         ]
       },
@@ -52,7 +53,7 @@
         "time_end": "14:30",
         "title": "Programmer++: Business Fundamentals and Commercial Awareness for Techies",
         "speakers": [
-          "Terezia Tanzil"
+          "Theresia Tanzil"
         ]
       },
       {
@@ -72,7 +73,7 @@
       {
         "time_start": "15:45",
         "time_end": "16:50",
-        "title": "Panel Discussion",
+        "title": "Panel Discussion - Berbagi Perspektif dalam Pengamanan Data bagi Product Engineer",
         "speakers": [
           "Teguh Aprianto",
           "TinTin"
@@ -82,7 +83,9 @@
         "time_start": "16:50",
         "time_end": null,
         "title": "Closing & Breakout Session",
-        "speakers": null
+        "speakers": [
+          "IDSW Committee Lead"
+        ]
       }
     ]
   },
@@ -100,7 +103,9 @@
         "time_start": "9:30",
         "time_end": "9:55",
         "title": "Opening",
-        "speakers": null
+        "speakers": [
+          "IDSW Committee Lead"
+        ]
       },
       {
         "time_start": "9:55",
@@ -175,7 +180,9 @@
         "time_start": "16:30",
         "time_end": null,
         "title": "Closing & Breakout Session",
-        "speakers": null
+        "speakers": [
+          "IDSW Committee Lead"
+        ]
       }
     ]
   }
