@@ -22,10 +22,10 @@ export default function Header() {
       name: "About",
       href: "#about",
     },
-    // {
-    //   name: "Agenda",
-    //   href: "#agenda",
-    // },
+    {
+      name: "Agenda",
+      href: "#agenda",
+    },
     {
       name: "Speakers",
       href: "#speakers",
