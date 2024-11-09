@@ -4,8 +4,8 @@
     "active": true,
     "agendas": [
       {
-        "time_start": "8:30",
-        "time_end": "9:45",
+        "time_start": "08:30",
+        "time_end": "09:45",
         "title": "Gate open (registration)",
         "speakers": null
       },
@@ -94,21 +94,21 @@
     "active": false,
     "agendas": [
       {
-        "time_start": "9:00",
-        "time_end": "9:30",
+        "time_start": "09:00",
+        "time_end": "09:30",
         "title": "Gate open (registration)",
         "speakers": null
       },
       {
-        "time_start": "9:30",
-        "time_end": "9:55",
+        "time_start": "09:30",
+        "time_end": "09:55",
         "title": "Opening",
         "speakers": [
           "IDSW Committee Lead"
         ]
       },
       {
-        "time_start": "9:55",
+        "time_start": "09:55",
         "time_end": "11:00",
         "title": "From Hype to Reality: How We Build LLM Products That Users Love",
         "speakers": [
