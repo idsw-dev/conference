@@ -4,13 +4,13 @@
     "active": true,
     "agendas": [
       {
-        "time_start": "9:00",
-        "time_end": "10:00",
+        "time_start": "8:30",
+        "time_end": "9:45",
         "title": "Gate open (registration)",
         "speakers": null
       },
       {
-        "time_start": "10:00",
+        "time_start": "09:45",
         "time_end": "10:10",
         "title": "Opening",
         "speakers": [
@@ -27,51 +27,51 @@
       },
       {
         "time_start": "11:15",
-        "time_end": "11:40",
-        "title": "Talk 1",
+        "time_end": "11:50",
+        "title": "Scaling Video Conferencing: From Prototype to Unlimited Participants",
         "speakers": [
-          "Speaker 1"
+          "Yohan Totting"
         ]
       },
       {
-        "time_start": "11:40",
-        "time_end": "12:10",
-        "title": "Talk 2",
+        "time_start": "11:50",
+        "time_end": "12:25",
+        "title": "High Grade Security: Embedding Zero Trust Inside Your Application",
         "speakers": [
-          "Speaker 2"
+          "Fandi Gunawan"
         ]
       },
       {
-        "time_start": "12:10",
-        "time_end": "13:10",
+        "time_start": "12:25",
+        "time_end": "13:25",
         "title": "Lunch Break",
         "speakers": null
       },
       {
-        "time_start": "13:10",
-        "time_end": "14:15",
+        "time_start": "13:25",
+        "time_end": "14:30",
         "title": "Programmer++: Business Fundamentals and Commercial Awareness for Techies",
         "speakers": [
           "Terezia Tanzil"
         ]
       },
       {
-        "time_start": "14:15",
-        "time_end": "14:50",
-        "title": "Talk 3",
+        "time_start": "14:30",
+        "time_end": "15:05",
+        "title": "Menjadi Solopreneur: Best Practice == Bullsh*t?",
         "speakers": [
-          "Speaker 3"
+          "M. Gilang Januar"
         ]
       },
       {
-        "time_start": "14:50",
-        "time_end": "15:30",
+        "time_start": "15:05",
+        "time_end": "15:45",
         "title": "Coffee Break",
         "speakers": null
       },
       {
-        "time_start": "15:30",
-        "time_end": "16:35",
+        "time_start": "15:45",
+        "time_end": "16:50",
         "title": "Panel Discussion",
         "speakers": [
           "Teguh Aprianto",
@@ -79,15 +79,9 @@
         ]
       },
       {
-        "time_start": "16:35",
-        "time_end": "16:40",
-        "title": "Closing",
-        "speakers": null
-      },
-      {
-        "time_start": "16:40",
+        "time_start": "16:50",
         "time_end": null,
-        "title": "Breakout Session",
+        "title": "Closing & Breakout Session",
         "speakers": null
       }
     ]
@@ -104,84 +98,83 @@
       },
       {
         "time_start": "9:30",
-        "time_end": "9:45",
+        "time_end": "9:55",
         "title": "Opening",
-        "speakers": [
-          "Platinum Sponsor Session"
-        ]
+        "speakers": null
       },
       {
-        "time_start": "9:45",
-        "time_end": "10:50",
-        "title": "Keynote 3",
+        "time_start": "9:55",
+        "time_end": "11:00",
+        "title": "From Hype to Reality: How We Build LLM Products That Users Love",
         "speakers": [
           "Ibrahim Arief"
         ]
       },
       {
-        "time_start": "10:50",
-        "time_end": "11:25",
-        "title": "Talk 4",
+        "time_start": "11:00",
+        "time_end": "11:35",
+        "title": "Why browser monoculture isn't good for web innovation",
         "speakers": [
-          "Speaker 4"
+          "Rizki Kelimutu"
         ]
       },
       {
-        "time_start": "11:25",
-        "time_end": "12:00",
-        "title": "Talk 5",
+        "time_start": "11:35",
+        "time_end": "12:10",
+        "title": "Modular Monolith: Balancing Simplicity, Flexibility, and Scalability",
         "speakers": [
-          "Speaker 5"
+          "Kemal Elmizan"
         ]
       },
       {
-        "time_start": "12:00",
-        "time_end": "13:00",
+        "time_start": "12:10",
+        "time_end": "13:10",
         "title": "Lunch Break",
         "speakers": null
       },
       {
-        "time_start": "13:00",
-        "time_end": "13:35",
-        "title": "Talk 6",
+        "time_start": "13:10",
+        "time_end": "13:45",
+        "title": "Prioritize and Pay Technical Debt at Scale",
         "speakers": [
-          "Speaker 6"
+          "Rama Rahmanda"
         ]
       },
       {
-        "time_start": "13:35",
-        "time_end": "14:10",
-        "title": "Talk 7",
+        "time_start": "13:45",
+        "time_end": "14:20",
+        "title": "Doing More with Less, a Tale of Systematically Scaling Up Developer Productivity",
         "speakers": [
-          "Speaker 7"
+          "Adityo Pratomo",
+          "Joshua Bezaleel Abednego"
         ]
       },
       {
-        "time_start": "14:10",
-        "time_end": "14:45",
-        "title": "Talk 8",
+        "time_start": "14:20",
+        "time_end": "14:55",
+        "title": "MLOps and LLMOps with MLflow",
         "speakers": [
-          "Speaker 8"
+          "Arief Rahmansyah"
         ]
       },
       {
-        "time_start": "14:45",
-        "time_end": "15:50",
+        "time_start": "14:55",
+        "time_end": "15:30",
         "title": "Coffee Break",
         "speakers": null
       },
       {
-        "time_start": "15:50",
-        "time_end": "16:55",
-        "title": "Keynote 4",
+        "time_start": "15:30",
+        "time_end": "16:30",
+        "title": "Infrastructure Cost: Afraid Not",
         "speakers": [
           "Imre Nagi"
         ]
       },
       {
-        "time_start": "16:55",
+        "time_start": "16:30",
         "time_end": null,
-        "title": "Breakout Session",
+        "title": "Closing & Breakout Session",
         "speakers": null
       }
     ]
