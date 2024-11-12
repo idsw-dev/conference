@@ -56,56 +56,65 @@
   },
   {
     "name": "M. Gilang Januar",
-    "imageName": "default",
+    "imageName": "cfp-gilang",
+    "title": "Solopreneur",
     "role": "Speaker",
     "socialUrl": ["https://x.com/mgilangjanuar/"]
   },
   {
     "name": "Arief Rahmansyah",
-    "imageName": "default",
+    "imageName": "cfp-arief",
+    "title": "Software Engineer",
     "role": "Speaker",
     "socialUrl": ["https://x.com/ariefr23/"]
   },
   {
     "name": "Rizki Kelimutu",
-    "imageName": "default",
+    "imageName": "cfp-rizki",
+    "title": "Community Manager",
     "role": "Speaker",
     "socialUrl": ["https://x.com/kelimuttu/"]
   },
   {
-    "imageName": "default",
     "name": "Kemal Elmizan",
+    "imageName": "cfp-kemal",
+    "title": "Software Engineer",
     "role": "Speaker",
     "socialUrl": ["https://x.com/kemalelmizan/"]
   },
   {
     "name": "Adityo Pratomo",
-    "imageName": "default",
+    "imageName": "cfp-adityo",
+    "title": "Product Manager",
     "role": "Speaker",
     "socialUrl": ["https://x.com/kotakmakan/"]
   },
   {
     "name": "Yohan Totting",
-    "imageName": "default",
+    "imageName": "cfp-yohan",
+    "title": "Founder of Inlive",
     "role": "Speaker",
     "socialUrl": ["https://x.com/tyohan/"]
   },
   {
     "name": "Fandi Gunawan",
-    "imageName": "default",
+    "imageName": "cfp-fandi",
+    "title": "Software Engineer",
     "role": "Speaker",
     "socialUrl": ["https://www.linkedin.com/in/fandigunawan/"]
   },
   {
     "name": "Rama Rahmanda",
+    "imageName": "cfp-rama",
+    "title": "SRE",
     "role": "Speaker",
-    "imageName": "default",
     "socialUrl": ["https://x.com/ramandann/"]
   },
   {
     "name": "Joshua Bezaleel Abednego",
+    "imageName": "cfp-joshua",
+    "title": "Software Engineer",
     "role": "Speaker",
-    "imageName": "default",
     "socialUrl": ["https://x.com/joshuabezaleel/"]
   }
 ]
