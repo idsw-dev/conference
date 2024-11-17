@@ -21,12 +21,21 @@ export default function Timer({ date, ...props }: TimerProps) {
     const now = new Date();
     const diff = date.getTime() - now.getTime();
 
-    setDayLeft({
-      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-      hours: Math.floor(diff / (1000 * 60 * 60)) % 24,
-      mins: Math.floor(diff / (1000 * 60)) % 60,
-      secs: Math.floor((diff / 1000) % 60),
-    });
+    if (diff < 0) {
+      setDayLeft({
+        days: 0,
+        hours: 0,
+        mins: 0,
+        secs: 0,
+      });
+    } else {
+      setDayLeft({
+        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+        hours: Math.floor(diff / (1000 * 60 * 60)) % 24,
+        mins: Math.floor(diff / (1000 * 60)) % 60,
+        secs: Math.floor((diff / 1000) % 60),
+      });
+    }
   }
 
   const { start } = useInterval(updateCountdown, 1000);
