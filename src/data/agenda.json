@@ -13,34 +13,25 @@
         "time_start": "09:45",
         "time_end": "10:10",
         "title": "Opening",
-        "speakers": [
-          "IDSW Committee Lead",
-          "Platinum Sponsor Session"
-        ]
+        "speakers": ["IDSW Committee Lead", "Platinum Sponsor Session"]
       },
       {
         "time_start": "10:10",
         "time_end": "11:15",
         "title": "Product Engineers 101",
-        "speakers": [
-          "Listiarso Wastuargo"
-        ]
+        "speakers": ["Listiarso Wastuargo"]
       },
       {
         "time_start": "11:15",
         "time_end": "11:50",
         "title": "Scaling Video Conferencing: From Prototype to Unlimited Participants",
-        "speakers": [
-          "Yohan Totting"
-        ]
+        "speakers": ["Yohan Totting"]
       },
       {
         "time_start": "11:50",
         "time_end": "12:25",
         "title": "High Grade Security: Embedding Zero Trust Inside Your Application",
-        "speakers": [
-          "Fandi Gunawan"
-        ]
+        "speakers": ["Fandi Gunawan"]
       },
       {
         "time_start": "12:25",
@@ -52,17 +43,13 @@
         "time_start": "13:25",
         "time_end": "14:30",
         "title": "Programmer++: Business Fundamentals and Commercial Awareness for Techies",
-        "speakers": [
-          "Theresia Tanzil"
-        ]
+        "speakers": ["Theresia Tanzil"]
       },
       {
         "time_start": "14:30",
         "time_end": "15:05",
         "title": "Menjadi Solopreneur: Best Practice == Bullsh*t?",
-        "speakers": [
-          "M. Gilang Januar"
-        ]
+        "speakers": ["M. Gilang Januar"]
       },
       {
         "time_start": "15:05",
@@ -74,18 +61,13 @@
         "time_start": "15:45",
         "time_end": "16:50",
         "title": "Panel Discussion - Berbagi Perspektif dalam Pengamanan Data bagi Product Engineer",
-        "speakers": [
-          "Teguh Aprianto",
-          "TinTin"
-        ]
+        "speakers": ["Teguh Aprianto", "TinTin"]
       },
       {
         "time_start": "16:50",
         "time_end": null,
         "title": "Closing & Breakout Session",
-        "speakers": [
-          "IDSW Committee Lead"
-        ]
+        "speakers": ["IDSW Committee Lead"]
       }
     ]
   },
@@ -103,33 +85,25 @@
         "time_start": "09:30",
         "time_end": "09:55",
         "title": "Opening",
-        "speakers": [
-          "IDSW Committee Lead"
-        ]
+        "speakers": ["IDSW Committee Lead"]
       },
       {
         "time_start": "09:55",
         "time_end": "11:00",
         "title": "From Hype to Reality: How We Build LLM Products That Users Love",
-        "speakers": [
-          "Ibrahim Arief"
-        ]
+        "speakers": ["Ibrahim Arief"]
       },
       {
         "time_start": "11:00",
         "time_end": "11:35",
         "title": "Why browser monoculture isn't good for web innovation",
-        "speakers": [
-          "Rizki Kelimutu"
-        ]
+        "speakers": ["Rizki Kelimutu"]
       },
       {
         "time_start": "11:35",
         "time_end": "12:10",
         "title": "Modular Monolith: Balancing Simplicity, Flexibility, and Scalability",
-        "speakers": [
-          "Kemal Elmizan"
-        ]
+        "speakers": ["Kemal Elmizan"]
       },
       {
         "time_start": "12:10",
@@ -141,26 +115,19 @@
         "time_start": "13:10",
         "time_end": "13:45",
         "title": "Prioritize and Pay Technical Debt at Scale",
-        "speakers": [
-          "Rama Rahmanda"
-        ]
+        "speakers": ["Rama Rahmanda"]
       },
       {
         "time_start": "13:45",
         "time_end": "14:20",
         "title": "Doing More with Less, a Tale of Systematically Scaling Up Developer Productivity",
-        "speakers": [
-          "Adityo Pratomo",
-          "Joshua Bezaleel Abednego"
-        ]
+        "speakers": ["Adityo Pratomo", "Joshua Bezaleel Abednego"]
       },
       {
         "time_start": "14:20",
         "time_end": "14:55",
         "title": "MLOps and LLMOps with MLflow",
-        "speakers": [
-          "Arief Rahmansyah"
-        ]
+        "speakers": ["Arief Rahmansyah"]
       },
       {
         "time_start": "14:55",
@@ -172,17 +139,13 @@
         "time_start": "15:30",
         "time_end": "16:30",
         "title": "Infrastructure Cost: Afraid Not",
-        "speakers": [
-          "Imre Nagi"
-        ]
+        "speakers": ["Imre Nagi"]
       },
       {
         "time_start": "16:30",
         "time_end": null,
         "title": "Closing & Breakout Session",
-        "speakers": [
-          "IDSW Committee Lead"
-        ]
+        "speakers": ["IDSW Committee Lead"]
       }
     ]
   }
