@@ -22,6 +22,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "astro": "^4.16.9",
+    "lucide-react": "^0.525.0",
     "posthog-js": "^1.257.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
