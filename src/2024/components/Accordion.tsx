@@ -60,7 +60,9 @@ export default function Accordion({ data, ...props }: Props) {
           >
             <div
               className="accordion-content-padding px-4 py-4"
-              ref={(el) => (contentRefs.current[i] = el)}
+              ref={(el) => {
+                contentRefs.current[i] = el;
+              }}
             >
               {accordion.answer}
             </div>

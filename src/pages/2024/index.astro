@@ -1,15 +1,14 @@
 ---
 import { Image } from "astro:assets";
-import Layout from "../../2024/layout.astro";
 import type { Agenda } from "../../2024/@types/agenda";
 import type { Faq } from "../../2024/@types/faq";
 import type { Speaker } from "../../2024/@types/speakers";
 import type { Sponsor } from "../../2024/@types/sponsors";
 import Accordion from "../../2024/components/Accordion";
 import AgendaData from "../../2024/components/AgendaData";
-import Button from "../../2024/components/Button";
 import CardSpeaker from "../../2024/components/CardSpeaker.astro";
 import Timer from "../../2024/components/Timer";
+import Layout from "../../2024/layout.astro";
 const eventDate = new Date(2024, 10, 16, 1, 30, 0);
 const faq = await Astro.glob("../../2024/data/faq.json");
 const agenda = await Astro.glob("../../2024/data/agenda.json");
