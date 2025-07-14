@@ -45,7 +45,7 @@ export default function Header() {
             href="#"
             className={`flex items-center space-x-3 transition duration-200 rtl:space-x-reverse ${isScrolled ? "opacity-100" : "opacity-0"}`}
           >
-            <img src="/logo.svg" className="h-8" alt="Flowbite Logo" />
+            <img src="/2024/logo.svg" className="h-8" alt="Flowbite Logo" />
             <span className="self-center whitespace-nowrap text-2xl font-semibold">
               IDSW
             </span>

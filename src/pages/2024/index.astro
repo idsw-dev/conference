@@ -1,37 +1,37 @@
 ---
-// import type { Agenda } from "../@types/agenda";
 import { Image } from "astro:assets";
-import type { Faq } from "../@types/faq";
-import type { Speaker } from "../@types/speakers";
-import type { Sponsor } from "../@types/sponsors";
-import Accordion from "../components/Accordion";
-import Button from "../components/Button";
-import CardSpeaker from "../components/CardSpeaker.astro";
-import Timer from "../components/Timer";
-import AgendaData from "../components/AgendaData";
-import MainLayout from "../layouts/MainLayout.astro";
-import type { Agenda } from "../@types/agenda";
+import type { Agenda } from "../../2024/@types/agenda";
+import type { Faq } from "../../2024/@types/faq";
+import type { Speaker } from "../../2024/@types/speakers";
+import type { Sponsor } from "../../2024/@types/sponsors";
+import Accordion from "../../2024/components/Accordion";
+import AgendaData from "../../2024/components/AgendaData";
+import CardSpeaker from "../../2024/components/CardSpeaker.astro";
+import Timer from "../../2024/components/Timer";
+import Layout from "../../2024/layout.astro";
 const eventDate = new Date(2024, 10, 16, 1, 30, 0);
-const faq = await Astro.glob("../data/faq.json");
-const agenda = await Astro.glob("../data/agenda.json");
-const speakers = await Astro.glob("../data/speakers.json");
-const sponsors = await Astro.glob("../data/sponsors.json");
+const faq = await Astro.glob("../../2024/data/faq.json");
+const agenda = await Astro.glob("../../2024/data/agenda.json");
+const speakers = await Astro.glob("../../2024/data/speakers.json");
+const sponsors = await Astro.glob("../../2024/data/sponsors.json");
 
 const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
 const agendaData: Agenda[] = Object.values(agenda).map((item) => (item as any).default)[0];
 const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as any).default)[0];
 
 const sponsorsData: Sponsor[] = Object.values(sponsors).map((item) => (item as any).default)[0];
-const sponsorImages = await Astro.glob<{ default: ImageMetadata }>("../data/images/sponsors/*.{png,jpg,jpeg,svg,webp}");
+const sponsorImages = await Astro.glob<{ default: ImageMetadata }>(
+  "../../2024/data/images/sponsors/*.{png,jpg,jpeg,svg,webp}",
+);
 ---
 
-<MainLayout>
+<Layout>
   <section id="hero" class="min-h-full">
     <div class="container">
       <div class="grid grid-cols-12">
         <div
           class="hero-left col-span-12 flex flex-grow flex-wrap items-end gap-10 pb-14 pt-24 md:py-24 lg:col-span-4 lg:block">
-          <img src="/logo.svg" alt="" class="grid-col w-[320px] lg:mb-8" />
+          <img src="/2024/logo.svg" alt="" class="grid-col w-[320px] lg:mb-8" />
           <div class="hero-text text-gray- flex flex-col gap-4">
             <h1 class="mb-3 text-3xl font-bold">Indonesia Software Developer Conference</h1>
             <div class="flex flex-col items-start gap-2 text-lg">
@@ -65,19 +65,12 @@ const sponsorImages = await Astro.glob<{ default: ImageMetadata }>("../data/imag
                 className="text-xl md:gap-5 md:text-xl xl:gap-10 xl:text-2xl"
               />
             </div>
-            <div class="flex flex-col gap-6 lg:flex-row">
-              <p class="text-lg font-light text-white opacity-80 md:text-xl lg:text-start">
-                Join us for the first annual conference for Indonesia software developers, where you can hear
-                thought-provoking keynotes from industry leaders and network with fellow developers.
+            <div class="flex flex-col gap-2">
+              <h2 class="text-3xl font-bold">IDSW 2024 is Over!</h2>
+              <p class="text-lg font-light opacity-80 md:text-xl lg:text-start">
+                Thank you to all our speakers, sponsors, and attendees for making the first IDSW Conference a huge
+                success!
               </p>
-              <div class="flex">
-                <Button
-                  color="primary"
-                  className="min-w-44 flex-grow self-center rounded-xl px-0 text-xl xl:text-2xl"
-                  href="https://www.loket.com/event/idsw2024">
-                  Get Tickets
-                </Button>
-              </div>
             </div>
           </div>
         </div>
@@ -137,7 +130,7 @@ const sponsorImages = await Astro.glob<{ default: ImageMetadata }>("../data/imag
           class="speakers-left relative col-span-12 items-end py-8 lg:col-span-4 lg:block lg:min-h-[1000px] lg:py-24">
           <div class="bg-to-start -translate-y-3 bg-lightblue">
             <img
-              src="/logo-white.svg"
+              src="/2024/logo-white.svg"
               alt=""
               class="grid-col absolute -bottom-8 right-0 hidden w-[520px] lg:mb-8 lg:block"
             />
@@ -151,7 +144,7 @@ const sponsorImages = await Astro.glob<{ default: ImageMetadata }>("../data/imag
               experiences, and innovative ideas to inspire.
             </p>
             <img
-              src="/logo-white.svg"
+              src="/2024/logo-white.svg"
               alt=""
               class="grid-col absolute -right-12 top-0 block h-full lg:mb-8 lg:hidden"
             />
@@ -191,4 +184,4 @@ const sponsorImages = await Astro.glob<{ default: ImageMetadata }>("../data/imag
       </div>
     </div>
   </section>
-</MainLayout>
+</Layout>

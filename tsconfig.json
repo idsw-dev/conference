@@ -3,5 +3,7 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react"
-  }
+  },
+  "include": ["src/**/*", "astro.config.*"],
+  "exclude": ["node_modules", "dist", ".astro"]
 }
