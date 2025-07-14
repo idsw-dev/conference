@@ -1,7 +1,7 @@
 ---
 import Layout from "../../2025/layout.astro";
 import Timer from "../../2025/components/Timer";
-import { Code2, Brain, Users, MapPin, Mail } from "lucide-react";
+import { Code2, Brain, Users, MapPin, Mail, ArrowLeft } from "lucide-react";
 ---
 
 <Layout>
@@ -83,6 +83,20 @@ import { Code2, Brain, Users, MapPin, Mail } from "lucide-react";
             </p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- See Past Event Section -->
+  <section class="relative z-10 bg-white py-8">
+    <div class="container mx-auto max-w-6xl px-4">
+      <div class="flex justify-center">
+        <a
+          href="/2024"
+          class="inline-flex items-center gap-2 rounded-lg border border-slate-600 px-4 py-2 text-base font-medium text-slate-600 transition-all duration-200 hover:border-[#0B2B5B] hover:bg-slate-50 hover:text-[#0B2B5B]">
+          <ArrowLeft className="h-5 w-5" />
+          See Past 2024 Event
+        </a>
       </div>
     </div>
   </section>
