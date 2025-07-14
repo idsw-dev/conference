@@ -44,5 +44,13 @@ import "./styles.css";
       <slot />
     </main>
     <Footer />
+    <script>
+      import posthog from "posthog-js";
+      const posthogId = import.meta.env.PUBLIC_POSTHOG_ID;
+
+      posthog.init(`${posthogId}`, {
+        api_host: "https://us.i.posthog.com",
+      });
+    </script>
   </body>
 </html>
