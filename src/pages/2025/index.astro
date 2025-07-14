@@ -7,7 +7,7 @@ import { Code2, Brain, Users, MapPin, Mail } from "lucide-react";
 <Layout>
   <div class="bg-subtle-gradient relative flex min-h-screen w-full flex-col text-gray-900">
     <main class="relative z-10 flex-1">
-      <div class="container mx-auto px-4 py-12">
+      <div class="container mx-auto max-w-6xl px-4 py-12">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
           <div class="flex flex-col justify-center space-y-8">
             <div class="animate-fade-up">
@@ -61,7 +61,7 @@ import { Code2, Brain, Users, MapPin, Mail } from "lucide-react";
 
   <!-- About Section -->
   <section class="relative z-10 bg-gradient-to-r from-slate-50 to-blue-50 py-12">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto max-w-6xl px-4">
       <div class="mx-auto max-w-4xl text-center">
         <h2 class="mb-6 text-2xl font-bold text-[#0B2B5B] md:text-3xl">About IDSW</h2>
         <p class="mb-8 text-lg leading-relaxed text-slate-700">
@@ -88,7 +88,8 @@ import { Code2, Brain, Users, MapPin, Mail } from "lucide-react";
   </section>
 
   <footer class="relative z-10 border-t border-slate-200 bg-white/90 backdrop-blur-sm">
-    <div class="container mx-auto flex flex-col items-center justify-between gap-6 px-4 py-6 md:flex-row md:px-6">
+    <div
+      class="container mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 py-6 md:flex-row md:px-6">
       <div class="text-center md:text-left">
         <p class="text-sm font-semibold text-[#0B2B5B]">IDSW Conference 2025</p>
         <p class="text-xs text-slate-600">By PERKODI</p>
