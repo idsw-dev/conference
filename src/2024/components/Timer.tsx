@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { useInterval } from "../hooks/useInterval";
+import { useInterval } from "../../shared/hooks/useInterval";
 
 type TimerProps = {
   date: Date;
 } & React.HTMLProps<HTMLDivElement>;
 
 function formatNumber(number: number) {
-  return number.toString().padStart(2, "0");
+  const str = number.toString();
+  return str.length < 2 ? "0" + str : str;
 }
 
 export default function Timer({ date, ...props }: TimerProps) {

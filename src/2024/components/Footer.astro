@@ -27,7 +27,7 @@ const socialMedias: SocialMedia[] = Object.values(socialMediaJson).map((item) =>
                     href={socmed.url}
                     class="social-media-link flex min-h-12 min-w-12 items-center rounded-lg p-3"
                     title={socmed.name}>
-                    <img src={socmed.image} alt={socmed.name} />
+                    <img src={`/2024${socmed.image}`} alt={socmed.name} />
                   </a>
                 </li>
               ))
