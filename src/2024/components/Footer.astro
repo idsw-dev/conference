@@ -1,7 +1,7 @@
 ---
 import type { SocialMedia } from "../@types/social-media";
 
-const socialMediaJson = await Astro.glob("../../shared/data/social-media.json");
+const socialMediaJson = await Astro.glob("../data/social-media.json");
 const socialMedias: SocialMedia[] = Object.values(socialMediaJson).map((item) => (item as any).default)[0];
 ---
 
