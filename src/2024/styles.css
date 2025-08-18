@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 section {
   overflow-x: hidden;
 }
@@ -5,7 +7,6 @@ html {
   scroll-behavior: smooth;
 }
 
-@tailwind base;
 @layer base {
   :root {
     --color-primary: 28 122 255;
@@ -73,7 +74,8 @@ html {
   z-index: -1;
 }
 .scrolled .menu-link {
-  @apply text-primary-dark transition duration-200;
+  @apply transition duration-200;
+  color: rgb(var(--color-primary-dark));
 }
 
 @media screen and (min-width: 1024px) {
