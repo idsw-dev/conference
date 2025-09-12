@@ -19,7 +19,7 @@ const TimeUnit = ({ value, label }: { value: string; label: string }) => (
 );
 
 export default function Timer() {
-  const cfpClosingDate = "2025-08-17T17:00:00Z";
+  const cfpClosingDate = "2025-11-22T00:00:00Z";
 
   const calculateTimeLeft = (): TimeLeft | null => {
     const difference = +new Date(cfpClosingDate) - +new Date();
