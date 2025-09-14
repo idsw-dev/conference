@@ -1,6 +1,5 @@
 @import "tailwindcss";
-@layer base {
-  :root {
+@theme {
     --color-primary: 28 122 255;
     --color-primary-dark: 11 43 91;
     --color-primary-light: 187 225 250;
@@ -8,7 +7,12 @@
     --color-text: 255 255 255;
     --color-body: 230 230 230;
     --color-lightblue: 28 122 255;
-  }
+    --color-dark: rgb(8 8 20);
+    --color-blue-1: rgb(0 59 157);
+    --color-blue-2: rgb(79 133 191);
+    --color-blue-3: rgb(153 191 252);
+}
+@layer base {
 
   html {
     scroll-behavior: smooth;
@@ -81,11 +85,14 @@
 
 @layer components {
   .container {
-    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto xl:max-w-[1320px]!;
   }
 }
 
 @layer utilities {
+  .gradient-blue {
+    background: linear-gradient(to bottom, var(--color-dark), var(--color-blue-1), var(--color-blue-2), var(--color-blue-3));
+  }
   /* Animation utilities */
   .animate-fade-up {
     animation: fadeUp 0.8s ease-out forwards;
