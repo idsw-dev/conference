@@ -11,6 +11,9 @@
     --color-blue-1: rgb(0 59 157);
     --color-blue-2: rgb(79 133 191);
     --color-blue-3: rgb(153 191 252);
+    --color-darkblue: rgb(4 32 85);
+
+    --font-sans: Inter, sans-serif;
 }
 @layer base {
 
@@ -127,6 +130,12 @@
   .animate-slide-down {
     animation: slideDown 0.8s ease-out;
   }
+}
+
+section#description {
+  background-image: url(/2025/gradient-bg.png);
+  background-position: 0 95%;
+  background-size: cover;
 }
 
 /* Keyframes */

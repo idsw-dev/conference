@@ -52,15 +52,15 @@ export default function Timer() {
     return (
       <div className="flex items-center gap-2 sm:gap-3 md:gap-4 font-mono bg-white/25 px-12 py-8 rounded-3xl border border-white">
         <TimeUnit value={formatNumber(timeLeft.days)} label="DAYS" />
-        <span className="text-2xl sm:text-3xl md:text-5xl font-light text-white">
+        <span className="text-sm sm:text-md md:text-xl font-light text-white">
           :
         </span>
         <TimeUnit value={formatNumber(timeLeft.hours)} label="HOURS" />
-        <span className="text-2xl sm:text-3xl md:text-5xl font-light text-white">
+        <span className="text-sm sm:text-md md:text-xl font-light text-white">
           :
         </span>
         <TimeUnit value={formatNumber(timeLeft.minutes)} label="MINUTES" />
-        <span className="text-2xl sm:text-3xl md:text-5xl font-light text-white">
+        <span className="text-sm sm:text-md md:text-xl font-light text-white">
           :
         </span>
         <TimeUnit value={formatNumber(timeLeft.seconds)} label="SECONDS" />

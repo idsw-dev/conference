@@ -2,10 +2,15 @@
 import Layout from "../2025/layout.astro";
 import Timer from "../2025/components/Timer";
 import { ArrowLeft, Brain, Code2, Mail, Users } from "lucide-react";
+import CardSpeaker from "../2025/components/CardSpeaker.astro";
+import type { Speaker } from "../2024/@types/speakers";
+
+const speakers = await Astro.glob("../2025/data/speakers.json");
+const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as any).default)[0];
 ---
 
 <Layout>
-  <section id="hero" class="bg-dark relative flex min-h-screen w-full flex-col py-32 text-gray-900">
+  <section id="hero" class="bg-dark relative flex w-full flex-col py-32 text-gray-900">
     <div class="container">
       <div
         class="gradient-blue card animate-fade-up animation-delay-400 space-y-4 rounded-lg bg-gradient-to-br from-white to-[#CAE1FF] px-4 py-12 text-center shadow-lg backdrop-blur-sm">
@@ -30,28 +35,27 @@ import { ArrowLeft, Brain, Code2, Mail, Users } from "lucide-react";
     </div>
   </section>
 
+  <section id="description" class="py-8">
+    <div class="container text-center">
+      <p class="px-8 text-xl leading-relaxed text-white">
+        IDSW 2025 is Indonesia’s biggest community-led developer conference. Organized by Perkodi and various tech
+        communities, this year’s mission is to explore Artificial Intelligence and its impact through in-depth sessions,
+        discussions, and collaboration.
+      </p>
+    </div>
+  </section>
+
   <!-- About Section -->
-  <section class="relative z-10 bg-gradient-to-r from-slate-50 to-blue-50 py-12">
+  <section class="from-dark to-darkblue relative z-10 bg-gradient-to-b py-12 text-white">
     <div class="container mx-auto max-w-6xl px-4">
       <div class="mx-auto max-w-4xl text-center">
-        <h2 class="mb-6 text-2xl font-bold text-[#0B2B5B] md:text-3xl">About IDSW</h2>
-        <p class="mb-8 text-lg leading-relaxed text-slate-700">
-          IDSW is Indonesia's first software developer conference. Organized by Perkodi and various tech communities,
-          its mission is to offer annual in-depth sessions on the most important and new technologies.
-        </p>
-        <div class="grid grid-cols-1 gap-6 text-left md:grid-cols-2">
-          <div class="rounded-lg bg-white/80 p-6 shadow-sm">
-            <h3 class="mb-3 font-semibold text-[#0B2B5B]">Organized by Perkodi</h3>
-            <p class="text-sm text-slate-600">
-              The Indonesian Software Developers Association, bringing together the nation's tech community.
-            </p>
-          </div>
-          <div class="rounded-lg bg-white/80 p-6 shadow-sm">
-            <h3 class="mb-3 font-semibold text-[#0B2B5B]">Tech Communities</h3>
-            <p class="text-sm text-slate-600">
-              Supported by various technology communities across Indonesia to foster collaboration and knowledge
-              sharing.
-            </p>
+        <div class="section-header mb-8">
+          <h2 class="mb-2 text-2xl font-bold md:text-3xl">Meet Our Speakers</h2>
+          <span class="text-xl">Experts from across the tech community</span>
+        </div>
+        <div class="section-content">
+          <div class="grid grid-cols-1 gap-6 text-left md:grid-cols-3">
+            {speakersData.map((speaker) => <CardSpeaker data={speaker} />)}
           </div>
         </div>
       </div>

@@ -1,0 +1,120 @@
+[
+  {
+    "name": "Listiarso Wastuargo",
+    "title": "Tech Entrepreneur",
+    "role": "Keynote Speaker",
+    "imageName": "listiarso",
+    "socialUrl": [
+      "https://x.com/lwastuargo",
+      "https://www.linkedin.com/in/lwastuargo/"
+    ]
+  },
+  {
+    "name": "Theresia Tanzil",
+    "title": "Independent Researcher at Proses.ID",
+    "role": "Keynote Speaker",
+    "imageName": "tre",
+    "socialUrl": [
+      "https://x.com/theresiatanzil",
+      "https://facebook.com/theresiatanzil",
+      "https://www.linkedin.com/in/theresiatanzil/"
+    ]
+  },
+  {
+    "name": "Teguh Aprianto",
+    "title": "Founder Ethical Hacker indonesia",
+    "role": "Panelist",
+    "imageName": "secgron",
+    "socialUrl": [
+      "https://x.com/secgron",
+      "https://www.linkedin.com/in/secgron"
+    ]
+  },
+  {
+    "name": "TinTin",
+    "title": "Independent Security Researcher",
+    "role": "Panelist",
+    "imageName": "tintin",
+    "socialUrl": ["https://x.com/tintinnya"]
+  },
+  {
+    "name": "Ibrahim Arief",
+    "title": "CTO at Stealth AI Startup",
+    "role": "Keynote Speaker",
+    "imageName": "ibam",
+    "socialUrl": [
+      "https://x.com/ibamarief",
+      "https://www.linkedin.com/in/ibrahimarief/"
+    ]
+  },
+  {
+    "name": "Imre Nagi",
+    "title": "Migration Engineer",
+    "role": "Keynote Speaker",
+    "imageName": "imre",
+    "socialUrl": ["https://www.linkedin.com/in/imrenagi/"]
+  },
+  {
+    "name": "M. Gilang Januar",
+    "imageName": "cfp-gilang",
+    "title": "Solopreneur",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/mgilangjanuar/"]
+  },
+  {
+    "name": "Arief Rahmansyah",
+    "imageName": "cfp-arief",
+    "title": "Software Engineer",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/ariefr23/"]
+  },
+  {
+    "name": "Rizki Kelimutu",
+    "imageName": "cfp-rizki",
+    "title": "Community Manager",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/kelimuttu/"]
+  },
+  {
+    "name": "Kemal Elmizan",
+    "imageName": "cfp-kemal",
+    "title": "Software Engineer",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/kemalelmizan/"]
+  },
+  {
+    "name": "Adityo Pratomo",
+    "imageName": "cfp-adityo",
+    "title": "Product Manager",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/kotakmakan/"]
+  },
+  {
+    "name": "Yohan Totting",
+    "imageName": "cfp-yohan",
+    "title": "Founder of Inlive",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/tyohan/"]
+  },
+  {
+    "name": "Fandi Gunawan",
+    "imageName": "cfp-fandi",
+    "title": "Software Engineer",
+    "role": "Speaker",
+    "socialUrl": ["https://www.linkedin.com/in/fandigunawan/"]
+  },
+  {
+    "name": "Rama Rahmanda",
+    "imageName": "cfp-rama",
+    "title": "SRE",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/ramandann/"]
+  },
+  {
+    "name": "Joshua Bezaleel Abednego",
+    "imageName": "cfp-joshua",
+    "title": "Software Engineer",
+    "role": "Speaker",
+    "socialUrl": ["https://x.com/joshuabezaleel/"]
+  }
+]
