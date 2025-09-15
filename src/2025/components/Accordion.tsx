@@ -32,9 +32,9 @@ export default function Accordion({ data, ...props }: Props) {
   return (
     <div className="accordion flex flex-col" {...props}>
       {data.map((accordion, i) => (
-        <div className="accordion-item" key={i}>
+        <div className="accordion-item mb-2 bg-[#8BA6FF33] rounded-xl " key={i}>
           <div
-            className="accordion-title flex cursor-pointer items-center border border-[#B8CAE3] bg-[#F3F8FF] p-5"
+            className={`accordion-title flex cursor-pointer items-center p-5 ${openIndex === i ? "border-b border-white/20" : ""}`}
             onClick={() => toggleAccordion(i)}
             onKeyDown={(e) => handleKeyDown(e, i)}
             aria-expanded={openIndex === i}
@@ -55,7 +55,7 @@ export default function Accordion({ data, ...props }: Props) {
             id={`accordion-content-${i}`}
             aria-labelledby={`accordion-title-${i}`}
             aria-hidden={i !== openIndex}
-            className={`accordion-content overflow-hidden bg-white transition-[max-height] duration-300 ease-in-out ${openIndex === i ? "border" : ""}`}
+            className={`accordion-content overflow-hidden transition-[max-height] duration-300 ease-in-out `}
             style={{ maxHeight: openIndex === i ? `${heights[i]}px` : "0px" }}
           >
             <div
