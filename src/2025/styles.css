@@ -94,7 +94,7 @@
 
 @layer utilities {
   .gradient-blue {
-    background: linear-gradient(to bottom, var(--color-dark), var(--color-blue-1), var(--color-blue-2), var(--color-blue-3));
+    background: linear-gradient(to bottom, var(--color-dark) 30%, var(--color-blue-1), var(--color-blue-2), var(--color-blue-3));
   }
   /* Animation utilities */
   .animate-fade-up {
