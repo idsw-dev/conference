@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/inter";
 import "./styles.css";
+import Header from "./components/Header";
 ---
 
 <html lang="en">
@@ -38,7 +39,8 @@ import "./styles.css";
     <title>IDSW 2025</title>
   </head>
   <body>
-    <main>
+    <main class="font-sans">
+      <Header />
       <slot />
     </main>
     <script>
