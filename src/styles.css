@@ -97,14 +97,21 @@
 }
 
 @layer utilities {
-  .gradient-blue {
-    background: linear-gradient(
-      to bottom,
-      var(--color-dark) 30%,
-      var(--color-blue-1),
-      var(--color-blue-2),
-      var(--color-blue-3)
-    );
+  .gradient-blue-hero {
+    background:
+      url(/hero-mask-bg.png),
+      linear-gradient(
+        to bottom,
+        var(--color-dark) 30%,
+        var(--color-blue-1),
+        var(--color-blue-2),
+        var(--color-blue-3)
+      );
+    background-size:
+      cover,
+      100% 100%;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
   }
   /* Animation utilities */
   .animate-fade-up {
@@ -143,9 +150,14 @@
 }
 
 section#description {
-  background-image: url(/gradient-bg.png);
-  background-position: 0 95%;
-  background-size: cover;
+  background: linear-gradient(
+    135deg,
+    #4a90e2 0%,
+    #1d3a68 25%,
+    #030b29 50%,
+    #263fad 75%,
+    #0a1a2a 100%
+  );
 }
 
 /* Keyframes */

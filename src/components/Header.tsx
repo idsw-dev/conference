@@ -71,7 +71,7 @@ export default function Header() {
                   <a
                     href={menu.href}
                     onClick={() => setIsOpen(!isOpen)}
-                    className={`menu-link block rounded px-3 py-2 text-white transition-colors duration-300 hover:text-blue-500 md:bg-transparent md:p-0`}
+                    className={`menu-link block rounded px-3 py-2 text-gray-900 transition-colors duration-300 hover:text-blue-500 md:bg-transparent md:p-0 md:text-white`}
                     aria-current="page"
                   >
                     {menu.name}
