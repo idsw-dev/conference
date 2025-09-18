@@ -50,7 +50,7 @@ export default function Timer() {
 
   if (timeLeft) {
     return (
-      <div className="flex items-center gap-4 rounded-3xl border border-white/40 bg-white/25 px-12 py-6 sm:gap-6 sm:px-20 sm:py-8 md:gap-8">
+      <div className="flex items-center gap-2 rounded-3xl border border-white/40 bg-white/25 px-12 py-6 sm:gap-4 sm:px-20 sm:py-8 md:gap-8">
         <TimeUnit value={formatNumber(timeLeft.days)} label="DAYS" />
         <span className="sm:text-md text-sm font-light text-white md:text-xl">
           :
