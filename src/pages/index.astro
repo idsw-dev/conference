@@ -1,17 +1,24 @@
 ---
-import Layout from "../layout.astro";
-import Timer from "../components/Timer";
-import { ArrowLeft, Brain, Code2, Mail, Users } from "lucide-react";
-import CardSpeaker from "../components/CardSpeaker.astro";
+import { SiX } from "@icons-pack/react-simple-icons";
+import { SiInstagram } from "@icons-pack/react-simple-icons";
+import { SiThreads } from "@icons-pack/react-simple-icons";
+import { SiFacebook } from "@icons-pack/react-simple-icons";
+import { Mail } from "lucide-react";
+import type { Faq } from "../@types/faq";
 import type { Speaker } from "../@types/speakers";
 import Accordion from "../components/Accordion";
-import type { Faq } from "../@types/faq";
+import CardSpeaker from "../components/CardSpeaker.astro";
+import Timer from "../components/Timer";
+import Layout from "../layout.astro";
+import type { SocialMedia } from "../@types/social-media";
 
 const faq = import.meta.glob("../data/faq.json", { eager: true });
 const speakers = import.meta.glob("../data/speakers.json", { eager: true });
+const socialMediasJson = import.meta.glob("../data/social-media.json", { eager: true });
 
 const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as any).default)[0];
 const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
+const socialMedias: SocialMedia[] = Object.values(socialMediasJson).map((item) => (item as any).default)[0];
 ---
 
 <Layout>
@@ -168,15 +175,72 @@ const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0
       </p>
 
       <ul class="flex justify-center">
-        <li>
-          <a
-            href="placeholder"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex min-h-8 min-w-8 items-center rounded bg-white/20 p-3">
-            <img src="/icons/x.svg" alt="X" class="h-6 w-6" />
-          </a>
-        </li>
+        <ul class="social-medias flex flex-wrap gap-3">
+          {
+            socialMedias.map((socmed: SocialMedia) => {
+              if (socmed.name === "Email") {
+                return (
+                  <a
+                    target="_blank"
+                    href={socmed.url}
+                    class="social-media-link flex min-h-12 min-w-12 items-center rounded-lg p-3"
+                    title={socmed.name}>
+                    <Mail className="h-6 w-6" client:load />
+                  </a>
+                );
+              }
+
+              if (socmed.name === "X") {
+                return (
+                  <a
+                    target="_blank"
+                    href={socmed.url}
+                    class="social-media-link flex min-h-12 min-w-12 items-center rounded-lg p-3"
+                    title={socmed.name}>
+                    <SiX className="h-6 w-6" client:load />
+                  </a>
+                );
+              }
+
+              if (socmed.name === "Instagram") {
+                return (
+                  <a
+                    target="_blank"
+                    href={socmed.url}
+                    class="social-media-link flex min-h-12 min-w-12 items-center rounded-lg p-3"
+                    title={socmed.name}>
+                    <SiInstagram className="h-6 w-6" client:load />
+                  </a>
+                );
+              }
+
+              if (socmed.name === "Threads") {
+                return (
+                  <a
+                    target="_blank"
+                    href={socmed.url}
+                    class="social-media-link flex min-h-12 min-w-12 items-center rounded-lg p-3"
+                    title={socmed.name}>
+                    <SiThreads className="h-6 w-6" client:load />
+                  </a>
+                );
+              }
+
+              if (socmed.name === "Facebook") {
+                return (
+                  <a
+                    target="_blank"
+                    href={socmed.url}
+                    class="social-media-link flex min-h-12 min-w-12 items-center rounded-lg p-3"
+                    title={socmed.name}>
+                    <SiFacebook className="h-6 w-6" client:load />
+                  </a>
+                );
+              }
+              return null;
+            })
+          }
+        </ul>
       </ul>
     </div>
   </section>

@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
 import type { Faq } from "../@types/faq";
 type Props = {
   data: Faq[];
@@ -32,7 +33,7 @@ export default function Accordion({ data, ...props }: Props) {
   return (
     <div className="accordion flex flex-col" {...props}>
       {data.map((accordion, i) => (
-        <div className="accordion-item mb-2 bg-[#8BA6FF33] rounded-xl " key={i}>
+        <div className="accordion-item mb-2 rounded-xl bg-[#8BA6FF33]" key={i}>
           <div
             className={`accordion-title flex cursor-pointer items-center p-5 ${openIndex === i ? "border-b border-white/20" : ""}`}
             onClick={() => toggleAccordion(i)}
@@ -48,14 +49,14 @@ export default function Accordion({ data, ...props }: Props) {
             <div
               className={`accordion-icon ${openIndex === i ? "rotate-180 transform" : ""}`}
             >
-              <IconChevronBottom />
+              <ChevronDown />
             </div>
           </div>
           <div
             id={`accordion-content-${i}`}
             aria-labelledby={`accordion-title-${i}`}
             aria-hidden={i !== openIndex}
-            className={`accordion-content overflow-hidden transition-[max-height] duration-300 ease-in-out `}
+            className={`accordion-content overflow-hidden transition-[max-height] duration-300 ease-in-out`}
             style={{ maxHeight: openIndex === i ? `${heights[i]}px` : "0px" }}
           >
             <div
@@ -70,25 +71,5 @@ export default function Accordion({ data, ...props }: Props) {
         </div>
       ))}
     </div>
-  );
-}
-
-function IconChevronBottom() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      viewBox="0 0 32 32"
-    >
-      <path
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M30 12L16 24L2 12"
-      ></path>
-    </svg>
   );
 }

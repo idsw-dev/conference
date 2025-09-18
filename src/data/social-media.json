@@ -1,27 +1,22 @@
 [
   {
     "name": "X",
-    "url": "https://x.com/idswdev",
-    "image": "/icons/x.svg"
+    "url": "https://x.com/idswdev"
   },
   {
     "name": "Instagram",
-    "url": "https://www.instagram.com/idsw.dev",
-    "image": "/icons/ig.svg"
+    "url": "https://www.instagram.com/idsw.dev"
   },
   {
     "name": "Threads",
-    "url": "https://www.threads.net/@idsw.dev",
-    "image": "/icons/threads.svg"
+    "url": "https://www.threads.net/@idsw.dev"
   },
   {
     "name": "Facebook",
-    "url": "https://www.facebook.com/idsw.dev/",
-    "image": "/icons/fb.svg"
+    "url": "https://www.facebook.com/idsw.dev/"
   },
   {
     "name": "Email",
-    "url": "mailto:idsw@perkodi.org",
-    "image": "/icons/mail.svg"
+    "url": "mailto:idsw@perkodi.org"
   }
 ]

@@ -31,33 +31,24 @@ if (!image) {
     <div class="card-title mb-1 pt-3 text-base font-bold text-white lg:text-2xl">{data.name}</div>
     <div class="card-subtitle text-sm text-gray-200 lg:text-lg">{data.title}</div>
     <ul class="mt-2 flex flex-wrap justify-center gap-2">
-      {
+      <!-- {
         data.socialUrl.map((url) => {
+          let IconComponent = null;
           if (url.includes("x.com")) {
-            return (
-              <li>
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex min-h-8 min-w-8 items-center rounded p-2">
-                  <img src="/icons/x.svg" alt="X" class="h-4 w-4" />
-                </a>
-              </li>
-            );
+            IconComponent = SiX;
           } else if (url.includes("facebook.com")) {
-            return (
-              <li>
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex min-h-8 min-w-8 items-center rounded p-2">
-                  <img src="/icons/fb.svg" alt="Facebook" class="h-4 w-4" />
-                </a>
-              </li>
-            );
+            IconComponent = SiFacebook;
           } else if (url.includes("linkedin.com")) {
+            IconComponent = LinkedinIcon;
+          } else if (url.includes("instagram.com")) {
+            IconComponent = SiInstagram;
+          } else if (url.includes("threads.net")) {
+            IconComponent = SiThreads;
+          } else if (url.includes("facebook.com")) {
+            IconComponent = SiFacebook;
+          }
+
+          if (IconComponent) {
             return (
               <li>
                 <a
@@ -65,14 +56,14 @@ if (!image) {
                   target="_blank"
                   rel="noopener noreferrer"
                   class="flex min-h-8 min-w-8 items-center rounded p-2">
-                  <img src="/icons/linkedin.svg" alt="LinkedIn" class="h-4 w-4" />
+                  <IconComponent className="h-4 w-4" client:load />
                 </a>
               </li>
             );
           }
           return null;
         })
-      }
+      } -->
     </ul>
   </div>
 </div>
