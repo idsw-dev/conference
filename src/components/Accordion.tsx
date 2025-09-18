@@ -35,7 +35,7 @@ export default function Accordion({ data, ...props }: Props) {
       {data.map((accordion, i) => (
         <div className="accordion-item mb-2 rounded-xl bg-[#8BA6FF33]" key={i}>
           <div
-            className={`accordion-title flex cursor-pointer p-5 ${openIndex === i ? "border-b border-white/20" : ""}`}
+            className={`accordion-title flex cursor-pointer items-start p-5 ${openIndex === i ? "border-b border-white/20" : ""}`}
             onClick={() => toggleAccordion(i)}
             onKeyDown={(e) => handleKeyDown(e, i)}
             aria-expanded={openIndex === i}
@@ -47,7 +47,7 @@ export default function Accordion({ data, ...props }: Props) {
               {accordion.question}
             </a>
             <div
-              className={`accordion-icon ${openIndex === i ? "rotate-180 transform" : ""}`}
+              className={`accordion-icon flex-shrink-0 ${openIndex === i ? "rotate-180 transform" : ""}`}
             >
               <ChevronDown />
             </div>

@@ -97,7 +97,7 @@ const socialMedias: SocialMedia[] = Object.values(socialMediasJson).map((item) =
           </div>
         </BlurFade>
         <div class="section-content">
-          <div class="grid grid-cols-1 gap-6 text-left sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div class="grid grid-cols-1 gap-3 text-left sm:grid-cols-2 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
             {
               speakersData.map((speaker, index) => (
                 <BlurFade delay={0.4 + index * 0.1} client:load>
