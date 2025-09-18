@@ -19,15 +19,9 @@ if (!image) {
 }
 ---
 
-<div class="card mb-8">
-  <div class="card-image bg-white p-4 lg:p-6">
-    <Image
-      src={image.default}
-      alt={data.name}
-      width={200}
-      height={200}
-      class:list={["h-full w-full object-cover grayscale"]}
-    />
+<div class="card mb-8 flex flex-col items-center">
+  <div class="card-image max-w-60 bg-white p-4 sm:max-w-full lg:p-6">
+    <Image src={image.default} alt={data.name} class:list={["h-full w-full object-cover grayscale"]} />
   </div>
   <div class="card-content mt-3 text-center">
     <div class="card-title mb-1 pt-3 text-base font-bold text-white lg:text-2xl">{data.name}</div>

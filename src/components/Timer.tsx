@@ -9,10 +9,10 @@ type TimeLeft = {
 
 const TimeUnit = ({ value, label }: { value: string; label: string }) => (
   <div className="flex flex-col items-center">
-    <span className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
+    <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl">
       {value}
     </span>
-    <span className="mt-1 text-xs sm:text-sm font-medium tracking-wider text-white">
+    <span className="mt-1 text-xs font-medium tracking-wider text-white sm:text-sm">
       {label}
     </span>
   </div>
@@ -50,17 +50,17 @@ export default function Timer() {
 
   if (timeLeft) {
     return (
-      <div className="flex items-center gap-2 sm:gap-3 md:gap-4 font-mono bg-white/25 px-12 py-8 rounded-3xl border border-white">
+      <div className="flex items-center gap-4 rounded-3xl border border-white/40 bg-white/25 px-12 py-6 sm:gap-6 sm:px-20 sm:py-8 md:gap-8">
         <TimeUnit value={formatNumber(timeLeft.days)} label="DAYS" />
-        <span className="text-sm sm:text-md md:text-xl font-light text-white">
+        <span className="sm:text-md text-sm font-light text-white md:text-xl">
           :
         </span>
         <TimeUnit value={formatNumber(timeLeft.hours)} label="HOURS" />
-        <span className="text-sm sm:text-md md:text-xl font-light text-white">
+        <span className="sm:text-md text-sm font-light text-white md:text-xl">
           :
         </span>
         <TimeUnit value={formatNumber(timeLeft.minutes)} label="MINUTES" />
-        <span className="text-sm sm:text-md md:text-xl font-light text-white">
+        <span className="sm:text-md text-sm font-light text-white md:text-xl">
           :
         </span>
         <TimeUnit value={formatNumber(timeLeft.seconds)} label="SECONDS" />

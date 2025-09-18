@@ -31,11 +31,11 @@ export default function Accordion({ data, ...props }: Props) {
   };
 
   return (
-    <div className="accordion flex flex-col" {...props}>
+    <div className="accordion flex flex-col text-left" {...props}>
       {data.map((accordion, i) => (
         <div className="accordion-item mb-2 rounded-xl bg-[#8BA6FF33]" key={i}>
           <div
-            className={`accordion-title flex cursor-pointer items-center p-5 ${openIndex === i ? "border-b border-white/20" : ""}`}
+            className={`accordion-title flex cursor-pointer p-5 ${openIndex === i ? "border-b border-white/20" : ""}`}
             onClick={() => toggleAccordion(i)}
             onKeyDown={(e) => handleKeyDown(e, i)}
             aria-expanded={openIndex === i}
@@ -43,7 +43,7 @@ export default function Accordion({ data, ...props }: Props) {
             tabIndex={0}
             role="button"
           >
-            <a className="flex-1" id={`accordion-title-${i}`}>
+            <a className="flex-1 text-left" id={`accordion-title-${i}`}>
               {accordion.question}
             </a>
             <div
@@ -60,7 +60,7 @@ export default function Accordion({ data, ...props }: Props) {
             style={{ maxHeight: openIndex === i ? `${heights[i]}px` : "0px" }}
           >
             <div
-              className="accordion-content-padding px-4 py-4"
+              className="accordion-content-padding px-4 py-4 text-left"
               ref={(el) => {
                 contentRefs.current[i] = el;
               }}
