@@ -50,5 +50,12 @@
     "role": "CFP Speakers",
     "imageName": "rully-saputra",
     "socialUrl": ["https://www.linkedin.com/in/rully-saputra-7554a7138"]
+  },
+  {
+    "name": "More speakers",
+    "title": "Stay tuned for more exciting speakers!",
+    "role": "Placeholder",
+    "imageName": "default",
+    "socialUrl": []
   }
 ]
