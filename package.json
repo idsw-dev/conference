@@ -8,8 +8,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --plugin=prettier-plugin-astro --write .",
-    "prettier:check": "prettier --check --plugin=prettier-plugin-astro .",
+    "format": "prettier --plugin=prettier-plugin-astro --write . --ignore-path .gitignore",
+    "prettier:check": "prettier --check --plugin=prettier-plugin-astro . --ignore-path .gitignore",
     "prepare": "husky"
   },
   "dependencies": {
