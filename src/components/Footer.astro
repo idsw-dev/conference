@@ -1,7 +1,7 @@
 ---
 import type { SocialMedia } from "../@types/social-media";
 
-const socialMediaJson = await Astro.glob("../data/social-media.json");
+const socialMediaJson = import.meta.glob("../data/social-media.json", { eager: true });
 const socialMedias: SocialMedia[] = Object.values(socialMediaJson).map((item) => (item as any).default)[0];
 ---
 
@@ -9,7 +9,7 @@ const socialMedias: SocialMedia[] = Object.values(socialMediaJson).map((item) =>
   <div class="container">
     <div class="grid grid-cols-12 items-start">
       <div class="about-left col-span-12 mb-8 gap-10 pb-0 lg:col-span-3 lg:mb-0 lg:block">
-        <h2 class="text-2xl font-bold !leading-normal text-white md:text-4xl">Get in touch with us</h2>
+        <h2 class="text-2xl !leading-normal font-bold text-white md:text-4xl">Get in touch with us</h2>
       </div>
       <div
         class="about-right relative col-span-12 col-start-1 grid grid-cols-subgrid flex-col lg:col-span-8 lg:col-start-5">
