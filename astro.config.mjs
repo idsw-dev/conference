@@ -8,5 +8,4 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  redirects: { "/2025": "/" },
 });

@@ -9,7 +9,7 @@ export default {
       center: true,
       padding: "2.5rem",
       screens: {
-        xl: "1272px",
+        xl: "1280px",
         lg: "1000px",
         md: "768px",
       },
@@ -23,6 +23,7 @@ export default {
         text: "rgb(var(--color-text) / <alpha-value>)",
         lightblue: "rgb(var(--color-lightblue) / <alpha-value>)",
         body: "rgb(var(--color-body) / <alpha-value>)",
+        bgdark: "rgb(var(--color-bg-dark) / <alpha-value>)",
         "primary-dark": "rgb(var(--color-primary-dark) / <alpha-value>)",
       },
     },
