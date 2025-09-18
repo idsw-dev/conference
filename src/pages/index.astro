@@ -1,14 +1,14 @@
 ---
-import Layout from "../2025/layout.astro";
-import Timer from "../2025/components/Timer";
+import Layout from "../layout.astro";
+import Timer from "../components/Timer";
 import { ArrowLeft, Brain, Code2, Mail, Users } from "lucide-react";
-import CardSpeaker from "../2025/components/CardSpeaker.astro";
-import type { Speaker } from "../2025/@types/speakers";
-import Accordion from "../2025/components/Accordion";
-import type { Faq } from "../2025/@types/faq";
+import CardSpeaker from "../components/CardSpeaker.astro";
+import type { Speaker } from "../@types/speakers";
+import Accordion from "../components/Accordion";
+import type { Faq } from "../@types/faq";
 
-const faq = await Astro.glob("../2025/data/faq.json");
-const speakers = await Astro.glob("../2025/data/speakers.json");
+const faq = await Astro.glob("../data/faq.json");
+const speakers = await Astro.glob("../data/speakers.json");
 
 const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as any).default)[0];
 const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
@@ -100,17 +100,17 @@ const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0
         <div class="section-content">
           <div class="highlight-photos mb-8 grid grid-cols-1 gap-6 text-left lg:grid-cols-7">
             <img
-              src="/2025/img-placeholder.jpg"
+              src="/img-placeholder.jpg"
               alt="event"
               class="h-[200px] w-full rounded-3xl object-cover lg:col-span-2"
             />
             <img
-              src="/2025/img-placeholder.jpg"
+              src="/img-placeholder.jpg"
               alt="event"
               class="h-[200px] w-full rounded-3xl object-cover lg:col-span-3"
             />
             <img
-              src="/2025/img-placeholder.jpg"
+              src="/img-placeholder.jpg"
               alt="event"
               class="h-[200px] w-full rounded-3xl object-cover lg:col-span-2"
             />
@@ -174,7 +174,7 @@ const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0
             target="_blank"
             rel="noopener noreferrer"
             class="flex min-h-8 min-w-8 items-center rounded bg-white/20 p-3">
-            <img src="/2025/icons/x.svg" alt="X" class="h-6 w-6" />
+            <img src="/icons/x.svg" alt="X" class="h-6 w-6" />
           </a>
         </li>
       </ul>

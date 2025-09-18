@@ -1,22 +1,21 @@
 @import "tailwindcss";
 @theme {
-    --color-primary: 28 122 255;
-    --color-primary-dark: 11 43 91;
-    --color-primary-light: 187 225 250;
-    --color-dark: 8 7 22;
-    --color-text: 255 255 255;
-    --color-body: 230 230 230;
-    --color-lightblue: 28 122 255;
-    --color-dark: rgb(8 8 20);
-    --color-blue-1: rgb(0 59 157);
-    --color-blue-2: rgb(79 133 191);
-    --color-blue-3: rgb(153 191 252);
-    --color-darkblue: rgb(4 32 85);
+  --color-primary: 28 122 255;
+  --color-primary-dark: 11 43 91;
+  --color-primary-light: 187 225 250;
+  --color-dark: 8 7 22;
+  --color-text: 255 255 255;
+  --color-body: 230 230 230;
+  --color-lightblue: 28 122 255;
+  --color-dark: rgb(8 8 20);
+  --color-blue-1: rgb(0 59 157);
+  --color-blue-2: rgb(79 133 191);
+  --color-blue-3: rgb(153 191 252);
+  --color-darkblue: rgb(4 32 85);
 
-    --font-sans: Inter, sans-serif;
+  --font-sans: Inter, sans-serif;
 }
 @layer base {
-
   html {
     scroll-behavior: smooth;
   }
@@ -94,7 +93,13 @@
 
 @layer utilities {
   .gradient-blue {
-    background: linear-gradient(to bottom, var(--color-dark) 30%, var(--color-blue-1), var(--color-blue-2), var(--color-blue-3));
+    background: linear-gradient(
+      to bottom,
+      var(--color-dark) 30%,
+      var(--color-blue-1),
+      var(--color-blue-2),
+      var(--color-blue-3)
+    );
   }
   /* Animation utilities */
   .animate-fade-up {
@@ -133,7 +138,7 @@
 }
 
 section#description {
-  background-image: url(/2025/gradient-bg.png);
+  background-image: url(/gradient-bg.png);
   background-position: 0 95%;
   background-size: cover;
 }
