@@ -4,48 +4,58 @@
     "title": "Founder & Developer at Sekolah Koding",
     "role": "CFP Speakers",
     "imageName": "hilman-ramadhan",
-    "socialUrl": []
+    "socialUrl": [
+      "https://www.linkedin.com/in/hilmanski",
+      "https://hilman.space/"
+    ]
   },
   {
     "name": "Evan Purnama",
     "title": "Co-Founder at Qiscus",
     "role": "CFP Speakers",
     "imageName": "evan-purnama",
-    "socialUrl": []
+    "socialUrl": [
+      "https://www.linkedin.com/in/evan-purnama-49266a62/",
+      "https://x.com/evanpurnama"
+    ]
   },
   {
     "name": "Zain Fathoni",
     "title": "Senior Front-End Engineer at Relay Commerce",
     "role": "CFP Speakers",
     "imageName": "zain-fathoni",
-    "socialUrl": []
+    "socialUrl": [
+      "https://x.com/zainfathoni",
+      "https://www.linkedin.com/in/zainfathoni/",
+      "https://www.zainfathoni.com/"
+    ]
   },
   {
     "name": "Yohan Totting",
     "title": "Head of Engineering (AI) at SIRCLO",
     "role": "CFP Speakers",
     "imageName": "yohan-totting",
-    "socialUrl": []
+    "socialUrl": ["https://x.com/tyohan", "https://www.linkedin.com/in/tyohan"]
   },
   {
     "name": "Rajeev Reddy Chevuri",
     "title": "Sr. Cloud Devops Engineer at Freddie Mac",
     "role": "CFP Speakers",
     "imageName": "rajeev-reddy-chevuri",
-    "socialUrl": []
+    "socialUrl": ["https://www.linkedin.com/in/rajeev-chevuri-76a61a116/"]
   },
   {
     "name": "Iskandar Soesman",
     "title": "Co-Founder of Awanio",
     "role": "CFP Speakers",
     "imageName": "iskandar-soesman",
-    "socialUrl": []
+    "socialUrl": ["https://www.linkedin.com/in/ikandars", "https://awan.io/"]
   },
   {
     "name": "Rully Saputra",
     "title": "Software Engineer II at Tiket",
     "role": "CFP Speakers",
     "imageName": "rully-saputra",
-    "socialUrl": []
+    "socialUrl": ["https://www.linkedin.com/in/rully-saputra-7554a7138"]
   }
 ]
