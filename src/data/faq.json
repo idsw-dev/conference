@@ -18,5 +18,9 @@
   {
     "question": "What should I bring on the day of the event?",
     "answer": "Ensure to bring your registration confirmation and identification. If you have any specific inquiries, please contact us."
+  },
+  {
+    "question": "Why do I need to provide my ID number, date of birth, and phone number when getting a ticket?",
+    "answer": "Our ticketing partner loket.com requires each participant to submit those details during registration. The data is stored on their platform only; the organizing team does not receive, or retain your personal information."
   }
 ]
