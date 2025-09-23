@@ -1,5 +1,20 @@
 [
   {
+    "name": "Renaldi Gondosubroto",
+    "title": "Software Engineer at SEEK",
+    "role": "CFP Speakers",
+    "imageName": "renaldi-gondosubroto",
+    "socialUrl": [
+      "https://x.com/Renaldig",
+      "https://www.renaldigondosubroto.com"
+    ],
+    "talk": {
+      "title": "Certified Answers for RAG: Cryptographic Receipts that Prove What Your AI Says",
+      "description": "Stop hallucinations by default. This talk shows how to make every AI answer carry a verifiable receipt that proves which sources were used, what was quoted, and why it is trustworthy. We build a zero-trust RAG service that signs and checks proofs before responses reach users.",
+      "topics": ["Research", "Deep-Dive"]
+    }
+  },
+  {
     "name": "Hilman Ramadhan",
     "title": "Founder & Developer at Sekolah Koding",
     "role": "CFP Speakers",
@@ -7,7 +22,12 @@
     "socialUrl": [
       "https://www.linkedin.com/in/hilmanski",
       "https://hilman.space/"
-    ]
+    ],
+    "talk": {
+      "title": "Build, Share, Connect: Perlihatkan karyamu",
+      "description": "Katanya lowongan kerja untuk programmer makin sempit karena AI makin canggih. Bagaimana kamu bisa standout dari programmer lain ketika angka loker semakin kecil?",
+      "topics": ["Society"]
+    }
   },
   {
     "name": "Evan Purnama",
@@ -17,7 +37,12 @@
     "socialUrl": [
       "https://www.linkedin.com/in/evan-purnama-49266a62/",
       "https://x.com/evanpurnama"
-    ]
+    ],
+    "talk": {
+      "title": "Balancing AI Innovation & Profit: The CTO Playbook for Two-Speed Organizations",
+      "description": "Drive tech org amid AI fast trend: as CTO, I built a pragmatic AI team. Research new trends, deliver AI tied to core products (e.g various AI Agent), and Advocate adoption AI. Result? strong double digit % revenue growth while staying profitable in this economy. Unlock the two-speed playbook!",
+      "topics": ["Leadership", "Strategic"]
+    }
   },
   {
     "name": "Zain Fathoni",
@@ -28,34 +53,47 @@
       "https://x.com/zainfathoni",
       "https://www.linkedin.com/in/zainfathoni/",
       "https://www.zainfathoni.com/"
-    ]
+    ],
+    "talk": {
+      "title": "Raising Children Who Outthink the Machines",
+      "description": "Are you worried machines 🤖 might take your kids' jobs? Do you fear AI could bring a dystopia 💣 instead of a utopia ✨? Do you struggle to protect your children's attention from gadgets 📱—and their minds 🧠 from AI? Let's turn fear into optimism ✨ and raise kids who outthink the machines 💪.",
+      "topics": ["Society"]
+    }
   },
   {
     "name": "Yohan Totting",
     "title": "Head of Engineering (AI) at SIRCLO",
     "role": "CFP Speakers",
     "imageName": "yohan-totting",
-    "socialUrl": ["https://x.com/tyohan", "https://www.linkedin.com/in/tyohan"]
+    "socialUrl": ["https://x.com/tyohan", "https://www.linkedin.com/in/tyohan"],
+    "talk": {
+      "title": "Under the Hood: Building AI Coding Assistants, Understand the Mechanics to Unleash Their Power",
+      "description": "Understand the mechanics of coding assistant will help us maximize their power. This talk will cover what you need to know if you want to build your own, from fundamental knowledge of LLM, context engineering, and how to give right tools to improve the performance and accuracy of coding assistant.",
+      "topics": ["Productivity", "Deep-dive"]
+    }
   },
   {
     "name": "Iskandar Soesman",
     "title": "Co-Founder of Awanio",
     "role": "CFP Speakers",
     "imageName": "iskandar-soesman",
-    "socialUrl": ["https://www.linkedin.com/in/ikandars", "https://awan.io/"]
+    "socialUrl": ["https://www.linkedin.com/in/ikandars", "https://awan.io/"],
+    "talk": {
+      "title": "Building Production-Ready Infrastructure Tools 10x Faster with AI Agents: The Vapor Story",
+      "description": "Discover how AI agents helped build Vapor, an open source comprehensive platfrom for managing modern Linux stacks, in just months instead of years. Learn practical strategies for leveraging AI to accelerate complex software development while maintaining enterprise-grade quality.",
+      "topics": ["Productivity"]
+    }
   },
   {
     "name": "Rully Saputra",
     "title": "Software Engineer II at Tiket",
     "role": "CFP Speakers",
     "imageName": "rully-saputra",
-    "socialUrl": ["https://www.linkedin.com/in/rully-saputra-7554a7138"]
-  },
-  {
-    "name": "More speakers",
-    "title": "Stay tuned for more exciting speakers!",
-    "role": "Placeholder",
-    "imageName": "default",
-    "socialUrl": []
+    "socialUrl": ["https://www.linkedin.com/in/rully-saputra-7554a7138"],
+    "talk": {
+      "title": "Smart Monitoring System for Core Web Vitals using n8n",
+      "description": "Maximize website performance with n8n automation! This process fetches Lighthouse reports, audits Core Web Vitals, sends real-time notifications to your team, and logs concise insights to Google Sheets—perfect for devs, SEOs, and product teams who need speed, clarity, and continuous monitoring.",
+      "topics": ["Productivity"]
+    }
   }
 ]
