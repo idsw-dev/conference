@@ -20,20 +20,22 @@ if (!image) {
 ---
 
 <div
-  class="group mb-6 flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:shadow-lg hover:shadow-blue-500/10 md:flex-row xl:flex-row lg:flex-col">
+  class="group mb-6 flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#04060F] bg-gradient-to-br from-[#04060F]/95 via-[#070C1A]/95 to-[#0A1230]/90 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:shadow-lg hover:shadow-blue-500/10 md:flex-row lg:flex-col xl:flex-row">
   <!-- Speaker Image Section -->
-  <div class="min-w-60 bg-white/5 p-6 lg:min-w-full xl:min-w-60">
-    <div class="max-w-60 space-y-3 lg:max-w-full xl:max-w-60">
-      <div class="h-32 w-32 overflow-hidden rounded-lg transition-transform duration-300 group-hover:scale-105">
+  <div class="flex min-w-60 flex-col bg-white/5 p-6 lg:min-w-full xl:min-w-60">
+    <div class="flex flex-1 flex-col space-y-3 lg:max-w-full xl:max-w-60">
+      <div class="mb-6 h-32 w-32 overflow-hidden rounded-2xl transition-transform duration-300 group-hover:scale-105">
         <Image
           src={image.default}
           alt={data.name}
-          class:list={["h-full w-full object-cover transition-all duration-300 group-hover:scale-110"]}
+          class:list={[
+            "h-full w-full object-cover grayscale transition-all duration-300 group-hover:scale-110 group-hover:grayscale-0",
+          ]}
         />
       </div>
       <h3 class="text-xl font-bold text-white">{data.name}</h3>
-      <p class="text-base text-gray-300">{data.title}</p>
-      <div class="social-links">
+      <p class="text-base text-white/80">{data.title}</p>
+      <div class="social-links mt-2 xl:mt-auto">
         <ul class="flex gap-3">
           {
             data.socialUrl.map((url) => (
@@ -71,7 +73,7 @@ if (!image) {
         <div class="flex gap-2">
           {
             data.talk.topics.map((topic) => (
-              <span class="inline-flex items-center rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold text-blue-300">
+              <span class="inline-flex items-center rounded-full bg-blue-500/20 px-3 py-1 text-xs font-medium tracking-wide text-blue-300 uppercase">
                 {topic}
               </span>
             ))
@@ -80,7 +82,7 @@ if (!image) {
         <h4 class="mb-3 text-xl font-semibold text-white">
           {data.talk.title}
         </h4>
-        <p class="text-base text-gray-300">
+        <p class="text-base leading-relaxed font-light text-white/70">
           {data.talk.description}
         </p>
       </div>
