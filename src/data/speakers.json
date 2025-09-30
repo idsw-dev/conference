@@ -118,19 +118,19 @@
       "https://www.linkedin.com/in/rendybjunior/",
       "https://x.com/rendybjunior"
     ],
-    "bio": "Passionate on how data and technology can deliver value to user and business. Currently VP of Data at Evermos. Delivered business values using data, machine learning, and insights, at Ruangguru. Ex-Traveloka since its early years, built batch/streaming data pipeline and data warehouse. High achiever, resilient, believe in craftmanship and growth mindset. Enjoy solving complex problems and growing talents in the team.",
+    "bio": "VP of Data at Evermos, passionate about delivering business value through data and technology. Previously delivered insights at Ruangguru and built data infrastructure at Traveloka.",
     "talk": null
   },
   {
     "name": "Ayu Purwarianti",
-    "title": "Researcher at Artificial Intelligence Center, Bandung Institute of Technology",
+    "title": "Associate Professor & AI Researcher at ITB",
     "isKeynoteSpeakers": true,
     "imageName": "ayu-purwarianti",
     "socialUrl": [
       "https://www.linkedin.com/in/ayu-purwarianti/",
       "https://x.com/AyuP_AI"
     ],
-    "bio": "Dr. Eng. Ayu Purwarianti is a distinguished academic and leader in the field of artificial intelligence, currently serving as the Researcher of the Artificial Intelligence Center at the Bandung Institute of Technology. She is also a lecturer in Electrical & Informatics Engineering at the same institution. Her academic journey includes earning a Doctorate in Engineering from the Doctoral Program in Information and Computer Science at Toyohashi University of Technology, Japan, which underscores her deep expertise in her field. Dr. Ayu's research is primarily focused on artificial intelligence, natural language processing, and machine learning, areas in which she has made significant contributions. She is a co-founder of Prosa.ai, a company that leverages AI technologies to advance natural language processing capabilities. Her work includes initiatives like NusaCrowd, an open-source project for Indonesian NLP resources, and IndoNLU, a benchmark for evaluating Indonesian natural language understanding. These projects highlight her commitment to advancing technology that supports the Indonesian language and culture.",
+    "bio": "Researcher at ITB's AI Center and lecturer in Electrical & Informatics Engineering. Doctorate from Toyohashi University of Technology. Co-founder of Prosa.ai, focused on AI, NLP, and machine learning. Leads NusaCrowd and IndoNLU for Indonesian language technology.",
     "talk": null
   },
   {
@@ -142,7 +142,7 @@
       "https://www.youtube.com/@sandhikagalihWPU",
       "https://x.com/sandhikagalih"
     ],
-    "bio": "The largest Indonesian Software Engineering YouTube Content Creator, Lecturer at Universitas Pasundan, Co-Founder of WPU Course & Google Developer Expert",
+    "bio": "Indonesia's largest Software Engineering YouTube Content Creator, Lecturer at Universitas Pasundan, and Co-Founder of WPU Course. Google Developer Expert in software engineering education.",
     "talk": null
   },
   {
@@ -154,7 +154,7 @@
       "https://www.linkedin.com/in/pahleviauliya/",
       "https://x.com/_fikri_auliya"
     ],
-    "bio": "Associate Vice President of Ruangguru, the largest ed-tech in Southeast Asia with 150+ engineers. Leading 5 teams in Ruangguru. Occasionally switch roles from a people servant, a project manager, and a technical architect.",
+    "bio": "Associate Vice President at Ruangguru, Southeast Asia's largest ed-tech company with 150+ engineers. Leads multiple teams while balancing roles as people manager, project manager, and technical architect.",
     "talk": null
   }
 ]
