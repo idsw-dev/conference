@@ -48,8 +48,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background:
-      radial-gradient(
+    background: radial-gradient(
         circle at 20% 50%,
         rgba(14, 165, 233, 0.1) 0%,
         transparent 50%
@@ -74,8 +73,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image:
-      linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1) 25%,
+        transparent 25%
+      ),
       linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
       linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%),
       linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%);
@@ -98,21 +100,90 @@
 
 @layer utilities {
   .gradient-blue-hero {
-    background:
-      url(/hero-mask-bg.png),
-      linear-gradient(
-        to bottom,
-        var(--color-dark) 30%,
-        var(--color-blue-1),
-        var(--color-blue-2),
-        var(--color-blue-3)
-      );
-    background-size:
-      cover,
-      100% 100%;
-    background-position: center, center;
-    background-repeat: no-repeat, no-repeat;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+      to bottom,
+      var(--color-dark) 30%,
+      var(--color-blue-1),
+      var(--color-blue-2),
+      var(--color-blue-3)
+    );
   }
+
+  .gradient-blue-hero::before,
+  .gradient-blue-hero::after {
+    --hero-accent-size: min(70vw, 582px);
+    content: "";
+    position: absolute;
+    top: 50%;
+    bottom: auto;
+    width: var(--hero-accent-size);
+    height: var(--hero-accent-size);
+    margin-top: calc(var(--hero-accent-size) / -2);
+    transform-origin: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    will-change: transform;
+    z-index: -1;
+  }
+
+  /* Left IDSW LOGO */
+  .gradient-blue-hero::before {
+    left: calc(var(--hero-accent-size) * -0.5);
+    background-image: url(/hero-mask-bg-item.png);
+    background-position-x: right;
+    animation: rotate-left 2s;
+  }
+
+  /* Right IDSW LOGO */
+  .gradient-blue-hero::after {
+    right: calc(var(--hero-accent-size) * -0.5);
+    background-image: url(/hero-mask-bg-item.png);
+    background-position-x: left;
+    animation: rotate-right 2s;
+  }
+
+  @keyframes rotate-left {
+    from {
+      transform: rotate(-200deg) scale(1);
+      opacity: 0;
+    }
+    to {
+      transform: rotate(0deg) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotate-right {
+    from {
+      transform: rotate(200deg) scale(1);
+      opacity: 0;
+    }
+    to {
+      transform: rotate(0deg) scale(1);
+      opacity: 1;
+    }
+  }
+
+  .hero-mask-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(8, 8, 20, 1) 0%,
+      rgba(8, 8, 20, 0) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .gradient-blue-hero > :not(.hero-mask-overlay) {
+    position: relative;
+    z-index: 1;
+  }
+
   /* Animation utilities */
   .animate-fade-up {
     animation: fadeUp 0.8s ease-out forwards;
