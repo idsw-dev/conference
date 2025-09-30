@@ -2,12 +2,14 @@
   {
     "name": "Renaldi Gondosubroto",
     "title": "Director at Cloudetica Solutions",
-    "role": "CFP Speakers",
+    "isKeynoteSpeakers": false,
     "imageName": "renaldi-gondosubroto",
     "socialUrl": [
       "https://x.com/Renaldig",
-      "https://www.renaldigondosubroto.com"
+      "https://www.renaldigondosubroto.com",
+      "https://www.linkedin.com/in/renaldi-gondosubroto"
     ],
+    "bio": "Renaldi Gondosubroto is the Director of Cloudetica Solutions, where he leads the building of both proprietary and open-source solutions on cloud platforms. He brings over a decade of software development experience and has been active within the research community; putting a lot of his research focus within IoT and virtual reality. Having spoken over 50 events and conferences, he has been an international speaker for the past six years, sharing his experiences and projects. He also currently is an AWS Subject Matter Expert (SME) for its Professional, Associate and Specialty Certifications and holds all 14 AWS certifications. He aims to build open-source solutions which can both help people achieve more value in what they do and promote best practices for fellow developers.",
     "talk": {
       "title": "Certified Answers for RAG: Cryptographic Receipts that Prove What Your AI Says",
       "description": "Stop hallucinations by default. This talk shows how to make every AI answer carry a verifiable receipt that proves which sources were used, what was quoted, and why it is trustworthy. We build a zero-trust RAG service that signs and checks proofs before responses reach users.",
@@ -17,12 +19,13 @@
   {
     "name": "Hilman Ramadhan",
     "title": "Founder & Developer at Sekolah Koding",
-    "role": "CFP Speakers",
+    "isKeynoteSpeakers": false,
     "imageName": "hilman-ramadhan",
     "socialUrl": [
       "https://www.linkedin.com/in/hilmanski",
       "https://hilman.space/"
     ],
+    "bio": "Hi! I'm a programmer that loves marketing. I'm currently working at SerpApi - SearchApi and teach at Skodev - place to learn programming in Indonesian language.",
     "talk": {
       "title": "Build, Share, Connect: Perlihatkan karyamu",
       "description": "Katanya lowongan kerja untuk programmer makin sempit karena AI makin canggih. Bagaimana kamu bisa standout dari programmer lain ketika angka loker semakin kecil?",
@@ -32,12 +35,14 @@
   {
     "name": "Evan Purnama",
     "title": "Co-Founder at Qiscus",
-    "role": "CFP Speakers",
+    "isKeynoteSpeakers": false,
     "imageName": "evan-purnama",
     "socialUrl": [
       "https://www.linkedin.com/in/evan-purnama-49266a62/",
-      "https://x.com/evanpurnama"
+      "https://x.com/evanpurnama",
+      "https://twitter.com/evanpurnama"
     ],
+    "bio": "Evan Purnama, born and grow up in Jogja. Went to Singapore and graduated in 3.5 years from NTU and worked at some IT companies in Singapore before decided to start his own startup tech company in early 2013, Qiscus. Evan then moved back to Indonesia (Jogja) in mid 2013 to open Engineering Team. He is also active in TechTalk (already held 100+ talks so far) and startup communities in Jogja and Semarang.",
     "talk": {
       "title": "Balancing AI Innovation & Profit: The CTO Playbook for Two-Speed Organizations",
       "description": "Drive tech org amid AI fast trend: as CTO, I built a pragmatic AI team. Research new trends, deliver AI tied to core products (e.g various AI Agent), and Advocate adoption AI. Result? strong double digit % revenue growth while staying profitable in this economy. Unlock the two-speed playbook!",
@@ -47,13 +52,15 @@
   {
     "name": "Zain Fathoni",
     "title": "Senior Software Engineer at BookThatApp",
-    "role": "CFP Speakers",
+    "isKeynoteSpeakers": false,
     "imageName": "zain-fathoni",
     "socialUrl": [
       "https://x.com/zainfathoni",
       "https://www.linkedin.com/in/zainfathoni/",
-      "https://www.zainfathoni.com/"
+      "https://www.zainfathoni.com/",
+      "https://zainfathoni.com/"
     ],
+    "bio": "Zain Fathoni is a software engineer and homeschooling parent of three. By day, he builds web applications. By night, he experiments with AI tools alongside his children—sometimes laughing at their mistakes, sometimes amazed by their insights. With a strong background in technology and hands-on parenting, Zain explores how families can leverage AI to enhance learning while preserving human connection. His mission is to empower parents to raise children who are resilient, curious, and ready to outthink the machines.",
     "talk": {
       "title": "Raising Children Who Outthink the Machines",
       "description": "Are you worried machines 🤖 might take your kids' jobs? Do you fear AI could bring a dystopia 💣 instead of a utopia ✨? Do you struggle to protect your children's attention from gadgets 📱—and their minds 🧠 from AI? Let's turn fear into optimism ✨ and raise kids who outthink the machines 💪.",
@@ -63,9 +70,10 @@
   {
     "name": "Yohan Totting",
     "title": "Head of Engineering (AI) at SIRCLO",
-    "role": "CFP Speakers",
+    "isKeynoteSpeakers": false,
     "imageName": "yohan-totting",
     "socialUrl": ["https://x.com/tyohan", "https://www.linkedin.com/in/tyohan"],
+    "bio": "Head of Engineering (AI) of Sirclo, an Indonesia e-commerce enabler, founder and creator of Inlive, a video conferencing platform. Currently learning on how to build and control an AI agents. In the missions to make AI coding agent can more accessible for Indonesia developers. Enjoying running around BSD, but sometimes doing trail runs at Sentul, or gravel ride around Rumpin.",
     "talk": {
       "title": "Under the Hood: Building AI Coding Assistants, Understand the Mechanics to Unleash Their Power",
       "description": "Understand the mechanics of coding assistant will help us maximize their power. This talk will cover what you need to know if you want to build your own, from fundamental knowledge of LLM, context engineering, and how to give right tools to improve the performance and accuracy of coding assistant.",
@@ -75,9 +83,10 @@
   {
     "name": "Iskandar Soesman",
     "title": "Co-Founder of Awanio",
-    "role": "CFP Speakers",
+    "isKeynoteSpeakers": false,
     "imageName": "iskandar-soesman",
     "socialUrl": ["https://www.linkedin.com/in/ikandars", "https://awan.io/"],
+    "bio": "Write code since 2008. Maintainer of Panada, and open source PHP framework 2009 - 2015. Co-founder of Awanio, A Cloud Enabler Platform to simplify resources management",
     "talk": {
       "title": "Building Production-Ready Infrastructure Tools 10x Faster with AI Agents: The Vapor Story",
       "description": "Discover how AI agents helped build Vapor, an open source comprehensive platfrom for managing modern Linux stacks, in just months instead of years. Learn practical strategies for leveraging AI to accelerate complex software development while maintaining enterprise-grade quality.",
@@ -87,13 +96,65 @@
   {
     "name": "Rully Saputra",
     "title": "Software Engineer II at Tiket",
-    "role": "CFP Speakers",
+    "isKeynoteSpeakers": false,
     "imageName": "rully-saputra",
-    "socialUrl": ["https://www.linkedin.com/in/rully-saputra-7554a7138"],
+    "socialUrl": [
+      "https://www.linkedin.com/in/rully-saputra-7554a7138",
+      "https://medium.com/@rully.saputra4"
+    ],
+    "bio": "Specializing in software engineering with over 5 years of hands-on experience. In addition to my expertise in web development, I also have experience in creating Hybrid mobile apps. Fuelled by my deep passion for programming and system design, I am driven to create large-scale systems that leave a lasting impact. My ultimate ambition is to develop applications on par with the likes of Instagram, YouTube, TikTok, and other prominent platforms. Given the rapid pace of the IT industry, I remain agile and stay hungry for new technologies and opportunities. I am always seeking to expand my knowledge base and stay at the forefront of emerging trends. My dedication to continuous learning ensures that I deliver precise solutions and remain adaptable in this ever-evolving field.",
     "talk": {
       "title": "Smart Monitoring System for Core Web Vitals using n8n",
       "description": "Maximize website performance with n8n automation! This process fetches Lighthouse reports, audits Core Web Vitals, sends real-time notifications to your team, and logs concise insights to Google Sheets—perfect for devs, SEOs, and product teams who need speed, clarity, and continuous monitoring.",
       "topics": ["Productivity"]
     }
+  },
+  {
+    "name": "Rendy B. Junior",
+    "title": "VP of Data at Evermos",
+    "isKeynoteSpeakers": true,
+    "imageName": "rendy-b-junior",
+    "socialUrl": [
+      "https://www.linkedin.com/in/rendybjunior/",
+      "https://x.com/rendybjunior"
+    ],
+    "bio": "Passionate on how data and technology can deliver value to user and business. Currently VP of Data at Evermos. Delivered business values using data, machine learning, and insights, at Ruangguru. Ex-Traveloka since its early years, built batch/streaming data pipeline and data warehouse. High achiever, resilient, believe in craftmanship and growth mindset. Enjoy solving complex problems and growing talents in the team.",
+    "talk": null
+  },
+  {
+    "name": "Ayu Purwarianti",
+    "title": "Researcher at Artificial Intelligence Center, Bandung Institute of Technology",
+    "isKeynoteSpeakers": true,
+    "imageName": "ayu-purwarianti",
+    "socialUrl": [
+      "https://www.linkedin.com/in/ayu-purwarianti/",
+      "https://x.com/AyuP_AI"
+    ],
+    "bio": "Dr. Eng. Ayu Purwarianti is a distinguished academic and leader in the field of artificial intelligence, currently serving as the Researcher of the Artificial Intelligence Center at the Bandung Institute of Technology. She is also a lecturer in Electrical & Informatics Engineering at the same institution. Her academic journey includes earning a Doctorate in Engineering from the Doctoral Program in Information and Computer Science at Toyohashi University of Technology, Japan, which underscores her deep expertise in her field. Dr. Ayu's research is primarily focused on artificial intelligence, natural language processing, and machine learning, areas in which she has made significant contributions. She is a co-founder of Prosa.ai, a company that leverages AI technologies to advance natural language processing capabilities. Her work includes initiatives like NusaCrowd, an open-source project for Indonesian NLP resources, and IndoNLU, a benchmark for evaluating Indonesian natural language understanding. These projects highlight her commitment to advancing technology that supports the Indonesian language and culture.",
+    "talk": null
+  },
+  {
+    "name": "Sandhika Galih",
+    "title": "Content Creator & Lecturer at Universitas Pasundan",
+    "isKeynoteSpeakers": true,
+    "imageName": "sandhika-galih",
+    "socialUrl": [
+      "https://www.youtube.com/@sandhikagalihWPU",
+      "https://x.com/sandhikagalih"
+    ],
+    "bio": "The largest Indonesian Software Engineering YouTube Content Creator, Lecturer at Universitas Pasundan, Co-Founder of WPU Course & Google Developer Expert",
+    "talk": null
+  },
+  {
+    "name": "Pahlevi Fikri Auliya",
+    "title": "Associate Vice President at Ruangguru",
+    "isKeynoteSpeakers": true,
+    "imageName": "pahlevi-fikri-auliya",
+    "socialUrl": [
+      "https://www.linkedin.com/in/pahleviauliya/",
+      "https://x.com/_fikri_auliya"
+    ],
+    "bio": "Associate Vice President of Ruangguru, the largest ed-tech in Southeast Asia with 150+ engineers. Leading 5 teams in Ruangguru. Occasionally switch roles from a people servant, a project manager, and a technical architect.",
+    "talk": null
   }
 ]

@@ -6,6 +6,7 @@ import type { SocialMedia } from "../@types/social-media";
 import type { Speaker } from "../@types/speakers";
 import Accordion from "../components/Accordion";
 import CardSpeaker from "../components/CardSpeaker.astro";
+import CFPSpeaker from "../components/CFPSpeaker.astro";
 import Timer from "../components/Timer";
 import { BlurFade } from "../components/ui/blur-fade";
 import { NumberTicker } from "../components/ui/number-ticker";
@@ -18,6 +19,11 @@ const socialMediasJson = import.meta.glob("../data/social-media.json", { eager: 
 const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as any).default)[0];
 const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
 const socialMedias: SocialMedia[] = Object.values(socialMediasJson).map((item) => (item as any).default)[0];
+
+// Filter CFP speakers (keynote speakers)
+const cfpSpeakers = speakersData.filter((speaker) => speaker.isKeynoteSpeakers);
+// Filter regular speakers
+const regularSpeakers = speakersData.filter((speaker) => !speaker.isKeynoteSpeakers);
 ---
 
 <Layout>
@@ -87,6 +93,33 @@ const socialMedias: SocialMedia[] = Object.values(socialMediasJson).map((item) =
     </div>
   </section>
 
+  <!-- CFP Speakers Section -->
+  {
+    cfpSpeakers.length > 0 && (
+      <section id="keynote-speakers" class="relative z-10 bg-[#080814] bg-gradient-to-b py-12 text-white">
+        <div class="container mx-auto px-12">
+          <div class="mx-auto text-center">
+            <BlurFade delay={0.2} client:load>
+              <div class="section-header mb-8">
+                <h2 class="mb-2 text-2xl font-bold md:text-3xl">Keynote Speakers</h2>
+                <span class="text-xl">Distinguished speakers and industry leaders</span>
+              </div>
+            </BlurFade>
+            <div class="section-content">
+              <div class="grid grid-cols-1 gap-6 text-left lg:grid-cols-2 lg:gap-8">
+                {cfpSpeakers.map((speaker, index) => (
+                  <BlurFade delay={0.4 + index * 0.1} client:load>
+                    <CFPSpeaker data={speaker} />
+                  </BlurFade>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   <!-- Speakers Section -->
   <section id="speakers" class="relative z-10 bg-[#080814] bg-gradient-to-b py-12 text-white">
     <div class="container mx-auto px-12">
@@ -100,7 +133,7 @@ const socialMedias: SocialMedia[] = Object.values(socialMediasJson).map((item) =
         <div class="section-content">
           <div class="grid grid-cols-1 gap-6 text-left lg:grid-cols-2 lg:gap-8">
             {
-              speakersData.map((speaker, index) => (
+              regularSpeakers.map((speaker, index) => (
                 <BlurFade delay={0.4 + index * 0.1} client:load>
                   <CardSpeaker data={speaker} />
                 </BlurFade>
