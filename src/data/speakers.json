@@ -110,6 +110,19 @@
     }
   },
   {
+    "name": "Guntur A. Fauzi",
+    "title": "Solutions Architect at Philip Morris International",
+    "isKeynoteSpeakers": false,
+    "imageName": "guntur-a-fauzi",
+    "socialUrl": ["https://www.linkedin.com/in/gunturaf/"],
+    "bio": "Guntur Akhmad Fauzi is a Solution Architect based in Jakarta, with a strong track record of driving enterprise-scale digital transformation initiatives. At a leading global FMCG company, Guntur plays a key role in designing and scaling AI-powered solutions that align with business strategy, regulatory compliance, and operational excellence. With a background in systems architecture and cross-functional collaboration, Guntur has contributed to initiatives involving AI governance, data protection, and responsible innovation. His work bridges the gap between technical feasibility and business impact—ensuring that emerging technologies are deployed safely, legally, and with reputational integrity. Guntur is passionate about building pragmatic frameworks that empower teams to innovate confidently while navigating complex enterprise environments. He frequently collaborates with product, compliance, and engineering teams to translate strategic goals into scalable, secure solutions.",
+    "talk": {
+      "title": "Balancing Speed and Safety: AI Governance at Scale in Global FMCG",
+      "description": "In a global FMCG, AI governance enables safe, scalable innovation. Structured paths ensure legal and reputational integrity; Fast-Track options offer agility. Together, they empower teams to innovate responsibly while seizing market momentum.",
+      "topics": ["Leadership"]
+    }
+  },
+  {
     "name": "Rendy B. Junior",
     "title": "VP of Data at Evermos",
     "isKeynoteSpeakers": true,
