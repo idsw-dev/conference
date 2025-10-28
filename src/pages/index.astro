@@ -4,8 +4,10 @@ import { ExternalLink, Mail } from "lucide-react";
 import type { Faq } from "../@types/faq";
 import type { SocialMedia } from "../@types/social-media";
 import type { Speaker } from "../@types/speakers";
+import type { Sponsor } from "../@types/sponsors";
 import Accordion from "../components/Accordion";
 import CardSpeaker from "../components/CardSpeaker.astro";
+import CardSponsor from "../components/CardSponsor.astro";
 import CFPSpeaker from "../components/CFPSpeaker.astro";
 import Timer from "../components/Timer";
 import { BlurFade } from "../components/ui/blur-fade";
@@ -14,9 +16,11 @@ import Layout from "../layout.astro";
 
 const faq = import.meta.glob("../data/faq.json", { eager: true });
 const speakers = import.meta.glob("../data/speakers.json", { eager: true });
+const sponsors = import.meta.glob("../data/sponsors.json", { eager: true });
 const socialMediasJson = import.meta.glob("../data/social-media.json", { eager: true });
 
 const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as any).default)[0];
+const sponsorsData: Sponsor[] = Object.values(sponsors).map((item) => (item as any).default)[0];
 const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
 const socialMedias: SocialMedia[] = Object.values(socialMediasJson).map((item) => (item as any).default)[0];
 
@@ -144,6 +148,31 @@ const regularSpeakers = speakersData.filter((speaker) => !speaker.isKeynoteSpeak
             <BlurFade delay={0.8} client:load>
               <p class="text-lg text-gray-300">More speakers to be announced soon!</p>
             </BlurFade>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors Section -->
+  <section id="sponsors" class="relative z-10 bg-[#080814] bg-gradient-to-b py-12 text-white">
+    <div class="container mx-auto px-12">
+      <div class="mx-auto text-center">
+        <BlurFade delay={0.2} client:load>
+          <div class="section-header mb-8">
+            <h2 class="mb-2 text-2xl font-bold md:text-3xl">Supported by</h2>
+            <span class="text-xl">Our valued partners making this event possible</span>
+          </div>
+        </BlurFade>
+        <div class="section-content">
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:gap-8">
+            {
+              sponsorsData.map((sponsor, index) => (
+                <BlurFade delay={0.4 + index * 0.1} client:load>
+                  <CardSponsor data={sponsor} />
+                </BlurFade>
+              ))
+            }
           </div>
         </div>
       </div>

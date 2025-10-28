@@ -1,12 +1,17 @@
 [
   {
-    "name": "Apache Flink",
-    "logo": "flink",
-    "url": "https://flink.apache.org/"
+    "name": "SerpApi",
+    "logo": "serpapi",
+    "url": "https://serpapi.com/"
+  },
+  {
+    "name": "True Watch",
+    "logo": "truewatch",
+    "url": "https://www.truewatch.com/"
   },
   {
     "name": "Qiscus",
     "logo": "qiscus",
-    "url": "https://qiscus.com/"
+    "url": "https://www.qiscus.com/"
   }
 ]
