@@ -13,8 +13,8 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^4.3.1",
+    "@astrojs/check": "^0.9.5",
+    "@astrojs/react": "^4.4.1",
     "@fontsource-variable/inter": "^5.0.20",
     "@fontsource/inter": "^5.0.20",
     "@fontsource/twinkle-star": "^5.1.0",
@@ -22,7 +22,7 @@
     "@tailwindcss/vite": "^4.1.14",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.7",
-    "astro": "^5.13.8",
+    "astro": "^5.15.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.540.0",

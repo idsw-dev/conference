@@ -22,13 +22,9 @@ if (!image) {
   target="_blank"
   rel="noopener noreferrer"
   class="group flex h-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-[#04060F] bg-gradient-to-br from-[#04060F]/95 via-[#070C1A]/95 to-[#0A1230]/90 p-8 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:shadow-lg hover:shadow-blue-500/10 hover:scale-105"
-  title={data.name}
->
-  <div class="flex h-24 w-full items-center justify-center opacity-70 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105">
-    <Image
-      src={image.default}
-      alt={data.name}
-      class="h-full w-full object-contain"
-    />
+  title={data.name}>
+  <div
+    class="flex h-24 w-full items-center justify-center opacity-70 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105">
+    <Image src={image.default} alt={data.name} class="h-full w-full object-contain" />
   </div>
 </a>
