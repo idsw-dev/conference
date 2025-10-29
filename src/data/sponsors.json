@@ -2,16 +2,19 @@
   {
     "name": "SerpApi",
     "logo": "serpapi",
-    "url": "https://serpapi.com/"
+    "url": "https://serpapi.com/",
+    "tier": "title"
   },
   {
     "name": "True Watch",
     "logo": "truewatch",
-    "url": "https://www.truewatch.com/"
+    "url": "https://www.truewatch.com/",
+    "tier": "gold"
   },
   {
     "name": "Qiscus",
     "logo": "qiscus",
-    "url": "https://www.qiscus.com/"
+    "url": "https://www.qiscus.com/",
+    "tier": "silver"
   }
 ]

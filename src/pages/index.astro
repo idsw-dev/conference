@@ -155,7 +155,7 @@ const regularSpeakers = speakersData.filter((speaker) => !speaker.isKeynoteSpeak
   </section>
 
   <!-- Sponsors Section -->
-  <section id="sponsors" class="relative z-10 bg-[#080814] bg-gradient-to-b py-12 text-white">
+  <section id="sponsors" class="relative z-10 bg-[#080814] bg-gradient-to-b py-20 text-white">
     <div class="container mx-auto px-12">
       <div class="mx-auto text-center">
         <BlurFade delay={0.2} client:load>
@@ -164,16 +164,34 @@ const regularSpeakers = speakersData.filter((speaker) => !speaker.isKeynoteSpeak
             <span class="text-xl">Our valued partners making this event possible</span>
           </div>
         </BlurFade>
-        <div class="section-content">
-          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:gap-8">
-            {
-              sponsorsData.map((sponsor, index) => (
-                <BlurFade delay={0.4 + index * 0.1} client:load>
-                  <CardSponsor data={sponsor} />
-                </BlurFade>
-              ))
-            }
-          </div>
+        <div class="section-content mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
+          {
+            (() => {
+              const titleSponsor = sponsorsData.find((s) => s.tier === "title");
+              const goldSponsor = sponsorsData.find((s) => s.tier === "gold");
+              const silverSponsor = sponsorsData.find((s) => s.tier === "silver");
+
+              return (
+                <>
+                  {titleSponsor && (
+                    <BlurFade delay={0.4} client:load className="col-span-1 md:col-span-2">
+                      <CardSponsor data={titleSponsor} />
+                    </BlurFade>
+                  )}
+                  {goldSponsor && (
+                    <BlurFade delay={0.5} client:load>
+                      <CardSponsor data={goldSponsor} />
+                    </BlurFade>
+                  )}
+                  {silverSponsor && (
+                    <BlurFade delay={0.6} client:load>
+                      <CardSponsor data={silverSponsor} />
+                    </BlurFade>
+                  )}
+                </>
+              );
+            })()
+          }
         </div>
       </div>
     </div>

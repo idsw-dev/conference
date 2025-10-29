@@ -15,16 +15,74 @@ const image = Object.values(images).find((img) => img.default.src.includes(data.
 if (!image) {
   throw new Error(`"${data.logo}" does not exist in glob: "src/data/images/sponsors/*.{png,jpg,jpeg,svg,webp}"`);
 }
+
+const tierConfig = {
+  title: {
+    label: "Title Sponsor",
+    height: "h-28",
+    padding: "p-8",
+    badgeSize: "px-4 py-1.5 text-sm",
+    badgeColor: "bg-gradient-to-r from-blue-700 to-blue-600",
+    borderColor: "border-blue-500/70",
+    borderWidth: "border-2",
+    shadowColor: "hover:shadow-blue-500/50 hover:shadow-2xl",
+    bgOpacity: "from-[#04060F] via-[#0A1845]/90 to-[#0D2055]/80",
+  },
+  gold: {
+    label: "Gold Sponsor",
+    height: "h-16",
+    padding: "p-5",
+    badgeSize: "px-2.5 py-0.5 text-[10px]",
+    badgeColor: "bg-gradient-to-r from-amber-500 to-yellow-500",
+    borderColor: "border-amber-400/40",
+    borderWidth: "border",
+    shadowColor: "hover:shadow-amber-400/30",
+    bgOpacity: "from-[#04060F]/95 via-[#070C1A]/95 to-[#0A1230]/90",
+  },
+  silver: {
+    label: "Silver Sponsor",
+    height: "h-14",
+    padding: "p-4",
+    badgeSize: "px-2.5 py-0.5 text-[10px]",
+    badgeColor: "bg-gradient-to-r from-slate-500 to-slate-400",
+    borderColor: "border-slate-300/25",
+    borderWidth: "border",
+    shadowColor: "hover:shadow-slate-300/15",
+    bgOpacity: "from-[#04060F]/95 via-[#070C1A]/95 to-[#0A1230]/90",
+  },
+};
+
+const config = tierConfig[data.tier];
 ---
 
 <a
   href={data.url}
   target="_blank"
   rel="noopener noreferrer"
-  class="group flex h-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-[#04060F] bg-gradient-to-br from-[#04060F]/95 via-[#070C1A]/95 to-[#0A1230]/90 p-8 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:shadow-lg hover:shadow-blue-500/10 hover:scale-105"
+  class:list={[
+    "group flex h-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-[#04060F] bg-gradient-to-br backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:shadow-xl hover:scale-105",
+    config.padding,
+    config.borderColor,
+    config.borderWidth,
+    config.shadowColor,
+    config.bgOpacity,
+  ]}
   title={data.name}>
+  <div class="mb-3">
+    <span
+      class:list={[
+        "inline-flex items-center rounded-full font-bold uppercase tracking-wider text-white shadow-lg",
+        config.badgeColor,
+        config.badgeSize,
+      ]}>
+      {config.label}
+    </span>
+  </div>
   <div
-    class="flex h-24 w-full items-center justify-center opacity-70 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105">
-    <Image src={image.default} alt={data.name} class="h-full w-full object-contain" />
+    class:list={[
+      "flex w-full items-center justify-center opacity-80 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110",
+      config.height,
+    ]}>
+    <Image src={image.default} alt={data.name} class="h-full w-full object-contain drop-shadow-lg" />
   </div>
 </a>
