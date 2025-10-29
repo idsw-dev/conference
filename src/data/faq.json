@@ -22,5 +22,9 @@
   {
     "question": "Why do I need to provide my ID number, date of birth, and phone number when getting a ticket?",
     "answer": "Our ticketing partner loket.com requires each participant to submit those details during registration. The data is stored on their platform only; the organizing team does not receive, or retain your personal information. Please be advised that this is a common procedure by major ticketing platform to combat illegal ticket broker."
+  },
+  {
+    "question": "There's a price change during the regular ticket sale, I purchased a ticket at the old price. Can I get a refund?",
+    "answer": "Yes, if you purchased a ticket at a higher price during the regular ticket sale and the price decreased later, you are eligible for a refund of the difference. Please go to the event with your ticket confirmation to process the refund."
   }
 ]
