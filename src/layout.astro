@@ -1,7 +1,7 @@
 ---
 import "@fontsource-variable/inter";
-import "./styles.css";
 import Header from "./components/Header";
+import "./styles.css";
 
 const title = "IDSW 2025";
 const description =
@@ -9,32 +9,41 @@ const description =
 const keywords =
   "Indonesia Software Developer Conference, IDSW, software development, conference, Jakarta, 2025, developers, networking, technology";
 
-const isPublic = true;
+const origin = Astro.url.origin;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    {isPublic && <meta name="robots" content="index, follow" />}
-    <meta name="generator" content={Astro.generator} />
+
+    <!-- Only render if public -->
+    <meta name="robots" content="index, follow" />
+
+    <meta name="generator" content="Astro" />
     <link rel="icon" href="/favicon.ico" />
-    <meta property="og:image" content="/og.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="/og.jpg" />
+
+    <!-- Primary SEO -->
+    <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <meta name="author" content="IDSW Organizers" />
+
+    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://www.idsw.dev" />
+    <meta property="og:image" content={`${origin}/og.jpg`} />
+    <meta property="og:url" content={origin} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="IDSW" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-
-    <title>{title}</title>
+    <meta name="twitter:image" content={`${origin}/og.jpg`} />
+    <meta name="twitter:site" content="@idswdev" />
   </head>
+
   <body>
     <main class="font-sans">
       <Header client:load />
