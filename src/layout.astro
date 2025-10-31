@@ -10,6 +10,7 @@ const keywords =
   "Indonesia Software Developer Conference, IDSW, software development, conference, Jakarta, 2025, developers, networking, technology";
 
 const isPublic = true;
+const ogImageUrl = new URL("/og.jpg", Astro.site).href;
 ---
 
 <html lang="en">
@@ -19,15 +20,15 @@ const isPublic = true;
     {isPublic && <meta name="robots" content="index, follow" />}
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" href="/favicon.ico" />
-    <meta property="og:image" content="/og.jpg" />
+    <meta property="og:image" content={ogImageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="/og.jpg" />
+    <meta name="twitter:image" content={ogImageUrl} />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="IDSW Organizers" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://www.idsw.dev" />
+    <meta property="og:url" content={Astro.site?.href} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="IDSW" />
     <meta name="twitter:title" content={title} />
