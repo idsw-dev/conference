@@ -1,7 +1,7 @@
 ---
 import "@fontsource-variable/inter";
-import Header from "./components/Header";
 import "./styles.css";
+import Header from "./components/Header";
 
 const title = "IDSW 2025";
 const description =
@@ -9,41 +9,32 @@ const description =
 const keywords =
   "Indonesia Software Developer Conference, IDSW, software development, conference, Jakarta, 2025, developers, networking, technology";
 
-const origin = Astro.url.origin;
+const isPublic = true;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-
-    <!-- Only render if public -->
-    <meta name="robots" content="index, follow" />
-
-    <meta name="generator" content="Astro" />
+    {isPublic && <meta name="robots" content="index, follow" />}
+    <meta name="generator" content={Astro.generator} />
     <link rel="icon" href="/favicon.ico" />
-
-    <!-- Primary SEO -->
-    <title>{title}</title>
+    <meta property="og:image" content="/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/og.jpg" />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-
-    <!-- Open Graph -->
+    <meta name="author" content="IDSW Organizers" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${origin}/og.jpg`} />
-    <meta property="og:url" content={origin} />
+    <meta property="og:url" content="https://www.idsw.dev" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="IDSW" />
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${origin}/og.jpg`} />
-    <meta name="twitter:site" content="@idswdev" />
-  </head>
 
+    <title>{title}</title>
+  </head>
   <body>
     <main class="font-sans">
       <Header client:load />
