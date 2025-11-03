@@ -156,37 +156,49 @@ const regularSpeakers = speakersData.filter((speaker) => !speaker.isKeynoteSpeak
 
   <!-- Sponsors Section -->
   <section id="sponsors" class="relative z-10 bg-[#080814] bg-gradient-to-b py-20 text-white">
-    <div class="container mx-auto px-12">
-      <div class="mx-auto text-center">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-12">
+      <div class="mx-auto max-w-6xl text-center">
         <BlurFade delay={0.2} client:load>
-          <div class="section-header mb-8">
+          <div class="section-header mb-12">
             <h2 class="mb-2 text-2xl font-bold md:text-3xl">Supported by</h2>
             <span class="text-xl">Our valued partners making this event possible</span>
           </div>
         </BlurFade>
-        <div class="section-content mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
+        <div class="section-content space-y-8">
           {
             (() => {
-              const titleSponsor = sponsorsData.find((s) => s.tier === "title");
-              const goldSponsor = sponsorsData.find((s) => s.tier === "gold");
-              const silverSponsor = sponsorsData.find((s) => s.tier === "silver");
+              const titleSponsors = sponsorsData.filter((s) => s.tier === "title");
+              const goldSponsors = sponsorsData.filter((s) => s.tier === "gold");
+              const silverSponsors = sponsorsData.filter((s) => s.tier === "silver");
 
               return (
                 <>
-                  {titleSponsor && (
-                    <BlurFade delay={0.4} client:load className="col-span-1 md:col-span-2">
-                      <CardSponsor data={titleSponsor} />
-                    </BlurFade>
+                  {titleSponsors.length > 0 && (
+                    <div class="mx-auto max-w-3xl">
+                      {titleSponsors.map((sponsor, index) => (
+                        <BlurFade delay={0.4 + index * 0.1} client:load>
+                          <CardSponsor data={sponsor} />
+                        </BlurFade>
+                      ))}
+                    </div>
                   )}
-                  {goldSponsor && (
-                    <BlurFade delay={0.5} client:load>
-                      <CardSponsor data={goldSponsor} />
-                    </BlurFade>
+                  {goldSponsors.length > 0 && (
+                    <div class="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
+                      {goldSponsors.map((sponsor, index) => (
+                        <BlurFade delay={0.5 + index * 0.1} client:load>
+                          <CardSponsor data={sponsor} />
+                        </BlurFade>
+                      ))}
+                    </div>
                   )}
-                  {silverSponsor && (
-                    <BlurFade delay={0.6} client:load>
-                      <CardSponsor data={silverSponsor} />
-                    </BlurFade>
+                  {silverSponsors.length > 0 && (
+                    <div class={`mx-auto ${silverSponsors.length === 1 ? 'max-w-md' : 'grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'}`}>
+                      {silverSponsors.map((sponsor, index) => (
+                        <BlurFade delay={0.6 + index * 0.1} client:load>
+                          <CardSponsor data={sponsor} />
+                        </BlurFade>
+                      ))}
+                    </div>
                   )}
                 </>
               );
