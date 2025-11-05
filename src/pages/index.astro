@@ -192,7 +192,8 @@ const regularSpeakers = speakersData.filter((speaker) => !speaker.isKeynoteSpeak
                     </div>
                   )}
                   {silverSponsors.length > 0 && (
-                    <div class={`mx-auto ${silverSponsors.length === 1 ? 'max-w-md' : 'grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'}`}>
+                    <div
+                      class={`mx-auto ${silverSponsors.length === 1 ? "max-w-md" : "grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"}`}>
                       {silverSponsors.map((sponsor, index) => (
                         <BlurFade delay={0.6 + index * 0.1} client:load>
                           <CardSponsor data={sponsor} />
