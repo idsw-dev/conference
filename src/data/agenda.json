@@ -1,157 +1,211 @@
 [
   {
     "day": "First Day",
+    "date": "Nov 22",
     "active": true,
     "agendas": [
       {
-        "time_start": "08:30",
-        "time_end": "09:45",
+        "time_start": "09:00",
+        "time_end": null,
         "title": "Gate open (registration)",
-        "speakers": null
+        "speakers": null,
+        "type": "others"
       },
       {
-        "time_start": "09:45",
-        "time_end": "10:10",
+        "time_start": "10:00",
+        "time_end": "10:05",
         "title": "Opening",
-        "speakers": ["IDSW Committee Lead", "Platinum Sponsor Session"]
+        "speakers": null,
+        "type": "others"
       },
       {
         "time_start": "10:10",
-        "time_end": "11:15",
-        "title": "Product Engineers 101",
-        "speakers": ["Listiarso Wastuargo"]
+        "time_end": "10:30",
+        "title": "Our sponsors: SerpApi",
+        "speakers": null,
+        "type": "sponsors"
       },
       {
-        "time_start": "11:15",
-        "time_end": "11:50",
-        "title": "Scaling Video Conferencing: From Prototype to Unlimited Participants",
-        "speakers": ["Yohan Totting"]
+        "time_start": "10:35",
+        "time_end": "11:20",
+        "title": "Keynote by Pahlevi Fikri Auliya",
+        "speakers": ["Pahlevi Fikri Auliya"],
+        "type": "keynote"
       },
       {
-        "time_start": "11:50",
-        "time_end": "12:25",
-        "title": "High Grade Security: Embedding Zero Trust Inside Your Application",
-        "speakers": ["Fandi Gunawan"]
+        "time_start": "11:25",
+        "time_end": "11:55",
+        "title": "Under the Hood: Building AI Coding Assistants, Understand the Mechanics to Unleash Their Power",
+        "speakers": ["Yohan Totting"],
+        "type": "talks"
       },
       {
-        "time_start": "12:25",
-        "time_end": "13:25",
+        "time_start": "12:00",
+        "time_end": "12:30",
+        "title": "Balancing AI Innovation & Profit: The CTO Playbook for Two-Speed Organizations",
+        "speakers": ["Evan Purnama"],
+        "type": "talks"
+      },
+      {
+        "time_start": "12:30",
+        "time_end": "13:40",
         "title": "Lunch Break",
-        "speakers": null
+        "speakers": null,
+        "type": "break"
       },
       {
-        "time_start": "13:25",
-        "time_end": "14:30",
-        "title": "Panel Discussion - The goods and bads of remote working",
-        "speakers": ["Giovanni Sakti", "Taufiq Septryana", "Didik Wicaksono"]
+        "time_start": "13:40",
+        "time_end": "14:10",
+        "title": "Build, Share, Connect: Perlihatkan karyamu",
+        "speakers": ["Hilman Ramadhan"],
+        "type": "talks"
       },
       {
-        "time_start": "14:30",
-        "time_end": "15:05",
-        "title": "Menjadi Solopreneur: Best Practice == Bullsh*t?",
-        "speakers": ["M. Gilang Januar"]
+        "time_start": "14:15",
+        "time_end": "14:45",
+        "title": "Certified Answers for RAG: Cryptographic Receipts that Prove What Your AI Says",
+        "speakers": ["Renaldi Gondosubroto"],
+        "type": "talks"
       },
       {
-        "time_start": "15:05",
-        "time_end": "15:45",
+        "time_start": "14:45",
+        "time_end": "15:15",
         "title": "Coffee Break",
-        "speakers": null
+        "speakers": null,
+        "type": "break"
       },
       {
-        "time_start": "15:45",
-        "time_end": "16:50",
-        "title": "Panel Discussion - Berbagi Perspektif dalam Pengamanan Data bagi Product Engineer",
-        "speakers": ["Teguh Aprianto", "TinTin"]
+        "time_start": "15:15",
+        "time_end": "15:45",
+        "title": "Discussion Panel with Bagas & Gogo",
+        "speakers": ["Bagas Naufal Insani"],
+        "type": "talks"
       },
       {
-        "time_start": "16:50",
+        "time_start": "15:50",
+        "time_end": "16:10",
+        "title": "Our sponsors: TrueWatch",
+        "speakers": null,
+        "type": "sponsors"
+      },
+      {
+        "time_start": "16:15",
+        "time_end": "17:00",
+        "title": "Keynote by Sandhika Galih",
+        "speakers": ["Sandhika Galih"],
+        "type": "keynote"
+      },
+      {
+        "time_start": "17:00",
         "time_end": null,
-        "title": "Closing & Breakout Session",
-        "speakers": ["IDSW Committee Lead"]
+        "title": "Closing Remark",
+        "speakers": null,
+        "type": "others"
       }
     ]
   },
   {
     "day": "Second Day",
+    "date": "Nov 23",
     "active": false,
     "agendas": [
       {
-        "time_start": "09:00",
-        "time_end": "09:30",
-        "title": "Gate open (registration)",
-        "speakers": null
-      },
-      {
         "time_start": "09:30",
-        "time_end": "09:45",
-        "title": "Opening",
-        "speakers": ["IDSW Committee Lead"]
-      },
-      {
-        "time_start": "09:45",
-        "time_end": "10:40",
-        "title": "From Hype to Reality: How We Build LLM Products That Users Love",
-        "speakers": ["Ibrahim Arief"]
-      },
-      {
-        "time_start": "10:40",
-        "time_end": "11:10",
-        "title": "Why browser monoculture isn't good for web innovation",
-        "speakers": ["Rizki Kelimutu"]
-      },
-      {
-        "time_start": "11:10",
-        "time_end": "11:40",
-        "title": "Modular Monolith: Balancing Simplicity, Flexibility, and Scalability",
-        "speakers": ["Kemal Elmizan"]
-      },
-      {
-        "time_start": "11:40",
-        "time_end": "12:40",
-        "title": "Lunch Break",
-        "speakers": null
-      },
-      {
-        "time_start": "12:40",
-        "time_end": "13:35",
-        "title": "Programmer++: Business Fundamentals and Commercial Awareness for Techies",
-        "speakers": ["Theresia Tanzil"]
-      },
-      {
-        "time_start": "13:35",
-        "time_end": "14:05",
-        "title": "Prioritize and Pay Technical Debt at Scale",
-        "speakers": ["Rama Rahmanda"]
-      },
-      {
-        "time_start": "14:05",
-        "time_end": "14:35",
-        "title": "Doing More with Less, a Tale of Systematically Scaling Up Developer Productivity",
-        "speakers": ["Adityo Pratomo", "Joshua Bezaleel Abednego"]
-      },
-      {
-        "time_start": "14:35",
-        "time_end": "15:05",
-        "title": "MLOps and LLMOps with MLflow",
-        "speakers": ["Arief Rahmansyah"]
-      },
-      {
-        "time_start": "15:05",
-        "time_end": "16:00",
-        "title": "Coffee Break",
-        "speakers": null
-      },
-      {
-        "time_start": "16:00",
-        "time_end": "17:00",
-        "title": "Infrastructure Cost: Afraid Not",
-        "speakers": ["Imre Nagi"]
-      },
-      {
-        "time_start": "17:00",
         "time_end": null,
-        "title": "Closing & Breakout Session",
-        "speakers": ["IDSW Committee Lead"]
+        "title": "Gate open (registration)",
+        "speakers": null,
+        "type": "others"
+      },
+      {
+        "time_start": "10:00",
+        "time_end": "10:05",
+        "title": "Opening",
+        "speakers": null,
+        "type": "others"
+      },
+      {
+        "time_start": "10:10",
+        "time_end": "10:30",
+        "title": "Our sponsors: Amartha",
+        "speakers": null,
+        "type": "sponsors"
+      },
+      {
+        "time_start": "10:35",
+        "time_end": "11:20",
+        "title": "Keynote by Ayu Purwarianti",
+        "speakers": ["Ayu Purwarianti"],
+        "type": "keynote"
+      },
+      {
+        "time_start": "11:25",
+        "time_end": "11:55",
+        "title": "Building Production-Ready Infrastructure Tools 10x Faster with AI Agents: The Vapor Story",
+        "speakers": ["Iskandar Soesman"],
+        "type": "talks"
+      },
+      {
+        "time_start": "12:00",
+        "time_end": "12:30",
+        "title": "Smart Monitoring System for Core Web Vitals using n8n",
+        "speakers": ["Rully Saputra"],
+        "type": "talks"
+      },
+      {
+        "time_start": "12:30",
+        "time_end": "13:55",
+        "title": "Icebreaking + Lunch Break",
+        "speakers": null,
+        "type": "break"
+      },
+      {
+        "time_start": "13:55",
+        "time_end": "14:25",
+        "title": "Balancing Speed and Safety: AI Governance at Scale in Global FMCG",
+        "speakers": ["Guntur A. Fauzi"],
+        "type": "talks"
+      },
+      {
+        "time_start": "14:30",
+        "time_end": "15:00",
+        "title": "Raising Children Who Outthink the Machines",
+        "speakers": ["Zain Fathoni"],
+        "type": "talks"
+      },
+      {
+        "time_start": "15:00",
+        "time_end": "15:30",
+        "title": "Coffee Break",
+        "speakers": null,
+        "type": "break"
+      },
+      {
+        "time_start": "15:35",
+        "time_end": "16:05",
+        "title": "Lightning Talks (6 @ 5 min)",
+        "speakers": null,
+        "type": "talks"
+      },
+      {
+        "time_start": "16:10",
+        "time_end": "16:55",
+        "title": "Keynote by Rendy B. Junior",
+        "speakers": ["Rendy B. Junior"],
+        "type": "keynote"
+      },
+      {
+        "time_start": "16:55",
+        "time_end": "17:10",
+        "title": "Doorprize Announcement",
+        "speakers": null,
+        "type": "others"
+      },
+      {
+        "time_start": "17:10",
+        "time_end": null,
+        "title": "Closing Remark",
+        "speakers": null,
+        "type": "others"
       }
     ]
   }

@@ -1,22 +1,14 @@
 export interface AgendaDetail {
   time_start: string;
-  time_end: string;
+  time_end: string | null;
   title: string;
-  speakers: {
-    imageName: string;
-    name: string;
-    title: string;
-    company: string;
-  }[];
+  speakers: string[] | null;
+  type: "break" | "sponsors" | "keynote" | "talks" | "others";
 }
+
 export interface Agenda {
   day: string;
-  agendas: AgendaDetail[];
+  date: string;
   active: boolean;
-  event: {
-    title: string;
-    description: string;
-    time_start: string;
-    time_end: string;
-  };
+  agendas: AgendaDetail[];
 }

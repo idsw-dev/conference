@@ -1,6 +1,7 @@
 ---
 import { SiFacebook, SiInstagram, SiThreads, SiX } from "@icons-pack/react-simple-icons";
 import { ExternalLink, Mail } from "lucide-react";
+import type { Agenda } from "../@types/agenda";
 import type { Faq } from "../@types/faq";
 import type { SocialMedia } from "../@types/social-media";
 import type { Speaker } from "../@types/speakers";
@@ -9,17 +10,20 @@ import Accordion from "../components/Accordion";
 import CardSpeaker from "../components/CardSpeaker.astro";
 import CardSponsor from "../components/CardSponsor.astro";
 import CFPSpeaker from "../components/CFPSpeaker.astro";
+import EventAgenda from "../components/EventAgenda";
 import TalkshowSpeaker from "../components/TalkshowSpeaker.astro";
 import Timer from "../components/Timer";
 import { BlurFade } from "../components/ui/blur-fade";
 import { NumberTicker } from "../components/ui/number-ticker";
 import Layout from "../layout.astro";
 
+const agenda = import.meta.glob("../data/agenda.json", { eager: true });
 const faq = import.meta.glob("../data/faq.json", { eager: true });
 const speakers = import.meta.glob("../data/speakers.json", { eager: true });
 const sponsors = import.meta.glob("../data/sponsors.json", { eager: true });
 const socialMediasJson = import.meta.glob("../data/social-media.json", { eager: true });
 
+const agendaData: Agenda[] = Object.values(agenda).map((item) => (item as any).default)[0];
 const speakersData: Speaker[] = Object.values(speakers).map((item) => (item as any).default)[0];
 const sponsorsData: Sponsor[] = Object.values(sponsors).map((item) => (item as any).default)[0];
 const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
@@ -174,11 +178,6 @@ const regularSpeakers = speakersData.filter((speaker) => speaker.type === "regul
               ))
             }
           </div>
-          <div class="mt-8 text-center">
-            <BlurFade delay={0.8} client:load>
-              <p class="text-lg text-gray-300">More speakers to be announced soon!</p>
-            </BlurFade>
-          </div>
         </div>
       </div>
     </div>
@@ -239,6 +238,9 @@ const regularSpeakers = speakersData.filter((speaker) => speaker.type === "regul
       </div>
     </div>
   </section>
+
+  <!-- Event Agenda Section -->
+  <EventAgenda data={agendaData} client:load />
 
   <!-- Highlight Section -->
   <!-- <section id="highlight" class="from-dark to-darkblue relative z-10 bg-gradient-to-b py-12 text-white">
