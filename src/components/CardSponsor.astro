@@ -50,6 +50,17 @@ const tierConfig = {
     shadowColor: "hover:shadow-slate-300/15",
     bgOpacity: "from-[#04060F]/95 via-[#070C1A]/95 to-[#0A1230]/90",
   },
+  community: {
+    label: "Community Partner",
+    height: "h-14",
+    padding: "p-4",
+    badgeSize: "px-2.5 py-0.5 text-[10px]",
+    badgeColor: "border border-slate-300 text-white bg-transparent",
+    borderColor: "border-slate-300/25",
+    borderWidth: "border",
+    shadowColor: "hover:shadow-slate-300/15",
+    bgOpacity: "from-[#04060F]/95 via-[#070C1A]/95 to-[#0A1230]/90",
+  },
 };
 
 const config = tierConfig[data.tier];
@@ -60,7 +71,7 @@ const config = tierConfig[data.tier];
   target="_blank"
   rel="noopener noreferrer"
   class:list={[
-    "group flex h-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-[#04060F] bg-gradient-to-br backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:shadow-xl hover:scale-105",
+    "group flex h-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-[#04060F] bg-gradient-to-br backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-white/20 hover:shadow-xl",
     config.padding,
     config.borderColor,
     config.borderWidth,
@@ -71,7 +82,7 @@ const config = tierConfig[data.tier];
   <div class="mb-3">
     <span
       class:list={[
-        "inline-flex items-center rounded-full font-bold uppercase tracking-wider text-white shadow-lg",
+        "inline-flex items-center rounded-full font-bold tracking-wider text-white uppercase shadow-lg",
         config.badgeColor,
         config.badgeSize,
       ]}>
@@ -80,7 +91,7 @@ const config = tierConfig[data.tier];
   </div>
   <div
     class:list={[
-      "flex w-full items-center justify-center opacity-80 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110",
+      "flex w-full items-center justify-center opacity-80 transition-all duration-300 group-hover:scale-110 group-hover:opacity-100",
       config.height,
     ]}>
     <Image src={image.default} alt={data.name} class="h-full w-full object-contain drop-shadow-lg" />
