@@ -22,5 +22,23 @@
     "logo": "qiscus",
     "url": "https://www.qiscus.com/",
     "tier": "silver"
+  },
+  {
+    "name": "WPU",
+    "logo": "wpu",
+    "url": "https://www.youtube.com/webprogrammingunpas",
+    "tier": "community"
+  },
+  {
+    "name": "IMPHNEN",
+    "logo": "imphnen",
+    "url": "https://www.facebook.com/groups/1032515944638255/",
+    "tier": "community"
+  },
+  {
+    "name": "Hacktiv8",
+    "logo": "hacktiv8",
+    "url": "https://www.hacktiv8.com/",
+    "tier": "community"
   }
 ]
