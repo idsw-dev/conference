@@ -2,7 +2,7 @@
   {
     "name": "Renaldi Gondosubroto",
     "title": "Director at Cloudetica Solutions",
-    "isKeynoteSpeakers": false,
+    "type": "regular",
     "imageName": "renaldi-gondosubroto",
     "socialUrl": [
       "https://x.com/Renaldig",
@@ -19,7 +19,7 @@
   {
     "name": "Hilman Ramadhan",
     "title": "Founder & Developer at Sekolah Koding",
-    "isKeynoteSpeakers": false,
+    "type": "regular",
     "imageName": "hilman-ramadhan",
     "socialUrl": [
       "https://www.linkedin.com/in/hilmanski",
@@ -35,7 +35,7 @@
   {
     "name": "Evan Purnama",
     "title": "Co-Founder at Qiscus",
-    "isKeynoteSpeakers": false,
+    "type": "regular",
     "imageName": "evan-purnama",
     "socialUrl": [
       "https://www.linkedin.com/in/evan-purnama-49266a62/",
@@ -52,7 +52,7 @@
   {
     "name": "Zain Fathoni",
     "title": "Senior Software Engineer at BookThatApp",
-    "isKeynoteSpeakers": false,
+    "type": "regular",
     "imageName": "zain-fathoni",
     "socialUrl": [
       "https://x.com/zainfathoni",
@@ -70,7 +70,7 @@
   {
     "name": "Yohan Totting",
     "title": "Head of Engineering (AI) at SIRCLO",
-    "isKeynoteSpeakers": false,
+    "type": "regular",
     "imageName": "yohan-totting",
     "socialUrl": ["https://x.com/tyohan", "https://www.linkedin.com/in/tyohan"],
     "bio": "Head of Engineering (AI) of Sirclo, an Indonesia e-commerce enabler, founder and creator of Inlive, a video conferencing platform. Currently learning on how to build and control an AI agents. In the missions to make AI coding agent can more accessible for Indonesia developers. Enjoying running around BSD, but sometimes doing trail runs at Sentul, or gravel ride around Rumpin.",
@@ -83,7 +83,7 @@
   {
     "name": "Iskandar Soesman",
     "title": "Co-Founder of Awanio",
-    "isKeynoteSpeakers": false,
+    "type": "regular",
     "imageName": "iskandar-soesman",
     "socialUrl": ["https://www.linkedin.com/in/ikandars", "https://awan.io/"],
     "bio": "Write code since 2008. Maintainer of Panada, and open source PHP framework 2009 - 2015. Co-founder of Awanio, A Cloud Enabler Platform to simplify resources management",
@@ -96,7 +96,7 @@
   {
     "name": "Rully Saputra",
     "title": "Software Engineer II at Tiket",
-    "isKeynoteSpeakers": false,
+    "type": "regular",
     "imageName": "rully-saputra",
     "socialUrl": [
       "https://www.linkedin.com/in/rully-saputra-7554a7138",
@@ -112,7 +112,7 @@
   {
     "name": "Guntur A. Fauzi",
     "title": "Solutions Architect",
-    "isKeynoteSpeakers": false,
+    "type": "regular",
     "imageName": "guntur-a-fauzi",
     "socialUrl": ["https://www.linkedin.com/in/gunturaf/"],
     "bio": "Guntur Akhmad Fauzi is a Solution Architect based in Jakarta, with a strong track record of driving enterprise-scale digital transformation initiatives. At a leading global FMCG company, Guntur plays a key role in designing and scaling AI-powered solutions that align with business strategy, regulatory compliance, and operational excellence. With a background in systems architecture and cross-functional collaboration, Guntur has contributed to initiatives involving AI governance, data protection, and responsible innovation. His work bridges the gap between technical feasibility and business impact—ensuring that emerging technologies are deployed safely, legally, and with reputational integrity. Guntur is passionate about building pragmatic frameworks that empower teams to innovate confidently while navigating complex enterprise environments. He frequently collaborates with product, compliance, and engineering teams to translate strategic goals into scalable, secure solutions.",
@@ -125,7 +125,7 @@
   {
     "name": "Rendy B. Junior",
     "title": "VP of Data at Evermos",
-    "isKeynoteSpeakers": true,
+    "type": "keynote",
     "imageName": "rendy-b-junior",
     "socialUrl": [
       "https://www.linkedin.com/in/rendybjunior/",
@@ -137,7 +137,7 @@
   {
     "name": "Ayu Purwarianti",
     "title": "Associate Professor & AI Researcher at ITB",
-    "isKeynoteSpeakers": true,
+    "type": "keynote",
     "imageName": "ayu-purwarianti",
     "socialUrl": [
       "https://www.linkedin.com/in/ayu-purwarianti/",
@@ -149,7 +149,7 @@
   {
     "name": "Sandhika Galih",
     "title": "Content Creator & Lecturer at Universitas Pasundan",
-    "isKeynoteSpeakers": true,
+    "type": "keynote",
     "imageName": "sandhika-galih",
     "socialUrl": [
       "https://www.youtube.com/@sandhikagalihWPU",
@@ -161,13 +161,35 @@
   {
     "name": "Pahlevi Fikri Auliya",
     "title": "Associate Vice President at Ruangguru",
-    "isKeynoteSpeakers": true,
+    "type": "keynote",
     "imageName": "pahlevi-fikri-auliya",
     "socialUrl": [
       "https://www.linkedin.com/in/pahleviauliya/",
       "https://x.com/_fikri_auliya"
     ],
     "bio": "Associate Vice President at Ruangguru, Southeast Asia's largest ed-tech company with 150+ engineers. Leads multiple teams while balancing roles as people manager, project manager, and technical architect.",
+    "talk": null
+  },
+  {
+    "name": "Listiarso Wastuargo",
+    "title": "Tech Entrepreneur",
+    "type": "talkshow",
+    "imageName": "listiarso-wastuargo",
+    "socialUrl": [
+      "https://x.com/lwastuargo",
+      "https://www.linkedin.com/in/lwastuargo/"
+    ],
+    "talk": null
+  },
+  {
+    "name": "Bagas Naufal Insani",
+    "title": "Senior Full-Stack Engineer at Digication",
+    "type": "talkshow",
+    "imageName": "bagas-naufal-insani",
+    "socialUrl": [
+      "https://x.com/BagasN7",
+      "https://www.linkedin.com/in/bagasnaufalinsani"
+    ],
     "talk": null
   }
 ]

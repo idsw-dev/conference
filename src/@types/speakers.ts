@@ -2,7 +2,7 @@ export interface Speaker {
   name: string;
   title: string;
   imageName: string;
-  isKeynoteSpeakers: boolean;
+  type: "keynote" | "regular" | "talkshow";
   socialUrl: string[];
   bio?: string;
   talk: {

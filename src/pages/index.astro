@@ -9,6 +9,7 @@ import Accordion from "../components/Accordion";
 import CardSpeaker from "../components/CardSpeaker.astro";
 import CardSponsor from "../components/CardSponsor.astro";
 import CFPSpeaker from "../components/CFPSpeaker.astro";
+import TalkshowSpeaker from "../components/TalkshowSpeaker.astro";
 import Timer from "../components/Timer";
 import { BlurFade } from "../components/ui/blur-fade";
 import { NumberTicker } from "../components/ui/number-ticker";
@@ -24,10 +25,12 @@ const sponsorsData: Sponsor[] = Object.values(sponsors).map((item) => (item as a
 const faqData: Faq[] = Object.values(faq).map((item) => (item as any).default)[0];
 const socialMedias: SocialMedia[] = Object.values(socialMediasJson).map((item) => (item as any).default)[0];
 
-// Filter CFP speakers (keynote speakers)
-const cfpSpeakers = speakersData.filter((speaker) => speaker.isKeynoteSpeakers);
+// Filter keynote speakers
+const cfpSpeakers = speakersData.filter((speaker) => speaker.type === "keynote");
+// Filter talkshow speakers
+const talkshowSpeakers = speakersData.filter((speaker) => speaker.type === "talkshow");
 // Filter regular speakers
-const regularSpeakers = speakersData.filter((speaker) => !speaker.isKeynoteSpeakers);
+const regularSpeakers = speakersData.filter((speaker) => speaker.type === "regular");
 ---
 
 <Layout>
@@ -114,6 +117,33 @@ const regularSpeakers = speakersData.filter((speaker) => !speaker.isKeynoteSpeak
                 {cfpSpeakers.map((speaker, index) => (
                   <BlurFade delay={0.4 + index * 0.1} client:load>
                     <CFPSpeaker data={speaker} />
+                  </BlurFade>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Talkshow Speakers Section -->
+  {
+    talkshowSpeakers.length > 0 && (
+      <section id="talkshow-speakers" class="relative z-10 bg-[#080814] bg-gradient-to-b py-12 text-white">
+        <div class="container mx-auto px-12">
+          <div class="mx-auto text-center">
+            <BlurFade delay={0.2} client:load>
+              <div class="section-header mb-8">
+                <h2 class="mb-2 text-2xl font-bold md:text-3xl">Talk Show</h2>
+                <span class="text-xl">Gacor di Era AI, masih Bisa?!</span>
+              </div>
+            </BlurFade>
+            <div class="section-content">
+              <div class="grid grid-cols-1 gap-6 text-left lg:grid-cols-2 lg:gap-8">
+                {talkshowSpeakers.map((speaker, index) => (
+                  <BlurFade delay={0.4 + index * 0.1} client:load>
+                    <TalkshowSpeaker data={speaker} />
                   </BlurFade>
                 ))}
               </div>
