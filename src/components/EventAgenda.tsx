@@ -85,7 +85,10 @@ export default function EventAgenda({ data }: Props) {
   };
 
   return (
-    <section className="relative z-10 bg-[#080814] bg-gradient-to-b py-12 text-white">
+    <section
+      id="agenda"
+      className="relative z-10 bg-[#080814] bg-gradient-to-b py-12 text-white"
+    >
       <div className="container mx-auto">
         <div className="mx-auto">
           {/* Section Header */}

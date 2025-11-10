@@ -55,48 +55,48 @@
       },
       {
         "time_start": "13:40",
-        "time_end": "14:10",
+        "time_end": "14:25",
+        "title": "Keynote by Ayu Purwarianti",
+        "speakers": ["Ayu Purwarianti"],
+        "type": "keynote"
+      },
+      {
+        "time_start": "14:30",
+        "time_end": "15:00",
         "title": "Build, Share, Connect: Perlihatkan karyamu",
         "speakers": ["Hilman Ramadhan"],
         "type": "talks"
       },
       {
-        "time_start": "14:15",
-        "time_end": "14:45",
-        "title": "Certified Answers for RAG: Cryptographic Receipts that Prove What Your AI Says",
-        "speakers": ["Renaldi Gondosubroto"],
-        "type": "talks"
-      },
-      {
-        "time_start": "14:45",
-        "time_end": "15:15",
+        "time_start": "15:00",
+        "time_end": "15:30",
         "title": "Coffee Break",
         "speakers": null,
         "type": "break"
       },
       {
-        "time_start": "15:15",
-        "time_end": "15:45",
-        "title": "Discussion Panel with Bagas & Gogo",
-        "speakers": ["Bagas Naufal Insani"],
+        "time_start": "15:30",
+        "time_end": "16:00",
+        "title": "Certified Answers for RAG: Cryptographic Receipts that Prove What Your AI Says (Research, Deep-dive)",
+        "speakers": ["Renaldi Gondosubroto"],
         "type": "talks"
       },
       {
-        "time_start": "15:50",
-        "time_end": "16:10",
+        "time_start": "16:05",
+        "time_end": "16:25",
         "title": "Our sponsors: TrueWatch",
         "speakers": null,
         "type": "sponsors"
       },
       {
-        "time_start": "16:15",
-        "time_end": "17:00",
-        "title": "Keynote by Sandhika Galih",
-        "speakers": ["Sandhika Galih"],
+        "time_start": "16:30",
+        "time_end": "17:30",
+        "title": "Discussion Panel with Bagas & Gogo",
+        "speakers": ["Bagas Naufal Insani", "Listiarso Wastuargo"],
         "type": "keynote"
       },
       {
-        "time_start": "17:00",
+        "time_start": "17:30",
         "time_end": null,
         "title": "Closing Remark",
         "speakers": null,
@@ -133,8 +133,8 @@
       {
         "time_start": "10:35",
         "time_end": "11:20",
-        "title": "Keynote by Ayu Purwarianti",
-        "speakers": ["Ayu Purwarianti"],
+        "title": "Keynote by Sandhika Galih",
+        "speakers": ["Sandhika Galih"],
         "type": "keynote"
       },
       {
@@ -180,28 +180,28 @@
         "type": "break"
       },
       {
-        "time_start": "15:35",
-        "time_end": "16:05",
+        "time_start": "15:30",
+        "time_end": "16:00",
         "title": "Lightning Talks (6 @ 5 min)",
         "speakers": null,
         "type": "talks"
       },
       {
-        "time_start": "16:10",
-        "time_end": "16:55",
+        "time_start": "16:05",
+        "time_end": "16:50",
         "title": "Keynote by Rendy B. Junior",
         "speakers": ["Rendy B. Junior"],
         "type": "keynote"
       },
       {
         "time_start": "16:55",
-        "time_end": "17:10",
+        "time_end": "17:05",
         "title": "Doorprize Announcement",
         "speakers": null,
         "type": "others"
       },
       {
-        "time_start": "17:10",
+        "time_start": "17:05",
         "time_end": null,
         "title": "Closing Remark",
         "speakers": null,
