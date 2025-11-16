@@ -191,5 +191,34 @@
       "https://www.linkedin.com/in/bagasnaufalinsani"
     ],
     "talk": null
+  },
+  {
+    "name": "Hilman Ramadhan",
+    "title": "Customer Success Director at SerpApi",
+    "type": "regular",
+    "imageName": "hilman-ramadhan",
+    "socialUrl": [
+      "https://www.linkedin.com/in/hilmanski",
+      "https://hilman.space/"
+    ],
+    "bio": "Hi! I'm a programmer that loves marketing. I'm currently working at SerpApi - SearchApi and teach at Skodev - place to learn programming in Indonesian language.",
+    "talk": {
+      "title": "Real-Time Web Search for AI tools",
+      "description": "",
+      "topics": ["Productivity", "Sponsor Session"]
+    }
+  },
+  {
+    "name": "Agung Darmawan",
+    "title": "Senior Presales Solutions Architect at TrueWatch",
+    "type": "regular",
+    "imageName": "agung-darmawan",
+    "socialUrl": [],
+    "bio": "A seasoned technology leader with over 15 years of experience, Agung specializes in IT operations, cloud, and DevSecOps. He has helped organizations across sectors like finance and critical infrastructure improve digital resilience through his work at Splunk, GE Digital, and HP.",
+    "talk": {
+      "title": "Hidden LLM Failures and How to Find Them",
+      "description": "",
+      "topics": ["Productivity", "Sponsor Session"]
+    }
   }
 ]
