@@ -40,5 +40,11 @@
     "logo": "hacktiv8",
     "url": "https://www.hacktiv8.com/",
     "tier": "community"
+  },
+  {
+    "name": "Women in Tech",
+    "logo": "womentech",
+    "url": "https://www.womentech.net/",
+    "tier": "community"
   }
 ]
