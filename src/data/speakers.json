@@ -220,5 +220,18 @@
       "description": "",
       "topics": ["Productivity", "Sponsor Session"]
     }
+  },
+  {
+    "name": "Bistok Diiel Lelono",
+    "title": "Engineering Manager at Amartha",
+    "type": "regular",
+    "imageName": "bistok-diiel-lelono",
+    "socialUrl": ["https://www.linkedin.com/in/bistokdl"],
+    "bio": "Bistok Diiel Lelono has been Amartha’s Software Engineering Manager for over four years. With deep expertise in back-end engineering, he is hands-on in building, troubleshooting, and optimizing systems to deliver robust and scalable solutions.",
+    "talk": {
+      "title": "",
+      "description": "",
+      "topics": ["Sponsor Session"]
+    }
   }
 ]
