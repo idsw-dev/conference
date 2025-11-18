@@ -236,7 +236,7 @@ const regularSpeakers = speakersData.filter((speaker) => speaker.type === "regul
                     <>
                       <div class="mx-auto my-12 w-full max-w-4xl border-t border-white/10" />
                       <div
-                        class={`mx-auto ${communityPartners.length === 1 ? "max-w-md" : communityPartners.length === 3 ? "flex max-w-5xl flex-wrap justify-center gap-6" : "grid max-w-5xl grid-cols-1 place-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3"}`}>
+                        class={`mx-auto ${communityPartners.length === 1 ? "max-w-md" : communityPartners.length === 3 ? "flex max-w-5xl flex-wrap justify-center gap-6" : "grid max-w-5xl grid-cols-1 place-items-center gap-6 sm:grid-cols-2 lg:grid-cols-4"}`}>
                         {communityPartners.map((sponsor, index) => (
                           <BlurFade delay={0.7 + index * 0.1} client:load>
                             <CardCommunityPartner data={sponsor} />
