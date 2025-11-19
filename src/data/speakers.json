@@ -213,11 +213,14 @@
     "title": "Senior Presales Solutions Architect at TrueWatch",
     "type": "regular",
     "imageName": "agung-darmawan",
-    "socialUrl": [],
+    "socialUrl": [
+      "https://www.linkedin.com/in/agung-darmawan/",
+      "https://linktr.ee/qr/a8b18ef2-cf16-421c-bd25-956b1d51b33b?utm_source=qr_code"
+    ],
     "bio": "A seasoned technology leader with over 15 years of experience, Agung specializes in IT operations, cloud, and DevSecOps. He has helped organizations across sectors like finance and critical infrastructure improve digital resilience through his work at Splunk, GE Digital, and HP.",
     "talk": {
       "title": "Hidden LLM Failures and How to Find Them",
-      "description": "",
+      "description": "LLM-powered applications are moving from experiments to mission-critical business systems — but they’re riddled with hidden failures: hallucinations, prompt drift, latency spikes, and compliance blind spots. These failures are expensive, hard to detect, and even harder to fix without the right visibility. In this talk, we’ll expose the cost of flying blind, explore the trends making LLM observability urgent, and show how to turn the AI black box into a glass cockpit — so your applications stay fast, compliant, and trustworthy at scale.",
       "topics": ["Productivity", "Sponsor Session"]
     }
   },
