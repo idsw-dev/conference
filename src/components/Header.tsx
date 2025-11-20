@@ -17,23 +17,23 @@ export default function Header() {
   const menus = [
     {
       name: "Home",
-      href: "#",
+      href: "/#",
     },
     {
       name: "Speakers",
-      href: "#speakers",
+      href: "/#speakers",
     },
     {
       name: "Agenda",
-      href: "#agenda",
+      href: "/#agenda",
     },
     {
       name: "FAQ",
-      href: "#faq",
+      href: "/#faq",
     },
     {
       name: "Contact",
-      href: "#contact",
+      href: "/#contact",
     },
   ];
   return (
@@ -43,7 +43,7 @@ export default function Header() {
       >
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-10 py-5">
           <a
-            href="#"
+            href="/"
             className={`flex items-center space-x-3 transition duration-200 rtl:space-x-reverse`}
           >
             <img src="/nav-logo.png" className="h-8" alt="Flowbite Logo" />
