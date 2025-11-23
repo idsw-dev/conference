@@ -75,28 +75,28 @@
         "type": "break"
       },
       {
-        "time_start": "15:35",
-        "time_end": "16:05",
+        "time_start": "15:45",
+        "time_end": "16:15",
         "title": "Certified Answers for RAG: Cryptographic Receipts that Prove What Your AI Says (Research, Deep-dive)",
         "speakers": ["Renaldi Gondosubroto"],
         "type": "talks"
       },
       {
-        "time_start": "16:10",
-        "time_end": "16:30",
+        "time_start": "16:20",
+        "time_end": "16:40",
         "title": "Hidden LLM Failures and How to Find Them",
         "speakers": ["Agung Darmawan"],
         "type": "sponsors"
       },
       {
-        "time_start": "16:35",
-        "time_end": "17:35",
+        "time_start": "16:45",
+        "time_end": "17:45",
         "title": "Discussion Panel with Bagas & Gogo",
         "speakers": ["Bagas Naufal Insani", "Listiarso Wastuargo"],
         "type": "keynote"
       },
       {
-        "time_start": "17:35",
+        "time_start": "17:45",
         "time_end": null,
         "title": "Closing Remark",
         "speakers": null,
