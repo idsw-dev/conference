@@ -110,98 +110,98 @@
     "active": false,
     "agendas": [
       {
-        "time_start": "09:30",
+        "time_start": "09:40",
         "time_end": null,
         "title": "Gate open (registration)",
         "speakers": null,
         "type": "others"
       },
       {
-        "time_start": "10:00",
-        "time_end": "10:05",
+        "time_start": "10:10",
+        "time_end": "10:15",
         "title": "Opening",
         "speakers": null,
         "type": "others"
       },
       {
-        "time_start": "10:10",
-        "time_end": "10:55",
+        "time_start": "10:20",
+        "time_end": "11:05",
         "title": "Keynote by Sandhika Galih",
         "speakers": ["Sandhika Galih"],
         "type": "keynote"
       },
       {
-        "time_start": "11:00",
-        "time_end": "11:20",
+        "time_start": "11:10",
+        "time_end": "11:30",
         "title": "AI for Financial Inclusion",
         "speakers": ["Bistok Diiel Lelono"],
         "type": "sponsors"
       },
       {
-        "time_start": "11:25",
-        "time_end": "11:55",
+        "time_start": "11:35",
+        "time_end": "12:05",
         "title": "Building Production-Ready Infrastructure Tools 10x Faster with AI Agents: The Vapor Story",
         "speakers": ["Iskandar Soesman"],
         "type": "talks"
       },
       {
-        "time_start": "12:00",
-        "time_end": "12:30",
+        "time_start": "12:10",
+        "time_end": "12:40",
         "title": "Smart Monitoring System for Core Web Vitals using n8n",
         "speakers": ["Rully Saputra"],
         "type": "talks"
       },
       {
-        "time_start": "12:30",
-        "time_end": "13:55",
+        "time_start": "12:40",
+        "time_end": "14:05",
         "title": "Icebreaking + Lunch Break",
         "speakers": null,
         "type": "break"
       },
       {
-        "time_start": "13:55",
-        "time_end": "14:25",
+        "time_start": "14:05",
+        "time_end": "14:35",
         "title": "Balancing Speed and Safety: AI Governance at Scale in Global FMCG",
         "speakers": ["Guntur A. Fauzi"],
         "type": "talks"
       },
       {
-        "time_start": "14:30",
-        "time_end": "15:00",
+        "time_start": "14:40",
+        "time_end": "15:10",
         "title": "Raising Children Who Outthink the Machines",
         "speakers": ["Zain Fathoni"],
         "type": "talks"
       },
       {
-        "time_start": "15:00",
-        "time_end": "15:30",
+        "time_start": "15:10",
+        "time_end": "15:40",
         "title": "Coffee Break",
         "speakers": null,
         "type": "break"
       },
       {
-        "time_start": "15:30",
-        "time_end": "16:00",
+        "time_start": "15:40",
+        "time_end": "16:10",
         "title": "Lightning Talks (6 @ 5 min)",
         "speakers": null,
         "type": "talks"
       },
       {
-        "time_start": "16:05",
-        "time_end": "16:50",
+        "time_start": "16:15",
+        "time_end": "17:00",
         "title": "Keynote by Rendy B. Junior",
         "speakers": ["Rendy B. Junior"],
         "type": "keynote"
       },
       {
-        "time_start": "16:55",
-        "time_end": "17:05",
+        "time_start": "17:05",
+        "time_end": "17:15",
         "title": "Doorprize Announcement",
         "speakers": null,
         "type": "others"
       },
       {
-        "time_start": "17:05",
+        "time_start": "17:15",
         "time_end": null,
         "title": "Closing Remark",
         "speakers": null,
