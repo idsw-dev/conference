@@ -20,6 +20,10 @@ export default function Header() {
       href: "/#",
     },
     {
+      name: "Stream",
+      href: "/stream",
+    },
+    {
       name: "Speakers",
       href: "/#speakers",
     },
