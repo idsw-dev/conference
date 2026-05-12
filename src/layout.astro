@@ -1,13 +1,12 @@
 ---
 import "@fontsource-variable/inter";
 import "./styles.css";
-import Header from "./components/Header";
 
-const title = "IDSW 2025 with SerpApi";
+const title = "IDSW 2026";
 const description =
-  "Join us for the Indonesia Software Developer Conference (IDSW) on 22-23rd November, 2025. Indonesia's premier software developer conference bringing together developers, engineers, and technology enthusiasts.";
+  "Indonesia Software Developer Conference (IDSW) 2026. Indonesia's biggest community-led developer conference.";
 const keywords =
-  "Indonesia Software Developer Conference, IDSW, software development, conference, Jakarta, 2025, developers, networking, technology";
+  "Indonesia Software Developer Conference, IDSW, software development, conference, Jakarta, 2026, developers, networking, technology";
 
 const isPublic = true;
 const ogImageUrl = new URL("/og.jpg", Astro.site).href;
@@ -38,7 +37,6 @@ const ogImageUrl = new URL("/og.jpg", Astro.site).href;
   </head>
   <body>
     <main class="font-sans">
-      <Header client:load />
       <slot />
     </main>
     <script>
