@@ -8,6 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "build:archives": "bash build-archives.sh",
     "format": "prettier --plugin=prettier-plugin-astro --write . --ignore-path .gitignore",
     "prettier:check": "prettier --check --plugin=prettier-plugin-astro . --ignore-path .gitignore",
     "prepare": "husky"
