@@ -362,7 +362,7 @@ function uo() {
     t,
     r,
     o = "";
-  for (; e < arguments.length; )
+  for (; e < arguments.length;)
     (t = arguments[e++]) && (r = Ge(t)) && (o && (o += " "), (o += r));
   return o;
 }

@@ -24,11 +24,11 @@ function u() {
       }));
   }, []);
   const l = [
-    { name: "Home", href: "/#" },
-    { name: "Speakers", href: "/#speakers" },
-    { name: "Agenda", href: "/#agenda" },
-    { name: "FAQ", href: "/#faq" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Home", href: "/2025/#" },
+    { name: "Speakers", href: "/2025/#speakers" },
+    { name: "Agenda", href: "/2025/#agenda" },
+    { name: "FAQ", href: "/2025/#faq" },
+    { name: "Contact", href: "/2025/#contact" },
   ];
   return e.jsx("header", {
     children: e.jsx("nav", {
@@ -38,13 +38,13 @@ function u() {
           "mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-10 py-5",
         children: [
           e.jsx("a", {
-            href: "/",
+            href: "/2025/",
             className:
               "flex items-center space-x-3 transition duration-200 rtl:space-x-reverse",
             children: e.jsx("img", {
-              src: "/nav-logo.png",
+              src: "/2025/nav-logo.png",
               className: "h-8",
-              alt: "Flowbite Logo",
+              alt: "IDSW Logo",
             }),
           }),
           e.jsxs("button", {

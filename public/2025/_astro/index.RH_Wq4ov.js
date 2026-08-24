@@ -180,7 +180,7 @@ function Z() {
       for (var c = 0; c < t.length; c++)
         ((r = t[c]), (f = p + d(r, c)), (u += _(r, e, n, f, s)));
     else if (((c = z(t)), typeof c == "function"))
-      for (t = c.call(t), c = 0; !(r = t.next()).done; )
+      for (t = c.call(t), c = 0; !(r = t.next()).done;)
         ((r = r.value), (f = p + d(r, c++)), (u += _(r, e, n, f, s)));
     else if (f === "object") {
       if (typeof t.then == "function") return _(B(t), e, n, r, s);

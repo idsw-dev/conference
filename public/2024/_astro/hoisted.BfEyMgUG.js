@@ -180,7 +180,7 @@ function Tt(s) {
   const e = Object.keys(s);
   let t = e.length;
   const i = new Array(t);
-  for (; t--; ) i[t] = [e[t], s[e[t]]];
+  for (; t--;) i[t] = [e[t], s[e[t]]];
   return i;
 }
 const os = function (s) {
@@ -485,12 +485,10 @@ class ur {
   }
   getFeatureFlag(e) {
     let t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    if (
-      !(
-        this.instance.decideEndpointWasHit ||
-        (this.getFlags() && this.getFlags().length > 0)
-      )
-    )
+    if (!(
+      this.instance.decideEndpointWasHit ||
+      (this.getFlags() && this.getFlags().length > 0)
+    ))
       return void g.warn(
         'getFeatureFlag for key "' +
           e +
@@ -825,7 +823,7 @@ function fr(s, e) {
       let o = Math.min(r.length, 8);
       const a = "dmn_chk_" + Fe(),
         l = new RegExp("(^|;)\\s*" + a + "=1");
-      for (; !nt && o--; ) {
+      for (; !nt && o--;) {
         const c = r.slice(o).join("."),
           d = a + "=1;domain=." + c;
         ((n.cookie = d),
@@ -857,7 +855,7 @@ const ye = {
           t = m.cookie.split(";").filter((i) => i.length);
         for (let i = 0; i < t.length; i++) {
           let n = t[i];
-          for (; n.charAt(0) == " "; ) n = n.substring(1, n.length);
+          for (; n.charAt(0) == " ";) n = n.substring(1, n.length);
           if (n.indexOf(e) === 0)
             return decodeURIComponent(n.substring(e.length, n.length));
         }
@@ -1811,7 +1809,7 @@ function Wt(s) {
         const t = [];
         return function (i, n) {
           if (D(n)) {
-            for (; t.length > 0 && t.at(-1) !== this; ) t.pop();
+            for (; t.length > 0 && t.at(-1) !== this;) t.pop();
             return t.includes(n) ? "[Circular]" : (t.push(n), n);
           }
           return n;
@@ -1985,7 +1983,7 @@ function Tr(s, e) {
   const o = [s];
   let a = !0,
     l = s;
-  for (; l.parentNode && !Te(l, "body"); )
+  for (; l.parentNode && !Te(l, "body");)
     if (wn(l.parentNode)) (o.push(l.parentNode.host), (l = l.parentNode.host));
     else {
       if (((a = xn(l)), !a)) break;
@@ -2597,7 +2595,7 @@ var Vr = _t(We, 9),
       c = 0,
       d = 1,
       u = 2;
-    for (t[0] = { s: -1, f: a.f + l.f, l: a, r: l }; d != n - 1; )
+    for (t[0] = { s: -1, f: a.f + l.f, l: a, r: l }; d != n - 1;)
       ((a = t[t[c].f < t[u].f ? c++ : u++]),
         (l = t[c != d && t[c].f < t[u].f ? c++ : u++]),
         (t[d++] = { s: -1, f: a.f + l.f, l: a, r: l }));
@@ -2621,7 +2619,7 @@ var Vr = _t(We, 9),
         if (!(_[y] > e)) break;
         ((v += w - (1 << (f - _[y]))), (_[y] = e));
       }
-      for (v >>>= b; v > 0; ) {
+      for (v >>>= b; v > 0;) {
         var k = r[i].s;
         _[k] < e ? (v -= 1 << (e - _[k]++ - 1)) : ++i;
       }
@@ -2639,7 +2637,7 @@ var Vr = _t(We, 9),
       : (e[s.s] = t);
   },
   As = function (s) {
-    for (var e = s.length; e && !s[--e]; );
+    for (var e = s.length; e && !s[--e];);
     for (
       var t = new Y(++e),
         i = 0,
@@ -2663,7 +2661,7 @@ var Vr = _t(We, 9),
           for (o(n), --r; r > 6; r -= 6) o(8304);
           r > 2 && (o(((r - 3) << 5) | 8208), (r = 0));
         }
-        for (; r--; ) o(n);
+        for (; r--;) o(n);
         ((r = 1), (n = s[a]));
       }
     return [t.subarray(0, i), e];
@@ -2766,7 +2764,7 @@ var Vr = _t(We, 9),
   ]),
   Qr = (function () {
     for (var s = new it(256), e = 0; e < 256; ++e) {
-      for (var t = e, i = 9; --i; ) t = (1 & t && 3988292384) ^ (t >>> 1);
+      for (var t = e, i = 9; --i;) t = (1 & t && 3988292384) ^ (t >>> 1);
       s[e] = t;
     }
     return s;
@@ -2843,7 +2841,6 @@ var Vr = _t(We, 9),
                   er = Math.min(32767, v),
                   tr = Math.min(258, Ve);
                 Se <= er && --Ge && de != we;
-
               ) {
                 if (r[v + ie] == r[v + ie - Se]) {
                   for (
@@ -2972,7 +2969,7 @@ const Zr = 3e5,
   G = "[SessionRecording]";
 function Ne(s) {
   return (function (e, t) {
-    for (var i = "", n = 0; n < e.length; ) {
+    for (var i = "", n = 0; n < e.length;) {
       var r = e[n++];
       r < 128 || t
         ? (i += String.fromCharCode(r))
@@ -5235,7 +5232,7 @@ function Li(s) {
 }
 function Jt() {
   var s, e, t, i, n, r, o, a, l;
-  for (He.sort(Mi); (s = He.shift()); )
+  for (He.sort(Mi); (s = He.shift());)
     s.__d &&
       ((e = He.length),
       (i = void 0),
@@ -5363,7 +5360,7 @@ function bo(s, e, t, i) {
     l = e[t];
   if (l === null || (l && n == l.key && r === l.type)) return t;
   if (i > (l != null && !(131072 & l.__u) ? 1 : 0))
-    for (; o >= 0 || a < e.length; ) {
+    for (; o >= 0 || a < e.length;) {
       if (o >= 0) {
         if ((l = e[o]) && !(131072 & l.__u) && n == l.key && r === l.type)
           return o;
@@ -5687,7 +5684,7 @@ function So(s, e, t, i, n, r, o, a, l) {
       ),
       r != null)
     )
-      for (c = r.length; c--; ) r[c] != null && Vn(r[c]);
+      for (c = r.length; c--;) r[c] != null && Vn(r[c]);
     a ||
       ((c = "value"),
       f !== void 0 &&
@@ -5733,7 +5730,7 @@ function Eo(s, e, t) {
 ((Bn = zn.slice),
   (A = {
     __e: function (s, e, t, i) {
-      for (var n, r, o; (e = e.__); )
+      for (var n, r, o; (e = e.__);)
         if ((n = e.__c) && !n.__)
           try {
             if (
@@ -6418,7 +6415,7 @@ class Co {
       r = this.instance.scrollManager.scrollElement(),
       o = (function (a, l, c) {
         let d = a;
-        for (; d && Kt(d) && !Te(d, "body"); ) {
+        for (; d && Kt(d) && !Te(d, "body");) {
           if (d === c) return !1;
           if (I(l, p?.getComputedStyle(d).position)) return !0;
           d = xn(d);
@@ -6590,7 +6587,7 @@ function Mo(s, e, t, i) {
   let a = 1,
     l = 1,
     c = s;
-  for (; (c = To(c)); ) (a++, c.tagName === s.tagName && l++);
+  for (; (c = To(c));) (a++, c.tagName === s.tagName && l++);
   return ((r.nth_child = a), (r.nth_of_type = l), r);
 }
 function Ao(s, e) {
@@ -6604,7 +6601,7 @@ function Ao(s, e) {
   } = e;
   const c = [s];
   let d = s;
-  for (; d.parentNode && !Te(d, "body"); )
+  for (; d.parentNode && !Te(d, "body");)
     wn(d.parentNode)
       ? (c.push(d.parentNode.host), (d = d.parentNode.host))
       : (c.push(d.parentNode), (d = d.parentNode));
@@ -8121,14 +8118,12 @@ class ei {
   }
   capture(e, t, i) {
     var n;
-    if (
-      !(
-        this.__loaded &&
-        this.persistence &&
-        this.sessionPersistence &&
-        this._requestQueue
-      )
-    )
+    if (!(
+      this.__loaded &&
+      this.persistence &&
+      this.sessionPersistence &&
+      this._requestQueue
+    ))
       return void g.uninitializedWarning("posthog.capture");
     if (this.consent.isOptedOut()) return;
     if (S(e) || !W(e))

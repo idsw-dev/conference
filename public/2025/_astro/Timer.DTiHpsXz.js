@@ -60,9 +60,21 @@ function c() {
           t.jsx(r, { value: a(s.seconds), label: "SECONDS" }),
         ],
       })
-    : t.jsx("div", {
-        className: "text-lg font-bold text-slate-800",
-        children: "The call for proposals is now closed.",
+    : t.jsxs("div", {
+        className:
+          "flex flex-col items-center justify-center gap-1 rounded-3xl border border-white/40 bg-white/25 px-8 py-6 sm:px-16 sm:py-8 backdrop-blur-sm",
+        children: [
+          t.jsx("span", {
+            className:
+              "text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl",
+            children: "EVENT CONCLUDED",
+          }),
+          t.jsx("span", {
+            className:
+              "mt-1 text-xs font-medium tracking-wider text-white sm:text-sm uppercase",
+            children: "THANK YOU FOR JOINING IDSW 2025",
+          }),
+        ],
       });
 }
 export { c as default };

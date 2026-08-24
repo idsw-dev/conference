@@ -246,7 +246,7 @@ var L = function (s) {
     );
   };
 function Ht(s) {
-  for (var e = Object.keys(s), t = e.length, i = new Array(t); t--; )
+  for (var e = Object.keys(s), t = e.length, i = new Array(t); t--;)
     i[t] = [e[t], s[e[t]]];
   return i;
 }
@@ -488,7 +488,7 @@ function ra(s, e, t, i, r) {
     var l = t.dom_event_allowlist;
     if (l && !l.some((b) => e.type === b)) return !1;
   }
-  for (var u = !1, c = [s], d = !0, h = s; h.parentNode && !De(h, "body"); )
+  for (var u = !1, c = [s], d = !0, h = s; h.parentNode && !De(h, "body");)
     if (Hr(h.parentNode)) (c.push(h.parentNode.host), (h = h.parentNode.host));
     else {
       if (!(d = Gr(h))) break;
@@ -840,7 +840,7 @@ function ga(s, e, t, i) {
           (n["attr__" + c.name] = gi(1024, h)));
       }
     }));
-  for (var o = 1, l = 1, u = s; (u = pa(u)); )
+  for (var o = 1, l = 1, u = s; (u = pa(u));)
     (o++, u.tagName === s.tagName && l++);
   return ((n.nth_child = o), (n.nth_of_type = l), n);
 }
@@ -858,7 +858,6 @@ function fa(s, e) {
       u = [s],
       c = s;
     c.parentNode && !De(c, "body");
-
   )
     Hr(c.parentNode)
       ? (u.push(c.parentNode.host), (c = c.parentNode.host))
@@ -1192,7 +1191,6 @@ function wa(s, e) {
       for (
         var a = r.split("."), o = Math.min(a.length, 8), l = "dmn_chk_" + Ce();
         !dt && o--;
-
       ) {
         var u = a.slice(o).join("."),
           c = l + "=1;domain=." + u + ";path=/";
@@ -1228,7 +1226,7 @@ var me = {
             i < t.length;
             i++
           ) {
-            for (var r = t[i]; r.charAt(0) == " "; )
+            for (var r = t[i]; r.charAt(0) == " ";)
               r = r.substring(1, r.length);
             if (r.indexOf(e) === 0)
               return decodeURIComponent(r.substring(e.length, r.length));
@@ -2220,7 +2218,7 @@ function Qt(s) {
       ((t = []),
       function (i, r) {
         if (A(r)) {
-          for (; t.length > 0 && t[t.length - 1] !== this; ) t.pop();
+          for (; t.length > 0 && t[t.length - 1] !== this;) t.pop();
           return t.includes(r) ? "[Circular]" : (t.push(r), r);
         }
         return r;
@@ -2640,7 +2638,7 @@ var Ya = xt(We, 9),
       u = 0,
       c = 1,
       d = 2;
-    for (t[0] = { s: -1, f: o.f + l.f, l: o, r: l }; c != r - 1; )
+    for (t[0] = { s: -1, f: o.f + l.f, l: o, r: l }; c != r - 1;)
       ((o = t[t[u].f < t[d].f ? u++ : d++]),
         (l = t[u != c && t[u].f < t[d].f ? u++ : d++]),
         (t[c++] = { s: -1, f: o.f + l.f, l: o, r: l }));
@@ -2664,7 +2662,7 @@ var Ya = xt(We, 9),
         if (!(p[x] > e)) break;
         ((f += E - (1 << (v - p[x]))), (p[x] = e));
       }
-      for (f >>>= b; f > 0; ) {
+      for (f >>>= b; f > 0;) {
         var S = n[i].s;
         p[S] < e ? (f -= 1 << (e - p[S]++ - 1)) : ++i;
       }
@@ -2682,7 +2680,7 @@ var Ya = xt(We, 9),
       : (e[s.s] = t);
   },
   tr = function (s) {
-    for (var e = s.length; e && !s[--e]; );
+    for (var e = s.length; e && !s[--e];);
     for (
       var t = new Q(++e),
         i = 0,
@@ -2706,7 +2704,7 @@ var Ya = xt(We, 9),
           for (a(r), --n; n > 6; n -= 6) a(8304);
           n > 2 && (a(((n - 3) << 5) | 8208), (n = 0));
         }
-        for (; n--; ) a(r);
+        for (; n--;) a(r);
         ((n = 1), (r = s[o]));
       }
     return [t.subarray(0, i), e];
@@ -2809,7 +2807,7 @@ var Ya = xt(We, 9),
   ]),
   Za = (function () {
     for (var s = new lt(256), e = 0; e < 256; ++e) {
-      for (var t = e, i = 9; --i; ) t = (1 & t && 3988292384) ^ (t >>> 1);
+      for (var t = e, i = 9; --i;) t = (1 & t && 3988292384) ^ (t >>> 1);
       s[e] = t;
     }
     return s;
@@ -2886,7 +2884,6 @@ var Ya = xt(We, 9),
                   Un = Math.min(32767, f),
                   Gn = Math.min(258, Ze);
                 Re <= Un && --Xe && ge != Fe;
-
               ) {
                 if (n[f + ne] == n[f + ne - Re]) {
                   for (
@@ -3230,7 +3227,7 @@ var co = 3e5,
   rr = (s) => ({ rrwebMethod: s, enqueuedAt: Date.now(), attempt: 1 });
 function ze(s) {
   return (function (e, t) {
-    for (var i = "", r = 0; r < e.length; ) {
+    for (var i = "", r = 0; r < e.length;) {
       var n = e[r++];
       i += String.fromCharCode(n);
     }
@@ -4695,7 +4692,7 @@ class wo {
       r = this.instance.scrollManager.scrollX(),
       n = this.instance.scrollManager.scrollElement(),
       a = (function (o, l, u) {
-        for (var c = o; c && oi(c) && !De(c, "body"); ) {
+        for (var c = o; c && oi(c) && !De(c, "body");) {
           if (c === u) return !1;
           if ($(l, g?.getComputedStyle(c).position)) return !0;
           c = Gr(c);

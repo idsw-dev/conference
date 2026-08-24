@@ -569,7 +569,7 @@ function he(e) {
   let t = 0;
   const s = 50;
   let r = e.next(t);
-  for (; !r.done && t < z; ) ((t += s), (r = e.next(t)));
+  for (; !r.done && t < z;) ((t += s), (r = e.next(t)));
   return t >= z ? 1 / 0 : t;
 }
 function Pt(e, t = 100, s) {

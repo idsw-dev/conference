@@ -814,7 +814,7 @@ const ro = new Set(["auto", "none", "0"]);
 function ao(t, e, n) {
   let i = 0,
     s;
-  for (; i < t.length && !s; ) {
+  for (; i < t.length && !s;) {
     const r = t[i];
     (typeof r == "string" && !ro.has(r) && xs(r).values.length && (s = t[i]),
       i++);
@@ -2972,7 +2972,7 @@ function _r(t, e) {
   let n = t.length - 1,
     i = null;
   const s = qi(t);
-  for (; n >= 0 && ((i = t[n]), !(s.timestamp - i.timestamp > st(e))); ) n--;
+  for (; n >= 0 && ((i = t[n]), !(s.timestamp - i.timestamp > st(e)));) n--;
   if (!i) return { x: 0, y: 0 };
   const r = Gt(s.timestamp - i.timestamp);
   if (r === 0) return { x: 0, y: 0 };
@@ -4232,16 +4232,14 @@ function ss({
         this.isSharedProjectionDirty ||
           (this.isSharedProjectionDirty = a.isSharedProjectionDirty));
       const l = !!this.resumingFrom || this !== a;
-      if (
-        !(
-          o ||
-          (l && this.isSharedProjectionDirty) ||
-          this.isProjectionDirty ||
-          this.parent?.isProjectionDirty ||
-          this.attemptToResolveRelativeTarget ||
-          this.root.updateBlockedByResize
-        )
-      )
+      if (!(
+        o ||
+        (l && this.isSharedProjectionDirty) ||
+        this.isProjectionDirty ||
+        this.parent?.isProjectionDirty ||
+        this.attemptToResolveRelativeTarget ||
+        this.root.updateBlockedByResize
+      ))
         return;
       const { layout: u, layoutId: h } = this.options;
       if (!(!this.layout || !(u || h))) {
@@ -4299,13 +4297,11 @@ function ss({
       }
     }
     getClosestProjectingParent() {
-      if (
-        !(
-          !this.parent ||
-          se(this.parent.latestValues) ||
-          Ii(this.parent.latestValues)
-        )
-      )
+      if (!(
+        !this.parent ||
+        se(this.parent.latestValues) ||
+        Ii(this.parent.latestValues)
+      ))
         return this.parent.isProjecting()
           ? this.parent
           : this.parent.getClosestProjectingParent();
@@ -4971,7 +4967,7 @@ function ll({
   offset: r = 6,
   direction: o = "down",
   inView: a = !1,
-  inViewMargin: l = "-50px",
+  inViewMargin: l = "0px",
   blur: c = "6px",
   ...u
 }) {
@@ -4995,7 +4991,7 @@ function ll({
   return O.jsx(Vo, {
     children: O.jsx(nl.div, {
       ref: h,
-      initial: "hidden",
+      initial: false,
       animate: d ? "visible" : "hidden",
       exit: "hidden",
       variants: x,

@@ -165,7 +165,7 @@ function _(e, t, n, u, o) {
       s += _(i, t, n, c, o);
     }
   else if (((c = B(e)), typeof c == "function"))
-    for (e = c.call(e), f = 0; !(i = e.next()).done; )
+    for (e = c.call(e), f = 0; !(i = e.next()).done;)
       ((i = i.value), (c = u + v(i, f++)), (s += _(i, t, n, c, o)));
   else if (i === "object")
     throw (

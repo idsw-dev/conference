@@ -30,9 +30,9 @@ function c() {
             className: `flex items-center space-x-3 transition duration-200 rtl:space-x-reverse ${n ? "opacity-100" : "opacity-0"}`,
             children: [
               e.jsx("img", {
-                src: "/logo.svg",
+                src: "/2024/logo.svg",
                 className: "h-8",
-                alt: "Flowbite Logo",
+                alt: "IDSW Logo",
               }),
               e.jsx("span", {
                 className:
