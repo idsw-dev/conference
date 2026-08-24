@@ -1,7 +1,8 @@
 ---
 import { SiFacebook, SiInstagram, SiThreads, SiX, SiYoutube } from "@icons-pack/react-simple-icons";
 import { Image } from "astro:assets";
-import { Globe, Linkedin } from "lucide-react";
+import { Globe } from "lucide-react";
+import LinkedinIcon from "./icons/Linkedin";
 import type { Speaker } from "../@types/speakers";
 
 interface Props {
@@ -12,10 +13,14 @@ const { data }: Props = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>("../data/images/speakers/*.{png,jpg,jpeg,svg,webp}", {
   eager: true,
 });
-const image = Object.values(images).find((img) => img.default.src.includes(data.imageName));
+const image = Object.entries(images).find(
+  ([key, img]) => key.includes(data.imageName) || img.default.src.includes(data.imageName),
+)?.[1];
 
 // Use default image if speaker image doesn't exist
-const defaultImage = Object.values(images).find((img) => img.default.src.includes("default"));
+const defaultImage = Object.entries(images).find(
+  ([key, img]) => key.includes("default") || img.default.src.includes("default"),
+)?.[1];
 const displayImage = image || defaultImage;
 
 if (!displayImage) {
@@ -70,7 +75,7 @@ if (!displayImage) {
                       ) : url.includes("facebook.com") ? (
                         <SiFacebook className="h-4 w-4" client:load />
                       ) : url.includes("linkedin.com") ? (
-                        <Linkedin className="h-4 w-4" client:load />
+                        <LinkedinIcon className="h-4 w-4" client:load />
                       ) : url.includes("instagram.com") ? (
                         <SiInstagram className="h-4 w-4" client:load />
                       ) : url.includes("threads.net") ? (

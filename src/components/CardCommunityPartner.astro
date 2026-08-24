@@ -10,7 +10,9 @@ const { data }: Props = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>("../data/images/sponsors/*.{png,jpg,jpeg,svg,webp}", {
   eager: true,
 });
-const image = Object.values(images).find((img) => img.default.src.includes(data.logo));
+const image = Object.entries(images).find(
+  ([key, img]) => key.includes(data.logo) || img.default.src.includes(data.logo),
+)?.[1];
 
 if (!image) {
   throw new Error(`"${data.logo}" does not exist in glob: "src/data/images/sponsors/*.{png,jpg,jpeg,svg,webp}"`);
