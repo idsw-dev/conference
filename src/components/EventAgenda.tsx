@@ -18,7 +18,7 @@ export default function EventAgenda({ data }: Props) {
     switch (type) {
       case "keynote":
         return (
-          <div className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-yellow-500/20 to-orange-500/20 px-3 py-1 text-xs font-semibold text-yellow-300">
+          <div className="inline-flex items-center gap-1 rounded-full bg-linear-to-r from-yellow-500/20 to-orange-500/20 px-3 py-1 text-xs font-semibold text-yellow-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="12"
@@ -34,7 +34,7 @@ export default function EventAgenda({ data }: Props) {
         );
       case "sponsors":
         return (
-          <div className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-3 py-1 text-xs font-semibold text-purple-300">
+          <div className="inline-flex items-center gap-1 rounded-full bg-linear-to-r from-purple-500/20 to-pink-500/20 px-3 py-1 text-xs font-semibold text-purple-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="12"
@@ -55,7 +55,7 @@ export default function EventAgenda({ data }: Props) {
         );
       case "break":
         return (
-          <div className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 px-3 py-1 text-xs font-semibold text-amber-300">
+          <div className="inline-flex items-center gap-1 rounded-full bg-linear-to-r from-amber-500/20 to-orange-500/20 px-3 py-1 text-xs font-semibold text-amber-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="12"
@@ -87,7 +87,7 @@ export default function EventAgenda({ data }: Props) {
   return (
     <section
       id="agenda"
-      className="relative z-10 bg-[#080814] bg-gradient-to-b py-12 text-white"
+      className="relative z-10 bg-[#080814] bg-linear-to-b py-12 text-white"
     >
       <div className="container mx-auto">
         <div className="mx-auto">
@@ -128,7 +128,7 @@ export default function EventAgenda({ data }: Props) {
           </div>
 
           {/* Agenda Content */}
-          <div className="relative min-h-[500px]">
+          <div className="relative min-h-125">
             {data.map((dayData, dayIndex) => (
               <div
                 key={`day-${dayData.day}-${dayData.date}`}
@@ -146,7 +146,7 @@ export default function EventAgenda({ data }: Props) {
                           key={`agenda-${dayData.date}-${agenda.time_start}-${agendaIndex}`}
                           delay={0.1 + agendaIndex * 0.05}
                         >
-                          <div className="group h-full overflow-hidden rounded-2xl border border-white/10 bg-[#04060F] bg-gradient-to-br from-[#04060F]/95 via-[#070C1A]/95 to-[#0A1230]/90 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:shadow-lg hover:shadow-blue-500/10">
+                          <div className="group h-full overflow-hidden rounded-2xl border border-white/10 bg-[#04060F] bg-linear-to-br from-[#04060F]/95 via-[#070C1A]/95 to-[#0A1230]/90 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:shadow-lg hover:shadow-blue-500/10">
                             {/* Content */}
                             <div className="flex-1 p-5">
                               {/* Time and Type Badge Row */}

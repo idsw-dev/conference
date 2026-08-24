@@ -29,12 +29,12 @@ export default function AgendaData({ data }: Props) {
           </div>
         </div>
       </div>
-      <div className="agenda-right relative col-span-12 grid flex-shrink grid-cols-9 flex-col lg:col-start-5">
+      <div className="agenda-right relative col-span-12 grid shrink grid-cols-9 flex-col lg:col-start-5">
         {data.map((agenda, i) =>
           i == active
             ? agenda.agendas.map((e, j) => (
                 <div
-                  className="event-card col-span-12 mb-8 flex bg-gradient-to-r from-[#2F4D78] to-[#28456F] text-white lg:grid-rows-1"
+                  className="event-card col-span-12 mb-8 flex bg-linear-to-r from-[#2F4D78] to-[#28456F] text-white lg:grid-rows-1"
                   key={j}
                 >
                   <div className="event-card-content lg:border-t-none border-t-none border-t-white border-opacity-50 p-4">

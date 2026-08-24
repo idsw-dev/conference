@@ -24,7 +24,7 @@ const tierConfig = {
     height: "h-28",
     padding: "p-8",
     badgeSize: "px-4 py-1.5 text-sm",
-    badgeColor: "bg-gradient-to-r from-blue-700 to-blue-600",
+    badgeColor: "bg-linear-to-r from-blue-700 to-blue-600",
     borderColor: "border-blue-500/70",
     borderWidth: "border-2",
     shadowColor: "hover:shadow-blue-500/50 hover:shadow-2xl",
@@ -35,7 +35,7 @@ const tierConfig = {
     height: "h-16",
     padding: "p-5",
     badgeSize: "px-2.5 py-0.5 text-[10px]",
-    badgeColor: "bg-gradient-to-r from-amber-500 to-yellow-500",
+    badgeColor: "bg-linear-to-r from-amber-500 to-yellow-500",
     borderColor: "border-amber-400/40",
     borderWidth: "border",
     shadowColor: "hover:shadow-amber-400/30",
@@ -46,7 +46,7 @@ const tierConfig = {
     height: "h-14",
     padding: "p-4",
     badgeSize: "px-2.5 py-0.5 text-[10px]",
-    badgeColor: "bg-gradient-to-r from-slate-500 to-slate-400",
+    badgeColor: "bg-linear-to-r from-slate-500 to-slate-400",
     borderColor: "border-slate-300/25",
     borderWidth: "border",
     shadowColor: "hover:shadow-slate-300/15",
@@ -73,7 +73,7 @@ const config = tierConfig[data.tier];
   target="_blank"
   rel="noopener noreferrer"
   class:list={[
-    "group flex h-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-[#04060F] bg-gradient-to-br backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-white/20 hover:shadow-xl",
+    "group flex h-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-[#04060F] bg-linear-to-br backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-white/20 hover:shadow-xl",
     config.padding,
     config.borderColor,
     config.borderWidth,

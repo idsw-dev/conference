@@ -12,8 +12,16 @@
     "typescriptreact" // Enable .tsx
   ],
   "files.readonlyInclude": {
-    "node_modules/**": true
+    "node_modules/**": true,
+    "public/[0-9][0-9][0-9][0-9]/**": true
   },
+  "tailwindCSS.files.exclude": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/public/[0-9][0-9][0-9][0-9]/**",
+    "**/public/20*/**"
+  ],
   "npm.packageManager": "npm",
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"

@@ -47,7 +47,7 @@ export default function Accordion({ data, ...props }: Props) {
               {accordion.question}
             </a>
             <div
-              className={`accordion-icon flex-shrink-0 ${openIndex === i ? "rotate-180 transform" : ""}`}
+              className={`accordion-icon shrink-0 ${openIndex === i ? "rotate-180 transform" : ""}`}
             >
               <ChevronDown />
             </div>

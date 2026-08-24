@@ -9,8 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "archive": "node scripts/archive.js",
-    "format": "prettier --plugin=prettier-plugin-astro --write . --ignore-path .gitignore",
-    "prettier:check": "prettier --check --plugin=prettier-plugin-astro . --ignore-path .gitignore",
+    "format": "prettier --plugin=prettier-plugin-astro --write .",
+    "prettier:check": "prettier --check --plugin=prettier-plugin-astro .",
     "prepare": "husky"
   },
   "dependencies": {
