@@ -80,7 +80,7 @@ export const siteConfig = {
       edition: "Inaugural Edition",
       dates: "16–17 November 2024",
       venue: "GetCourse Hall, Jakarta",
-      highlights: "12+ Keynotes & Sessions · Community Track",
+      highlights: "4 Keynotes · 15 Speakers",
       logo: "/2024/logo.svg",
     },
     {
@@ -90,7 +90,7 @@ export const siteConfig = {
       edition: "AI Edition · with SerpApi",
       dates: "22–23 November 2025",
       venue: "Usmar Ismail Hall, Jakarta",
-      highlights: "450+ Attendees · 17+ Speakers · 88% Pros",
+      highlights: "450+ Attendees · 17+ Speakers",
       logo: "/2025/logo-blue.png",
       logoWhite: "/2025/nav-logo.png",
     },
