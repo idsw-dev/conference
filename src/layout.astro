@@ -1,15 +1,46 @@
 ---
-import "@fontsource-variable/inter";
+import "@fontsource/plus-jakarta-sans/400.css";
+import "@fontsource/plus-jakarta-sans/500.css";
+import "@fontsource/plus-jakarta-sans/600.css";
+import "@fontsource/plus-jakarta-sans/700.css";
+import "@fontsource/plus-jakarta-sans/800.css";
+import Header from "./components/header.astro";
+import { siteConfig } from "./config/site";
 import "./styles.css";
 
 const title = "IDSW 2026";
 const description =
-  "Indonesia Software Developer Conference (IDSW) 2026. Indonesia's biggest community-led developer conference.";
+  "Indonesia Software Developer Conference (IDSW) 2026. Indonesia's biggest community-led developer conference. Call for proposals now open.";
 const keywords =
-  "Indonesia Software Developer Conference, IDSW, software development, conference, Jakarta, 2026, developers, networking, technology";
+  "Indonesia Software Developer Conference, IDSW, software development, conference, Jakarta, 2026, developers, CFP, call for proposals";
 
 const isPublic = true;
 const ogImageUrl = new URL("/og.jpg", Astro.site).href;
+
+const eventJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: siteConfig.event.name,
+  description,
+  startDate: "2026-11-21",
+  endDate: "2026-11-22",
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  location: {
+    "@type": "Place",
+    name: siteConfig.event.venue,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Jakarta Selatan",
+      addressCountry: "ID",
+    },
+  },
+  organizer: {
+    "@type": "Organization",
+    name: "PERKODI",
+    url: "https://perkodi.org",
+  },
+};
 ---
 
 <html lang="en">
@@ -18,7 +49,8 @@ const ogImageUrl = new URL("/og.jpg", Astro.site).href;
     <meta name="viewport" content="width=device-width" />
     {isPublic && <meta name="robots" content="index, follow" />}
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:image" content={ogImageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImageUrl} />
@@ -32,11 +64,13 @@ const ogImageUrl = new URL("/og.jpg", Astro.site).href;
     <meta property="og:site_name" content="IDSW" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(eventJsonLd)} />
 
     <title>{title}</title>
   </head>
   <body>
-    <main class="font-sans">
+    <Header />
+    <main>
       <slot />
     </main>
     <script>

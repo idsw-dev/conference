@@ -4,16 +4,291 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
 @theme {
-  --color-dark: rgb(8 8 20);
-  --font-sans: Inter, sans-serif;
+  --color-primary: #003ac2;
+  --color-primary-light: #018dff;
+  --color-primary-mid: #223ec9;
+  --color-navy: #0c1020;
+  --color-navy-deep: #020951;
+  --color-dark: #080814;
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64758b;
+  --color-neutral-700: #334155;
+  --color-neutral-900: #0f172a;
+
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
 }
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--site-header-height, 4rem);
   }
 
   body {
     overflow-x: hidden;
+    font-family: var(--font-sans);
+    color: var(--color-neutral-900);
+    letter-spacing: -0.011em;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-[1280px] px-6 md:px-10;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+
+  .hero-gradient {
+    background-color: #002e9a;
+    background-image:
+      radial-gradient(
+        ellipse 90% 70% at 75% 15%,
+        rgba(1, 141, 255, 0.6) 0%,
+        transparent 65%
+      ),
+      radial-gradient(
+        ellipse 70% 60% at 15% 85%,
+        rgba(34, 62, 201, 0.75) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 60% 50% at 85% 90%,
+        rgba(2, 9, 81, 0.85) 0%,
+        transparent 55%
+      ),
+      linear-gradient(135deg, #003ac2 0%, #00237d 50%, #001347 100%);
+    background-size: 150% 150%;
+    animation: hero-gradient-shift 16s ease-in-out infinite alternate;
+  }
+
+  .hero-glow {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(75px);
+    opacity: 0.6;
+    will-change: transform, opacity;
+  }
+
+  .hero-orb-a {
+    top: -15%;
+    right: -10%;
+    width: min(60vw, 560px);
+    height: min(60vw, 560px);
+    background: radial-gradient(
+      circle,
+      rgba(1, 141, 255, 0.7) 0%,
+      rgba(1, 141, 255, 0) 70%
+    );
+    animation: hero-drift-a 12s ease-in-out infinite alternate;
+  }
+
+  .hero-orb-b {
+    bottom: -20%;
+    left: -12%;
+    width: min(55vw, 520px);
+    height: min(55vw, 520px);
+    background: radial-gradient(
+      circle,
+      rgba(34, 62, 201, 0.8) 0%,
+      rgba(34, 62, 201, 0) 70%
+    );
+    animation: hero-drift-b 15s ease-in-out infinite alternate;
+  }
+
+  .hero-orb-c {
+    top: 30%;
+    left: 40%;
+    width: min(45vw, 420px);
+    height: min(45vw, 420px);
+    background: radial-gradient(
+      circle,
+      rgba(92, 184, 255, 0.35) 0%,
+      rgba(2, 9, 81, 0) 70%
+    );
+    animation: hero-drift-c 18s ease-in-out infinite alternate;
+  }
+
+  .hero-orb-d {
+    bottom: 10%;
+    right: 25%;
+    width: min(35vw, 320px);
+    height: min(35vw, 320px);
+    background: radial-gradient(
+      circle,
+      rgba(1, 141, 255, 0.4) 0%,
+      rgba(1, 141, 255, 0) 70%
+    );
+    animation: hero-drift-d 14s ease-in-out infinite alternate;
+  }
+
+  .venue-link {
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  @keyframes hero-gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes hero-drift-a {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 0.55;
+    }
+    50% {
+      transform: translate3d(-35px, 25px, 0) scale(1.12);
+      opacity: 0.75;
+    }
+    100% {
+      transform: translate3d(20px, -15px, 0) scale(0.95);
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes hero-drift-b {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translate3d(30px, -25px, 0) scale(1.1);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translate3d(-15px, 20px, 0) scale(0.92);
+      opacity: 0.55;
+    }
+  }
+
+  @keyframes hero-drift-c {
+    0% {
+      transform: translate3d(-50%, -50%, 0) scale(1);
+      opacity: 0.35;
+    }
+    50% {
+      transform: translate3d(calc(-50% + 25px), calc(-50% - 20px), 0)
+        scale(1.15);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translate3d(calc(-50% - 20px), calc(-50% + 15px), 0) scale(0.9);
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes hero-drift-d {
+    0% {
+      transform: translate3d(0, 0, 0) scale(0.9);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translate3d(-20px, -30px, 0) scale(1.2);
+      opacity: 0.55;
+    }
+    100% {
+      transform: translate3d(15px, 15px, 0) scale(1);
+      opacity: 0.35;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-gradient {
+      animation: none;
+    }
+    .hero-orb {
+      animation: none;
+    }
+  }
+
+  .cfp-band {
+    background-color: var(--color-navy);
+  }
+
+  .footer-gradient {
+    background-color: var(--color-primary);
+    background-image:
+      radial-gradient(
+        ellipse 70% 80% at 80% 50%,
+        rgba(1, 141, 255, 0.35) 0%,
+        transparent 60%
+      ),
+      linear-gradient(135deg, #003ac2 0%, #002e9a 50%, #00154f 100%);
+  }
+
+  .dot-pattern {
+    background-image: radial-gradient(
+      circle,
+      rgba(0, 58, 194, 0.15) 1.5px,
+      transparent 1.5px
+    );
+    background-size: 24px 24px;
+  }
+
+  .section-surface {
+    background-color: #ffffff;
+    background-image: radial-gradient(
+      circle at 100% 0%,
+      rgba(0, 58, 194, 0.04) 0%,
+      transparent 45%
+    );
+  }
+
+  .section-muted {
+    background-color: var(--color-neutral-50);
+    background-image:
+      radial-gradient(
+        circle at 0% 100%,
+        rgba(0, 58, 194, 0.06) 0%,
+        transparent 40%
+      ),
+      linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  }
+
+  .section-tint {
+    background-color: #eef4ff;
+    background-image:
+      radial-gradient(
+        ellipse 80% 60% at 50% 0%,
+        rgba(0, 58, 194, 0.08) 0%,
+        transparent 60%
+      ),
+      linear-gradient(180deg, #eef4ff 0%, #e8f0ff 100%);
+  }
+
+  .site-nav.is-scrolled,
+  .site-nav.is-menu-open {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    background-color: #0c1020;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    box-shadow: 0 8px 32px rgba(2, 9, 81, 0.5);
+    backdrop-filter: blur(16px);
   }
 }

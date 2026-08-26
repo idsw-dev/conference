@@ -1,0 +1,109 @@
+---
+import { siteConfig } from "../../config/site";
+import Button from "../ui/button.astro";
+
+const isOpen = siteConfig.cfp.enabled;
+const { formats, topics, deadline, deadlineTime } = siteConfig.cfp;
+---
+
+{
+  /*
+    THESIS: CFP is a navy mid-page field — one stage, a date, a submit — not a SaaS card stack.
+    OWN-WORLD: Solid navy, white type, 30 vs 7 as numbers, topics as a reading list.
+    STORY: Single track, bilingual, blind review. Submit before 26 September.
+    FIRST VIEWPORT: Headline, deadline, two durations, four topics, one button.
+    FORM: Navy editorial band extending the hero/footer field grammar.
+  */
+}
+
+<section id="cfp" class="cfp-band text-white">
+  <div class="container-site py-20 sm:py-24 md:py-32">
+    <div class="max-w-3xl">
+      {
+        isOpen ? (
+          <>
+            <p class="text-sm font-medium text-white/70 sm:text-base">
+              Closes {deadline} · {deadlineTime}
+            </p>
+            <h2 class="font-display mt-3 text-3xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+              Speak to the whole room
+            </h2>
+            <p class="mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:mt-6 sm:text-lg">
+              IDSW is a single track. Every talk is in English or Indonesian, on the main stage. Reviewers read the
+              proposal before they see your name.
+            </p>
+          </>
+        ) : (
+          <>
+            <p class="text-sm font-medium text-white/70 sm:text-base">Submissions closed</p>
+            <h2 class="font-display mt-3 text-3xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+              Speak to the whole room
+            </h2>
+            <p class="mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:mt-6 sm:text-lg">
+              Thank you to everyone who submitted. The speaker lineup will be announced after review.
+            </p>
+          </>
+        )
+      }
+    </div>
+
+    <div
+      class="mt-12 grid gap-10 border-t border-white/15 pt-10 sm:mt-16 sm:gap-12 sm:pt-12 lg:grid-cols-[minmax(0,20rem)_1fr] lg:gap-20">
+      <div class="grid grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-1">
+        {
+          formats.map((fmt) => (
+            <div>
+              <p class="font-display text-4xl leading-none font-semibold tracking-tight tabular-nums sm:text-5xl">
+                {fmt.duration.replace(" min", "")}
+                <span class="ml-1 text-lg font-medium text-white/50 sm:text-xl">min</span>
+              </p>
+              <h3 class="font-display mt-3 text-base font-semibold sm:text-lg">{fmt.title}</h3>
+              <p class="mt-1.5 max-w-xs text-sm leading-relaxed text-white/70">{fmt.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div>
+        <h3 class="font-display text-lg font-semibold sm:text-xl">What we want to hear</h3>
+        <ul class="mt-6 grid gap-6 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-7">
+          {
+            topics.map((topic) => (
+              <li>
+                <p class="font-display text-base font-semibold">{topic.title}</p>
+                <p class="mt-1 text-sm leading-relaxed text-white/70">{topic.desc}</p>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="mt-8 max-w-lg text-sm leading-relaxed text-white/70 sm:mt-10">
+          Speakers get a two-day ticket, dinner with the lineup, and abstract feedback if this is your first time on
+          stage.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-4 sm:mt-16 sm:flex-row sm:items-center sm:gap-6">
+      {
+        isOpen ? (
+          <Button href={siteConfig.cfp.url} variant="secondary" external class="w-full text-center sm:w-auto">
+            Submit a proposal
+          </Button>
+        ) : (
+          <Button href="/2025" variant="secondary" class="w-full text-center sm:w-auto">
+            View 2025 talks
+          </Button>
+        )
+      }
+      {
+        isOpen && (
+          <a
+            href="/2025"
+            class="text-center text-sm font-medium text-white/70 underline decoration-white/30 underline-offset-4 transition-colors hover:text-white hover:decoration-white">
+            See talks from 2025
+          </a>
+        )
+      }
+    </div>
+  </div>
+</section>

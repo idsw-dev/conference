@@ -1,0 +1,121 @@
+---
+import { ArrowUpRight, Calendar, Layers, MapPin, Users } from "lucide-react";
+import SectionHeader from "../ui/section-header.astro";
+---
+
+<section id="previous-events" class="section-muted relative overflow-hidden py-16 sm:py-20 md:py-28">
+  <div class="container-site text-center">
+    <SectionHeader
+      title="Previous Events"
+      subtitle="Browse schedules, recorded sessions, and slides from past conferences."
+    />
+
+    <div class="mt-10 grid gap-6 sm:mt-12 md:grid-cols-2 lg:gap-8">
+      <!-- 2024 Edition Card (2024 Dark Technical Aesthetic) -->
+      <a
+        href="/2024"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-700/80 bg-[#0c1222] p-6 text-left text-white shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:border-[#1c7aff] hover:shadow-2xl hover:shadow-[#1c7aff]/15 sm:p-8">
+        <!-- 2024 ambient technical grid & glow -->
+        <div
+          class="pointer-events-none absolute -top-12 -right-12 h-40 w-40 rounded-full bg-[#1c7aff]/20 blur-2xl transition-opacity group-hover:opacity-100"
+          aria-hidden="true">
+        </div>
+        <div
+          class="pointer-events-none absolute inset-0 bg-[radial-gradient(#1c7aff_1px,transparent_1px)] [background-size:16px_16px] opacity-10"
+          aria-hidden="true">
+        </div>
+
+        <div class="relative z-10">
+          <!-- 2024 Top Header: Logo + Title + Arrow -->
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex items-center gap-3.5 sm:gap-4">
+              <div
+                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg border border-white/15 bg-white/10 p-2.5 shadow-inner backdrop-blur-sm sm:h-16 sm:w-16">
+                <img src="/2024/logo.svg" alt="IDSW 2024 Logo" class="h-full w-auto object-contain" />
+              </div>
+              <div>
+                <h3
+                  class="font-display text-2xl font-bold text-white transition-colors group-hover:text-[#5cb8ff] sm:text-3xl">
+                  IDSW 2024
+                </h3>
+              </div>
+            </div>
+
+            <div
+              class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/70 transition-all group-hover:bg-[#1c7aff] group-hover:text-white">
+              <ArrowUpRight className="h-4 w-4" />
+            </div>
+          </div>
+
+          <!-- Metadata -->
+          <div class="mt-6 space-y-2.5 border-t border-white/10 pt-5 text-xs text-white/75 sm:text-sm">
+            <div class="flex items-center gap-2">
+              <Calendar className="h-3.5 w-3.5 text-[#5cb8ff]" />
+              <span>16–17 November 2024</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <MapPin className="h-3.5 w-3.5 text-[#5cb8ff]" />
+              <span>GetCourse Hall, Jakarta Selatan</span>
+            </div>
+            <div class="flex items-center gap-2 text-white/60">
+              <Layers className="h-3.5 w-3.5 text-[#5cb8ff]" />
+              <span>12+ Keynotes & Technical Sessions</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 2025 Edition Card (2025 Electric Blue AI Aesthetic) -->
+      <a
+        href="/2025"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group hover:shadow-primary/30 relative flex flex-col overflow-hidden rounded-2xl border border-blue-400/40 bg-gradient-to-br from-[#003ac2] via-[#00247e] to-[#020951] p-6 text-left text-white shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-300 hover:shadow-2xl sm:p-8">
+        <!-- 2025 ambient aurora glow -->
+        <div
+          class="pointer-events-none absolute -top-12 -right-12 h-44 w-44 rounded-full bg-[#018dff]/30 blur-2xl transition-opacity group-hover:opacity-100"
+          aria-hidden="true">
+        </div>
+        <div
+          class="pointer-events-none absolute bottom-0 left-0 h-32 w-32 rounded-full bg-[#5cb8ff]/15 blur-xl"
+          aria-hidden="true">
+        </div>
+
+        <div class="relative z-10">
+          <!-- 2025 Top Header: Logo + Arrow -->
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex items-center gap-3.5 sm:gap-4">
+              <div
+                class="flex h-14 w-auto max-w-[200px] shrink-0 items-center justify-center rounded-lg border border-white/25 bg-white/15 px-3 py-2 shadow-inner backdrop-blur-sm sm:h-16 sm:max-w-[240px]">
+                <img src="/2025/nav-logo.png" alt="IDSW 2025 with SerpApi" class="h-9 w-auto object-contain sm:h-10" />
+              </div>
+            </div>
+
+            <div
+              class="group-hover:text-primary flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/20 text-white transition-all group-hover:bg-white">
+              <ArrowUpRight className="h-4 w-4" />
+            </div>
+          </div>
+
+          <!-- Metadata -->
+          <div class="mt-6 space-y-2.5 border-t border-white/15 pt-5 text-xs text-white/85 sm:text-sm">
+            <div class="flex items-center gap-2">
+              <Calendar className="h-3.5 w-3.5 text-cyan-300" />
+              <span>22–23 November 2025</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <MapPin className="h-3.5 w-3.5 text-cyan-300" />
+              <span>Usmar Ismail Hall, Jakarta Selatan</span>
+            </div>
+            <div class="flex items-center gap-2 text-white/70">
+              <Users className="h-3.5 w-3.5 text-cyan-300" />
+              <span>450+ Attendees · 17+ Speakers · 88% Pros</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

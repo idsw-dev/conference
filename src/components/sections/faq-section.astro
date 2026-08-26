@@ -1,0 +1,77 @@
+---
+import { SiInstagram, SiX } from "@icons-pack/react-simple-icons";
+import { Mail } from "lucide-react";
+import type { Faq } from "../../@types/faq";
+import Accordion from "../accordion.astro";
+
+interface Props {
+  data: Faq[];
+}
+
+const { data } = Astro.props;
+
+const contactLink =
+  "inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-300 bg-white px-5 py-3 text-base font-semibold text-neutral-700 transition-colors hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-400";
+---
+
+<section id="faq" class="section-surface py-16 sm:py-20 md:py-28">
+  <div class="container-site">
+    <div class="grid items-start gap-8 lg:grid-cols-[1fr_2fr] lg:gap-16">
+      <div class="lg:sticky lg:top-28">
+        <h2
+          class="font-display text-2xl leading-tight font-semibold tracking-tight text-neutral-900 sm:text-3xl md:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+          Frequently Asked Questions
+        </h2>
+        <p class="mt-4 hidden max-w-sm text-base leading-relaxed text-neutral-600 md:block lg:text-lg">
+          Everything you need to know about speaking, attending, and getting involved with IDSW 2026.
+        </p>
+
+        <div class="mt-10 hidden border-t border-neutral-200 pt-8 lg:block">
+          <h3 class="font-display text-xl font-semibold tracking-tight text-neutral-900">Still have questions?</h3>
+          <p class="mt-3 text-base leading-relaxed text-neutral-600">
+            Can't find what you're looking for? Reach out to our organizing team directly.
+          </p>
+          <div class="mt-6 flex flex-col gap-3">
+            <a href="mailto:idsw@perkodi.org" class={contactLink}>
+              <Mail className="h-4 w-4" />
+              Email
+            </a>
+            <a href="https://x.com/idswdev" target="_blank" rel="noopener noreferrer" class={contactLink}>
+              <SiX className="h-4 w-4" />
+              X
+            </a>
+            <a href="https://www.instagram.com/idsw.dev" target="_blank" rel="noopener noreferrer" class={contactLink}>
+              <SiInstagram className="h-4 w-4" />
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <Accordion data={data} variant="light" />
+
+        <div class="mt-10 border-t border-neutral-200 pt-8 lg:hidden">
+          <h3 class="font-display text-xl font-semibold tracking-tight text-neutral-900">Still have questions?</h3>
+          <p class="mt-3 text-base leading-relaxed text-neutral-600">
+            Can't find what you're looking for? Reach out to our organizing team directly.
+          </p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a href="mailto:idsw@perkodi.org" class={contactLink}>
+              <Mail className="h-4 w-4" />
+              Email
+            </a>
+            <a href="https://x.com/idswdev" target="_blank" rel="noopener noreferrer" class={contactLink}>
+              <SiX className="h-4 w-4" />
+              X
+            </a>
+            <a href="https://www.instagram.com/idsw.dev" target="_blank" rel="noopener noreferrer" class={contactLink}>
+              <SiInstagram className="h-4 w-4" />
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

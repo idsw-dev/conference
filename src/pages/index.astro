@@ -1,51 +1,30 @@
 ---
+import type { Faq } from "../@types/faq";
+import type { SocialMedia } from "../@types/social-media";
+import About from "../components/sections/about.astro";
+import Cfp from "../components/sections/cfp.astro";
+import FaqSection from "../components/sections/faq-section.astro";
+import Footer from "../components/sections/footer.astro";
+import Hero from "../components/sections/hero.astro";
+import PreviousEvents from "../components/sections/previous-events.astro";
+import SponsorsPlaceholder from "../components/sections/sponsors-placeholder.astro";
 import Layout from "../layout.astro";
+
+const faq = import.meta.glob("../data/faq.json", { eager: true });
+const socialMediasJson = import.meta.glob("../data/social-media.json", { eager: true });
+
+const faqData: Faq[] = Object.values(faq).map((item) => (item as { default: Faq[] }).default)[0];
+const socialMedias: SocialMedia[] = Object.values(socialMediasJson).map(
+  (item) => (item as { default: SocialMedia[] }).default,
+)[0];
 ---
 
 <Layout>
-  <div class="flex min-h-screen flex-col items-center justify-center bg-[#080814] px-6 text-white">
-    <div class="mx-auto max-w-2xl space-y-12 text-center">
-      <div class="space-y-2">
-        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          IDSW 2026 <span class="block text-xl font-normal text-white/60 sm:text-2xl">is coming!</span>
-        </h1>
-        <p class="text-lg text-white/70">21–22 November 2026 · Jakarta</p>
-      </div>
-
-      <!-- <div class="space-y-8">
-        <div class="space-y-3">
-          <h2 class="text-2xl font-semibold">Call for Proposal is Open</h2>
-          <a
-            href="/cfp"
-            class="inline-block rounded-lg bg-white px-8 py-3 font-semibold text-[#080814] transition-all duration-200 hover:scale-105 hover:bg-white/90">
-            Submit your proposal here
-          </a>
-        </div> -->
-
-      <div class="space-y-3">
-        <h2 class="text-2xl font-semibold">We&apos;re looking for sponsors</h2>
-        <a
-          href="/2026-sponsorship.pdf"
-          class="inline-block rounded-lg border border-white/30 px-8 py-3 font-semibold text-white transition-all duration-200 hover:scale-105 hover:bg-white/10">
-          Check our Sponsorship Prospectus
-        </a>
-      </div>
-
-      <div class="space-y-4">
-        <h2 class="text-2xl font-semibold">Our Previous Events</h2>
-        <div class="flex justify-center gap-4">
-          <a
-            href="/2024"
-            class="inline-block rounded-lg border border-white/30 px-8 py-3 font-semibold text-white transition-all duration-200 hover:scale-105 hover:bg-white/10">
-            IDSW 2024
-          </a>
-          <a
-            href="/2025"
-            class="inline-block rounded-lg border border-white/30 px-8 py-3 font-semibold text-white transition-all duration-200 hover:scale-105 hover:bg-white/10">
-            IDSW 2025
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <Hero />
+  <About />
+  <Cfp />
+  <SponsorsPlaceholder />
+  <PreviousEvents />
+  <FaqSection data={faqData} />
+  <Footer socialMedias={socialMedias} />
 </Layout>

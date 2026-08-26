@@ -1,0 +1,49 @@
+---
+import { siteConfig } from "../../config/site";
+import Button from "../ui/button.astro";
+
+const { prospectusUrl, email } = siteConfig.sponsors;
+---
+
+{
+  /*
+    THESIS: A partnership letter, not a pricing page. No stats, no Gold/Platinum cards.
+    OWN-WORLD: White paper after the navy CFP band. PDF and email. Reading measure.
+    STORY: Community conference, one hall. Download the prospectus or write the partnership desk.
+    FIRST VIEWPORT: Short letter, two actions.
+    FORM: SmashingConf-style partnership note.
+  */
+}
+
+<section id="sponsors" class="section-surface">
+  <div class="container-site py-16 sm:py-20 md:py-28">
+    <div class="max-w-2xl">
+      <h2
+        class="font-display text-3xl leading-tight font-semibold tracking-tight text-neutral-900 sm:text-4xl md:text-[2.75rem] md:leading-[1.15]">
+        Partner with IDSW
+      </h2>
+
+      <div class="mt-6 space-y-4 text-base leading-relaxed text-neutral-700 sm:mt-8 sm:text-lg">
+        <p>
+          IDSW is run by PERKODI and Indonesia's developer communities. Partners sit in the same hall as the talks: one
+          track, two days, Usmar Ismail Hall.
+        </p>
+        <p>
+          Last year SerpApi took the title slot. This year is open. We would rather build a package around what you need
+          than sell you a banner.
+        </p>
+      </div>
+
+      <div class="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:items-center sm:gap-6">
+        <Button href={prospectusUrl} variant="primary" external class="w-full text-center sm:w-auto">
+          Download the prospectus
+        </Button>
+        <a
+          href={`mailto:${email}`}
+          class="text-center text-sm font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary">
+          {email}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
