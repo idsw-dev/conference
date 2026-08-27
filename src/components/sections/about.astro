@@ -7,13 +7,20 @@ import SectionHeader from "../ui/section-header.astro";
   <div class="container-site">
     <div class="grid items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16">
       <div class="relative">
-        <div class="overflow-hidden rounded-2xl shadow-xl">
-          <img
-            src="/img-placeholder.jpg"
-            alt="Audience at a previous IDSW conference"
-            class="aspect-[4/3] w-full object-cover"
-            loading="lazy"
-          />
+        <div class="overflow-hidden rounded-2xl bg-navy shadow-xl">
+          <video
+            id="about-recap"
+            class="aspect-video w-full object-cover"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="/video/idsw-2025.jpg"
+            aria-label="Recap from IDSW 2025">
+            <source src="/video/idsw-2025.av1.mp4" type='video/mp4; codecs="av01.0.05M.08"' />
+            <source src="/video/idsw-2025.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
 
@@ -30,3 +37,33 @@ import SectionHeader from "../ui/section-header.astro";
     </div>
   </div>
 </section>
+
+<script>
+  const video = document.getElementById("about-recap");
+  if (video instanceof HTMLVideoElement) {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduced) {
+      video.removeAttribute("autoplay");
+      video.pause();
+      video.preload = "none";
+    } else {
+      const play = () => {
+        video.play().catch(() => {});
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) play();
+            else video.pause();
+          }
+        },
+        { threshold: 0.2 },
+      );
+
+      observer.observe(video);
+      video.addEventListener("loadeddata", play, { once: true });
+    }
+  }
+</script>
