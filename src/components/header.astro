@@ -6,16 +6,18 @@ import { siteConfig } from "../config/site";
   <nav
     class="site-nav border-b border-transparent py-4 transition-[background-color,box-shadow,border-color,padding] duration-500 ease-out">
     <div class="relative mx-auto max-w-[1280px] px-6 md:px-10">
+      <input id="nav-toggle" type="checkbox" class="peer sr-only" />
+
       <div class="flex items-center justify-between">
         <a href="/" class="relative z-10 flex items-center">
           <img src="/idsw-logo.png" class="h-8 w-auto" alt="IDSW 2026" />
         </a>
 
-        <button
-          type="button"
-          class="site-nav-toggle relative z-10 inline-flex h-10 w-10 items-center justify-center rounded-lg text-white md:hidden"
-          aria-expanded="false"
-          aria-label="Toggle menu">
+        <label
+          for="nav-toggle"
+          class="site-nav-toggle relative z-10 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg text-white md:hidden"
+          aria-controls="site-nav-panel">
+          <span class="sr-only">Menu</span>
           <svg
             class="site-nav-icon-open h-6 w-6"
             viewBox="0 0 24 24"
@@ -26,7 +28,7 @@ import { siteConfig } from "../config/site";
             <path d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
           <svg
-            class="site-nav-icon-close hidden h-6 w-6"
+            class="site-nav-icon-close h-6 w-6"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -34,7 +36,7 @@ import { siteConfig } from "../config/site";
             aria-hidden="true">
             <path d="M6 6l12 12M18 6 6 18"></path>
           </svg>
-        </button>
+        </label>
 
         <ul class="hidden items-center gap-1 md:flex">
           {
@@ -44,8 +46,21 @@ import { siteConfig } from "../config/site";
                   href={menu.href}
                   target={menu.external ? "_blank" : undefined}
                   rel={menu.external ? "noopener noreferrer" : undefined}
-                  class="site-nav-link inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white">
+                  class="site-nav-link inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white"
+                  data-ph-event={menu.name === "Tickets" ? "ticket_cta" : undefined}
+                  data-ph-location={menu.name === "Tickets" ? "nav" : undefined}>
                   {menu.name}
+                  {menu.external && (
+                    <svg class="h-3.5 w-3.5 opacity-70" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M8 8h8v8M8 16 16 8"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  )}
                 </a>
               </li>
             ))
@@ -53,17 +68,30 @@ import { siteConfig } from "../config/site";
         </ul>
       </div>
 
-      <div class="site-nav-panel mt-4 hidden border-t border-white/10 pt-4 md:hidden">
-        <ul class="flex flex-col gap-1">
+      <div id="site-nav-panel" class="site-nav-panel mt-4 border-t border-white/10 pt-4">
+        <ul class="flex flex-col">
           {
             siteConfig.nav.map((menu) => (
-              <li>
+              <li class="w-full">
                 <a
                   href={menu.href}
                   target={menu.external ? "_blank" : undefined}
                   rel={menu.external ? "noopener noreferrer" : undefined}
-                  class="site-nav-link inline-flex items-center gap-1.5 rounded-lg px-3 py-3 text-base font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white">
+                  class="site-nav-link flex w-full items-center justify-between gap-3 rounded-lg px-3 py-3 text-base font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white"
+                  data-ph-event={menu.name === "Tickets" ? "ticket_cta" : undefined}
+                  data-ph-location={menu.name === "Tickets" ? "nav" : undefined}>
                   {menu.name}
+                  {menu.external && (
+                    <svg class="h-4 w-4 shrink-0 opacity-70" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M8 8h8v8M8 16 16 8"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  )}
                 </a>
               </li>
             ))
@@ -76,32 +104,25 @@ import { siteConfig } from "../config/site";
 
 <script>
   const nav = document.querySelector(".site-nav");
-  const toggle = document.querySelector(".site-nav-toggle");
+  const toggle = document.querySelector<HTMLInputElement>("#nav-toggle");
   const panel = document.querySelector(".site-nav-panel");
-  const iconOpen = document.querySelector(".site-nav-icon-open");
-  const iconClose = document.querySelector(".site-nav-icon-close");
   const links = document.querySelectorAll(".site-nav-link");
 
   const setHeaderHeight = () => {
     if (!nav) return;
-    const panelHeight = panel && !panel.classList.contains("hidden") ? panel.getBoundingClientRect().height : 0;
+    const panelHeight = toggle?.checked && panel ? panel.getBoundingClientRect().height : 0;
     const height = nav.getBoundingClientRect().height - panelHeight;
     document.documentElement.style.setProperty("--site-header-height", `${Math.round(height)}px`);
   };
 
   const setScrolled = () => {
-    const scrolled = window.scrollY > 24;
-    nav?.classList.toggle("is-scrolled", scrolled);
+    nav?.classList.toggle("is-scrolled", window.scrollY > 24);
     requestAnimationFrame(setHeaderHeight);
   };
 
   const setMenuOpen = (open: boolean) => {
-    panel?.classList.toggle("hidden", !open);
-    toggle?.setAttribute("aria-expanded", String(open));
-    iconOpen?.classList.toggle("hidden", open);
-    iconClose?.classList.toggle("hidden", !open);
-    document.body.style.overflow = open ? "hidden" : "";
-    nav?.classList.toggle("is-menu-open", open);
+    if (toggle) toggle.checked = open;
+    requestAnimationFrame(setHeaderHeight);
   };
 
   setScrolled();
@@ -113,11 +134,7 @@ import { siteConfig } from "../config/site";
     }
   });
 
-  toggle?.addEventListener("click", () => {
-    const open = toggle.getAttribute("aria-expanded") !== "true";
-    setMenuOpen(open);
-  });
-
+  toggle?.addEventListener("change", () => requestAnimationFrame(setHeaderHeight));
   links.forEach((link) => link.addEventListener("click", () => setMenuOpen(false)));
 
   window.addEventListener("resize", () => {

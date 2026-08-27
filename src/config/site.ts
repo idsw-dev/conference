@@ -1,9 +1,11 @@
+const ticketsUrl =
+  "https://tiptip.id/event/68c1a321-c6f7-4fe8-8ac0-38b48136ff33";
+
 export const siteConfig = {
   event: {
     name: "IDSW 2026",
     tagline: "The Biggest Community-Led Developer Conference in Indonesia",
-    dates: "21–22 Nov 2026",
-    time: "08.30 – 17.30 WIB",
+    dates: "21–22 Nov 2026, 08.30–17.30 WIB",
     venue: "Usmar Ismail Hall, Jakarta Selatan",
     venueUrl: "https://maps.google.com/?q=Usmar+Ismail+Hall+Jakarta",
     calendarUrl:
@@ -16,7 +18,6 @@ export const siteConfig = {
     enabled: true,
     url: "https://cfp.idsw.dev/",
     deadline: "26 September 2026",
-    deadlineTime: "23:59 WIB",
     deadlineIso: "2026-09-26T23:59:59+07:00",
     formats: [
       {
@@ -57,8 +58,9 @@ export const siteConfig = {
   },
 
   tickets: {
-    enabled: false,
-    url: "",
+    enabled: true,
+    url: ticketsUrl,
+    label: "Get an early bird ticket",
   },
 
   sponsors: {
@@ -103,5 +105,6 @@ export const siteConfig = {
     { name: "Previous Events", href: "/#previous-events", external: false },
     { name: "FAQ", href: "/#faq", external: false },
     { name: "Contact", href: "/#contact", external: false },
+    { name: "Tickets", href: ticketsUrl, external: true },
   ],
 } as const;

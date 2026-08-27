@@ -50,6 +50,22 @@
     letter-spacing: -0.025em;
   }
 
+  .hero-stage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: calc(var(--site-header-height, 4.5rem) + 2.25rem);
+    padding-bottom: 2.75rem;
+  }
+
+  /* Fill the viewport only in landscape, where a short navy band looks unfinished. */
+  @media (orientation: landscape) {
+    .hero-stage {
+      min-height: 100svh;
+      padding-bottom: 3.25rem;
+    }
+  }
+
   .hero-gradient {
     background-color: #002e9a;
     background-image:
@@ -69,8 +85,8 @@
         transparent 55%
       ),
       linear-gradient(135deg, #003ac2 0%, #00237d 50%, #001347 100%);
-    background-size: 150% 150%;
-    animation: hero-gradient-shift 16s ease-in-out infinite alternate;
+    background-size: 180% 180%;
+    animation: hero-gradient-shift 10s ease-in-out infinite alternate;
   }
 
   .hero-glow {
@@ -98,7 +114,7 @@
       rgba(1, 141, 255, 0.7) 0%,
       rgba(1, 141, 255, 0) 70%
     );
-    animation: hero-drift-a 12s ease-in-out infinite alternate;
+    animation: hero-drift-a 8s ease-in-out infinite alternate;
   }
 
   .hero-orb-b {
@@ -111,7 +127,7 @@
       rgba(34, 62, 201, 0.8) 0%,
       rgba(34, 62, 201, 0) 70%
     );
-    animation: hero-drift-b 15s ease-in-out infinite alternate;
+    animation: hero-drift-b 10s ease-in-out infinite alternate;
   }
 
   .hero-orb-c {
@@ -124,7 +140,7 @@
       rgba(92, 184, 255, 0.35) 0%,
       rgba(2, 9, 81, 0) 70%
     );
-    animation: hero-drift-c 18s ease-in-out infinite alternate;
+    animation: hero-drift-c 12s ease-in-out infinite alternate;
   }
 
   .hero-orb-d {
@@ -137,7 +153,20 @@
       rgba(1, 141, 255, 0.4) 0%,
       rgba(1, 141, 255, 0) 70%
     );
-    animation: hero-drift-d 14s ease-in-out infinite alternate;
+    animation: hero-drift-d 9s ease-in-out infinite alternate;
+  }
+
+  .hero-sweep {
+    position: absolute;
+    inset: -20% -10%;
+    background: linear-gradient(
+      115deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.07) 45%,
+      transparent 70%
+    );
+    animation: hero-sweep 9s ease-in-out infinite;
+    pointer-events: none;
   }
 
   .venue-link {
@@ -163,8 +192,8 @@
       opacity: 0.55;
     }
     50% {
-      transform: translate3d(-35px, 25px, 0) scale(1.12);
-      opacity: 0.75;
+      transform: translate3d(-70px, 40px, 0) scale(1.18);
+      opacity: 0.85;
     }
     100% {
       transform: translate3d(20px, -15px, 0) scale(0.95);
@@ -178,8 +207,8 @@
       opacity: 0.5;
     }
     50% {
-      transform: translate3d(30px, -25px, 0) scale(1.1);
-      opacity: 0.7;
+      transform: translate3d(55px, -45px, 0) scale(1.16);
+      opacity: 0.8;
     }
     100% {
       transform: translate3d(-15px, 20px, 0) scale(0.92);
@@ -193,9 +222,9 @@
       opacity: 0.35;
     }
     50% {
-      transform: translate3d(calc(-50% + 25px), calc(-50% - 20px), 0)
-        scale(1.15);
-      opacity: 0.6;
+      transform: translate3d(calc(-50% + 50px), calc(-50% - 40px), 0)
+        scale(1.22);
+      opacity: 0.7;
     }
     100% {
       transform: translate3d(calc(-50% - 20px), calc(-50% + 15px), 0) scale(0.9);
@@ -209,8 +238,8 @@
       opacity: 0.3;
     }
     50% {
-      transform: translate3d(-20px, -30px, 0) scale(1.2);
-      opacity: 0.55;
+      transform: translate3d(-40px, -50px, 0) scale(1.28);
+      opacity: 0.7;
     }
     100% {
       transform: translate3d(15px, 15px, 0) scale(1);
@@ -218,12 +247,56 @@
     }
   }
 
+  @keyframes hero-sweep {
+    0% {
+      transform: translate3d(-18%, 8%, 0);
+      opacity: 0.35;
+    }
+    50% {
+      transform: translate3d(14%, -10%, 0);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translate3d(-18%, 8%, 0);
+      opacity: 0.35;
+    }
+  }
+
+  .countdown-value {
+    display: inline-flex;
+    overflow: hidden;
+    line-height: 1;
+  }
+
+  .countdown-slot {
+    display: block;
+    width: 1ch;
+    height: 1em;
+    overflow: hidden;
+  }
+
+  .countdown-strip {
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .countdown-strip > span {
+    display: block;
+    height: 1em;
+    line-height: 1;
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .hero-gradient {
+    .hero-gradient,
+    .hero-orb,
+    .hero-sweep {
       animation: none;
     }
-    .hero-orb {
-      animation: none;
+
+    .countdown-strip {
+      transition: none;
     }
   }
 
@@ -282,8 +355,31 @@
       linear-gradient(180deg, #eef4ff 0%, #e8f0ff 100%);
   }
 
+  .site-nav-panel {
+    display: none;
+  }
+
+  .site-nav-icon-close {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .site-nav:has(#nav-toggle:checked) .site-nav-panel {
+      display: block;
+    }
+
+    .site-nav:has(#nav-toggle:checked) .site-nav-icon-open {
+      display: none;
+    }
+
+    .site-nav:has(#nav-toggle:checked) .site-nav-icon-close {
+      display: block;
+    }
+  }
+
   .site-nav.is-scrolled,
-  .site-nav.is-menu-open {
+  .site-nav.is-menu-open,
+  .site-nav:has(#nav-toggle:checked) {
     border-bottom-color: rgba(255, 255, 255, 0.1);
     background-color: #0c1020;
     padding-top: 0.75rem;

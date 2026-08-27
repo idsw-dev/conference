@@ -1,23 +1,23 @@
 [
   {
     "question": "How do I submit a talk proposal?",
-    "answer": "Head to our Call for Proposals page and submit the form. Talks can be in English or Indonesian, and we welcome speakers at every career stage, from first-time presenters to experienced engineers."
+    "answer": "When the call for proposals is open, use the CFP link on this site. Talks can be in English or Indonesian. First-time speakers are welcome."
   },
   {
     "question": "What kind of talks are you looking for?",
-    "answer": "We look for sessions that help developers solve real problems in production: systems architecture, web and mobile engineering, applied AI, reliability, and technical leadership."
+    "answer": "Sessions that help developers solve real problems in production: systems architecture, web and mobile engineering, applied AI, reliability, and technical leadership."
   },
   {
     "question": "What talk formats are available?",
-    "answer": "You can submit a 30-minute main talk or a 7-minute lightning talk. Both take place on the single conference track."
+    "answer": "We run a single track. Formats and durations are listed in the Call for Proposals section when submissions are open."
   },
   {
     "question": "When will the speaker lineup be announced?",
-    "answer": "We will publish the full lineup after the CFP closes on September 26, 2026. Follow our community channels or check back here for confirmed speakers."
+    "answer": "We publish the lineup on this site after review. Follow our social channels for announcements."
   },
   {
     "question": "How can I get a ticket?",
-    "answer": "Ticket registration is not open yet. We will announce ticket release dates here and on our social channels once sales go live."
+    "answer": "Use Tickets in the menu or the ticket button at the top of this page. Some rounds, including early bird, are limited and can sell out."
   },
   {
     "question": "Will food and drinks be provided?",
@@ -29,14 +29,14 @@
   },
   {
     "question": "Where can I find the latest event updates?",
-    "answer": "This website is the official source of truth for IDSW 2026. We also post announcements and schedule updates across our community social channels."
+    "answer": "This website is the official source of truth for the event. We also post announcements and schedule updates on our social channels."
   },
   {
     "question": "What should I bring on the day of the event?",
-    "answer": "Bring your ticket confirmation email and a valid ID for check-in. A laptop is optional for note-taking and hallway discussions. If you have questions before the event, email us at idsw@perkodi.org."
+    "answer": "Bring your ticket confirmation and a valid ID for check-in. A laptop is optional for note-taking and hallway discussions. If you have questions before the event, email us at idsw@perkodi.org."
   },
   {
     "question": "How do I become a sponsor?",
-    "answer": "Download the official sponsorship proposal from the Sponsors section, or email idsw.sponsor@perkodi.org to connect with our partnership team."
+    "answer": "Download the sponsorship proposal from the Sponsors section, or email idsw.sponsor@perkodi.org to reach the partnership desk."
   }
 ]

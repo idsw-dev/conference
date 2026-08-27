@@ -4,9 +4,11 @@ interface Props {
   variant?: "primary" | "secondary" | "outline" | "outline-dark";
   external?: boolean;
   class?: string;
+  capture?: string;
+  captureLocation?: string;
 }
 
-const { href, variant = "primary", external = false, class: className = "" } = Astro.props;
+const { href, variant = "primary", external = false, class: className = "", capture, captureLocation } = Astro.props;
 
 const base =
   "inline-flex items-center justify-center rounded-lg px-8 py-3.5 text-base font-semibold transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:brightness-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 select-none";
@@ -24,6 +26,8 @@ const variants = {
   href={href}
   class:list={[base, variants[variant], className]}
   target={external ? "_blank" : undefined}
-  rel={external ? "noopener noreferrer" : undefined}>
+  rel={external ? "noopener noreferrer" : undefined}
+  data-ph-event={capture}
+  data-ph-location={captureLocation}>
   <slot />
 </a>

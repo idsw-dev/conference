@@ -1,58 +1,77 @@
 ---
 import { siteConfig } from "../../config/site";
-import CfpCountdown from "../cfp-countdown";
+import { isCfpOpen } from "../../lib/cfp";
+import CfpCountdown from "../cfp-countdown.astro";
 import Button from "../ui/button.astro";
+
+const cfpOpen = isCfpOpen();
 ---
 
-<section
-  id="hero"
-  class="hero-gradient relative min-h-[85vh] overflow-hidden pt-24 pb-14 text-white sm:min-h-[88vh] md:pt-28 md:pb-24">
+<section id="hero" class="hero-gradient hero-stage relative overflow-hidden text-white">
   <div class="hero-glow" aria-hidden="true">
     <div class="hero-orb hero-orb-a"></div>
     <div class="hero-orb hero-orb-b"></div>
     <div class="hero-orb hero-orb-c"></div>
     <div class="hero-orb hero-orb-d"></div>
+    <div class="hero-sweep"></div>
   </div>
 
   <div class="container-site relative z-10 flex flex-col items-center text-center">
     <h1
-      class="font-display max-w-4xl text-[1.7rem] leading-[1.25] font-extrabold tracking-tight text-balance sm:text-5xl sm:leading-[1.12] md:text-6xl lg:text-7xl">
+      class="font-display max-w-4xl text-[1.7rem] leading-[1.25] font-extrabold tracking-tight text-balance sm:text-4xl sm:leading-[1.12] md:text-5xl lg:text-6xl xl:text-7xl">
       {siteConfig.event.tagline}
     </h1>
 
-    <p class="mt-6 max-w-xl text-sm leading-relaxed text-white/80 sm:mt-8 sm:text-base">
+    <div
+      class="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm leading-relaxed text-white/80 sm:mt-8 sm:text-base">
       <a
         href={siteConfig.event.calendarUrl}
         target="_blank"
         rel="noopener noreferrer"
         title="Add to Google Calendar"
-        class="text-white underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white">
+        class="whitespace-nowrap text-white underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white">
         {siteConfig.event.dates}
       </a>
-      <span class="mx-2 text-white/40" aria-hidden="true">·</span>
-      <span>{siteConfig.event.time}</span>
-      <span class="mx-2 text-white/40" aria-hidden="true">·</span>
       <a
         href={siteConfig.event.venueUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="text-white underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white">
+        class="whitespace-nowrap text-white underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white">
         {siteConfig.event.venue}
       </a>
-    </p>
+    </div>
 
     <div
       class="mt-8 flex w-full max-w-sm flex-col items-center gap-3 sm:mt-10 sm:w-auto sm:max-w-none sm:flex-row sm:gap-4">
       {
-        siteConfig.cfp.enabled && (
-          <Button href="/#cfp" variant="secondary" class="w-full sm:w-auto">
+        siteConfig.tickets.enabled && (
+          <Button
+            href={siteConfig.tickets.url}
+            variant="secondary"
+            external
+            class="w-full sm:w-auto"
+            capture="ticket_cta"
+            captureLocation="hero">
+            {siteConfig.tickets.label}
+          </Button>
+        )
+      }
+      {
+        cfpOpen && (
+          <Button href="/#cfp" variant={siteConfig.tickets.enabled ? "outline" : "secondary"} class="w-full sm:w-auto">
             Submit a proposal
           </Button>
         )
       }
-      <Button href="/#previous-events" variant="outline" class="w-full sm:w-auto"> See previous events </Button>
+      {
+        !siteConfig.tickets.enabled && !cfpOpen && (
+          <Button href="/#previous-events" variant="outline" class="w-full sm:w-auto">
+            See previous events
+          </Button>
+        )
+      }
     </div>
 
-    {siteConfig.cfp.enabled && <CfpCountdown client:load />}
+    <CfpCountdown />
   </div>
 </section>

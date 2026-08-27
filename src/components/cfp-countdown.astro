@@ -1,0 +1,210 @@
+---
+import { siteConfig } from "../config/site";
+import { getTimeLeft, isCfpOpen } from "../lib/cfp";
+
+const open = isCfpOpen();
+const timeLeft = getTimeLeft(siteConfig.cfp.deadlineIso);
+const deadlineMs = new Date(siteConfig.cfp.deadlineIso).getTime();
+const strip = [9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const pad = (value: number, length = 2) => String(value).padStart(length, "0");
+const dayWidth = timeLeft.days >= 100 ? 3 : 2;
+
+function digitIndex(digit: number) {
+  return digit + 1;
+}
+---
+
+{
+  open ? (
+    <div id="cfp-countdown" class="mt-8 sm:mt-10" data-deadline={deadlineMs}>
+      <div data-cfp-open>
+        <p class="sr-only">Call for proposals closes {siteConfig.cfp.deadline}.</p>
+        <p class="text-sm text-white/70 sm:text-base" aria-hidden="true">
+          CFP closes in
+        </p>
+        <div class="mt-4 flex items-end justify-center gap-5 sm:gap-8 md:gap-10" aria-hidden="true">
+          <div class="flex min-w-12 flex-col items-center sm:min-w-14">
+            <span
+              class="countdown-value font-display text-3xl leading-none font-semibold tracking-tight tabular-nums sm:text-4xl lg:text-5xl"
+              data-unit="days"
+              data-pad={dayWidth}>
+              {pad(timeLeft.days, dayWidth)
+                .split("")
+                .map((digit) => (
+                  <span class="countdown-slot">
+                    <span
+                      class="countdown-strip"
+                      data-digit={digit}
+                      style={`transform: translateY(-${digitIndex(Number(digit))}em)`}>
+                      {strip.map((n) => (
+                        <span>{n}</span>
+                      ))}
+                    </span>
+                  </span>
+                ))}
+            </span>
+            <span class="mt-2 text-xs text-white/70 sm:text-sm">days</span>
+          </div>
+          <div class="flex min-w-12 flex-col items-center sm:min-w-14">
+            <span
+              class="countdown-value font-display text-3xl leading-none font-semibold tracking-tight tabular-nums sm:text-4xl lg:text-5xl"
+              data-unit="hours"
+              data-pad="2">
+              {pad(timeLeft.hours)
+                .split("")
+                .map((digit) => (
+                  <span class="countdown-slot">
+                    <span
+                      class="countdown-strip"
+                      data-digit={digit}
+                      style={`transform: translateY(-${digitIndex(Number(digit))}em)`}>
+                      {strip.map((n) => (
+                        <span>{n}</span>
+                      ))}
+                    </span>
+                  </span>
+                ))}
+            </span>
+            <span class="mt-2 text-xs text-white/70 sm:text-sm">hours</span>
+          </div>
+          <div class="flex min-w-12 flex-col items-center sm:min-w-14">
+            <span
+              class="countdown-value font-display text-3xl leading-none font-semibold tracking-tight tabular-nums sm:text-4xl lg:text-5xl"
+              data-unit="minutes"
+              data-pad="2">
+              {pad(timeLeft.minutes)
+                .split("")
+                .map((digit) => (
+                  <span class="countdown-slot">
+                    <span
+                      class="countdown-strip"
+                      data-digit={digit}
+                      style={`transform: translateY(-${digitIndex(Number(digit))}em)`}>
+                      {strip.map((n) => (
+                        <span>{n}</span>
+                      ))}
+                    </span>
+                  </span>
+                ))}
+            </span>
+            <span class="mt-2 text-xs text-white/70 sm:text-sm">min</span>
+          </div>
+          <div class="flex min-w-12 flex-col items-center sm:min-w-14">
+            <span
+              class="countdown-value font-display text-3xl leading-none font-semibold tracking-tight tabular-nums sm:text-4xl lg:text-5xl"
+              data-unit="seconds"
+              data-pad="2">
+              {pad(timeLeft.seconds)
+                .split("")
+                .map((digit) => (
+                  <span class="countdown-slot">
+                    <span
+                      class="countdown-strip"
+                      data-digit={digit}
+                      style={`transform: translateY(-${digitIndex(Number(digit))}em)`}>
+                      {strip.map((n) => (
+                        <span>{n}</span>
+                      ))}
+                    </span>
+                  </span>
+                ))}
+            </span>
+            <span class="mt-2 text-xs text-white/70 sm:text-sm">sec</span>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-md" data-cfp-closed hidden>
+        <p class="text-sm font-medium text-white/70">CFP is closed</p>
+        <p class="font-display mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">Submissions are in review</p>
+        <p class="mt-2 text-sm leading-relaxed text-white/70 sm:text-base">
+          The speaker lineup will be announced on this site.
+        </p>
+      </div>
+    </div>
+  ) : (
+    <div class="mt-8 max-w-md sm:mt-10">
+      <p class="text-sm font-medium text-white/70">CFP is closed</p>
+      <p class="font-display mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">Submissions are in review</p>
+      <p class="mt-2 text-sm leading-relaxed text-white/70 sm:text-base">
+        The speaker lineup will be announced on this site.
+      </p>
+    </div>
+  )
+}
+
+<script>
+  const root = document.getElementById("cfp-countdown");
+  if (root) {
+    const deadline = Number(root.dataset.deadline);
+    const openEl = root.querySelector("[data-cfp-open]");
+    const closedEl = root.querySelector("[data-cfp-closed]");
+    const kickerOpen = document.querySelector("[data-cfp-kicker-open]");
+    const kickerClosed = document.querySelector("[data-cfp-kicker-closed]");
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const setDigit = (strip: HTMLElement, next: number) => {
+      const prev = Number(strip.dataset.digit ?? next);
+      if (prev === next) return;
+
+      let index = next + 1;
+      if (prev === 0 && next === 9) index = 0;
+
+      strip.style.transform = `translateY(-${index}em)`;
+      strip.dataset.digit = String(next);
+
+      if (index === 0 && !reduced) {
+        strip.addEventListener(
+          "transitionend",
+          () => {
+            strip.style.transition = "none";
+            strip.style.transform = "translateY(-10em)";
+            void strip.offsetWidth;
+            strip.style.transition = "";
+          },
+          { once: true },
+        );
+      }
+    };
+
+    const setUnit = (name: string, value: number) => {
+      const unit = root.querySelector(`[data-unit='${name}']`);
+      if (!(unit instanceof HTMLElement)) return;
+      const width = Number(unit.dataset.pad ?? 2);
+      const digits = String(value).padStart(width, "0").split("");
+      unit.querySelectorAll<HTMLElement>(".countdown-strip").forEach((strip, i) => {
+        setDigit(strip, Number(digits[i]));
+      });
+    };
+
+    const showClosed = () => {
+      openEl?.setAttribute("hidden", "");
+      closedEl?.removeAttribute("hidden");
+      kickerOpen?.setAttribute("hidden", "");
+      kickerClosed?.removeAttribute("hidden");
+    };
+
+    const tick = () => {
+      const diff = deadline - Date.now();
+      if (diff <= 0) {
+        showClosed();
+        return false;
+      }
+
+      setUnit("days", Math.floor(diff / 86_400_000));
+      setUnit("hours", Math.floor((diff / 3_600_000) % 24));
+      setUnit("minutes", Math.floor((diff / 60_000) % 60));
+      setUnit("seconds", Math.floor((diff / 1_000) % 60));
+      return true;
+    };
+
+    if (tick()) {
+      const id = window.setInterval(
+        () => {
+          if (!tick()) window.clearInterval(id);
+        },
+        reduced ? 60_000 : 1_000,
+      );
+    }
+  }
+</script>
