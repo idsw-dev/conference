@@ -10,11 +10,7 @@ const { title, subtitle, dark = false, class: className = "" } = Astro.props;
 ---
 
 <div class:list={["text-center", className]}>
-  <h2
-    class:list={[
-      "font-display text-2xl font-semibold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl",
-      dark ? "text-white" : "text-neutral-900",
-    ]}>
+  <h2 class:list={["section-heading", dark ? "text-white" : "text-neutral-900"]}>
     {title}
   </h2>
   {
