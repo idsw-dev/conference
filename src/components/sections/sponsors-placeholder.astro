@@ -35,12 +35,20 @@ const { prospectusUrl, email } = siteConfig.sponsors;
       </div>
 
       <div class="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:items-center sm:gap-6">
-        <Button href={prospectusUrl} variant="primary" external class="w-full text-center sm:w-auto">
+        <Button
+          href={prospectusUrl}
+          variant="primary"
+          external
+          class="w-full text-center sm:w-auto"
+          capture="sponsor_prospectus_cta"
+          captureLocation="sponsors">
           Download the prospectus
         </Button>
         <a
           href={`mailto:${email}`}
-          class="text-center text-sm font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary">
+          class="text-center text-sm font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
+          data-ph-event="sponsor_email_cta"
+          data-ph-location="sponsors">
           {email}
         </a>
       </div>

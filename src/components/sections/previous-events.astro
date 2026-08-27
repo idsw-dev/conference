@@ -1,25 +1,23 @@
 ---
 import { ArrowUpRight, Calendar, Layers, MapPin, Users } from "lucide-react";
-import SectionHeader from "../ui/section-header.astro";
 
 const cardInteractive =
-  "relative flex flex-col overflow-hidden rounded-2xl p-6 text-left text-white transition-all duration-200 hover:scale-[1.02] hover:brightness-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy active:scale-[0.98] sm:p-8";
+  "relative flex flex-col overflow-hidden rounded-lg border border-white/20 p-6 text-left text-white transition-all duration-200 hover:scale-[1.02] hover:brightness-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy active:scale-[0.98] sm:p-8";
 ---
 
 <section id="previous-events" class="section-muted relative overflow-hidden py-16 sm:py-20 md:py-28">
-  <div class="container-site text-center">
-    <SectionHeader
-      title="Previous Events"
-      subtitle="Browse schedules, recorded sessions, and slides from past conferences."
-    />
+  <div class="container-site">
+    <h2
+      class="font-display text-3xl leading-tight font-semibold tracking-tight text-neutral-900 sm:text-4xl md:text-[2.75rem] md:leading-[1.15]">
+      Previous Events
+    </h2>
+    <p class="mt-6 max-w-xl text-base leading-relaxed text-neutral-700 sm:mt-8 sm:text-lg">
+      The 2024 and 2025 conference websites.
+    </p>
 
     <div class="mt-10 grid gap-6 sm:mt-12 md:grid-cols-2 lg:gap-8">
       <!-- 2024 Edition Card (2024 Dark Technical Aesthetic) -->
-      <a
-        href="/2024"
-        target="_blank"
-        rel="noopener noreferrer"
-        class:list={[cardInteractive, "border border-slate-700/80 bg-[#0c1222]"]}>
+      <a href="/2024" target="_blank" rel="noopener noreferrer" class:list={[cardInteractive, "bg-[#0c1222]"]}>
         <!-- 2024 ambient technical grid & glow -->
         <div
           class="pointer-events-none absolute -top-12 -right-12 h-40 w-40 rounded-full bg-[#1c7aff]/20 blur-2xl"
@@ -35,7 +33,7 @@ const cardInteractive =
           <div class="flex items-start justify-between gap-4">
             <div class="flex items-center gap-3.5 sm:gap-4">
               <div
-                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg border border-white/15 bg-white/10 p-2.5 backdrop-blur-sm sm:h-16 sm:w-16">
+                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg border border-white/20 bg-white/10 p-2.5 backdrop-blur-sm sm:h-16 sm:w-16">
                 <img src="/2024/logo.svg" alt="IDSW 2024 Logo" class="h-full w-auto object-contain" />
               </div>
               <div>
@@ -71,10 +69,7 @@ const cardInteractive =
         href="/2025"
         target="_blank"
         rel="noopener noreferrer"
-        class:list={[
-          cardInteractive,
-          "border border-blue-400/40 bg-gradient-to-br from-[#003ac2] via-[#00247e] to-[#020951]",
-        ]}>
+        class:list={[cardInteractive, "bg-gradient-to-br from-[#003ac2] via-[#00247e] to-[#020951]"]}>
         <!-- 2025 ambient aurora glow -->
         <div
           class="pointer-events-none absolute -top-12 -right-12 h-44 w-44 rounded-full bg-[#018dff]/30 blur-2xl"
@@ -90,7 +85,7 @@ const cardInteractive =
           <div class="flex items-start justify-between gap-4">
             <div class="flex items-center gap-3.5 sm:gap-4">
               <div
-                class="flex h-14 w-auto max-w-[200px] shrink-0 items-center justify-center rounded-lg border border-white/25 bg-white/15 px-3 py-2 backdrop-blur-sm sm:h-16 sm:max-w-[240px]">
+                class="flex h-14 w-auto max-w-[200px] shrink-0 items-center justify-center rounded-lg border border-white/20 bg-white/15 px-3 py-2 backdrop-blur-sm sm:h-16 sm:max-w-[240px]">
                 <img src="/2025/nav-logo.png" alt="IDSW 2025 with SerpApi" class="h-9 w-auto object-contain sm:h-10" />
               </div>
             </div>
