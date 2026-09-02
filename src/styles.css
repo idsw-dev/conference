@@ -71,25 +71,83 @@
   }
 
   .hero-gradient {
-    background-color: #002e9a;
+    background-color: #001347;
     background-image:
       radial-gradient(
-        ellipse 90% 70% at 75% 15%,
-        rgba(1, 141, 255, 0.6) 0%,
-        transparent 65%
+        ellipse 120% 80% at 20% 0%,
+        rgba(1, 141, 255, 0.85) 0%,
+        rgba(1, 141, 255, 0.15) 55%,
+        transparent 75%
       ),
       radial-gradient(
-        ellipse 70% 60% at 15% 85%,
-        rgba(34, 62, 201, 0.75) 0%,
+        ellipse 90% 60% at 80% 15%,
+        rgba(92, 184, 255, 0.5) 0%,
         transparent 60%
       ),
       radial-gradient(
-        ellipse 60% 50% at 85% 90%,
-        rgba(2, 9, 81, 0.85) 0%,
-        transparent 55%
+        ellipse 100% 70% at 50% 110%,
+        rgba(2, 9, 81, 0.9) 0%,
+        rgba(34, 62, 201, 0.3) 55%,
+        transparent 75%
       ),
-      linear-gradient(135deg, #003ac2 0%, #00237d 50%, #001347 100%);
-    background-size: 180% 180%;
+      linear-gradient(
+        160deg,
+        #0057d9 0%,
+        #003ac2 45%,
+        #00237d 70%,
+        #001347 100%
+      );
+  }
+
+  .hero-accent {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hero-accent-radiance {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    width: min(100vw, 1200px);
+    height: min(80vh, 620px);
+    transform: translateX(-50%);
+    background: radial-gradient(
+      ellipse 50% 50% at 50% 50%,
+      rgba(255, 255, 255, 0.28) 0%,
+      rgba(255, 255, 255, 0.1) 42%,
+      transparent 72%
+    );
+    filter: blur(6px);
+  }
+
+  .hero-accent-cyan {
+    position: absolute;
+    top: -18%;
+    right: -10%;
+    width: min(58vw, 720px);
+    height: min(58vw, 720px);
+    background: radial-gradient(
+      circle,
+      rgba(92, 184, 255, 0.55) 0%,
+      rgba(92, 184, 255, 0) 66%
+    );
+    filter: blur(10px);
+  }
+
+  .hero-accent-violet {
+    position: absolute;
+    bottom: -22%;
+    left: -8%;
+    width: min(56vw, 680px);
+    height: min(56vw, 680px);
+    background: radial-gradient(
+      circle,
+      rgba(87, 92, 232, 0.5) 0%,
+      rgba(87, 92, 232, 0) 68%
+    );
+    filter: blur(12px);
   }
 
   .venue-link {
