@@ -71,6 +71,12 @@ export const siteConfig = {
     contactPhone: "+62 812-1084-1382",
   },
 
+  communities: [
+    { name: "Python ID", logo: "/community/python-id.png", url: "https://telegram.me/pythonID" },
+    { name: "StartupLokal", logo: "/community/startuplokal.png", url: "https://startuplokal.community/" },
+    { name: "WPU", logo: "/community/wpu.png", url: "https://discord.gg/S4rrXQU" },
+  ],
+
   about:
     "IDSW is a community-led developer conference run by PERKODI and tech communities across Indonesia (Python ID, id-ruby, TEKNUM, JakartaJS, Deeptech.id). 5,000+ developers have joined 15+ past editions since 2017.",
 

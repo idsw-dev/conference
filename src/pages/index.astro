@@ -3,6 +3,7 @@ import type { Faq } from "../@types/faq";
 import type { SocialMedia } from "../@types/social-media";
 import About from "../components/sections/about.astro";
 import Cfp from "../components/sections/cfp.astro";
+import CommunityPartners from "../components/sections/community-partners.astro";
 import FaqSection from "../components/sections/faq-section.astro";
 import Footer from "../components/sections/footer.astro";
 import Hero from "../components/sections/hero.astro";
@@ -24,6 +25,7 @@ const socialMedias: SocialMedia[] = Object.values(socialMediasJson).map(
   <About />
   <Cfp />
   <SponsorsPlaceholder />
+  <CommunityPartners />
   <PreviousEvents />
   <FaqSection data={faqData} />
   <Footer socialMedias={socialMedias} />
