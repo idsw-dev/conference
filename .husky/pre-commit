@@ -1,1 +1,16 @@
+#!/usr/bin/env sh
+set -e
+
+echo "→ Formatting..."
 npm run format
+
+echo "→ Checking formatting..."
+npx prettier --check --plugin=prettier-plugin-astro .
+
+echo "→ Type-checking..."
+npx tsc --noEmit
+
+echo "→ Building..."
+npm run build
+
+echo "✓ All checks passed"
