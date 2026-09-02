@@ -72,9 +72,21 @@ export const siteConfig = {
   },
 
   communities: [
-    { name: "Python ID", logo: "/community/python-id.png", url: "https://telegram.me/pythonID" },
-    { name: "StartupLokal", logo: "/community/startuplokal.png", url: "https://startuplokal.community/" },
-    { name: "WPU", logo: "/community/wpu.png", url: "https://discord.gg/S4rrXQU" },
+    {
+      name: "Python ID",
+      logo: "/community/python-id.png",
+      url: "https://telegram.me/pythonID",
+    },
+    {
+      name: "StartupLokal",
+      logo: "/community/startuplokal.png",
+      url: "https://startuplokal.community/",
+    },
+    {
+      name: "WPU",
+      logo: "/community/wpu.png",
+      url: "https://discord.gg/S4rrXQU",
+    },
   ],
 
   about:
