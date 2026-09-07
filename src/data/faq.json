@@ -25,7 +25,11 @@
   },
   {
     "question": "Is there a refund policy?",
-    "answer": "Tickets are non-refundable once purchased. If your plans change, you can transfer your ticket to a colleague or friend. Email us and we will help transfer the name."
+    "answer": "Tickets are non-refundable once purchased, except if your talk proposal (CFP) is accepted as a speaker. If your plans change, you can transfer your ticket to a colleague or friend. Email us and we will help transfer the name."
+  },
+  {
+    "question": "What happens if I bought a ticket and my talk proposal (CFP) is accepted?",
+    "answer": "If your proposal is accepted, your purchased ticket can be refunded. Alternatively, you can choose to transfer the ticket to a colleague or friend. Accepted speakers will be connected with a Liaison Officer (LO) who will assist with the refund, ticket transfer, and event preparations."
   },
   {
     "question": "Where can I find the latest event updates?",
