@@ -71,6 +71,19 @@ export const siteConfig = {
     contactPhone: "+62 812-1084-1382",
   },
 
+  partners: [
+    {
+      name: "Midtrans",
+      logo: "/partners/midtrans.svg",
+      url: "https://midtrans.com",
+    },
+    {
+      name: "Biznet Gio",
+      logo: "/partners/biznet-gio.png",
+      url: "https://www.biznetgio.com",
+    },
+  ],
+
   communities: [
     {
       name: "Python ID",

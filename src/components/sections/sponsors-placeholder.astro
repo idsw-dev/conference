@@ -16,7 +16,7 @@ const { prospectusUrl, email } = siteConfig.sponsors;
 }
 
 <section id="sponsors" class="section-surface">
-  <div class="container-site py-16 sm:py-20 md:py-28">
+  <div class="container-site pt-16 pb-10 sm:pt-20 sm:pb-12 md:pt-28 md:pb-14">
     <div class="max-w-2xl">
       <h2 class="section-heading text-neutral-900">Partner with IDSW</h2>
 
@@ -50,5 +50,37 @@ const { prospectusUrl, email } = siteConfig.sponsors;
         </a>
       </div>
     </div>
+
+    {
+      siteConfig.partners.length > 0 && (
+        <div class="mt-14 sm:mt-16 pt-10 sm:pt-12 border-t border-neutral-100">
+          <p class="w-full text-center text-xs font-medium tracking-[0.16em] text-neutral-400 uppercase sm:text-left">
+            Current partners
+          </p>
+          <ul class="mt-6 flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:justify-start sm:gap-x-12">
+            {siteConfig.partners.map((partner) => (
+              <li>
+                <a
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={`Visit ${partner.name}`}
+                  class="group inline-flex items-center justify-center rounded-lg outline-none transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  data-ph-event="partner_click"
+                  data-ph-location="sponsors"
+                  data-ph-partner={partner.name}>
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    loading="lazy"
+                    class="h-8 w-auto max-w-[12rem] object-contain opacity-85 transition-opacity duration-200 group-hover:opacity-100 sm:h-10 sm:max-w-[14rem]"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
   </div>
 </section>
