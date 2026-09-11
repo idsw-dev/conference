@@ -60,7 +60,7 @@ export const siteConfig = {
   tickets: {
     enabled: true,
     url: ticketsUrl,
-    label: "Get an early bird ticket",
+    label: "Get a regular ticket",
   },
 
   sponsors: {
