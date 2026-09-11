@@ -76,11 +76,13 @@ export const siteConfig = {
       name: "Midtrans",
       logo: "/partners/midtrans.png",
       url: "https://midtrans.com",
+      tier: "platinum",
     },
     {
       name: "Biznet Gio",
       logo: "/partners/biznet-gio.png",
       url: "https://www.biznetgio.com",
+      tier: "platinum",
     },
   ],
 

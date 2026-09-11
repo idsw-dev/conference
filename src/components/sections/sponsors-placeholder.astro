@@ -54,10 +54,10 @@ const { prospectusUrl, email } = siteConfig.sponsors;
     {
       siteConfig.partners.length > 0 && (
         <div class="mt-14 sm:mt-16 pt-10 sm:pt-12 border-t border-neutral-100">
-          <p class="w-full text-center text-xs font-medium tracking-[0.16em] text-neutral-400 uppercase sm:text-left">
-            Current partners
+          <p class="w-full text-center text-xs font-semibold tracking-[0.16em] text-neutral-400 uppercase sm:text-left">
+            Platinum partners
           </p>
-          <ul class="mt-6 flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:justify-start sm:gap-x-12">
+          <ul class="mt-6 flex w-full flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:justify-start sm:gap-x-14">
             {siteConfig.partners.map((partner) => (
               <li>
                 <a
@@ -73,7 +73,7 @@ const { prospectusUrl, email } = siteConfig.sponsors;
                     src={partner.logo}
                     alt={`${partner.name} logo`}
                     loading="lazy"
-                    class="h-8 w-auto max-w-[12rem] object-contain opacity-85 transition-opacity duration-200 group-hover:opacity-100 sm:h-10 sm:max-w-[14rem]"
+                    class="h-10 w-auto max-w-[14rem] object-contain transition-transform duration-200 group-hover:scale-[1.03] sm:h-12 sm:max-w-[16rem]"
                   />
                 </a>
               </li>
