@@ -74,7 +74,7 @@ export const siteConfig = {
   partners: [
     {
       name: "Midtrans",
-      logo: "/partners/midtrans.svg",
+      logo: "/partners/midtrans.png",
       url: "https://midtrans.com",
     },
     {
