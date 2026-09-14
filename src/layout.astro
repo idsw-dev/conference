@@ -8,18 +8,26 @@ import Header from "./components/header.astro";
 import PostHog from "./components/posthog.astro";
 import { siteConfig } from "./config/site";
 import "./styles.css";
+interface Props {
+  title?: string;
+  description?: string;
+  ogDescription?: string;
+  canonicalPath?: string;
+}
 
-const title = "IDSW 2026 | Indonesia Software Developer Conference, Jakarta";
-const description =
-  "IDSW is Indonesia's biggest community-led developer conference. Run by PERKODI in Jakarta, with a single track for software engineers from across the country.";
-const ogDescription =
-  "IDSW is Indonesia's biggest community-led developer conference. Two days in Jakarta with PERKODI and local communities.";
+const {
+  title = "IDSW 2026 | Indonesia Software Developer Conference, Jakarta",
+  description = "IDSW is Indonesia's biggest community-led developer conference. Run by PERKODI in Jakarta, with a single track for software engineers from across the country.",
+  ogDescription = "IDSW is Indonesia's biggest community-led developer conference. Two days in Jakarta with PERKODI and local communities.",
+  canonicalPath = "/",
+} = Astro.props;
+
 const keywords =
   "Indonesia Software Developer Conference, IDSW, PERKODI, developer conference, Jakarta, software engineering";
 const ogAlt = "IDSW 2026. Indonesia Software Developer Conference.";
 
 const isPublic = true;
-const canonicalUrl = new URL("/", Astro.site).href;
+const canonicalUrl = new URL(canonicalPath, Astro.site).href;
 const ogImageUrl = new URL("/og.jpg", Astro.site).href;
 
 const eventJsonLd = {

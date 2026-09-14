@@ -1,0 +1,343 @@
+---
+import LegalPage from "../components/legal/legal-page.astro";
+
+const toc = [
+  { id: "agreement", title: "Agreement to Terms" },
+  { id: "registration-tickets", title: "Registration & Tickets" },
+  { id: "code-of-conduct", title: "Code of Conduct" },
+  { id: "livestreaming-recording", title: "Livestreaming & Recording" },
+  { id: "photography-media", title: "Photography & Media Use" },
+  { id: "liability-warranty", title: "Liability & Warranty" },
+  { id: "privacy-data", title: "Privacy & Data Usage" },
+  { id: "changes-cancellations", title: "Changes & Cancellations" },
+  { id: "force-majeure", title: "Force Majeure" },
+  { id: "intellectual-property", title: "Intellectual Property" },
+  { id: "dispute-resolution", title: "Dispute Resolution" },
+  { id: "amendments", title: "Amendments" },
+  { id: "contact", title: "Contact Information" },
+];
+---
+
+<LegalPage
+  title="Terms of Service"
+  subtitle="The terms and conditions governing participation, ticketing, media use, and rights for IDSW 2026 organized by PERKODI."
+  toc={toc}
+  currentPath="/terms-of-service">
+  <div class="rounded-xl border border-blue-200 bg-blue-50/60 p-5 text-sm text-blue-950">
+    <p class="font-semibold text-blue-900 mb-1">Important Notice</p>
+    <p class="text-blue-900/90 leading-relaxed">
+      By registering for, purchasing a ticket to, or attending <strong
+        >Indonesia Software Developer Weekend (IDSW 2026)</strong
+      >, whether in-person or virtually, you enter into a legally binding agreement with <strong>PERKODI</strong> and agree
+      to comply with these Terms of Service.
+    </p>
+  </div>
+
+  <!-- Section 1: Agreement -->
+  <section id="agreement" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      1. Agreement to Terms
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      These Terms of Service (“Terms”) constitute a legally binding agreement between you (“Participant”, “Attendee”,
+      “Speaker”, “Sponsor”, or “You”) and <strong
+        >Perkumpulan Komunitas Pengembang Perangkat Lunak Indonesia (PERKODI)</strong
+      > (“PERKODI”, “We”, “Us”, or “Our”), the organizer of <strong
+        >Indonesia Software Developer Weekend 2026 (IDSW 2026)</strong
+      >.
+    </p>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      These Terms apply to all participants attending in-person sessions at Usmar Ismail Hall, Jakarta, as well as
+      participants joining virtual sessions, workshops, networking channels, and related conference activities. If you
+      do not agree with any part of these Terms, please do not register for or attend the event.
+    </p>
+  </section>
+
+  <!-- Section 2: Registration & Tickets -->
+  <section id="registration-tickets" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      2. Registration & Tickets
+    </h2>
+    <ul class="list-disc pl-5 space-y-2 text-sm sm:text-base text-neutral-700">
+      <li>
+        <strong>Mandatory Registration:</strong> Valid registration through our official ticketing platform (TipTip) or official
+        complimentary pass distribution is required for admission.
+      </li>
+      <li>
+        <strong>Sales Policy:</strong> All ticket sales are final and non-refundable, except as explicitly provided in these
+        Terms or under exceptional circumstances approved at the sole discretion of the organizers.
+      </li>
+      <li>
+        <strong>CFP Speaker Refund Exception:</strong> Attendees who purchased a ticket and are subsequently accepted as conference
+        speakers are eligible for a full refund upon written request prior to the event.
+      </li>
+      <li>
+        <strong>Non-Transferability:</strong> Tickets are non-transferable unless prior written request is submitted to and
+        approved by the organizing committee at least 7 business days before the event.
+      </li>
+      <li>
+        <strong>Right of Refusal:</strong> PERKODI reserves the right to deny or revoke entry to any individual who violates
+        safety policies, commits fraud, or fails to adhere to the event Code of Conduct.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section 3: Code of Conduct -->
+  <section id="code-of-conduct" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      3. Code of Conduct
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      All participants, including in-person and online attendees, speakers, sponsors, exhibitors, and staff, must
+      strictly abide by the event’s <a href="/code-of-conduct" class="text-primary font-semibold underline"
+        >Code of Conduct</a
+      >:
+    </p>
+    <ul class="list-disc pl-5 space-y-1.5 text-sm sm:text-base text-neutral-700">
+      <li>
+        <strong>Respect others:</strong> Discrimination or harassment of any form based on gender, race, religion, disability,
+        or physical appearance is strictly prohibited.
+      </li>
+      <li>
+        <strong>Follow all instructions:</strong> Comply immediately with instructions given by IDSW event staff, venue management,
+        and security personnel.
+      </li>
+      <li>
+        <strong>Priority:</strong> The safety and comfort of all participants take precedence over all other event activities.
+      </li>
+    </ul>
+    <p class="text-xs text-neutral-600 bg-neutral-100 rounded-lg p-3">
+      Violations of the Code of Conduct may result in immediate expulsion from the conference without refund and
+      potential referral to relevant authorities.
+    </p>
+  </section>
+
+  <!-- Section 4: Livestreaming & Recording -->
+  <section id="livestreaming-recording" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      4. Livestreaming & Recording
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      By attending IDSW 2026, participants acknowledge and consent to image, audio, and video recordings of sessions and
+      auditorium proceedings:
+    </p>
+    <ul class="list-disc pl-5 space-y-1.5 text-sm sm:text-base text-neutral-700">
+      <li>
+        Recordings may be used for live streaming, official digital archives, educational distribution, or future
+        promotional purposes on official IDSW and PERKODI channels.
+      </li>
+      <li>
+        If a participant prefers not to be recorded or included in public video streams, they must notify the organizers
+        in writing at least 7 days in advance via <a href="mailto:idsw@perkodi.org" class="text-primary underline"
+          >idsw@perkodi.org</a
+        > so reasonable accommodations (such as designated non-filmed seating zones) can be arranged where feasible.
+      </li>
+      <li>
+        Unauthorized continuous recording, live broadcasting, or commercial redistribution of conference sessions by
+        attendees without prior written permission is prohibited.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section 5: Photography & Media Use -->
+  <section id="photography-media" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      5. Photography & Media Use
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      Official photographers and media crew will capture photos and video footage throughout the conference:
+    </p>
+    <ul class="list-disc pl-5 space-y-1.5 text-sm sm:text-base text-neutral-700">
+      <li>
+        Event photos or videos featuring attendees may be used for marketing, press releases, social media, recap
+        publications, and historical archival purposes.
+      </li>
+      <li>
+        Participants are deemed to consent to the reasonable use of their likeness and image in crowd or candid event
+        photography unless they opt out in writing beforehand.
+      </li>
+      <li>
+        To opt out, please contact the organizers prior to the event with a clear self-photograph so our media team can
+        make reasonable efforts to exclude your likeness from published highlights.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section 6: Liability & Warranty -->
+  <section id="liability-warranty" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      6. Liability & Warranty
+    </h2>
+    <ul class="list-disc pl-5 space-y-2 text-sm sm:text-base text-neutral-700">
+      <li>
+        <strong>“As Is” Disclaimer:</strong> All conference activities, presentations, content, sessions, and networking opportunities
+        are provided “as is,” without warranties of any kind, express or implied.
+      </li>
+      <li>
+        <strong>Limitation of Liability:</strong> Organizers (PERKODI, community co-hosts, sponsors, and partners) are not
+        liable for any personal injury, loss, damage, or theft of personal property occurring during the event or at the venue.
+      </li>
+      <li>
+        <strong>Personal Belongings:</strong> Attendees bear sole responsibility for the custody and safety of their personal
+        belongings (laptops, phones, bags, equipment) at all times within Usmar Ismail Hall.
+      </li>
+      <li>
+        <strong>Technical / Content Accuracy:</strong> The views expressed by speakers, sponsors, or attendees belong solely
+        to them and do not necessarily reflect the official stance of PERKODI.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section 7: Privacy & Data Usage -->
+  <section id="privacy-data" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      7. Privacy & Data Usage
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      We treat participant privacy with the utmost seriousness:
+    </p>
+    <ul class="list-disc pl-5 space-y-1.5 text-sm sm:text-base text-neutral-700">
+      <li>
+        Personal data collected (including full names, email addresses, contact info, job titles, and speaker bios) will
+        be used exclusively for event administration, ticketing, credential verification, and essential communication.
+      </li>
+      <li>
+        All personal data handling must comply with Indonesian data protection regulations (Law No. 27/2022 on Personal
+        Data Protection / UU PDP).
+      </li>
+      <li>
+        Participant data may be shared with trusted third parties (such as ticketing providers, venue access control,
+        and livestreaming platforms) solely where strictly necessary for event execution. We do not sell participant
+        data.
+      </li>
+      <li>
+        For comprehensive details on your statutory rights and our data practices, please consult our full <a
+          href="/privacy-policy"
+          class="text-primary font-semibold underline">Privacy Policy</a
+        >.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section 8: Changes & Cancellations -->
+  <section id="changes-cancellations" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      8. Changes & Cancellations
+    </h2>
+    <ul class="list-disc pl-5 space-y-2 text-sm sm:text-base text-neutral-700">
+      <li>
+        <strong>Program Alterations:</strong> Organizers may change the event format, schedule, speaker lineup, or presentation
+        topics at their discretion (e.g., due to speaker travel disruptions or unforeseen circumstances).
+      </li>
+      <li>
+        <strong>Notification:</strong> In case of substantial rescheduling, format changes, or full cancellation, attendees
+        and speakers will be informed promptly via the email address supplied at registration and through official website
+        announcements.
+      </li>
+      <li>
+        <strong>Remedies:</strong> In the event of partial or full event cancellation by the organizers, attendees will be
+        offered reasonable alternatives (e.g., access to virtual proceedings, rescheduling to future dates, or ticket refunds
+        where applicable).
+      </li>
+      <li>
+        <strong>External Costs:</strong> PERKODI and its partners are not liable for any third-party expenses incurred by
+        participants, including non-refundable flight, transit, or accommodation bookings.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section 9: Force Majeure -->
+  <section id="force-majeure" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      9. Force Majeure
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      The organizers are not liable for failure to hold, deliver, or complete the event due to unforeseen events or
+      circumstances beyond reasonable control.
+    </p>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      Such circumstances include, but are not limited to: natural disasters, severe earthquakes, floods, acts of war,
+      civil unrest, strikes, terrorism, widespread utility or power failures, government orders, public health
+      emergencies, epidemics, or national lockdowns. In such events, alternative plans, digital arrangements, or refunds
+      may be offered at the organizers’ discretion.
+    </p>
+  </section>
+
+  <!-- Section 10: Intellectual Property -->
+  <section id="intellectual-property" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      10. Intellectual Property
+    </h2>
+    <ul class="list-disc pl-5 space-y-2 text-sm sm:text-base text-neutral-700">
+      <li>
+        <strong>Speaker Ownership:</strong> Speakers retain full intellectual property ownership of their submitted content,
+        presentation slides, source code, and workshop materials.
+      </li>
+      <li>
+        <strong>Attendee License:</strong> Attendees are granted non-exclusive, non-commercial rights to access and use shared
+        conference materials solely for private study, learning, and research purposes.
+      </li>
+      <li>
+        <strong>Organizer Publication Rights:</strong> By presenting at IDSW, speakers grant PERKODI a non-exclusive license
+        to record, publish, stream, and archive their presentation materials post-conference for community access.
+      </li>
+      <li>
+        <strong>Trademarks & Branding:</strong> “IDSW”, “Indonesia Software Developer Weekend”, and related conference logos
+        are trademarks of PERKODI. Use of these marks for commercial purposes without written authorization is prohibited.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section 11: Dispute Resolution -->
+  <section id="dispute-resolution" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      11. Dispute Resolution & Governing Law
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      These Terms and any dispute or claim arising out of or in connection with them or your participation in IDSW 2026
+      shall be governed by and construed in accordance with the <strong>laws of the Republic of Indonesia</strong>.
+    </p>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      The parties agree to attempt in good faith to resolve any dispute amicably through informal negotiations. If a
+      dispute cannot be resolved informally, any legal proceeding or action will be tried exclusively in the <strong
+        >courts of Jakarta (Pengadilan Negeri di wilayah Jakarta)</strong
+      >.
+    </p>
+  </section>
+
+  <!-- Section 12: Amendments -->
+  <section id="amendments" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      12. Amendments
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      Organizers reserve the right to amend or update these Terms at any time to reflect operational, logistical, or
+      legal changes.
+    </p>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      Updates will be published immediately on the official IDSW website (<a
+        href="https://idsw.dev"
+        class="text-primary underline">idsw.dev</a
+      >). In the event of material modifications affecting attendee rights, registered participants will be notified via
+      email. Continued attendance or participation after such changes constitutes acceptance of the updated Terms.
+    </p>
+  </section>
+
+  <!-- Section 13: Contact Information -->
+  <section id="contact" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      13. Contact Information
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      For questions, requests for ticket transfers, media opt-out notices, or clarifications regarding these Terms of
+      Service, please contact:
+    </p>
+    <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-5 text-sm text-neutral-700">
+      <p class="font-semibold text-neutral-900">Perkumpulan Komunitas Pengembang Perangkat Lunak Indonesia (PERKODI)</p>
+      <p class="mt-1">Organizing Committee — IDSW 2026</p>
+      <p class="mt-2">
+        Email: <a href="mailto:idsw@perkodi.org" class="text-primary font-semibold underline">idsw@perkodi.org</a>
+      </p>
+    </div>
+  </section>
+</LegalPage>

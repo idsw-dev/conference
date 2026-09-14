@@ -48,6 +48,10 @@ function publicDirectoryIntegration() {
 export default defineConfig({
   site: process.env.CF_PAGES_URL || "https://www.idsw.dev",
   integrations: [react(), publicDirectoryIntegration()],
+  redirects: {
+    "/toc": "/terms-of-service",
+    "/terms": "/terms-of-service",
+  },
   vite: {
     plugins: [tailwindcss()],
   },

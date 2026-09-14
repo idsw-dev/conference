@@ -1,0 +1,265 @@
+---
+import LegalPage from "../components/legal/legal-page.astro";
+
+const toc = [
+  { id: "purpose", title: "Purpose & Core Principles" },
+  { id: "scope", title: "Scope & Applicability" },
+  { id: "expected-behavior", title: "Expected Behavior" },
+  { id: "unacceptable-behavior", title: "Unacceptable Behavior" },
+  { id: "exhibitors-sponsors", title: "Exhibitors & Sponsors" },
+  { id: "reporting", title: "Reporting an Incident" },
+  { id: "enforcement", title: "Enforcement & Penalties" },
+  { id: "license", title: "License & Attribution" },
+];
+---
+
+<LegalPage
+  title="Code of Conduct"
+  subtitle="Our commitment to providing a safe, respectful, and inclusive conference experience for everyone in the Indonesian software developer community."
+  toc={toc}
+  currentPath="/code-of-conduct">
+  <!-- Key takeaway callout box -->
+  <div class="rounded-xl border border-blue-200 bg-blue-50/60 p-5 text-sm text-blue-950">
+    <p class="font-semibold text-blue-900 mb-1">Guiding Principle</p>
+    <p class="text-blue-900/90 leading-relaxed">
+      All participants—including in-person and online attendees, speakers, sponsors, exhibitors, volunteers, and
+      staff—must abide by this Code of Conduct. The safety and comfort of all participants take precedence above all
+      else.
+    </p>
+  </div>
+
+  <!-- Section 1: Purpose -->
+  <section id="purpose" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      1. Purpose & Core Principles
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      Indonesia Software Developer Weekend (IDSW), organized by Perkumpulan Komunitas Pengembang Perangkat Lunak
+      Indonesia (PERKODI), is dedicated to fostering an open, collaborative, and harassment-free community conference.
+    </p>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      We believe that the developer ecosystem thrives when diverse perspectives are welcomed with mutual respect and
+      professionalism. Every individual deserves an enjoyable, productive, and safe conference experience, regardless of
+      their background, identity, or level of technical experience.
+    </p>
+    <div class="grid gap-3 pt-2 sm:grid-cols-3">
+      <div class="rounded-lg border border-neutral-200 bg-neutral-50 p-3.5 text-xs text-neutral-700">
+        <span class="font-semibold text-neutral-900 block mb-1">Respect Everyone</span>
+        Treat all participants with professional courtesy, empathy, and dignity.
+      </div>
+      <div class="rounded-lg border border-neutral-200 bg-neutral-50 p-3.5 text-xs text-neutral-700">
+        <span class="font-semibold text-neutral-900 block mb-1">Zero Tolerance</span>
+        Discrimination or harassment in any form is strictly prohibited.
+      </div>
+      <div class="rounded-lg border border-neutral-200 bg-neutral-50 p-3.5 text-xs text-neutral-700">
+        <span class="font-semibold text-neutral-900 block mb-1">Safety First</span>
+        Follow instructions from event staff. Participant safety and comfort come first.
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Scope -->
+  <section id="scope" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      2. Scope & Applicability
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      This Code of Conduct applies to all participants across all event contexts and touchpoints:
+    </p>
+    <ul class="list-disc pl-5 space-y-1.5 text-sm sm:text-base text-neutral-700">
+      <li>
+        <strong>In-Person Venue:</strong> Usmar Ismail Hall, Jakarta, including auditorium stages, exhibition areas, hallways,
+        networking lounges, restrooms, and associated venue facilities.
+      </li>
+      <li>
+        <strong>Online Channels:</strong> Official livestream chats, Discord servers, social media mentions, question-and-answer
+        portals, and community groups.
+      </li>
+      <li>
+        <strong>Official & Unofficial Associated Gatherings:</strong> Speaker dinners, pre-conference mixers, after-parties,
+        and community meetups bearing the IDSW name or partnership.
+      </li>
+      <li>
+        <strong>All Roles:</strong> Attendees, speakers, sponsors, booth staff, organizers, volunteers, and media partners.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section 3: Expected Behavior -->
+  <section id="expected-behavior" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      3. Expected Behavior
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      We expect all participants to uphold the following standards:
+    </p>
+    <ul class="list-disc pl-5 space-y-2 text-sm sm:text-base text-neutral-700">
+      <li>
+        <strong>Practice inclusive and respectful communication:</strong> Use welcoming language, listen constructively, and
+        value differing professional viewpoints.
+      </li>
+      <li>
+        <strong>Follow staff instructions:</strong> Comply promptly with directions given by IDSW organizers, venue management,
+        and security personnel.
+      </li>
+      <li>
+        <strong>Respect shared spaces and personal boundaries:</strong> Be mindful of physical space, personal comfort, and
+        accessibility needs of fellow attendees.
+      </li>
+      <li>
+        <strong>Be attentive to fellow participants:</strong> If you see someone in distress, experiencing discomfort, or
+        facing inappropriate behavior, offer assistance or alert event staff immediately.
+      </li>
+      <li>
+        <strong>Professional conduct:</strong> Introduce yourself courteously. Solicitation, product pitches, or promotional
+        activities must be respectful and consensual.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section 4: Unacceptable Behavior -->
+  <section id="unacceptable-behavior" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      4. Unacceptable Behavior
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      Harassment and discriminatory conduct will not be tolerated under any circumstances. Unacceptable behaviors
+      include, but are not limited to:
+    </p>
+    <ul class="list-disc pl-5 space-y-2 text-sm sm:text-base text-neutral-700">
+      <li>
+        Offensive verbal or written comments related to gender, gender identity, sexual orientation, disability,
+        physical appearance, body size, race, ethnicity, age, or religion.
+      </li>
+      <li>
+        Use of sexualized images, language, jokes, or provocative material in presentations, slides, or public spaces.
+      </li>
+      <li>
+        Deliberate intimidation, stalking, following, or harassing photography and video recording without consent.
+      </li>
+      <li>Sustained disruption of presentations, workshops, panel discussions, or networking sessions.</li>
+      <li>Inappropriate physical contact or unwelcome sexual attention of any nature.</li>
+      <li>
+        Aggressive commercial solicitation, unsolicited direct promotional spamming, or disruptive guerrilla marketing
+        without prior sponsor authorization.
+      </li>
+      <li>Advocating for, or encouraging, any of the above behaviors.</li>
+    </ul>
+    <p class="text-xs text-neutral-500 bg-neutral-100 rounded-lg p-3">
+      <strong>Immediate Compliance:</strong> Participants asked by staff, speakers, or attendees to stop any harassing or
+      disruptive behavior are required to comply immediately.
+    </p>
+  </section>
+
+  <!-- Section 5: Exhibitors & Sponsors -->
+  <section id="exhibitors-sponsors" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      5. Exhibitors & Sponsors
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      Exhibitors in sponsor booths, partner lounges, and demo areas are fully subject to this anti-harassment policy:
+    </p>
+    <ul class="list-disc pl-5 space-y-1.5 text-sm sm:text-base text-neutral-700">
+      <li>
+        Exhibitors and booth staff (including hired promoters and volunteers) must not use sexualized imagery, costumes,
+        or activities.
+      </li>
+      <li>
+        Promotional activities, giveaways, and booth games must maintain a professional and welcoming atmosphere for all
+        conference attendees.
+      </li>
+      <li>Staff must respect participants' decision to engage or walk away from marketing conversations.</li>
+    </ul>
+  </section>
+
+  <!-- Section 6: Reporting an Incident -->
+  <section id="reporting" class="scroll-mt-28 space-y-4">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      6. Reporting an Incident
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      If you experience harassment, observe that someone else is being harassed, or have any other safety or comfort
+      concerns, please notify the organizers immediately through either of the following channels:
+    </p>
+
+    <div class="grid gap-4 sm:grid-cols-2 pt-1">
+      <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+        <h3 class="font-semibold text-neutral-900 text-sm mb-1 flex items-center gap-2">
+          <svg class="h-4 w-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+          In-Person at the Venue
+        </h3>
+        <p class="text-xs text-neutral-600 leading-relaxed">
+          Approach any member of the IDSW organizing committee or volunteer crew on duty at Usmar Ismail Hall. Staff can
+          be easily identified by official <strong>IDSW staff badges, shirts, or crew passes</strong>.
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+        <h3 class="font-semibold text-neutral-900 text-sm mb-1 flex items-center gap-2">
+          <svg class="h-4 w-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            ></path>
+          </svg>
+          Email Hotline
+        </h3>
+        <p class="text-xs text-neutral-600 leading-relaxed">
+          Send an email to <a
+            href="mailto:idsw@perkodi.org?subject=Reporting%20Code%20of%20Conduct%20Violation"
+            class="text-primary font-semibold underline">idsw@perkodi.org</a
+          > with the subject line <em>"Reporting Code of Conduct Violation"</em> for prioritized monitoring and immediate
+          response.
+        </p>
+      </div>
+    </div>
+
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      Event staff are prepared to help participants contact hotel and venue security or local Indonesian law
+      enforcement, provide safe escorts, or otherwise assist those experiencing harassment to feel secure for the entire
+      duration of the conference.
+    </p>
+  </section>
+
+  <!-- Section 7: Enforcement & Penalties -->
+  <section id="enforcement" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      7. Enforcement & Penalties
+    </h2>
+    <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
+      The IDSW Organizing Committee and PERKODI reserve the right to take appropriate disciplinary actions against
+      anyone who violates this Code of Conduct, including but not limited to:
+    </p>
+    <ul class="list-disc pl-5 space-y-2 text-sm sm:text-base text-neutral-700">
+      <li>Issuing a formal verbal or written reprimand.</li>
+      <li>Immediate expulsion from the conference without refund or reimbursement.</li>
+      <li>Permanent ban from attending or speaking at future IDSW and PERKODI-affiliated events.</li>
+      <li>Reporting criminal conduct to venue management and local law enforcement authorities.</li>
+    </ul>
+  </section>
+
+  <!-- Section 8: License & Attribution -->
+  <section id="license" class="scroll-mt-28 space-y-3">
+    <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-900 border-b border-neutral-100 pb-2">
+      8. License & Attribution
+    </h2>
+    <p class="text-xs text-neutral-600 leading-relaxed">
+      This Code of Conduct is adapted from the PyCon US and PyCon ID Code of Conduct policies and is licensed under the
+      <a
+        href="https://creativecommons.org/licenses/by/3.0/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-primary underline">
+        Creative Commons Attribution 3.0 Unported License
+      </a>.
+    </p>
+  </section>
+</LegalPage>
