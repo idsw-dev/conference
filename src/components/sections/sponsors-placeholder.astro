@@ -43,7 +43,7 @@ const { prospectusUrl, email } = siteConfig.sponsors;
         </Button>
         <a
           href={`mailto:${email}`}
-          class="text-center text-sm font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
+          class="hover:text-primary hover:decoration-primary text-center text-sm font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-4 transition-colors"
           data-ph-event="sponsor_email_cta"
           data-ph-location="sponsors">
           {email}
@@ -53,7 +53,7 @@ const { prospectusUrl, email } = siteConfig.sponsors;
 
     {
       siteConfig.partners.length > 0 && (
-        <div class="mt-14 sm:mt-16 pt-10 sm:pt-12 border-t border-neutral-100">
+        <div class="mt-14 border-t border-neutral-100 pt-10 sm:mt-16 sm:pt-12">
           <p class="w-full text-center text-xs font-semibold tracking-[0.16em] text-neutral-400 uppercase sm:text-left">
             Platinum partners
           </p>
@@ -65,7 +65,7 @@ const { prospectusUrl, email } = siteConfig.sponsors;
                   target="_blank"
                   rel="noopener noreferrer"
                   title={`Visit ${partner.name}`}
-                  class="group inline-flex items-center justify-center rounded-lg outline-none transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  class="group focus-visible:outline-primary inline-flex items-center justify-center rounded-lg transition-all duration-200 outline-none hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
                   data-ph-event="partner_click"
                   data-ph-location="sponsors"
                   data-ph-partner={partner.name}>
@@ -73,7 +73,7 @@ const { prospectusUrl, email } = siteConfig.sponsors;
                     src={partner.logo}
                     alt={`${partner.name} logo`}
                     loading="lazy"
-                    class="h-10 w-auto max-w-[14rem] object-contain transition-transform duration-200 group-hover:scale-[1.03] sm:h-12 sm:max-w-[16rem]"
+                    class="h-20 w-50 object-contain transition-transform duration-200 group-hover:scale-[1.03] sm:h-20 sm:w-50"
                   />
                 </a>
               </li>

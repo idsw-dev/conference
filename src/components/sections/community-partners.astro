@@ -26,7 +26,7 @@ import { siteConfig } from "../../config/site";
               target="_blank"
               rel="noopener noreferrer"
               title={`Visit ${community.name}`}
-              class="group inline-flex items-center justify-center rounded-lg outline-none transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:brightness-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              class="group focus-visible:outline-primary inline-flex items-center justify-center rounded-lg transition-all duration-200 outline-none hover:scale-[1.02] hover:brightness-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
               data-ph-event="community_partner_click"
               data-ph-location="community-partners"
               data-ph-community={community.name}>
@@ -34,7 +34,7 @@ import { siteConfig } from "../../config/site";
                 src={community.logo}
                 alt={`${community.name} logo`}
                 loading="lazy"
-                class="h-7 w-auto max-w-[7rem] object-contain opacity-60 transition-opacity duration-200 group-hover:opacity-100 sm:h-8 sm:max-w-[8.5rem]"
+                class="h-17 w-auto max-w-[7rem] object-contain opacity-60 transition-opacity duration-200 group-hover:opacity-100 sm:h-17 sm:max-w-[8.5rem]"
               />
             </a>
           </li>
