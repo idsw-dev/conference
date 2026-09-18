@@ -34,4 +34,4 @@ All commands are run from the root of the project, from a terminal:
 
 ## Deployment
 
-We use Cloudflare Pages and it's CI/CD for deployment, ask our contributor for details.
+We use Cloudflare Pages and its CI/CD for deployment, ask our contributor for details.
