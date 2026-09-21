@@ -86,6 +86,15 @@ export const siteConfig = {
     },
   ],
 
+  digitalPartners: [
+    {
+      name: "Grafana",
+      logo: "/partners/grafana.svg",
+      url: "https://grafana.com",
+      tier: "digital",
+    },
+  ],
+
   communities: [
     {
       name: "Python ID",
