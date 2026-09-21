@@ -63,6 +63,37 @@ export const siteConfig = {
     label: "Get a regular ticket",
   },
 
+  keynotes: [
+    {
+      name: "Mansur Maturidi Arief",
+      position:
+        "Assistant Professor, Industrial and Systems Engineering, King Fahd University of Petroleum and Minerals (KFUPM), and Faculty Director, AI Verification and Validation (AI V&V) Lab",
+      photo: "mansur",
+      brief:
+        "Mansur M. Arief adalah Assistant Professor di Departemen Industrial and Systems Engineering KFUPM, Arab Saudi, sekaligus memimpin AI Verification and Validation Lab dan meneliti di IRC for Smart Mobility and Logistics dan KFUPM-SDAIA Joint Research Center for AI. Sebelumnya ia menjabat sebagai Executive Director di Stanford Center for AI Safety dan menyelesaikan PhD di Carnegie Mellon University dengan fokus pada evaluasi tersertifikasi untuk sistem otonom.",
+    },
+    {
+      name: "Muqorrobin Marufi Syihab",
+      position: "Founder of Nuwaira Academy & Creator of Evonic",
+      photo: "robin",
+      brief:
+        "A practitioner, engineer, and independent researcher. As a serial entrepreneur with over 20 years of experience across various sectors including Artificial Intelligence (AI), Cybersecurity, Social Media, Blockchain, and Tech Education",
+    },
+    {
+      name: "Mustafa Zaki Assagaf",
+      position: "Platform Engineer",
+      photo: "mustafa-z-assagaf",
+      brief: "Umur 26, domisili depok, engga suka makan pedes",
+    },
+    {
+      name: "Aria Ghora",
+      position: "AI R&D Engineer at EAGLYS, Tokyo",
+      photo: "aria-ghora",
+      brief:
+        "Aria works across prototyping recent research and proofs of concept through to system architecture, and leads a small engineering team. PhD from HUFS, South Korea, with research in applied AI/ML.",
+    },
+  ],
+
   sponsors: {
     showSection: true,
     prospectusUrl: "/IDSW%202026%20-%20Sponsorship%20Proposal.pdf",
