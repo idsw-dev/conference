@@ -43,10 +43,10 @@ const photoByName = Object.fromEntries(
                   </div>
                 </div>
 
-                <div class="keynote-card-face keynote-card-back flex flex-col overflow-hidden rounded-lg bg-navy-deep p-4 sm:p-5">
+                <div class="keynote-card-face keynote-card-back flex flex-col overflow-y-auto rounded-lg bg-navy-deep p-4 sm:p-5">
                   <p class="font-display text-base font-semibold text-white sm:text-lg">{keynote.name}</p>
                   <p class="mt-1 text-xs font-medium text-primary-light sm:text-sm">{keynote.position}</p>
-                  <p class="mt-3 flex-1 overflow-y-auto text-xs leading-relaxed text-white/75 sm:text-sm">
+                  <p class="mt-3 text-xs leading-relaxed text-white/75 sm:text-sm">
                     {keynote.brief ?? "Bio coming soon."}
                   </p>
                 </div>
