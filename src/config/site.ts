@@ -92,12 +92,6 @@ export const siteConfig = {
       brief:
         "Aria works across prototyping recent research and proofs of concept through to system architecture, and leads a small engineering team. PhD from HUFS, South Korea, with research in applied AI/ML.",
     },
-    {
-      name: "Eko Kurniawan Khannedy",
-      position: "Programmer Zaman Now",
-      photo: "default",
-      brief: null,
-    },
   ],
 
   sponsors: {
