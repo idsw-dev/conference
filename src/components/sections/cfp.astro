@@ -4,7 +4,6 @@ import { isCfpOpen } from "../../lib/cfp";
 import Button from "../ui/button.astro";
 
 const isOpen = isCfpOpen();
-const { formats, topics } = siteConfig.cfp;
 ---
 
 <section id="cfp" class="cfp-band text-white">
@@ -29,7 +28,7 @@ const { formats, topics } = siteConfig.cfp;
           ) : (
             <>
               <p class="text-sm font-medium text-white/70">Submissions closed</p>
-              <h2 class="section-heading mt-2">Speak to the whole room</h2>
+              <h2 class="section-heading mt-2">Call for proposals is closed</h2>
               <p class="mt-5 max-w-xl text-sm leading-relaxed text-white/75 sm:text-base">
                 Thank you to everyone who submitted. The speaker lineup will be announced after review.
               </p>
@@ -38,9 +37,9 @@ const { formats, topics } = siteConfig.cfp;
         }
       </div>
 
-      <div class="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
-        {
-          isOpen ? (
+      {
+        isOpen && (
+          <div class="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
             <Button
               href={siteConfig.cfp.url}
               variant="secondary"
@@ -50,49 +49,9 @@ const { formats, topics } = siteConfig.cfp;
               captureLocation="cfp">
               Submit a proposal
             </Button>
-          ) : (
-            <Button href="/2025" variant="secondary" class="w-full text-center sm:w-auto">
-              View 2025 talks
-            </Button>
-          )
-        }
-      </div>
-    </div>
-
-    <div
-      class="mt-10 grid gap-8 border-t border-white/15 pt-8 sm:mt-12 sm:gap-10 sm:pt-10 lg:grid-cols-[minmax(0,16rem)_1fr] lg:gap-16">
-      <div class="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-1">
-        {
-          formats.map((fmt) => (
-            <div>
-              <p class="font-display text-3xl leading-none font-semibold tracking-tight tabular-nums sm:text-4xl">
-                {fmt.duration.replace(" min", "")}
-                <span class="ml-1 text-base font-medium text-white/50 sm:text-lg">min</span>
-              </p>
-              <h3 class="font-display mt-2 text-sm font-semibold sm:text-base">{fmt.title}</h3>
-              <p class="mt-1 max-w-xs text-sm leading-relaxed text-white/70">{fmt.desc}</p>
-            </div>
-          ))
-        }
-      </div>
-
-      <div>
-        <h3 class="font-display text-base font-semibold sm:text-lg">What we want to hear</h3>
-        <ul class="mt-5 grid gap-5 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-6">
-          {
-            topics.map((topic) => (
-              <li>
-                <p class="font-display text-sm font-semibold sm:text-base">{topic.title}</p>
-                <p class="mt-1 text-sm leading-relaxed text-white/70">{topic.desc}</p>
-              </li>
-            ))
-          }
-        </ul>
-        <p class="mt-6 max-w-lg text-sm leading-relaxed text-white/70">
-          Speakers get a two-day ticket, dinner with the lineup, and abstract feedback if this is your first time on
-          stage.
-        </p>
-      </div>
+          </div>
+        )
+      }
     </div>
   </div>
 </section>

@@ -17,7 +17,7 @@ export const siteConfig = {
   phase: "cfp" as const,
 
   cfp: {
-    enabled: true,
+    enabled: false,
     url: "https://cfp.idsw.dev/",
     deadline: "26 September 2026",
     deadlineIso: "2026-09-26T23:59:59+07:00",
