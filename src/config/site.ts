@@ -5,13 +5,13 @@ export const siteConfig = {
   event: {
     name: "IDSW 2026",
     tagline: "The Biggest Community-Led Developer Conference in Indonesia",
-    dates: "21–22 Nov 2026 | Day 1: 08.00–18.15 | Day 2: 08.30–17.20 WIB",
+    dates: "21–22 Nov 2026 | Day 1: 08.00–18.15 | Day 2: 09.00–17.15 WIB",
     startDate: "2026-11-21T08:00:00+07:00",
-    endDate: "2026-11-22T17:20:00+07:00",
+    endDate: "2026-11-22T17:15:00+07:00",
     venue: "Usmar Ismail Hall, Jakarta Selatan",
     venueUrl: "https://maps.google.com/?q=Usmar+Ismail+Hall+Jakarta",
     calendarUrl:
-      "https://calendar.google.com/calendar/render?action=TEMPLATE&text=IDSW+2026+-+Indonesia+Software+Developer+Conference&dates=20261121T010000Z/20261122T102000Z&details=Indonesia+Software+Developer+Conference+2026.+Indonesia%27s+biggest+community-led+developer+conference.&location=Usmar+Ismail+Hall%2C+Jakarta",
+      "https://calendar.google.com/calendar/render?action=TEMPLATE&text=IDSW+2026+-+Indonesia+Software+Developer+Conference&dates=20261121T010000Z/20261122T101500Z&details=Indonesia+Software+Developer+Conference+2026.+Indonesia%27s+biggest+community-led+developer+conference.&location=Usmar+Ismail+Hall%2C+Jakarta",
   },
 
   phase: "cfp" as const,

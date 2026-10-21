@@ -3,6 +3,24 @@ import schedule from "../../data/schedule.json";
 import socialMedias from "../../data/social-media.json";
 import { Coffee, Utensils } from "lucide-react";
 import SectionHeader from "../ui/section-header.astro";
+
+const pendingLabel = {
+  title: "Title to be announced",
+  speaker: "Speaker to be announced",
+  subject: "Subject and participants to be announced",
+  order: "Order to be announced",
+} as const;
+
+function announcedLabel(pending: string | null) {
+  switch (pending) {
+    case "speaker":
+    case "subject":
+    case "order":
+      return pendingLabel[pending];
+    default:
+      return null;
+  }
+}
 ---
 
 <section id="schedule" class="section-surface py-16 sm:py-20 md:py-28">
@@ -12,7 +30,7 @@ import SectionHeader from "../ui/section-header.astro";
       {
         schedule.days.map((day) => (
           <article
-            class="overflow-hidden rounded-lg border border-neutral-200 bg-white"
+            class="h-fit overflow-hidden rounded-lg border border-neutral-200 bg-white"
             aria-labelledby={`schedule-${day.date}`}>
             <div class="bg-navy px-4 py-3 text-white sm:px-5 sm:py-4">
               <h3 id={`schedule-${day.date}`} class="font-display text-xl font-semibold">
@@ -28,9 +46,9 @@ import SectionHeader from "../ui/section-header.astro";
                   class:list={[
                     "grid min-h-16 grid-cols-[6rem_minmax(0,1fr)] items-start gap-x-3 px-3 py-3 sm:min-h-18 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-x-4 sm:px-5",
                     {
-                      "bg-neutral-50": session.title === "Coffee Break",
-                      "bg-neutral-100": session.title === "Lunch Break",
-                      "bg-primary/5 shadow-[inset_3px_0_0_var(--color-primary)]": session.title.startsWith("Keynote"),
+                      "bg-neutral-50": session.kind === "coffee",
+                      "bg-neutral-100": session.kind === "lunch",
+                      "bg-primary/5 shadow-[inset_3px_0_0_var(--color-primary)]": session.kind === "keynote",
                     },
                   ]}>
                   <div>
@@ -41,22 +59,32 @@ import SectionHeader from "../ui/section-header.astro";
                     </div>
                     <p class="mt-1 text-xs text-neutral-500 sm:text-sm">{session.duration} min</p>
                   </div>
-                  <div>
-                    <p
-                      class:list={[
-                        "flex items-center gap-2 text-sm font-semibold sm:text-base",
-                        session.title.startsWith("Keynote") ? "text-primary" : "text-neutral-900",
-                      ]}>
-                      {session.title === "Lunch Break" && (
-                        <Utensils className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
-                      )}
-                      {session.title === "Coffee Break" && (
-                        <Coffee className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
-                      )}
-                      <span>{session.title}</span>
-                    </p>
-                    {["Talk", "Keynote", "Sponsor session", "Lightning Talks"].includes(session.title) && (
-                      <p class="mt-1 text-xs text-neutral-500 sm:text-sm">To be announced</p>
+                  <div class="min-w-0">
+                    {session.kind === "keynote" && (
+                      <p class="mb-1 text-xs font-semibold tracking-wide text-primary uppercase">Keynote</p>
+                    )}
+                    {session.pending === "title" ? (
+                      <div class="rounded-md border border-dashed border-neutral-500 bg-white px-3 py-2.5">
+                        <p class="text-sm font-semibold text-neutral-900 sm:text-base">{pendingLabel.title}</p>
+                        <p class="mt-2 text-xs font-medium text-neutral-500">Working topic</p>
+                        <p class="mt-0.5 text-sm leading-snug text-pretty text-neutral-700">{session.title}</p>
+                      </div>
+                    ) : (
+                      <p class="flex items-center gap-2 text-sm font-semibold text-neutral-900 sm:text-base">
+                        {session.kind === "lunch" && (
+                          <Utensils className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
+                        )}
+                        {session.kind === "coffee" && (
+                          <Coffee className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
+                        )}
+                        <span class="min-w-0 text-pretty">{session.title}</span>
+                      </p>
+                    )}
+                    {session.speaker && <p class="mt-1.5 text-sm text-neutral-600">{session.speaker}</p>}
+                    {announcedLabel(session.pending) && (
+                      <p class="mt-1.5 w-fit max-w-full rounded-md border border-dashed border-neutral-500 bg-neutral-50 px-2.5 py-1 text-sm leading-snug font-medium text-neutral-900">
+                        {announcedLabel(session.pending)}
+                      </p>
                     )}
                   </div>
                 </li>
