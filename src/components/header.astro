@@ -3,8 +3,7 @@ import { siteConfig } from "../config/site";
 ---
 
 <header class="site-header fixed top-0 right-0 left-0 z-50">
-  <nav
-    class="site-nav border-b border-transparent py-4 transition-[background-color,box-shadow,border-color,padding] duration-500 ease-out">
+  <nav class="site-nav border-b border-transparent py-4 transition-[background-color,box-shadow,border-color,padding] duration-500 ease-out">
     <div class="relative mx-auto max-w-[1280px] px-6 md:px-10">
       <input id="nav-toggle" type="checkbox" class="peer sr-only" />
 
@@ -39,63 +38,59 @@ import { siteConfig } from "../config/site";
         </label>
 
         <ul class="hidden items-center gap-1 md:flex">
-          {
-            siteConfig.nav.map((menu) => (
-              <li>
-                <a
-                  href={menu.href}
-                  target={menu.external ? "_blank" : undefined}
-                  rel={menu.external ? "noopener noreferrer" : undefined}
-                  class="site-nav-link inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white"
-                  data-ph-event={menu.name === "Tickets" ? "ticket_cta" : undefined}
-                  data-ph-location={menu.name === "Tickets" ? "nav" : undefined}>
-                  {menu.name}
-                  {menu.external && (
-                    <svg class="h-3.5 w-3.5 opacity-70" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path
-                        d="M8 8h8v8M8 16 16 8"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  )}
-                </a>
-              </li>
-            ))
-          }
+          {siteConfig.nav.map((menu) => (
+            <li>
+              <a
+                href={menu.href}
+                target={menu.external ? "_blank" : undefined}
+                rel={menu.external ? "noopener noreferrer" : undefined}
+                class="site-nav-link inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white"
+                data-ph-event={menu.name === "Tickets" ? "ticket_cta" : undefined}
+                data-ph-location={menu.name === "Tickets" ? "nav" : undefined}>
+                {menu.name}
+                {menu.external && (
+                  <svg class="h-3.5 w-3.5 opacity-70" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M8 8h8v8M8 16 16 8"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                )}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 
       <div id="site-nav-panel" class="site-nav-panel mt-4 border-t border-white/10 pt-4">
         <ul class="flex flex-col">
-          {
-            siteConfig.nav.map((menu) => (
-              <li class="w-full">
-                <a
-                  href={menu.href}
-                  target={menu.external ? "_blank" : undefined}
-                  rel={menu.external ? "noopener noreferrer" : undefined}
-                  class="site-nav-link flex w-full items-center justify-between gap-3 rounded-lg px-3 py-3 text-base font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white"
-                  data-ph-event={menu.name === "Tickets" ? "ticket_cta" : undefined}
-                  data-ph-location={menu.name === "Tickets" ? "nav" : undefined}>
-                  {menu.name}
-                  {menu.external && (
-                    <svg class="h-4 w-4 shrink-0 opacity-70" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path
-                        d="M8 8h8v8M8 16 16 8"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  )}
-                </a>
-              </li>
-            ))
-          }
+          {siteConfig.nav.map((menu) => (
+            <li class="w-full">
+              <a
+                href={menu.href}
+                target={menu.external ? "_blank" : undefined}
+                rel={menu.external ? "noopener noreferrer" : undefined}
+                class="site-nav-link flex w-full items-center justify-between gap-3 rounded-lg px-3 py-3 text-base font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white"
+                data-ph-event={menu.name === "Tickets" ? "ticket_cta" : undefined}
+                data-ph-location={menu.name === "Tickets" ? "nav" : undefined}>
+                {menu.name}
+                {menu.external && (
+                  <svg class="h-4 w-4 shrink-0 opacity-70" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M8 8h8v8M8 16 16 8"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                )}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

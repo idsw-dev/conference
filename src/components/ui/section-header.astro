@@ -10,18 +10,14 @@ const { title, subtitle, dark = false, class: className = "" } = Astro.props;
 ---
 
 <div class:list={["text-center", className]}>
-  <h2 class:list={["section-heading", dark ? "text-white" : "text-neutral-900"]}>
-    {title}
-  </h2>
-  {
-    subtitle && (
-      <p
-        class:list={[
-          "mt-2.5 text-sm leading-relaxed text-balance sm:mt-3 sm:text-base md:text-lg",
-          dark ? "text-white/70" : "text-neutral-500",
-        ]}>
-        {subtitle}
-      </p>
-    )
-  }
+  <h2 class:list={["section-heading", dark ? "text-white" : "text-neutral-900"]}>{title}</h2>
+  {subtitle && (
+    <p
+      class:list={[
+        "mt-2.5 text-sm leading-relaxed text-balance sm:mt-3 sm:text-base md:text-lg",
+        dark ? "text-white/70" : "text-neutral-500",
+      ]}>
+      {subtitle}
+    </p>
+  )}
 </div>

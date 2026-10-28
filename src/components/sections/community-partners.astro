@@ -2,14 +2,12 @@
 import { siteConfig } from "../../config/site";
 ---
 
-{
-  /*
+{/*
     THESIS: A quiet strip right after the partnership letter, not a logo wall.
     No cards, no borders, no "proudly presented by" fanfare. The label is smaller
     than the logos. Logos sit at a fixed height; square and wide marks both fit.
     ADD A COMMUNITY: append one object to siteConfig.communities.
-  */
-}
+  */}
 
 <section class="border-b border-neutral-100 bg-white" aria-label="Community partners">
   <div class="container-site flex flex-col items-center gap-4 pt-2 pb-12 sm:items-start sm:pt-4 sm:pb-14">
@@ -18,28 +16,26 @@ import { siteConfig } from "../../config/site";
     </p>
 
     <ul class="flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-5 sm:justify-start sm:gap-x-16">
-      {
-        siteConfig.communities.map((community) => (
-          <li>
-            <a
-              href={community.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={`Visit ${community.name}`}
-              class="group focus-visible:outline-primary inline-flex items-center justify-center rounded-lg transition-all duration-200 outline-none hover:scale-[1.02] hover:brightness-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
-              data-ph-event="community_partner_click"
-              data-ph-location="community-partners"
-              data-ph-community={community.name}>
-              <img
-                src={community.logo}
-                alt={`${community.name} logo`}
-                loading="lazy"
-                class="h-17 w-auto max-w-[7rem] object-contain opacity-60 transition-opacity duration-200 group-hover:opacity-100 sm:h-17 sm:max-w-[8.5rem]"
-              />
-            </a>
-          </li>
-        ))
-      }
+      {siteConfig.communities.map((community) => (
+        <li>
+          <a
+            href={community.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`Visit ${community.name}`}
+            class="group focus-visible:outline-primary inline-flex items-center justify-center rounded-lg transition-all duration-200 outline-none hover:scale-[1.02] hover:brightness-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
+            data-ph-event="community_partner_click"
+            data-ph-location="community-partners"
+            data-ph-community={community.name}>
+            <img
+              src={community.logo}
+              alt={`${community.name} logo`}
+              loading="lazy"
+              class="h-17 w-auto max-w-[7rem] object-contain opacity-60 transition-opacity duration-200 group-hover:opacity-100 sm:h-17 sm:max-w-[8.5rem]"
+            />
+          </a>
+        </li>
+      ))}
     </ul>
   </div>
 </section>
