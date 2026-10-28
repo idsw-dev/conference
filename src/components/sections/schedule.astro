@@ -27,72 +27,70 @@ function announcedLabel(pending: string | null) {
   <div class="container-site">
     <SectionHeader title="Schedule" subtitle="Plan your two days at IDSW. Times are shown in Jakarta time (WIB)." />
     <div class="mt-6 grid gap-5 sm:mt-8 lg:grid-cols-2">
-      {
-        schedule.days.map((day) => (
-          <article
-            class="h-fit overflow-hidden rounded-lg border border-neutral-200 bg-white"
-            aria-labelledby={`schedule-${day.date}`}>
-            <div class="bg-navy px-4 py-3 text-white sm:px-5 sm:py-4">
-              <h3 id={`schedule-${day.date}`} class="font-display text-xl font-semibold">
-                {day.day}
-              </h3>
-              <time datetime={day.date} class="mt-1 block text-xs text-white/75 sm:text-sm">
-                {day.label}
-              </time>
-            </div>
-            <ol class="divide-y divide-neutral-200">
-              {day.sessions.map((session) => (
-                <li
-                  class:list={[
-                    "grid min-h-16 grid-cols-[6rem_minmax(0,1fr)] items-start gap-x-3 px-3 py-3 sm:min-h-18 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-x-4 sm:px-5",
-                    {
-                      "bg-neutral-50": session.kind === "coffee",
-                      "bg-neutral-100": session.kind === "lunch",
-                      "bg-primary/5 shadow-[inset_3px_0_0_var(--color-primary)]": session.kind === "keynote",
-                    },
-                  ]}>
-                  <div>
-                    <div class="whitespace-nowrap text-sm font-medium tabular-nums text-neutral-600 sm:text-base">
-                      <time datetime={`${day.date}T${session.start}:00+07:00`}>{session.start}</time>
-                      {"–"}
-                      <time datetime={`${day.date}T${session.end}:00+07:00`}>{session.end}</time>
+      {schedule.days.map((day) => (
+        <article
+          class="h-fit overflow-hidden rounded-lg border border-neutral-200 bg-white"
+          aria-labelledby={`schedule-${day.date}`}>
+          <div class="bg-navy px-4 py-3 text-white sm:px-5 sm:py-4">
+            <h3 id={`schedule-${day.date}`} class="font-display text-xl font-semibold">
+              {day.day}
+            </h3>
+            <time datetime={day.date} class="mt-1 block text-xs text-white/75 sm:text-sm">
+              {day.label}
+            </time>
+          </div>
+          <ol class="divide-y divide-neutral-200">
+            {day.sessions.map((session) => (
+              <li
+                class:list={[
+                  "grid min-h-16 grid-cols-[6rem_minmax(0,1fr)] items-start gap-x-3 px-3 py-3 sm:min-h-18 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-x-4 sm:px-5",
+                  {
+                    "bg-neutral-50": session.kind === "coffee",
+                    "bg-neutral-100": session.kind === "lunch",
+                    "bg-primary/5 shadow-[inset_3px_0_0_var(--color-primary)]": session.kind === "keynote",
+                  },
+                ]}>
+                <div>
+                  <div class="whitespace-nowrap text-sm font-medium tabular-nums text-neutral-600 sm:text-base">
+                    <time datetime={`${day.date}T${session.start}:00+07:00`}>{session.start}</time>
+                    {"–"}
+                    <time datetime={`${day.date}T${session.end}:00+07:00`}>{session.end}</time>
+                  </div>
+                  <p class="mt-1 text-xs text-neutral-500 sm:text-sm">{session.duration} min</p>
+                </div>
+                <div class="min-w-0">
+                  {session.kind === "keynote" && (
+                    <p class="mb-1 text-xs font-semibold tracking-wide text-primary uppercase">Keynote</p>
+                  )}
+                  {session.pending === "title" ? (
+                    <div class="rounded-md border border-dashed border-neutral-500 bg-white px-3 py-2.5">
+                      <p class="text-sm font-semibold text-neutral-900 sm:text-base">{pendingLabel.title}</p>
+                      <p class="mt-2 text-xs font-medium text-neutral-500">Working topic</p>
+                      <p class="mt-0.5 text-sm leading-snug text-pretty text-neutral-700">{session.title}</p>
                     </div>
-                    <p class="mt-1 text-xs text-neutral-500 sm:text-sm">{session.duration} min</p>
-                  </div>
-                  <div class="min-w-0">
-                    {session.kind === "keynote" && (
-                      <p class="mb-1 text-xs font-semibold tracking-wide text-primary uppercase">Keynote</p>
-                    )}
-                    {session.pending === "title" ? (
-                      <div class="rounded-md border border-dashed border-neutral-500 bg-white px-3 py-2.5">
-                        <p class="text-sm font-semibold text-neutral-900 sm:text-base">{pendingLabel.title}</p>
-                        <p class="mt-2 text-xs font-medium text-neutral-500">Working topic</p>
-                        <p class="mt-0.5 text-sm leading-snug text-pretty text-neutral-700">{session.title}</p>
-                      </div>
-                    ) : (
-                      <p class="flex items-center gap-2 text-sm font-semibold text-neutral-900 sm:text-base">
-                        {session.kind === "lunch" && (
-                          <Utensils className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
-                        )}
-                        {session.kind === "coffee" && (
-                          <Coffee className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
-                        )}
-                        <span class="min-w-0 text-pretty">{session.title}</span>
-                      </p>
-                    )}
-                    {session.speaker && <p class="mt-1.5 text-sm text-neutral-600">{session.speaker}</p>}
-                    {announcedLabel(session.pending) && (
-                      <p class="mt-1.5 w-fit max-w-full rounded-md border border-dashed border-neutral-500 bg-neutral-50 px-2.5 py-1 text-sm leading-snug font-medium text-neutral-900">
-                        {announcedLabel(session.pending)}
-                      </p>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </article>
-        ))
-      }
+                  ) : (
+                    <p class="flex items-center gap-2 text-sm font-semibold text-neutral-900 sm:text-base">
+                      {session.kind === "lunch" && (
+                        <Utensils className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
+                      )}
+                      {session.kind === "coffee" && (
+                        <Coffee className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
+                      )}
+                      <span class="min-w-0 text-pretty">{session.title}</span>
+                    </p>
+                  )}
+                  {session.speaker && <p class="mt-1.5 text-sm text-neutral-600">{session.speaker}</p>}
+                  {announcedLabel(session.pending) && (
+                    <p class="mt-1.5 w-fit max-w-full rounded-md border border-dashed border-neutral-500 bg-neutral-50 px-2.5 py-1 text-sm leading-snug font-medium text-neutral-900">
+                      {announcedLabel(session.pending)}
+                    </p>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </article>
+      ))}
     </div>
     <div class="mt-5 rounded-lg border border-neutral-200 bg-white px-4 py-4 text-center sm:px-5">
       <p class="text-sm font-semibold text-neutral-900 sm:text-base">The schedule is subject to change.</p>
@@ -100,21 +98,19 @@ function announcedLabel(pending: string | null) {
         Follow IDSW on social media for speaker announcements, schedule changes, and the latest event updates.
       </p>
       <ul class="mt-3 flex flex-wrap justify-center gap-x-6 gap-y-2">
-        {
-          socialMedias
-            .filter((social) => social.name !== "Email")
-            .map((social) => (
-              <li>
-                <a
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-sm font-semibold text-navy underline underline-offset-4 hover:text-neutral-600 sm:text-base">
-                  {social.name}
-                </a>
-              </li>
-            ))
-        }
+        {socialMedias
+          .filter((social) => social.name !== "Email")
+          .map((social) => (
+            <li>
+              <a
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm font-semibold text-navy underline underline-offset-4 hover:text-neutral-600 sm:text-base">
+                {social.name}
+              </a>
+            </li>
+          ))}
       </ul>
     </div>
   </div>

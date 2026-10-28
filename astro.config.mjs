@@ -46,6 +46,7 @@ function publicDirectoryIntegration() {
 
 // https://astro.build/config
 export default defineConfig({
+  compressHTML: true,
   site: process.env.CF_PAGES_URL || "https://www.idsw.dev",
   integrations: [react(), publicDirectoryIntegration()],
   redirects: {
