@@ -2,6 +2,7 @@
 import { siteConfig } from "../../config/site";
 import { isCfpOpen } from "../../lib/cfp";
 import CfpCountdown from "../cfp-countdown.astro";
+import EventCountdown from "../event-countdown.astro";
 import Button from "../ui/button.astro";
 
 const cfpOpen = isCfpOpen();
@@ -61,6 +62,6 @@ const cfpOpen = isCfpOpen();
       )}
     </div>
 
-    {cfpOpen && <CfpCountdown />}
+    {cfpOpen ? <CfpCountdown /> : <EventCountdown />}
   </div>
 </section>
