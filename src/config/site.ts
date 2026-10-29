@@ -126,6 +126,12 @@ export const siteConfig = {
       url: "https://grafana.com",
       tier: "digital",
     },
+    {
+      name: "Remote Browser",
+      logo: "/partners/remote-browser.png",
+      url: "https://remotebrowser.ai",
+      tier: "digital",
+    },
   ],
 
   communities: [
