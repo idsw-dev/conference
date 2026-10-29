@@ -1,0 +1,109 @@
+---
+import { siteConfig } from "../config/site";
+import { getTimeLeft } from "../lib/cfp";
+
+const deadline = new Date(siteConfig.event.startDate).getTime();
+const timeLeft = getTimeLeft(siteConfig.event.startDate);
+const startLabel = new Intl.DateTimeFormat("en-GB", {
+  dateStyle: "long",
+  timeStyle: "short",
+  timeZone: "Asia/Jakarta",
+}).format(new Date(siteConfig.event.startDate));
+const strip = [9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const units = [
+  { name: "days", label: "days", width: Math.max(2, String(timeLeft.days).length) },
+  { name: "hours", label: "hours", width: 2 },
+  { name: "minutes", label: "min", width: 2 },
+  { name: "seconds", label: "sec", width: 2 },
+] as const;
+---
+
+<div id="event-countdown" class="mt-8 sm:mt-10" data-deadline={deadline} hidden={deadline <= Date.now()}>
+  <p class="sr-only">
+    {siteConfig.event.name} starts on {startLabel} WIB.
+  </p>
+  <p class="text-sm text-white/70 sm:text-base" aria-hidden="true">
+    See you in
+  </p>
+  <div class="mt-4 flex items-end justify-center gap-5 sm:gap-8 md:gap-10" aria-hidden="true">
+    {units.map(({ name, label, width }) => (
+      <div class="flex min-w-12 flex-col items-center sm:min-w-14">
+        <span
+          class="countdown-value font-display text-3xl leading-none font-semibold tracking-tight tabular-nums sm:text-4xl lg:text-5xl"
+          data-unit={name}
+          data-pad={width}>
+          {String(timeLeft[name])
+            .padStart(width, "0")
+            .split("")
+            .map((digit) => (
+              <span class="countdown-slot">
+                <span
+                  class="countdown-strip"
+                  data-digit={digit}
+                  style={`transform: translateY(-${Number(digit) + 1}em)`}>
+                  {strip.map((n) => (
+                    <span>{n}</span>
+                  ))}
+                </span>
+              </span>
+            ))}
+        </span>
+        <span class="mt-2 text-xs text-white/70 sm:text-sm">{label}</span>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  import { getTimeLeft } from "../lib/cfp";
+
+  const root = document.getElementById("event-countdown");
+  if (root) {
+    const deadline = Number(root.dataset.deadline);
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const setDigit = (strip: HTMLElement, next: number) => {
+      const prev = Number(strip.dataset.digit ?? next);
+      if (prev === next) return;
+
+      const wrap = prev === 0 && next === 9 && !reduced.matches;
+      strip.style.transform = `translateY(-${wrap ? 0 : next + 1}em)`;
+      strip.dataset.digit = String(next);
+
+      if (wrap) {
+        strip.addEventListener(
+          "transitionend",
+          () => {
+            strip.style.transition = "none";
+            strip.style.transform = "translateY(-10em)";
+            void strip.offsetWidth;
+            strip.style.transition = "";
+          },
+          { once: true },
+        );
+      }
+    };
+
+    const tick = () => {
+      const now = Date.now();
+      root.hidden = now >= deadline;
+      if (root.hidden) return false;
+
+      const timeLeft = getTimeLeft(new Date(deadline).toISOString(), now);
+      root.querySelectorAll<HTMLElement>("[data-unit]").forEach((unit) => {
+        const name = unit.dataset.unit as keyof typeof timeLeft;
+        const digits = String(timeLeft[name]).padStart(Number(unit.dataset.pad), "0");
+        unit.querySelectorAll<HTMLElement>(".countdown-strip").forEach((strip, i) => {
+          setDigit(strip, Number(digits[i]));
+        });
+      });
+      return true;
+    };
+
+    if (tick()) {
+      const id = window.setInterval(() => {
+        if (!tick()) window.clearInterval(id);
+      }, 1_000);
+    }
+  }
+</script>
