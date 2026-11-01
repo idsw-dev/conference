@@ -68,7 +68,17 @@
         },
         {
           "start": "11:40",
-          "end": "13:10",
+          "end": "12:00",
+          "title": "Sponsor Talk B",
+          "speaker": null,
+          "kind": "sponsor",
+          "pending": "speaker",
+          "duration": 20,
+          "transition": 0
+        },
+        {
+          "start": "12:00",
+          "end": "13:30",
           "title": "Lunch Break",
           "speaker": null,
           "kind": "lunch",
@@ -77,8 +87,8 @@
           "transition": 0
         },
         {
-          "start": "13:10",
-          "end": "13:55",
+          "start": "13:30",
+          "end": "14:15",
           "title": "Inference Engineering: Innerworking of Fast LLM Serving",
           "speaker": "Mustafa Zaki Assagaf",
           "kind": "keynote",
@@ -87,8 +97,8 @@
           "transition": 5
         },
         {
-          "start": "14:00",
-          "end": "14:30",
+          "start": "14:20",
+          "end": "14:50",
           "title": "import zerotrust: Network Security as a Dependency, Not a Ticket",
           "speaker": "Affan Basalamah",
           "kind": "talk",
@@ -97,23 +107,13 @@
           "transition": 5
         },
         {
-          "start": "14:35",
-          "end": "15:05",
+          "start": "14:55",
+          "end": "15:25",
           "title": "From Air to Packets and Back: How Voice Travels Between Devices",
           "speaker": "Yoseph Bernandus",
           "kind": "talk",
           "pending": null,
           "duration": 30,
-          "transition": 0
-        },
-        {
-          "start": "15:05",
-          "end": "15:25",
-          "title": "Sponsor Talk B",
-          "speaker": null,
-          "kind": "sponsor",
-          "pending": "speaker",
-          "duration": 20,
           "transition": 5
         },
         {
@@ -191,11 +191,11 @@
           "kind": "sponsor",
           "pending": "speaker",
           "duration": 20,
-          "transition": 0
+          "transition": 5
         },
         {
-          "start": "10:00",
-          "end": "10:45",
+          "start": "10:05",
+          "end": "10:50",
           "title": "Pesan Systems Engineering Modern dalam Membangun Purwarupa AI ke Sistem Produksi yang Aman, Teruji, dan Layak Dipercaya",
           "speaker": "Mansur Maturidi Arief",
           "kind": "keynote",
@@ -204,8 +204,8 @@
           "transition": 5
         },
         {
-          "start": "10:50",
-          "end": "11:20",
+          "start": "10:55",
+          "end": "11:25",
           "title": "(Human) Attention is All You Need",
           "speaker": "Zain Fathoni",
           "kind": "talk",
@@ -214,8 +214,8 @@
           "transition": 5
         },
         {
-          "start": "11:25",
-          "end": "11:55",
+          "start": "11:30",
+          "end": "12:00",
           "title": "Front-End Job is Dying: What I Own as a Design Engineer",
           "speaker": "theodorusclarence",
           "kind": "talk",
@@ -224,8 +224,8 @@
           "transition": 0
         },
         {
-          "start": "11:55",
-          "end": "13:25",
+          "start": "12:00",
+          "end": "13:30",
           "title": "Lunch Break",
           "speaker": null,
           "kind": "lunch",
@@ -234,28 +234,28 @@
           "transition": 0
         },
         {
-          "start": "13:25",
-          "end": "14:25",
+          "start": "13:30",
+          "end": "14:15",
+          "title": "Keynote",
+          "speaker": "Eko Kurniawan Khannedy",
+          "kind": "keynote",
+          "pending": "title",
+          "duration": 45,
+          "transition": 5
+        },
+        {
+          "start": "14:20",
+          "end": "15:20",
           "title": "Lightning talks",
           "speaker": null,
           "kind": "lightning",
           "pending": "order",
           "duration": 60,
-          "transition": 5
+          "transition": 10
         },
         {
-          "start": "14:30",
-          "end": "15:00",
-          "title": "Building a Browser Engine with Swift and Guardrails for AI Assistance",
-          "speaker": "Kresna Satya",
-          "kind": "talk",
-          "pending": null,
-          "duration": 30,
-          "transition": 5
-        },
-        {
-          "start": "15:05",
-          "end": "16:05",
+          "start": "15:30",
+          "end": "16:30",
           "title": "Coffee Break",
           "speaker": null,
           "kind": "coffee",
@@ -264,8 +264,18 @@
           "transition": 0
         },
         {
-          "start": "16:05",
-          "end": "16:50",
+          "start": "16:30",
+          "end": "17:00",
+          "title": "Building a Browser Engine with Swift and Guardrails for AI Assistance",
+          "speaker": "Kresna Satya",
+          "kind": "talk",
+          "pending": null,
+          "duration": 30,
+          "transition": 5
+        },
+        {
+          "start": "17:05",
+          "end": "17:50",
           "title": "Something related to LLM to binary/machine code",
           "speaker": "Aria Ghora",
           "kind": "keynote",
@@ -274,8 +284,8 @@
           "transition": 5
         },
         {
-          "start": "16:55",
-          "end": "17:15",
+          "start": "17:55",
+          "end": "18:15",
           "title": "Closing",
           "speaker": null,
           "kind": "closing",

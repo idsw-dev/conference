@@ -5,13 +5,13 @@ export const siteConfig = {
   event: {
     name: "IDSW 2026",
     tagline: "The Biggest Community-Led Developer Conference in Indonesia",
-    dates: "21–22 Nov 2026 | Day 1: 08.00–18.15 | Day 2: 09.00–17.15 WIB",
+    dates: "21–22 Nov 2026 | Day 1: 08.00–18.15 | Day 2: 09.00–18.15 WIB",
     startDate: "2026-11-21T08:00:00+07:00",
-    endDate: "2026-11-22T17:15:00+07:00",
+    endDate: "2026-11-22T18:15:00+07:00",
     venue: "Usmar Ismail Hall, Jakarta Selatan",
     venueUrl: "https://maps.google.com/?q=Usmar+Ismail+Hall+Jakarta",
     calendarUrl:
-      "https://calendar.google.com/calendar/render?action=TEMPLATE&text=IDSW+2026+-+Indonesia+Software+Developer+Conference&dates=20261121T010000Z/20261122T101500Z&details=Indonesia+Software+Developer+Conference+2026.+Indonesia%27s+biggest+community-led+developer+conference.&location=Usmar+Ismail+Hall%2C+Jakarta",
+      "https://calendar.google.com/calendar/render?action=TEMPLATE&text=IDSW+2026+-+Indonesia+Software+Developer+Conference&dates=20261121T010000Z/20261122T111500Z&details=Indonesia+Software+Developer+Conference+2026.+Indonesia%27s+biggest+community-led+developer+conference.&location=Usmar+Ismail+Hall%2C+Jakarta",
   },
 
   phase: "cfp" as const,
@@ -86,6 +86,14 @@ export const siteConfig = {
       position: "Platform Engineer",
       photo: "mustafa-z-assagaf",
       brief: "Umur 26, domisili depok, engga suka makan pedes",
+    },
+    {
+      name: "Eko Kurniawan Khannedy",
+      position:
+        "Technical Architect at Blibli & Founder of Programmer Zaman Now",
+      photo: "eko-kurniawan-khannedy",
+      brief:
+        "Technical Architect at Blibli.com and founder of Programmer Zaman Now. With over 15 years of software engineering experience designing high-scale distributed systems and enterprise architectures, Eko is also one of Indonesia's foremost tech educators, having mentored over 300,000 developers across the country.",
     },
     {
       name: "Aria Ghora",
