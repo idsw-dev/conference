@@ -6,6 +6,18 @@ import Button from "../ui/button.astro";
 
 const { prospectusUrl, email } = siteConfig.sponsors;
 const { partners, digitalPartners } = siteConfig;
+
+function logoSize(logo: { width: number; height: number }, tier: "platinum" | "digital") {
+  const ratio = logo.width / logo.height;
+  if (tier === "platinum") {
+    if (ratio >= 4) return "h-12 w-52 sm:h-14 sm:w-64";
+    if (ratio >= 2) return "h-18 w-48 sm:h-20 sm:w-56";
+    return "h-20 w-20 sm:h-24 sm:w-24";
+  }
+  if (ratio >= 4) return "h-8 w-36 sm:h-9 sm:w-44";
+  if (ratio >= 2) return "h-12 w-36 sm:h-14 sm:w-40";
+  return "h-14 w-14 sm:h-16 sm:w-16";
+}
 ---
 
 {/*
@@ -59,15 +71,15 @@ const { partners, digitalPartners } = siteConfig;
             <p class="w-full text-center text-xs font-bold tracking-[0.18em] text-neutral-600 uppercase sm:text-left">
               Platinum partners
             </p>
-            <ul class="mt-7 flex w-full flex-wrap items-center justify-center gap-x-12 gap-y-8 sm:justify-start sm:gap-x-16">
+            <ul class="mt-7 grid w-full max-w-[42rem] grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
               {partners.map((partner) => (
-                <li>
+                <li class="flex justify-center">
                   <a
                     href={partner.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     title={`Visit ${partner.name}`}
-                    class="group focus-visible:outline-primary inline-flex items-center justify-center rounded-lg transition-all duration-200 outline-none hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
+                    class="group focus-visible:outline-primary flex h-36 max-w-80 px-6 w-full items-center justify-center rounded-lg outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
                     data-ph-event="partner_click"
                     data-ph-location="sponsors"
                     data-ph-partner={partner.name}>
@@ -76,7 +88,10 @@ const { partners, digitalPartners } = siteConfig;
                       width={400}
                       alt={`${partner.name} logo`}
                       loading="lazy"
-                      class="h-16 w-auto max-w-[13rem] object-contain transition-transform duration-200 group-hover:scale-105 sm:h-20 sm:max-w-[16rem]"
+                      class:list={[
+                        logoSize(partner.logo, "platinum"),
+                        "max-w-full object-contain transition-transform duration-200 group-hover:scale-105",
+                      ]}
                     />
                   </a>
                 </li>
@@ -90,15 +105,15 @@ const { partners, digitalPartners } = siteConfig;
             <p class="w-full text-center text-xs font-semibold tracking-[0.16em] text-neutral-400 uppercase sm:text-left">
               Digital partners
             </p>
-            <ul class="mt-6 flex w-full flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:justify-start sm:gap-x-12">
+            <ul class="mt-6 grid w-full max-w-[34rem] grid-cols-1 gap-4 min-[400px]:grid-cols-2 sm:gap-8">
               {digitalPartners.map((partner) => (
-                <li>
+                <li class="flex justify-center">
                   <a
                     href={partner.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     title={`Visit ${partner.name}`}
-                    class="group focus-visible:outline-primary inline-flex items-center justify-center rounded-lg transition-all duration-200 outline-none hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
+                    class="group focus-visible:outline-primary flex h-24 max-w-60 px-4 w-full items-center justify-center rounded-lg outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
                     data-ph-event="partner_click"
                     data-ph-location="sponsors"
                     data-ph-partner={partner.name}>
@@ -107,7 +122,10 @@ const { partners, digitalPartners } = siteConfig;
                       width={400}
                       alt={`${partner.name} logo`}
                       loading="lazy"
-                      class="h-10 w-auto max-w-[9.5rem] object-contain opacity-85 transition-all duration-200 group-hover:opacity-100 group-hover:scale-105 sm:h-12 sm:max-w-[11.5rem]"
+                      class:list={[
+                        logoSize(partner.logo, "digital"),
+                        "max-w-full object-contain opacity-85 transition-all duration-200 group-hover:opacity-100 group-hover:scale-105",
+                      ]}
                     />
                   </a>
                 </li>
