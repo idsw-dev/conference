@@ -50,8 +50,11 @@ To archive the source revision you want to preserve:
 3. Preview and commit the generated archive before starting the next edition.
 
 Use `withBasePath` from `src/lib/paths.ts` for edition-local public assets and
-navigation, including metadata URLs. Astro handles imported assets automatically.
+navigation, including metadata URLs. Store component images in `src/data/images`
+and import them through Astro’s `<Image>` component for build-time processing;
+Astro handles their archive paths automatically. Keep files requiring stable URLs
+(such as favicons, social-preview images, PDFs, and videos) in `public`.
 Links to previous editions intentionally stay at `/2024/` and `/2025/`; artwork
-used by the current edition lives in `public/previous-events/` so its archive
+used by the current edition lives in `src/data/images/previous-events/` so its archive
 retains its own copy. Browser interactions may use JavaScript, but pages must not
 require server rendering or runtime API routes.

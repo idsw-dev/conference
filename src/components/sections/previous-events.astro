@@ -1,5 +1,6 @@
 ---
-import { withBasePath } from "../../lib/paths";
+import { Image } from "astro:assets";
+import { siteConfig } from "../../config/site";
 import { ArrowUpRight, Calendar, Layers, MapPin, Users } from "lucide-react";
 
 const cardInteractive =
@@ -29,8 +30,9 @@ const cardInteractive =
           <div class="flex items-start justify-between gap-4">
             <div class="flex items-center gap-3.5 sm:gap-4">
               <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg border border-white/20 bg-white/10 p-2.5 backdrop-blur-sm sm:h-16 sm:w-16">
-                <img
-                  src={withBasePath("/previous-events/2024-logo.svg")}
+                <Image
+                  src={siteConfig.previousEvents[0].logo}
+                  width={128}
                   alt="IDSW 2024 Logo"
                   class="h-full w-auto object-contain"
                 />
@@ -82,8 +84,9 @@ const cardInteractive =
           <div class="flex items-start justify-between gap-4">
             <div class="flex items-center gap-3.5 sm:gap-4">
               <div class="flex h-14 w-auto max-w-[200px] shrink-0 items-center justify-center rounded-lg border border-white/20 bg-white/15 px-3 py-2 backdrop-blur-sm sm:h-16 sm:max-w-[240px]">
-                <img
-                  src={withBasePath("/previous-events/2025-nav-logo.png")}
+                <Image
+                  src={siteConfig.previousEvents[1].logoWhite}
+                  width={400}
                   alt="IDSW 2025 with SerpApi"
                   class="h-9 w-auto object-contain sm:h-10"
                 />

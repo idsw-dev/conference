@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { withBasePath } from "../../lib/paths";
 import { siteConfig } from "../../config/site";
 import Button from "../ui/button.astro";
@@ -70,8 +71,9 @@ const { partners, digitalPartners } = siteConfig;
                     data-ph-event="partner_click"
                     data-ph-location="sponsors"
                     data-ph-partner={partner.name}>
-                    <img
-                      src={withBasePath(partner.logo)}
+                    <Image
+                      src={partner.logo}
+                      width={400}
                       alt={`${partner.name} logo`}
                       loading="lazy"
                       class="h-20 w-50 object-contain transition-transform duration-200 group-hover:scale-[1.03] sm:h-20 sm:w-50"
@@ -100,8 +102,9 @@ const { partners, digitalPartners } = siteConfig;
                     data-ph-event="partner_click"
                     data-ph-location="sponsors"
                     data-ph-partner={partner.name}>
-                    <img
-                      src={withBasePath(partner.logo)}
+                    <Image
+                      src={partner.logo}
+                      width={400}
                       alt={`${partner.name} logo`}
                       loading="lazy"
                       class="h-20 w-50 object-contain transition-transform duration-200 group-hover:scale-[1.03] sm:h-20 sm:w-50"

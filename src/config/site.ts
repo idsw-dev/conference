@@ -1,3 +1,15 @@
+import midtransLogo from "../data/images/partners/midtrans.png";
+import biznetGioLogo from "../data/images/partners/biznet-gio.png";
+import grafanaLogo from "../data/images/partners/grafana.svg";
+import remoteBrowserLogo from "../data/images/partners/remote-browser.png";
+import pythonIdLogo from "../data/images/community/python-id.png";
+import startupLokalLogo from "../data/images/community/startuplokal.png";
+import wpuLogo from "../data/images/community/wpu.png";
+import founderInstituteLogo from "../data/images/community/founder-institute.svg";
+import idsw2024Logo from "../data/images/previous-events/2024-logo.svg";
+import idsw2025Logo from "../data/images/previous-events/2025-logo-blue.png";
+import idsw2025WhiteLogo from "../data/images/previous-events/2025-nav-logo.png";
+
 const ticketsUrl =
   "https://tiptip.id/event/68c1a321-c6f7-4fe8-8ac0-38b48136ff33";
 
@@ -115,13 +127,13 @@ export const siteConfig = {
   partners: [
     {
       name: "Midtrans",
-      logo: "/partners/midtrans.png",
+      logo: midtransLogo,
       url: "https://midtrans.com",
       tier: "platinum",
     },
     {
       name: "Biznet Gio",
-      logo: "/partners/biznet-gio.png",
+      logo: biznetGioLogo,
       url: "https://www.biznetgio.com",
       tier: "platinum",
     },
@@ -130,13 +142,13 @@ export const siteConfig = {
   digitalPartners: [
     {
       name: "Grafana",
-      logo: "/partners/grafana.svg",
+      logo: grafanaLogo,
       url: "https://grafana.com",
       tier: "digital",
     },
     {
       name: "Remote Browser",
-      logo: "/partners/remote-browser.png",
+      logo: remoteBrowserLogo,
       url: "https://github.com/remotebrowser/remotebrowser",
       tier: "digital",
     },
@@ -145,22 +157,22 @@ export const siteConfig = {
   communities: [
     {
       name: "Python ID",
-      logo: "/community/python-id.png",
+      logo: pythonIdLogo,
       url: "https://telegram.me/pythonID",
     },
     {
       name: "StartupLokal",
-      logo: "/community/startuplokal.png",
+      logo: startupLokalLogo,
       url: "https://startuplokal.community/",
     },
     {
       name: "WPU",
-      logo: "/community/wpu.png",
+      logo: wpuLogo,
       url: "https://discord.gg/S4rrXQU",
     },
     {
       name: "Founder Institute",
-      logo: "/community/founder-institute.svg",
+      logo: founderInstituteLogo,
       url: "https://fi.co/join/idsw",
     },
   ],
@@ -177,7 +189,7 @@ export const siteConfig = {
       dates: "16–17 November 2024",
       venue: "GetCourse Hall, Jakarta",
       highlights: "4 Keynotes · 15 Speakers",
-      logo: "/previous-events/2024-logo.svg",
+      logo: idsw2024Logo,
     },
     {
       year: 2025,
@@ -187,8 +199,8 @@ export const siteConfig = {
       dates: "22–23 November 2025",
       venue: "Usmar Ismail Hall, Jakarta",
       highlights: "450+ Attendees · 17+ Speakers",
-      logo: "/previous-events/2025-logo-blue.png",
-      logoWhite: "/previous-events/2025-nav-logo.png",
+      logo: idsw2025Logo,
+      logoWhite: idsw2025WhiteLogo,
     },
   ],
 

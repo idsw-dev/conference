@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import idswLogo from "../data/images/idsw-logo.png";
 import { withBasePath } from "../lib/paths";
 import { siteConfig } from "../config/site";
 ---
@@ -10,7 +12,7 @@ import { siteConfig } from "../config/site";
 
       <div class="flex items-center justify-between">
         <a href={withBasePath("/")} class="relative z-10 flex items-center">
-          <img src={withBasePath("/idsw-logo.png")} class="h-8 w-auto" alt="IDSW 2026" />
+          <Image src={idswLogo} width={320} class="h-8 w-auto" alt="IDSW 2026" />
         </a>
 
         <label

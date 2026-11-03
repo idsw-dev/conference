@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import idswLogo from "../../data/images/idsw-logo.png";
 import { withBasePath } from "../../lib/paths";
 import { SiFacebook, SiInstagram, SiThreads, SiX } from "@icons-pack/react-simple-icons";
 import { Mail } from "lucide-react";
@@ -29,7 +31,7 @@ const { socialMedias = defaultSocialMedias as SocialMedia[] } = Astro.props;
       </div>
 
       <div class="shrink-0">
-        <img src={withBasePath("/idsw-logo.png")} alt="IDSW 2026" class="h-14 w-auto opacity-95 sm:h-16 md:h-20" />
+        <Image src={idswLogo} width={320} alt="IDSW 2026" class="h-14 w-auto opacity-95 sm:h-16 md:h-20" />
       </div>
     </div>
   </div>

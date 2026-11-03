@@ -1,5 +1,6 @@
 ---
 import { withBasePath } from "../../lib/paths";
+import recapPoster from "../../data/images/idsw-2025-recap.jpg";
 import { siteConfig } from "../../config/site";
 import SectionHeader from "../ui/section-header.astro";
 ---
@@ -17,7 +18,7 @@ import SectionHeader from "../ui/section-header.astro";
             loop
             playsinline
             preload="metadata"
-            poster={withBasePath("/video/idsw-2025.jpg")}
+            poster={recapPoster.src}
             aria-label="Recap from IDSW 2025">
             <source src={withBasePath("/video/idsw-2025.av1.mp4")} type='video/mp4; codecs="av01.0.05M.08"' />
             <source src={withBasePath("/video/idsw-2025.mp4")} type="video/mp4" />
