@@ -159,8 +159,8 @@ export const siteConfig = {
       url: "https://discord.gg/S4rrXQU",
     },
     {
-      name: "Founder Institute",
-      logo: "/community/founder-institute.svg",
+      name: "Founder Institute × Foundry",
+      logo: "/community/founder-institute-x-foundry.svg",
       url: "https://fi.co/join/idsw",
     },
   ],
