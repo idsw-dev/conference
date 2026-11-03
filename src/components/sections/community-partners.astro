@@ -1,11 +1,19 @@
 ---
+import { Image } from "astro:assets";
 import { siteConfig } from "../../config/site";
+
+function logoSize(logo: { width: number; height: number }) {
+  const ratio = logo.width / logo.height;
+  if (ratio >= 4) return "h-7 w-30";
+  if (ratio >= 2) return "h-9 w-28";
+  return "h-12 w-12";
+}
 ---
 
 {/*
     THESIS: A quiet strip right after the partnership letter, not a logo wall.
     No cards, no borders, no "proudly presented by" fanfare. The label is smaller
-    than the logos. Logos sit at a fixed height; square and wide marks both fit.
+    than the logos. Equal slots keep spacing consistent; shape-based sizing balances visual weight.
     ADD A COMMUNITY: append one object to siteConfig.communities.
   */}
 
@@ -15,23 +23,27 @@ import { siteConfig } from "../../config/site";
       Community partners
     </p>
 
-    <ul class="flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-5 sm:justify-start sm:gap-x-12">
+    <ul class="grid w-full max-w-[42rem] grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-4 sm:gap-x-8">
       {siteConfig.communities.map((community) => (
-        <li>
+        <li class="flex justify-center">
           <a
             href={community.url}
             target="_blank"
             rel="noopener noreferrer"
             title={`Visit ${community.name}`}
-            class="group focus-visible:outline-primary inline-flex items-center justify-center rounded-lg transition-all duration-200 outline-none hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
+            class="group focus-visible:outline-primary flex h-16 w-full max-w-36 items-center justify-center rounded-lg transition-transform duration-200 outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
             data-ph-event="community_partner_click"
             data-ph-location="community-partners"
             data-ph-community={community.name}>
-            <img
+            <Image
               src={community.logo}
+              width={280}
               alt={`${community.name} logo`}
               loading="lazy"
-              class="h-7 w-auto max-w-[7rem] object-contain opacity-60 transition-all duration-200 group-hover:opacity-100 group-hover:scale-105 sm:h-8 sm:max-w-[8.5rem]"
+              class:list={[
+                logoSize(community.logo),
+                "object-contain opacity-60 transition-all duration-200 group-hover:opacity-100 group-hover:scale-105",
+              ]}
             />
           </a>
         </li>

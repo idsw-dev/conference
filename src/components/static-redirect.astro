@@ -1,0 +1,23 @@
+---
+import { withBasePath } from "../lib/paths";
+
+interface Props {
+  to: string;
+}
+
+const destination = withBasePath(Astro.props.to);
+const canonicalUrl = new URL(destination, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+    <link rel="canonical" href={canonicalUrl} />
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    <a href={destination}>Continue to Terms of Service</a>
+  </body>
+</html>

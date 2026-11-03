@@ -1,4 +1,5 @@
 ---
+import { withBasePath } from "../lib/paths";
 import LegalPage from "../components/legal/legal-page.astro";
 
 const toc = [
@@ -36,7 +37,7 @@ const toc = [
       This Privacy Policy explains how <strong>Perkumpulan Pengrajin Kode Indonesia (PERKODI)</strong> (“PERKODI”, “we”,
       “us”, or “our”) acts as the data controller for personal data collected in connection with{" "}
       <strong>Indonesia Software Developer Conference (IDSW 2026)</strong> and its official website (
-      <a href="https://idsw.dev" class="text-primary underline">
+      <a href={withBasePath("/")} class="text-primary underline">
         idsw.dev
       </a>
       ).
@@ -189,7 +190,7 @@ const toc = [
     <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
       We may update this Privacy Policy periodically to reflect operational changes or applicable legal requirements.
       Updates will be published on{" "}
-      <a href="https://idsw.dev/privacy-policy" class="text-primary underline">
+      <a href={withBasePath("/privacy-policy")} class="text-primary underline">
         idsw.dev/privacy-policy
       </a>
       .

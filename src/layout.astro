@@ -1,4 +1,5 @@
 ---
+import { withBasePath } from "./lib/paths";
 import "@fontsource/plus-jakarta-sans/400.css";
 import "@fontsource/plus-jakarta-sans/500.css";
 import "@fontsource/plus-jakarta-sans/600.css";
@@ -19,7 +20,7 @@ const {
   title = "IDSW 2026 | Indonesia Software Developer Conference, Jakarta",
   description = "IDSW is Indonesia's biggest community-led developer conference. Run by PERKODI in Jakarta, with a single track for software engineers from across the country.",
   ogDescription = "IDSW is Indonesia's biggest community-led developer conference. Two days in Jakarta with PERKODI and local communities.",
-  canonicalPath = "/",
+  canonicalPath = Astro.url.pathname,
 } = Astro.props;
 
 const keywords =
@@ -27,8 +28,8 @@ const keywords =
 const ogAlt = "IDSW 2026. Indonesia Software Developer Conference.";
 
 const isPublic = true;
-const canonicalUrl = new URL(canonicalPath, Astro.site).href;
-const ogImageUrl = new URL("/og.jpg", Astro.site).href;
+const canonicalUrl = new URL(withBasePath(canonicalPath), Astro.site).href;
+const ogImageUrl = new URL(withBasePath("/og.jpg"), Astro.site).href;
 
 const eventJsonLd = {
   "@context": "https://schema.org",
@@ -73,10 +74,15 @@ const eventJsonLd = {
     {isPublic && <meta name="robots" content="index, follow" />}
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonicalUrl} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
-    <link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" href="/favicon.png" type="image/png" media="(prefers-color-scheme: light)" />
-    <link rel="icon" href="/favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href={withBasePath("/favicon.svg")} type="image/svg+xml" media="(prefers-color-scheme: light)" />
+    <link
+      rel="icon"
+      href={withBasePath("/favicon-dark.svg")}
+      type="image/svg+xml"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="icon" href={withBasePath("/favicon.png")} type="image/png" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href={withBasePath("/favicon-dark.png")} type="image/png" media="(prefers-color-scheme: dark)" />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="IDSW Organizers" />

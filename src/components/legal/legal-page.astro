@@ -1,4 +1,5 @@
 ---
+import { withBasePath } from "../../lib/paths";
 import Layout from "../../layout.astro";
 import Footer from "../sections/footer.astro";
 
@@ -144,7 +145,7 @@ const legalLinks = [
                   return (
                     <li>
                       <a
-                        href={link.href}
+                        href={withBasePath(link.href)}
                         class:list={[
                           "flex items-center justify-between rounded-lg px-2.5 py-2 transition-colors",
                           isCurrent
