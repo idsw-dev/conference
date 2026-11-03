@@ -137,7 +137,7 @@ export const siteConfig = {
     {
       name: "Remote Browser",
       logo: "/partners/remote-browser.png",
-      url: "https://remotebrowser.ai",
+      url: "https://github.com/remotebrowser/remotebrowser",
       tier: "digital",
     },
   ],
