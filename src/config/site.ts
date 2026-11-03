@@ -5,7 +5,7 @@ import remoteBrowserLogo from "../data/images/partners/remote-browser.png";
 import pythonIdLogo from "../data/images/community/python-id.png";
 import startupLokalLogo from "../data/images/community/startuplokal.png";
 import wpuLogo from "../data/images/community/wpu.png";
-import founderInstituteLogo from "../data/images/community/founder-institute.svg";
+import founderInstituteFoundryLogo from "../data/images/community/founder-institute-x-foundry.svg";
 import idsw2024Logo from "../data/images/previous-events/2024-logo.svg";
 import idsw2025Logo from "../data/images/previous-events/2025-logo-blue.png";
 import idsw2025WhiteLogo from "../data/images/previous-events/2025-nav-logo.png";
@@ -171,8 +171,8 @@ export const siteConfig = {
       url: "https://discord.gg/S4rrXQU",
     },
     {
-      name: "Founder Institute",
-      logo: founderInstituteLogo,
+      name: "Founder Institute × Foundry",
+      logo: founderInstituteFoundryLogo,
       url: "https://fi.co/join/idsw",
     },
   ],
