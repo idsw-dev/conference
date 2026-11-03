@@ -158,6 +158,11 @@ export const siteConfig = {
       logo: "/community/wpu.png",
       url: "https://discord.gg/S4rrXQU",
     },
+    {
+      name: "Founder Institute",
+      logo: "/community/founder-institute.svg",
+      url: "https://fi.co/join/idsw",
+    },
   ],
 
   about:
