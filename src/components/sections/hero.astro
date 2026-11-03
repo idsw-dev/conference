@@ -1,4 +1,5 @@
 ---
+import { withBasePath } from "../../lib/paths";
 import { siteConfig } from "../../config/site";
 import { isCfpOpen } from "../../lib/cfp";
 import CfpCountdown from "../cfp-countdown.astro";
@@ -51,12 +52,15 @@ const cfpOpen = isCfpOpen();
         </Button>
       )}
       {cfpOpen && (
-        <Button href="/#cfp" variant={siteConfig.tickets.enabled ? "outline" : "secondary"} class="w-full sm:w-auto">
+        <Button
+          href={withBasePath("/#cfp")}
+          variant={siteConfig.tickets.enabled ? "outline" : "secondary"}
+          class="w-full sm:w-auto">
           Submit a proposal
         </Button>
       )}
       {!siteConfig.tickets.enabled && !cfpOpen && (
-        <Button href="/#previous-events" variant="outline" class="w-full sm:w-auto">
+        <Button href={withBasePath("/#previous-events")} variant="outline" class="w-full sm:w-auto">
           See previous events
         </Button>
       )}

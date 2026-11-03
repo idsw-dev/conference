@@ -1,4 +1,5 @@
 ---
+import { withBasePath } from "../../lib/paths";
 import { siteConfig } from "../../config/site";
 import Button from "../ui/button.astro";
 
@@ -32,7 +33,7 @@ const { partners, digitalPartners } = siteConfig;
 
       <div class="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:items-center sm:gap-6">
         <Button
-          href={prospectusUrl}
+          href={withBasePath(prospectusUrl)}
           variant="primary"
           external
           class="w-full text-center sm:w-auto"
@@ -70,7 +71,7 @@ const { partners, digitalPartners } = siteConfig;
                     data-ph-location="sponsors"
                     data-ph-partner={partner.name}>
                     <img
-                      src={partner.logo}
+                      src={withBasePath(partner.logo)}
                       alt={`${partner.name} logo`}
                       loading="lazy"
                       class="h-20 w-50 object-contain transition-transform duration-200 group-hover:scale-[1.03] sm:h-20 sm:w-50"
@@ -100,7 +101,7 @@ const { partners, digitalPartners } = siteConfig;
                     data-ph-location="sponsors"
                     data-ph-partner={partner.name}>
                     <img
-                      src={partner.logo}
+                      src={withBasePath(partner.logo)}
                       alt={`${partner.name} logo`}
                       loading="lazy"
                       class="h-20 w-50 object-contain transition-transform duration-200 group-hover:scale-[1.03] sm:h-20 sm:w-50"

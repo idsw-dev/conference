@@ -1,4 +1,5 @@
 ---
+import { withBasePath } from "../lib/paths";
 import LegalPage from "../components/legal/legal-page.astro";
 
 const toc = [
@@ -82,7 +83,7 @@ const toc = [
     <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
       All participants, including in-person and online attendees, speakers, sponsors, and staff, must strictly abide by
       the event’s{" "}
-      <a href="/code-of-conduct" class="text-primary font-semibold underline">
+      <a href={withBasePath("/code-of-conduct")} class="text-primary font-semibold underline">
         Code of Conduct
       </a>
       :
@@ -169,7 +170,7 @@ const toc = [
       </li>
       <li>
         For further details, please refer to our{" "}
-        <a href="/privacy-policy" class="text-primary font-semibold underline">
+        <a href={withBasePath("/privacy-policy")} class="text-primary font-semibold underline">
           Privacy Policy
         </a>
         .
@@ -237,7 +238,7 @@ const toc = [
     </h2>
     <p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
       Organizers may amend these Terms at any time. Updates will be published on the official IDSW website (
-      <a href="https://idsw.dev" class="text-primary underline">
+      <a href={withBasePath("/")} class="text-primary underline">
         idsw.dev
       </a>
       ); attendees will be notified via email.

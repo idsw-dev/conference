@@ -1,4 +1,5 @@
 ---
+import { withBasePath } from "../../lib/paths";
 import { siteConfig } from "../../config/site";
 import SectionHeader from "../ui/section-header.astro";
 ---
@@ -16,10 +17,10 @@ import SectionHeader from "../ui/section-header.astro";
             loop
             playsinline
             preload="metadata"
-            poster="/video/idsw-2025.jpg"
+            poster={withBasePath("/video/idsw-2025.jpg")}
             aria-label="Recap from IDSW 2025">
-            <source src="/video/idsw-2025.av1.mp4" type='video/mp4; codecs="av01.0.05M.08"' />
-            <source src="/video/idsw-2025.mp4" type="video/mp4" />
+            <source src={withBasePath("/video/idsw-2025.av1.mp4")} type='video/mp4; codecs="av01.0.05M.08"' />
+            <source src={withBasePath("/video/idsw-2025.mp4")} type="video/mp4" />
           </video>
         </div>
       </div>

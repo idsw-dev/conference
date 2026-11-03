@@ -1,4 +1,5 @@
 ---
+import { withBasePath } from "../../lib/paths";
 import { siteConfig } from "../../config/site";
 ---
 
@@ -28,7 +29,7 @@ import { siteConfig } from "../../config/site";
             data-ph-location="community-partners"
             data-ph-community={community.name}>
             <img
-              src={community.logo}
+              src={withBasePath(community.logo)}
               alt={`${community.name} logo`}
               loading="lazy"
               class="h-17 w-auto max-w-[7rem] object-contain opacity-60 transition-opacity duration-200 group-hover:opacity-100 sm:h-17 sm:max-w-[8.5rem]"

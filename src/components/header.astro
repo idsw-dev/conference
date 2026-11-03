@@ -1,4 +1,5 @@
 ---
+import { withBasePath } from "../lib/paths";
 import { siteConfig } from "../config/site";
 ---
 
@@ -8,8 +9,8 @@ import { siteConfig } from "../config/site";
       <input id="nav-toggle" type="checkbox" class="peer sr-only" />
 
       <div class="flex items-center justify-between">
-        <a href="/" class="relative z-10 flex items-center">
-          <img src="/idsw-logo.png" class="h-8 w-auto" alt="IDSW 2026" />
+        <a href={withBasePath("/")} class="relative z-10 flex items-center">
+          <img src={withBasePath("/idsw-logo.png")} class="h-8 w-auto" alt="IDSW 2026" />
         </a>
 
         <label
@@ -41,7 +42,7 @@ import { siteConfig } from "../config/site";
           {siteConfig.nav.map((menu) => (
             <li>
               <a
-                href={menu.href}
+                href={withBasePath(menu.href)}
                 target={menu.external ? "_blank" : undefined}
                 rel={menu.external ? "noopener noreferrer" : undefined}
                 class="site-nav-link inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white"
@@ -70,7 +71,7 @@ import { siteConfig } from "../config/site";
           {siteConfig.nav.map((menu) => (
             <li class="w-full">
               <a
-                href={menu.href}
+                href={withBasePath(menu.href)}
                 target={menu.external ? "_blank" : undefined}
                 rel={menu.external ? "noopener noreferrer" : undefined}
                 class="site-nav-link flex w-full items-center justify-between gap-3 rounded-lg px-3 py-3 text-base font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white"
