@@ -5,14 +5,19 @@ import { siteConfig } from "../../config/site";
 import Button from "../ui/button.astro";
 
 const { prospectusUrl, email } = siteConfig.sponsors;
-const { partners, digitalPartners } = siteConfig;
+const { partners, silverPartners, digitalPartners } = siteConfig;
 
-function logoSize(logo: { width: number; height: number }, tier: "platinum" | "digital") {
+function logoSize(logo: { width: number; height: number }, tier: "platinum" | "silver" | "digital") {
   const ratio = logo.width / logo.height;
   if (tier === "platinum") {
     if (ratio >= 4) return "h-12 w-52 sm:h-14 sm:w-64";
     if (ratio >= 2) return "h-18 w-48 sm:h-20 sm:w-56";
     return "h-20 w-20 sm:h-24 sm:w-24";
+  }
+  if (tier === "silver") {
+    if (ratio >= 4) return "h-11 w-48 sm:h-12 sm:w-56";
+    if (ratio >= 2) return "h-14 w-44 sm:h-16 sm:w-48";
+    return "h-16 w-16 sm:h-20 sm:w-20";
   }
   if (ratio >= 4) return "h-8 w-36 sm:h-9 sm:w-44";
   if (ratio >= 2) return "h-12 w-36 sm:h-14 sm:w-40";
@@ -64,7 +69,7 @@ function logoSize(logo: { width: number; height: number }, tier: "platinum" | "d
       </div>
     </div>
 
-    {(partners.length > 0 || digitalPartners.length > 0) && (
+    {(partners.length > 0 || silverPartners.length > 0 || digitalPartners.length > 0) && (
       <div class="mt-14 border-t border-neutral-100 pt-10 sm:mt-16 sm:pt-12">
         {partners.length > 0 && (
           <div>
@@ -90,6 +95,40 @@ function logoSize(logo: { width: number; height: number }, tier: "platinum" | "d
                       loading="lazy"
                       class:list={[
                         logoSize(partner.logo, "platinum"),
+                        "max-w-full object-contain transition-transform duration-200 group-hover:scale-105",
+                      ]}
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {silverPartners.length > 0 && (
+          <div class="mt-10 border-t border-neutral-100 pt-8 sm:mt-12 sm:pt-10">
+            <p class="w-full text-center text-xs font-bold tracking-[0.18em] text-neutral-500 uppercase sm:text-left">
+              Silver partners
+            </p>
+            <ul class="mt-6 grid w-full max-w-[42rem] grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+              {silverPartners.map((partner) => (
+                <li class="flex justify-center">
+                  <a
+                    href={partner.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`Visit ${partner.name}`}
+                    class="group focus-visible:outline-primary flex h-28 max-w-72 px-6 w-full items-center justify-center rounded-lg outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
+                    data-ph-event="partner_click"
+                    data-ph-location="sponsors"
+                    data-ph-partner={partner.name}>
+                    <Image
+                      src={partner.logo}
+                      width={400}
+                      alt={`${partner.name} logo`}
+                      loading="lazy"
+                      class:list={[
+                        logoSize(partner.logo, "silver"),
                         "max-w-full object-contain transition-transform duration-200 group-hover:scale-105",
                       ]}
                     />

@@ -1,6 +1,7 @@
 import midtransLogo from "../data/images/partners/midtrans.png";
 import biznetGioLogo from "../data/images/partners/biznet-gio.png";
 import grafanaLogo from "../data/images/partners/grafana.svg";
+import lmdLogo from "../data/images/partners/lmd.png";
 import remoteBrowserLogo from "../data/images/partners/remote-browser.png";
 import pythonIdLogo from "../data/images/community/python-id.png";
 import startupLokalLogo from "../data/images/community/startuplokal.png";
@@ -136,6 +137,15 @@ export const siteConfig = {
       logo: biznetGioLogo,
       url: "https://www.biznetgio.com",
       tier: "platinum",
+    },
+  ],
+
+  silverPartners: [
+    {
+      name: "Lintas Media Danawa",
+      logo: lmdLogo,
+      url: "https://www.lmd.co.id/",
+      tier: "silver",
     },
   ],
 
