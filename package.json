@@ -28,7 +28,7 @@
     "astro": "^7.4.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-react": "^1.63.0",
+    "lucide-react": "^1.65.0",
     "motion": "^14.7.1",
     "posthog-js": "^1.441.2",
     "react": "^19.3.1",
