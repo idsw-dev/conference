@@ -3,24 +3,26 @@ import schedule from "../../data/schedule.json";
 import socialMedias from "../../data/social-media.json";
 import { Coffee, Utensils } from "lucide-react";
 import SectionHeader from "../ui/section-header.astro";
+import SpeakerAvatar from "../speaker-avatar.astro";
 
-const pendingLabel = {
-  title: "Title to be announced",
+// What still needs announcing, shown as a muted line under the title. A pending
+// title is handled separately: the working title is shown muted with a TBA pill.
+const pendingNote: Record<string, string> = {
   speaker: "Speaker to be announced",
   subject: "Subject and participants to be announced",
   order: "Order to be announced",
-} as const;
+};
 
-function announcedLabel(pending: string | null) {
-  switch (pending) {
-    case "title":
-    case "speaker":
-    case "subject":
-    case "order":
-      return pendingLabel[pending];
-    default:
-      return null;
-  }
+// Housekeeping rows render slimmer than talks; breaks also get a tint and an icon.
+const slimKinds = new Set(["registration", "opening", "closing", "lunch", "coffee"]);
+const breakIcons: Record<string, typeof Coffee> = { lunch: Utensils, coffee: Coffee };
+
+function minutesBetween(start: string, end: string) {
+  const toMinutes = (time: string) => {
+    const [hours, minutes] = time.split(":").map(Number);
+    return hours * 60 + minutes;
+  };
+  return toMinutes(end) - toMinutes(start);
 }
 ---
 
@@ -46,46 +48,65 @@ function announcedLabel(pending: string | null) {
               </time>
             </div>
             <ol class="divide-y divide-neutral-200">
-              {day.sessions.map((session) => (
-                <li
-                  class:list={[
-                    "grid min-h-16 grid-cols-[6rem_minmax(0,1fr)] items-start gap-x-3 px-3 py-3 sm:min-h-18 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-x-4 sm:px-5",
-                    {
-                      "bg-neutral-50": session.kind === "coffee",
-                      "bg-neutral-100": session.kind === "lunch",
-                      "bg-primary/5 shadow-[inset_3px_0_0_var(--color-primary)]": session.kind === "keynote",
-                    },
-                  ]}>
-                  <div>
-                    <div class="whitespace-nowrap text-sm font-medium tabular-nums text-neutral-600 sm:text-base">
-                      <time datetime={`${day.date}T${session.start}:00+07:00`}>{session.start}</time>
-                      {"–"}
-                      <time datetime={`${day.date}T${session.end}:00+07:00`}>{session.end}</time>
-                    </div>
-                    <p class="mt-1 text-xs text-neutral-500 sm:text-sm">{session.duration} min</p>
-                  </div>
-                  <div class="min-w-0">
-                    {session.kind === "keynote" && (
-                      <p class="mb-1 text-xs font-semibold tracking-wide text-primary uppercase">Keynote</p>
-                    )}
-                    <p class="flex items-center gap-2 text-sm font-semibold text-neutral-900 sm:text-base">
-                      {session.kind === "lunch" && (
-                        <Utensils className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
-                      )}
-                      {session.kind === "coffee" && (
-                        <Coffee className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
-                      )}
-                      <span class="min-w-0 text-pretty">{session.title}</span>
-                    </p>
-                    {session.speaker && <p class="mt-1.5 text-sm text-neutral-600">{session.speaker}</p>}
-                    {announcedLabel(session.pending) && (
-                      <p class="mt-1.5 w-fit max-w-full rounded-md border border-dashed border-neutral-500 bg-neutral-50 px-2.5 py-1 text-sm leading-snug font-medium text-neutral-900">
-                        {announcedLabel(session.pending)}
+              {day.sessions.map((session) => {
+                const slim = slimKinds.has(session.kind);
+                const BreakIcon = breakIcons[session.kind];
+                const note = session.pending && pendingNote[session.pending];
+                return (
+                  <li
+                    class:list={[
+                      "grid grid-cols-[6rem_minmax(0,1fr)] gap-x-3 px-3 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-x-4 sm:px-5",
+                      slim ? "items-center py-2.5" : "items-start py-4",
+                      {
+                        "bg-neutral-50": BreakIcon,
+                        "bg-primary/5 shadow-[inset_3px_0_0_var(--color-primary)]": session.kind === "keynote",
+                      },
+                    ]}>
+                    <div class="whitespace-nowrap tabular-nums">
+                      <p class:list={["font-medium text-neutral-600", slim ? "text-sm" : "text-sm sm:text-base"]}>
+                        <time datetime={`${day.date}T${session.start}:00+07:00`}>{session.start}</time>
+                        {"–"}
+                        <time datetime={`${day.date}T${session.end}:00+07:00`}>{session.end}</time>
                       </p>
-                    )}
-                  </div>
-                </li>
-              ))}
+                      {!slim && (
+                        <p class="mt-0.5 text-xs text-neutral-500">{minutesBetween(session.start, session.end)} min</p>
+                      )}
+                    </div>
+                    <div class="min-w-0">
+                      {session.kind === "keynote" && (
+                        <p class="mb-1 text-xs font-semibold tracking-wide text-primary uppercase">Keynote</p>
+                      )}
+                      {slim ? (
+                        <p class="flex items-center gap-2 text-sm font-medium text-neutral-600">
+                          {BreakIcon && <BreakIcon className="h-4 w-4 shrink-0 text-neutral-400" aria-hidden="true" />}
+                          {session.title}
+                        </p>
+                      ) : session.pending === "title" ? (
+                        <p class="text-sm text-pretty text-neutral-500 italic sm:text-base">
+                          {session.title ?? "Title to be announced"}
+                          {session.title && (
+                            <span class="ml-1.5 inline-block rounded-full bg-neutral-200/70 px-1.5 py-px align-[2px] text-[10px] font-semibold tracking-wide text-neutral-600 not-italic">
+                              TBA
+                            </span>
+                          )}
+                        </p>
+                      ) : (
+                        <p class="text-sm font-semibold text-pretty text-neutral-900 sm:text-base">{session.title}</p>
+                      )}
+                      {session.speaker && (
+                        <div class="mt-2.5 flex items-center gap-2.5">
+                          <SpeakerAvatar name={session.speaker} />
+                          <div class="min-w-0 leading-tight">
+                            <p class="text-sm font-medium text-neutral-800">{session.speaker}</p>
+                            {session.role && <p class="mt-0.5 text-xs text-neutral-500">{session.role}</p>}
+                          </div>
+                        </div>
+                      )}
+                      {note && <p class="mt-1 text-sm text-neutral-500">{note}</p>}
+                    </div>
+                  </li>
+                );
+              })}
             </ol>
           </article>
         ))

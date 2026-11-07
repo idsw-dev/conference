@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import { cn } from "../lib/utils";
+
+interface Props {
+  name: string;
+  class?: string;
+}
+
+const slugify = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+// Avatars live in src/data/images/avatars/<slug>.webp, where the slug comes from the
+// speaker's name: "Muqorrobin Marufi Syihab (Robin)" -> "muqorrobin-marufi-syihab-robin".
+// Speakers without a file fall back to their initials.
+const avatars = new Map(
+  Object.entries(
+    import.meta.glob<{ default: ImageMetadata }>("../data/images/avatars/*.{jpg,jpeg,png,webp}", { eager: true }),
+  ).map(([path, module]) => [path.replace(/^.*\/|\.[^.]+$/g, ""), module.default]),
+);
+
+const initials = (value: string) => {
+  const words = value
+    .replace(/\(.*?\)/g, "")
+    .trim()
+    .split(/\s+/);
+  return ((words[0]?.[0] ?? "") + (words.length > 1 ? words[words.length - 1][0] : "")).toUpperCase();
+};
+
+const { name, class: className } = Astro.props;
+const image = avatars.get(slugify(name));
+const base = "size-8 shrink-0 rounded-full bg-neutral-100 ring-1 ring-neutral-200";
+---
+
+{
+  image ? (
+    <Image src={image} alt="" width={64} height={64} loading="lazy" class={cn(base, "object-cover", className)} />
+  ) : (
+    <span
+      aria-hidden="true"
+      class={cn(
+        base,
+        "inline-flex items-center justify-center text-[11px] font-semibold text-neutral-500 select-none",
+        className,
+      )}>
+      {initials(name)}
+    </span>
+  )
+}
