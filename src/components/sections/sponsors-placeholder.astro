@@ -25,13 +25,15 @@ function logoSize(logo: { width: number; height: number }, tier: "platinum" | "s
 }
 ---
 
-{/*
+{
+  /*
     THESIS: A partnership letter, not a pricing page. No stats, no Gold/Platinum cards.
     OWN-WORLD: White paper after the navy CFP band. PDF and email. Reading measure.
     STORY: Community conference, one hall. Download the prospectus or write the partnership desk.
     FIRST VIEWPORT: Short letter, two actions.
     FORM: SmashingConf-style partnership note.
-  */}
+  */
+}
 
 <section id="sponsors" class="section-surface">
   <div class="container-site pt-16 pb-10 sm:pt-20 sm:pb-12 md:pt-28 md:pb-14">
@@ -69,110 +71,112 @@ function logoSize(logo: { width: number; height: number }, tier: "platinum" | "s
       </div>
     </div>
 
-    {(partners.length > 0 || silverPartners.length > 0 || digitalPartners.length > 0) && (
-      <div class="mt-14 border-t border-neutral-100 pt-10 sm:mt-16 sm:pt-12">
-        {partners.length > 0 && (
-          <div>
-            <p class="w-full text-center text-xs font-bold tracking-[0.18em] text-neutral-600 uppercase sm:text-left">
-              Platinum partners
-            </p>
-            <ul class="mt-7 grid w-full max-w-[42rem] grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
-              {partners.map((partner) => (
-                <li class="flex justify-center">
-                  <a
-                    href={partner.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={`Visit ${partner.name}`}
-                    class="group focus-visible:outline-primary flex h-36 max-w-80 px-6 w-full items-center justify-center rounded-lg outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
-                    data-ph-event="partner_click"
-                    data-ph-location="sponsors"
-                    data-ph-partner={partner.name}>
-                    <Image
-                      src={partner.logo}
-                      width={400}
-                      alt={`${partner.name} logo`}
-                      loading="lazy"
-                      class:list={[
-                        logoSize(partner.logo, "platinum"),
-                        "max-w-full object-contain transition-transform duration-200 group-hover:scale-105",
-                      ]}
-                    />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+    {
+      (partners.length > 0 || silverPartners.length > 0 || digitalPartners.length > 0) && (
+        <div class="mt-14 border-t border-neutral-100 pt-10 sm:mt-16 sm:pt-12">
+          {partners.length > 0 && (
+            <div>
+              <p class="w-full text-center text-xs font-bold tracking-[0.18em] text-neutral-600 uppercase sm:text-left">
+                Platinum partners
+              </p>
+              <ul class="mt-7 grid w-full max-w-[42rem] grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+                {partners.map((partner) => (
+                  <li class="flex justify-center">
+                    <a
+                      href={partner.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`Visit ${partner.name}`}
+                      class="group focus-visible:outline-primary flex h-36 max-w-80 px-6 w-full items-center justify-center rounded-lg outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
+                      data-ph-event="partner_click"
+                      data-ph-location="sponsors"
+                      data-ph-partner={partner.name}>
+                      <Image
+                        src={partner.logo}
+                        width={400}
+                        alt={`${partner.name} logo`}
+                        loading="lazy"
+                        class:list={[
+                          logoSize(partner.logo, "platinum"),
+                          "max-w-full object-contain transition-transform duration-200 group-hover:scale-105",
+                        ]}
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-        {silverPartners.length > 0 && (
-          <div class="mt-10 border-t border-neutral-100 pt-8 sm:mt-12 sm:pt-10">
-            <p class="w-full text-center text-xs font-bold tracking-[0.18em] text-neutral-500 uppercase sm:text-left">
-              Silver partners
-            </p>
-            <ul class="mt-6 grid w-full max-w-[42rem] grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
-              {silverPartners.map((partner) => (
-                <li class="flex justify-center">
-                  <a
-                    href={partner.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={`Visit ${partner.name}`}
-                    class="group focus-visible:outline-primary flex h-28 max-w-72 px-6 w-full items-center justify-center rounded-lg outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
-                    data-ph-event="partner_click"
-                    data-ph-location="sponsors"
-                    data-ph-partner={partner.name}>
-                    <Image
-                      src={partner.logo}
-                      width={400}
-                      alt={`${partner.name} logo`}
-                      loading="lazy"
-                      class:list={[
-                        logoSize(partner.logo, "silver"),
-                        "max-w-full object-contain transition-transform duration-200 group-hover:scale-105",
-                      ]}
-                    />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+          {silverPartners.length > 0 && (
+            <div class="mt-10 border-t border-neutral-100 pt-8 sm:mt-12 sm:pt-10">
+              <p class="w-full text-center text-xs font-bold tracking-[0.18em] text-neutral-500 uppercase sm:text-left">
+                Silver partners
+              </p>
+              <ul class="mt-6 grid w-full max-w-[42rem] grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+                {silverPartners.map((partner) => (
+                  <li class="flex justify-center">
+                    <a
+                      href={partner.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`Visit ${partner.name}`}
+                      class="group focus-visible:outline-primary flex h-28 max-w-72 px-6 w-full items-center justify-center rounded-lg outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
+                      data-ph-event="partner_click"
+                      data-ph-location="sponsors"
+                      data-ph-partner={partner.name}>
+                      <Image
+                        src={partner.logo}
+                        width={400}
+                        alt={`${partner.name} logo`}
+                        loading="lazy"
+                        class:list={[
+                          logoSize(partner.logo, "silver"),
+                          "max-w-full object-contain transition-transform duration-200 group-hover:scale-105",
+                        ]}
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-        {digitalPartners.length > 0 && (
-          <div class="mt-10 border-t border-neutral-100 pt-8 sm:mt-12 sm:pt-10">
-            <p class="w-full text-center text-xs font-semibold tracking-[0.16em] text-neutral-400 uppercase sm:text-left">
-              Digital partners
-            </p>
-            <ul class="mt-6 grid w-full max-w-[34rem] grid-cols-1 gap-4 min-[400px]:grid-cols-2 sm:gap-8">
-              {digitalPartners.map((partner) => (
-                <li class="flex justify-center">
-                  <a
-                    href={partner.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={`Visit ${partner.name}`}
-                    class="group focus-visible:outline-primary flex h-24 max-w-60 px-4 w-full items-center justify-center rounded-lg outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
-                    data-ph-event="partner_click"
-                    data-ph-location="sponsors"
-                    data-ph-partner={partner.name}>
-                    <Image
-                      src={partner.logo}
-                      width={400}
-                      alt={`${partner.name} logo`}
-                      loading="lazy"
-                      class:list={[
-                        logoSize(partner.logo, "digital"),
-                        "max-w-full object-contain opacity-85 transition-all duration-200 group-hover:opacity-100 group-hover:scale-105",
-                      ]}
-                    />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-    )}
+          {digitalPartners.length > 0 && (
+            <div class="mt-10 border-t border-neutral-100 pt-8 sm:mt-12 sm:pt-10">
+              <p class="w-full text-center text-xs font-semibold tracking-[0.16em] text-neutral-400 uppercase sm:text-left">
+                Digital partners
+              </p>
+              <ul class="mt-6 grid w-full max-w-[34rem] grid-cols-1 gap-4 min-[400px]:grid-cols-2 sm:gap-8">
+                {digitalPartners.map((partner) => (
+                  <li class="flex justify-center">
+                    <a
+                      href={partner.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`Visit ${partner.name}`}
+                      class="group focus-visible:outline-primary flex h-24 max-w-60 px-4 w-full items-center justify-center rounded-lg outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]"
+                      data-ph-event="partner_click"
+                      data-ph-location="sponsors"
+                      data-ph-partner={partner.name}>
+                      <Image
+                        src={partner.logo}
+                        width={400}
+                        alt={`${partner.name} logo`}
+                        loading="lazy"
+                        class:list={[
+                          logoSize(partner.logo, "digital"),
+                          "max-w-full object-contain opacity-85 transition-all duration-200 group-hover:opacity-100 group-hover:scale-105",
+                        ]}
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      )
+    }
   </div>
 </section>

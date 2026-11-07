@@ -22,35 +22,35 @@ const units = [
   <p class="sr-only">
     {siteConfig.event.name} starts on {startLabel} WIB.
   </p>
-  <p class="text-sm text-white/70 sm:text-base" aria-hidden="true">
-    See you in
-  </p>
+  <p class="text-sm text-white/70 sm:text-base" aria-hidden="true">See you in</p>
   <div class="mt-4 flex items-end justify-center gap-5 sm:gap-8 md:gap-10" aria-hidden="true">
-    {units.map(({ name, label, width }) => (
-      <div class="flex min-w-12 flex-col items-center sm:min-w-14">
-        <span
-          class="countdown-value font-display text-3xl leading-none font-semibold tracking-tight tabular-nums sm:text-4xl lg:text-5xl"
-          data-unit={name}
-          data-pad={width}>
-          {String(timeLeft[name])
-            .padStart(width, "0")
-            .split("")
-            .map((digit) => (
-              <span class="countdown-slot">
-                <span
-                  class="countdown-strip"
-                  data-digit={digit}
-                  style={`transform: translateY(-${Number(digit) + 1}em)`}>
-                  {strip.map((n) => (
-                    <span>{n}</span>
-                  ))}
+    {
+      units.map(({ name, label, width }) => (
+        <div class="flex min-w-12 flex-col items-center sm:min-w-14">
+          <span
+            class="countdown-value font-display text-3xl leading-none font-semibold tracking-tight tabular-nums sm:text-4xl lg:text-5xl"
+            data-unit={name}
+            data-pad={width}>
+            {String(timeLeft[name])
+              .padStart(width, "0")
+              .split("")
+              .map((digit) => (
+                <span class="countdown-slot">
+                  <span
+                    class="countdown-strip"
+                    data-digit={digit}
+                    style={`transform: translateY(-${Number(digit) + 1}em)`}>
+                    {strip.map((n) => (
+                      <span>{n}</span>
+                    ))}
+                  </span>
                 </span>
-              </span>
-            ))}
-        </span>
-        <span class="mt-2 text-xs text-white/70 sm:text-sm">{label}</span>
-      </div>
-    ))}
+              ))}
+          </span>
+          <span class="mt-2 text-xs text-white/70 sm:text-sm">{label}</span>
+        </div>
+      ))
+    }
   </div>
 </div>
 
