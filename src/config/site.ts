@@ -3,6 +3,7 @@ import biznetGioLogo from "../data/images/partners/biznet-gio.png";
 import grafanaLogo from "../data/images/partners/grafana.svg";
 import lmdLogo from "../data/images/partners/lmd.png";
 import remoteBrowserLogo from "../data/images/partners/remote-browser.png";
+import fenrirLogo from "../data/images/partners/fenrir.png";
 import pythonIdLogo from "../data/images/community/python-id.png";
 import startupLokalLogo from "../data/images/community/startuplokal.png";
 import wpuLogo from "../data/images/community/wpu.png";
@@ -160,6 +161,12 @@ export const siteConfig = {
       name: "Remote Browser",
       logo: remoteBrowserLogo,
       url: "https://github.com/remotebrowser/remotebrowser",
+      tier: "digital",
+    },
+    {
+      name: "Fenrir",
+      logo: fenrirLogo,
+      url: "https://fenrir.lio.id/",
       tier: "digital",
     },
   ],
