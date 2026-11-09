@@ -35,18 +35,16 @@ const image = avatars.get(slugify(name));
 const base = "size-8 shrink-0 rounded-full bg-neutral-100 ring-1 ring-neutral-200";
 ---
 
-{
-  image ? (
-    <Image src={image} alt="" width={64} height={64} loading="lazy" class={cn(base, "object-cover", className)} />
-  ) : (
-    <span
-      aria-hidden="true"
-      class={cn(
-        base,
-        "inline-flex items-center justify-center text-[11px] font-semibold text-neutral-500 select-none",
-        className,
-      )}>
-      {initials(name)}
-    </span>
-  )
-}
+{image ? (
+  <Image src={image} alt="" width={64} height={64} loading="lazy" class={cn(base, "object-cover", className)} />
+) : (
+  <span
+    aria-hidden="true"
+    class={cn(
+      base,
+      "inline-flex items-center justify-center text-[11px] font-semibold text-neutral-500 select-none",
+      className,
+    )}>
+    {initials(name)}
+  </span>
+)}

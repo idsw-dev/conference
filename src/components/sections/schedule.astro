@@ -34,83 +34,81 @@ function minutesBetween(start: string, end: string) {
       class="!text-left"
     />
     <div class="mt-6 grid gap-5 sm:mt-8 lg:grid-cols-2">
-      {
-        schedule.days.map((day) => (
-          <article
-            class="h-fit overflow-hidden rounded-lg border border-neutral-200 bg-white"
-            aria-labelledby={`schedule-${day.date}`}>
-            <div class="bg-navy px-4 py-3 text-white sm:px-5 sm:py-4">
-              <h3 id={`schedule-${day.date}`} class="font-display text-xl font-semibold">
-                {day.day}
-              </h3>
-              <time datetime={day.date} class="mt-1 block text-xs text-white/75 sm:text-sm">
-                {day.label}
-              </time>
-            </div>
-            <ol class="divide-y divide-neutral-200">
-              {day.sessions.map((session) => {
-                const slim = slimKinds.has(session.kind);
-                const BreakIcon = breakIcons[session.kind];
-                const note = session.pending && pendingNote[session.pending];
-                return (
-                  <li
-                    class:list={[
-                      "grid grid-cols-[6rem_minmax(0,1fr)] gap-x-3 px-3 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-x-4 sm:px-5",
-                      slim ? "items-center py-2.5" : "items-start py-4",
-                      {
-                        "bg-neutral-50": BreakIcon,
-                        "bg-primary/5 shadow-[inset_3px_0_0_var(--color-primary)]": session.kind === "keynote",
-                      },
-                    ]}>
-                    <div class="whitespace-nowrap tabular-nums">
-                      <p class:list={["font-medium text-neutral-600", slim ? "text-sm" : "text-sm sm:text-base"]}>
-                        <time datetime={`${day.date}T${session.start}:00+07:00`}>{session.start}</time>
-                        {"–"}
-                        <time datetime={`${day.date}T${session.end}:00+07:00`}>{session.end}</time>
+      {schedule.days.map((day) => (
+        <article
+          class="h-fit overflow-hidden rounded-lg border border-neutral-200 bg-white"
+          aria-labelledby={`schedule-${day.date}`}>
+          <div class="bg-navy px-4 py-3 text-white sm:px-5 sm:py-4">
+            <h3 id={`schedule-${day.date}`} class="font-display text-xl font-semibold">
+              {day.day}
+            </h3>
+            <time datetime={day.date} class="mt-1 block text-xs text-white/75 sm:text-sm">
+              {day.label}
+            </time>
+          </div>
+          <ol class="divide-y divide-neutral-200">
+            {day.sessions.map((session) => {
+              const slim = slimKinds.has(session.kind);
+              const BreakIcon = breakIcons[session.kind];
+              const note = session.pending && pendingNote[session.pending];
+              return (
+                <li
+                  class:list={[
+                    "grid grid-cols-[6rem_minmax(0,1fr)] gap-x-3 px-3 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-x-4 sm:px-5",
+                    slim ? "items-center py-2.5" : "items-start py-4",
+                    {
+                      "bg-neutral-50": BreakIcon,
+                      "bg-primary/5 shadow-[inset_3px_0_0_var(--color-primary)]": session.kind === "keynote",
+                    },
+                  ]}>
+                  <div class="whitespace-nowrap tabular-nums">
+                    <p class:list={["font-medium text-neutral-600", slim ? "text-sm" : "text-sm sm:text-base"]}>
+                      <time datetime={`${day.date}T${session.start}:00+07:00`}>{session.start}</time>
+                      {"–"}
+                      <time datetime={`${day.date}T${session.end}:00+07:00`}>{session.end}</time>
+                    </p>
+                    {!slim && (
+                      <p class="mt-0.5 text-xs text-neutral-500">{minutesBetween(session.start, session.end)} min</p>
+                    )}
+                  </div>
+                  <div class="min-w-0">
+                    {session.kind === "keynote" && (
+                      <p class="mb-1 text-xs font-semibold tracking-wide text-primary uppercase">Keynote</p>
+                    )}
+                    {slim ? (
+                      <p class="flex items-center gap-2 text-sm font-medium text-neutral-600">
+                        {BreakIcon && <BreakIcon className="h-4 w-4 shrink-0 text-neutral-400" aria-hidden="true" />}
+                        {session.title}
                       </p>
-                      {!slim && (
-                        <p class="mt-0.5 text-xs text-neutral-500">{minutesBetween(session.start, session.end)} min</p>
-                      )}
-                    </div>
-                    <div class="min-w-0">
-                      {session.kind === "keynote" && (
-                        <p class="mb-1 text-xs font-semibold tracking-wide text-primary uppercase">Keynote</p>
-                      )}
-                      {slim ? (
-                        <p class="flex items-center gap-2 text-sm font-medium text-neutral-600">
-                          {BreakIcon && <BreakIcon className="h-4 w-4 shrink-0 text-neutral-400" aria-hidden="true" />}
-                          {session.title}
-                        </p>
-                      ) : session.pending === "title" ? (
-                        <p class="text-sm text-pretty text-neutral-500 italic sm:text-base">
-                          {session.title ?? "Title to be announced"}
-                          {session.title && (
-                            <span class="ml-1.5 inline-block rounded-full bg-neutral-200/70 px-1.5 py-px align-[2px] text-[10px] font-semibold tracking-wide text-neutral-600 not-italic">
-                              TBA
-                            </span>
-                          )}
-                        </p>
-                      ) : (
-                        <p class="text-sm font-semibold text-pretty text-neutral-900 sm:text-base">{session.title}</p>
-                      )}
-                      {session.speaker && (
-                        <div class="mt-2.5 flex items-center gap-2.5">
-                          <SpeakerAvatar name={session.speaker} />
-                          <div class="min-w-0 leading-tight">
-                            <p class="text-sm font-medium text-neutral-800">{session.speaker}</p>
-                            {session.role && <p class="mt-0.5 text-xs text-neutral-500">{session.role}</p>}
-                          </div>
+                    ) : session.pending === "title" ? (
+                      <p class="text-sm text-pretty text-neutral-500 italic sm:text-base">
+                        {session.title ?? "Title to be announced"}
+                        {session.title && (
+                          <span class="ml-1.5 inline-block rounded-full bg-neutral-200/70 px-1.5 py-px align-[2px] text-[10px] font-semibold tracking-wide text-neutral-600 not-italic">
+                            TBA
+                          </span>
+                        )}
+                      </p>
+                    ) : (
+                      <p class="text-sm font-semibold text-pretty text-neutral-900 sm:text-base">{session.title}</p>
+                    )}
+                    {session.speaker && (
+                      <div class="mt-2.5 flex items-center gap-2.5">
+                        <SpeakerAvatar name={session.speaker} />
+                        <div class="min-w-0 leading-tight">
+                          <p class="text-sm font-medium text-neutral-800">{session.speaker}</p>
+                          {session.role && <p class="mt-0.5 text-xs text-neutral-500">{session.role}</p>}
                         </div>
-                      )}
-                      {note && <p class="mt-1 text-sm text-neutral-500">{note}</p>}
-                    </div>
-                  </li>
-                );
-              })}
-            </ol>
-          </article>
-        ))
-      }
+                      </div>
+                    )}
+                    {note && <p class="mt-1 text-sm text-neutral-500">{note}</p>}
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        </article>
+      ))}
     </div>
     <div class="mt-5 rounded-lg border border-neutral-200 bg-white px-4 py-4 text-center sm:px-5">
       <p class="text-sm font-semibold text-neutral-900 sm:text-base">The schedule is subject to change.</p>
@@ -118,21 +116,19 @@ function minutesBetween(start: string, end: string) {
         Follow IDSW on social media for speaker announcements, schedule changes, and the latest event updates.
       </p>
       <ul class="mt-3 flex flex-wrap justify-center gap-x-6 gap-y-2">
-        {
-          socialMedias
-            .filter((social) => social.name !== "Email")
-            .map((social) => (
-              <li>
-                <a
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-sm font-semibold text-navy underline underline-offset-4 hover:text-neutral-600 sm:text-base">
-                  {social.name}
-                </a>
-              </li>
-            ))
-        }
+        {socialMedias
+          .filter((social) => social.name !== "Email")
+          .map((social) => (
+            <li>
+              <a
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm font-semibold text-navy underline underline-offset-4 hover:text-neutral-600 sm:text-base">
+                {social.name}
+              </a>
+            </li>
+          ))}
       </ul>
     </div>
   </div>

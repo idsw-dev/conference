@@ -251,10 +251,10 @@
           "start": "17:05",
           "end": "17:50",
           "kind": "keynote",
-          "title": "Something related to LLM to binary/machine code",
+          "title": "My Repository Is Probably Too Human: Let’s break it so AI agents can work better in parallel, ... and for fun",
           "speaker": "Aria Ghora",
           "role": "AI R&D Engineer at EAGLYS, Tokyo",
-          "pending": "title"
+          "pending": null
         },
         {
           "start": "17:55",
