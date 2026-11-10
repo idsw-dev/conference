@@ -12,6 +12,8 @@ import blockDevLogo from "../data/images/community/blockdev.png";
 import idsw2024Logo from "../data/images/previous-events/2024-logo.svg";
 import idsw2025Logo from "../data/images/previous-events/2025-logo-blue.png";
 import idsw2025WhiteLogo from "../data/images/previous-events/2025-nav-logo.png";
+import perkodiLogo from "../data/images/organizers/perkodi-logo.svg";
+import perkodiLogoWhite from "../data/images/organizers/perkodi-logo-white.svg";
 
 const ticketsUrl =
   "https://tiptip.id/event/68c1a321-c6f7-4fe8-8ac0-38b48136ff33";
@@ -20,7 +22,12 @@ export const siteConfig = {
   event: {
     name: "IDSW 2026",
     tagline: "The Biggest Community-Led Developer Conference in Indonesia",
-    dates: "21–22 Nov 2026 | Day 1: 08.00–18.15 | Day 2: 09.00–18.15 WIB",
+    dateRange: "21–22 Nov 2026",
+    days: [
+      { label: "Day 1", time: "08.00–18.15" },
+      { label: "Day 2", time: "09.00–18.15" },
+    ],
+    timezone: "WIB",
     startDate: "2026-11-21T08:00:00+07:00",
     endDate: "2026-11-22T18:15:00+07:00",
     venue: "Usmar Ismail Hall, Jakarta Selatan",
@@ -202,6 +209,14 @@ export const siteConfig = {
 
   about:
     "IDSW is a community-led developer conference run by PERKODI and tech communities across Indonesia (Python ID, id-ruby, TEKNUM, JakartaJS, Deeptech.id). 5,000+ developers have joined 15+ past editions since 2017.",
+
+  organizer: {
+    name: "PERKODI",
+    fullName: "Perkumpulan Pengrajin Kode Indonesia",
+    url: "https://perkodi.org",
+    logo: perkodiLogo,
+    logoWhite: perkodiLogoWhite,
+  },
 
   previousEvents: [
     {
