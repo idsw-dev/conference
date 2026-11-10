@@ -23,9 +23,9 @@ function logoSize(logo: { width: number; height: number }) {
       Community partners
     </p>
 
-    <ul class="grid w-full max-w-[42rem] grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-4 sm:gap-x-8">
+    <ul class="grid w-full max-w-[52rem] grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-5 sm:gap-x-8">
       {siteConfig.communities.map((community) => (
-        <li class="flex justify-center">
+        <li class="flex justify-center max-sm:[&:last-child:nth-child(odd)]:col-span-2">
           <a
             href={community.url}
             target="_blank"
