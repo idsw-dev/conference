@@ -212,13 +212,13 @@
           "pending": null
         },
         {
-          "start": "13:30",
+          "start": "13:45",
           "end": "14:15",
-          "kind": "keynote",
-          "title": null,
-          "speaker": "Eko Kurniawan Khannedy",
-          "role": "Technical Architect at Blibli & Founder of Programmer Zaman Now",
-          "pending": "title"
+          "kind": "talk",
+          "title": "Building a Browser Engine with AI Is Harder Than You Think",
+          "speaker": "Kresna Satya",
+          "role": null,
+          "pending": null
         },
         {
           "start": "14:20",
@@ -266,16 +266,16 @@
         },
         {
           "start": "16:30",
-          "end": "17:00",
-          "kind": "talk",
-          "title": "Building a Browser Engine with AI Is Harder Than You Think",
-          "speaker": "Kresna Satya",
-          "role": null,
-          "pending": null
+          "end": "17:15",
+          "kind": "keynote",
+          "title": null,
+          "speaker": "Eko Kurniawan Khannedy",
+          "role": "Technical Architect at Blibli & Founder of Programmer Zaman Now",
+          "pending": "title"
         },
         {
-          "start": "17:55",
-          "end": "18:15",
+          "start": "17:20",
+          "end": "17:40",
           "kind": "closing",
           "title": "Closing",
           "speaker": null,
