@@ -117,13 +117,6 @@ export const siteConfig = {
       brief:
         "Technical Architect at Blibli.com and founder of Programmer Zaman Now. With over 15 years of software engineering experience designing high-scale distributed systems and enterprise architectures, Eko is also one of Indonesia's foremost tech educators, having mentored over 300,000 developers across the country.",
     },
-    {
-      name: "Aria Ghora",
-      position: "AI R&D Engineer at EAGLYS, Tokyo",
-      photo: "aria-ghora",
-      brief:
-        "Aria works across prototyping recent research and proofs of concept through to system architecture, and leads a small engineering team. PhD from HUFS, South Korea, with research in applied AI/ML.",
-    },
   ],
 
   sponsors: {

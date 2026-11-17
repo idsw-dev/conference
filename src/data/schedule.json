@@ -212,13 +212,13 @@
           "pending": null
         },
         {
-          "start": "13:30",
+          "start": "13:45",
           "end": "14:15",
-          "kind": "keynote",
-          "title": null,
-          "speaker": "Eko Kurniawan Khannedy",
-          "role": "Technical Architect at Blibli & Founder of Programmer Zaman Now",
-          "pending": "title"
+          "kind": "talk",
+          "title": "Building a Browser Engine with AI Is Harder Than You Think",
+          "speaker": "Kresna Satya",
+          "role": null,
+          "pending": null
         },
         {
           "start": "14:20",
@@ -227,7 +227,33 @@
           "title": "Lightning talks",
           "speaker": null,
           "role": null,
-          "pending": "order"
+          "pending": "order",
+          "talks": [
+            {
+              "title": "Task Done, Skill Not",
+              "speaker": "Azzam Muhammadi Rizqun Karima"
+            },
+            {
+              "title": "Everything Has an API If You're Willing to Prompt",
+              "speaker": "Bagas Wastu"
+            },
+            {
+              "title": "Mencegah Secrets Bocor ke LLM Agent dengan SOPS",
+              "speaker": "Denny Aditya Pradipta"
+            },
+            {
+              "title": "Untuk Internal: Bangun Tool Sendiri, Langganan, atau On-premise Opensource?",
+              "speaker": "Irfan Kamil"
+            },
+            {
+              "title": "What Good Mentorship Felt Like to Me as a Junior Engineer",
+              "speaker": "luthfiyyah hanifah amari"
+            },
+            {
+              "title": "Tokenomics of Testing",
+              "speaker": "Salahuddin Muhammad Iqbal"
+            }
+          ]
         },
         {
           "start": "15:30",
@@ -240,25 +266,16 @@
         },
         {
           "start": "16:30",
-          "end": "17:00",
-          "kind": "talk",
-          "title": "Building a Browser Engine with AI Is Harder Than You Think",
-          "speaker": "Kresna Satya",
-          "role": null,
-          "pending": null
-        },
-        {
-          "start": "17:05",
-          "end": "17:50",
+          "end": "17:15",
           "kind": "keynote",
-          "title": "My Repository Is Probably Too Human: Let’s break it so AI agents can work better in parallel, ... and for fun",
-          "speaker": "Aria Ghora",
-          "role": "AI R&D Engineer at EAGLYS, Tokyo",
-          "pending": null
+          "title": null,
+          "speaker": "Eko Kurniawan Khannedy",
+          "role": "Technical Architect at Blibli & Founder of Programmer Zaman Now",
+          "pending": "title"
         },
         {
-          "start": "17:55",
-          "end": "18:15",
+          "start": "17:20",
+          "end": "17:40",
           "kind": "closing",
           "title": "Closing",
           "speaker": null,

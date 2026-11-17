@@ -17,7 +17,7 @@ const photoByName = Object.fromEntries(
     <SectionHeader title="Keynote Speakers" class="!text-left" />
 
     <div class="relative mt-8 sm:mt-12">
-      <div class="keynote-carousel flex gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory -mx-6 px-6 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-5 lg:gap-6 lg:overflow-visible lg:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div class="keynote-carousel flex gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory -mx-6 px-6 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible lg:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {siteConfig.keynotes.map((keynote, idx) => {
           const photo = photoByName[keynote.photo];
           return (
@@ -35,7 +35,7 @@ const photoByName = Object.fromEntries(
                       alt={keynote.name}
                       width={400}
                       height={480}
-                      sizes="(min-width: 1024px) 20vw, 75vw"
+                      sizes="(min-width: 1024px) 25vw, 75vw"
                       class="h-full w-full object-cover"
                     />
                   )}
