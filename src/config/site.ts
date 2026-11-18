@@ -244,6 +244,25 @@ export const siteConfig = {
     { name: "Previous Events", href: "/#previous-events", external: false },
     { name: "FAQ", href: "/#faq", external: false },
     { name: "Contact", href: "/#contact", external: false },
+    { name: "Guideline", href: "/guideline", external: false },
     { name: "Tickets", href: ticketsUrl, external: true },
+  ],
+
+  guidelines: [
+    {
+      name: "Day Guideline",
+      href: "/day-guideline",
+      desc: "Venue map, code of conduct and how to report misbehavior.",
+    },
+    {
+      name: "Check-in Guideline",
+      href: "/check-in-guideline",
+      desc: "What to bring and where to go when you arrive.",
+    },
+    {
+      name: "Access Guideline",
+      href: "/access-guideline",
+      desc: "Getting to Usmar Ismail Hall by LRT, Transjakarta, ride-hailing or car.",
+    },
   ],
 } as const;
