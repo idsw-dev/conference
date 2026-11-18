@@ -1,21 +1,27 @@
 ---
 import GuidelinePage from "../components/guideline/guideline-page.astro";
+import Steps from "../components/guideline/steps.astro";
 import { siteConfig } from "../config/site";
 import schedule from "../data/schedule.json";
 import { withBasePath } from "../lib/paths";
 
+const bring = [
+  "A valid ID card or passport.",
+  "The QR code from your ticket email. Save a screenshot in case your signal is weak.",
+];
+
 const steps = [
   {
     title: "Go to the Check-in Desk",
-    desc: "Head to the check-in (registration) desk when you arrive at the venue.",
+    desc: "Head to the check-in (registration) desk when you reach the venue.",
   },
   {
-    title: "Prepare your ID or passport",
-    desc: "Have a valid ID card or passport ready. The crew may ask to see it.",
+    title: "Show your ID and QR code",
+    desc: "Show both at the desk.",
   },
   {
-    title: "Show your QR code",
-    desc: "Open the QR code from your ticket email and have it ready to scan. A screenshot or printout works if your signal is weak.",
+    title: "Get checked in",
+    desc: "The crew will check you in. After that you are ready to enter.",
   },
 ];
 
@@ -28,22 +34,33 @@ const registration = schedule.days.flatMap((day) =>
 
 <GuidelinePage
   title="Check-in Guideline"
-  subtitle="What to bring and where to go when you arrive, so you can get your badge and head straight in."
+  subtitle="What to bring and where to go when you arrive, so check-in is quick."
   description="How to check in at IDSW 2026: where the check-in desk is, and what to prepare."
   canonicalPath="/check-in-guideline">
-  <section aria-labelledby="checkin-title">
-    <h2 id="checkin-title" class="font-display text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
-      How to check in
+  <section aria-labelledby="bring-title">
+    <h2 id="bring-title" class="font-display text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
+      Before you arrive
     </h2>
-    <ol class="mt-6 grid gap-4 md:grid-cols-3">
-      {steps.map((step, index) => (
-        <li class="rounded-xl border border-neutral-200 bg-white p-5 shadow-xs">
-          <span class="font-mono text-xs text-primary">{String(index + 1).padStart(2, "0")}</span>
-          <h3 class="mt-1 text-sm font-semibold text-neutral-900">{step.title}</h3>
-          <p class="mt-1.5 text-xs leading-relaxed text-neutral-600">{step.desc}</p>
+    <p class="mt-2 text-sm text-neutral-600 sm:text-base">Have these ready:</p>
+    <ul class="mt-4 max-w-2xl space-y-2 text-sm text-neutral-700 sm:text-base">
+      {bring.map((item) => (
+        <li class="flex gap-3 rounded-xl border border-neutral-200 bg-white p-4 shadow-xs">
+          <span aria-hidden="true" class="mt-0.5 font-bold text-primary">
+            ✓
+          </span>
+          <span>{item}</span>
         </li>
       ))}
-    </ol>
+    </ul>
+  </section>
+
+  <section aria-labelledby="checkin-title">
+    <h2 id="checkin-title" class="font-display text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
+      At the venue
+    </h2>
+    <div class="mt-6">
+      <Steps steps={steps} />
+    </div>
   </section>
 
   <section aria-labelledby="registration-title">

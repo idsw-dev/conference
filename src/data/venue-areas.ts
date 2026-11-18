@@ -3,7 +3,7 @@
  * image (src/data/images/venue/floor-plan.png, 934x1062), so they scale with it.
  * x/y = top-left corner, w/h = size.
  *
- * NOTE: help-desk, check-in-desk, photo-wall and stairs positions are best guesses from the plan. Verify
+ * NOTE: photo-wall, stairs and the help-desk / check-in-desk split are best guesses from the plan. Verify
  * against the real event layout and adjust.
  */
 export type VenueArea = {
@@ -62,20 +62,20 @@ export const venueAreas: VenueArea[] = [
     label: "Help Desk",
     description:
       "Ask the IDSW crew for help, lost and found, or to report an incident.",
-    x: 48.2,
-    y: 52.2,
-    w: 14,
-    h: 4.2,
+    x: 82.4,
+    y: 79.2,
+    w: 3.5,
+    h: 6.6,
   },
   {
     id: "check-in-desk",
     label: "Check-in Desk",
     description:
       "Registration. Bring your ID or passport and the QR code from your ticket email.",
-    x: 49.3,
-    y: 73.2,
-    w: 5.2,
-    h: 13,
+    x: 86.0,
+    y: 79.2,
+    w: 7.4,
+    h: 6.6,
   },
   {
     id: "photo-wall",

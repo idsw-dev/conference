@@ -1,7 +1,7 @@
 ---
 import GuidelinePage from "../components/guideline/guideline-page.astro";
 import { siteConfig } from "../config/site";
-import { busRoutes, parking, railRoutes, rideHailing, tips, venueAccess } from "../data/access";
+import { busRoutes, carFreeDay, parking, railRoutes, rideHailing, tips, venueAccess } from "../data/access";
 
 const routeGroups = [
   { id: "rail", title: "By train (MRT, KRL, LRT)", routes: railRoutes },
@@ -14,6 +14,15 @@ const routeGroups = [
   subtitle="How to get to Usmar Ismail Hall by LRT, Transjakarta, ride-hailing, motorbike or car."
   description="How to reach Usmar Ismail Hall for IDSW 2026: LRT and Transjakarta routes, ride-hailing and parking."
   canonicalPath="/access-guideline">
+  <section aria-labelledby="cfd-title">
+    <div class="rounded-xl border border-amber-300 bg-amber-50 p-5 text-sm text-amber-950 sm:text-base" role="note">
+      <h2 id="cfd-title" class="font-display text-lg font-bold tracking-tight sm:text-xl">
+        {carFreeDay.title}
+      </h2>
+      <p class="mt-1.5 leading-relaxed">{carFreeDay.body}</p>
+    </div>
+  </section>
+
   <section aria-labelledby="venue-title">
     <div class="rounded-2xl border border-neutral-200 bg-white p-6 shadow-xs sm:p-8">
       <h2 id="venue-title" class="font-display text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">

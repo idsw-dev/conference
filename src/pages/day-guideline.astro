@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import GuidelinePage from "../components/guideline/guideline-page.astro";
+import Steps from "../components/guideline/steps.astro";
 import { siteConfig } from "../config/site";
 import floorPlan from "../data/images/venue/floor-plan.png";
 import { venueAreas } from "../data/venue-areas";
@@ -135,15 +136,9 @@ const reportSteps = [
       Ask for help.
     </p>
 
-    <ol class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {reportSteps.map((step, index) => (
-        <li class="rounded-xl border border-neutral-200 bg-white p-5 shadow-xs">
-          <span class="font-mono text-xs text-primary">{String(index + 1).padStart(2, "0")}</span>
-          <h3 class="mt-1 text-sm font-semibold text-neutral-900">{step.title}</h3>
-          <p class="mt-1.5 text-xs leading-relaxed text-neutral-600">{step.desc}</p>
-        </li>
-      ))}
-    </ol>
+    <div class="mt-6">
+      <Steps steps={reportSteps} />
+    </div>
 
     <p class="mt-6 text-sm text-neutral-600">
       Prefer to write? Email

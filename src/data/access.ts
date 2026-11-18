@@ -135,9 +135,15 @@ export const rideHailing = {
   ],
 };
 
+export const carFreeDay = {
+  title: "Car Free Day on Sunday, 22 November",
+  body: "Car Free Day (CFD) takes place in Kuningan on Sunday, 22 November. We encourage you to use public transport: LRT, or Transjakarta routes 6, 6A and 13.",
+};
+
 export const parking = {
-  intro: "Parking for motorcycles and cars is available at Usmar Ismail Hall.",
-  overflow: "If it is full, park at Plaza Festival next door.",
+  intro:
+    "Parking for motorcycles and cars is available at Usmar Ismail Hall, but space there is limited.",
+  overflow: "We recommend parking at Plaza Festival next door instead.",
 };
 
 export const tips = [
