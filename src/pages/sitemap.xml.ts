@@ -5,7 +5,10 @@ export const GET: APIRoute = ({ site }) => {
   const editionPaths = [
     "/",
     "/code-of-conduct/",
+    "/guideline/",
     "/day-guideline/",
+    "/check-in-guideline/",
+    "/access-guideline/",
     "/privacy-policy/",
     "/terms-of-service/",
     "/stream/",

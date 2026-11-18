@@ -1,0 +1,26 @@
+---
+import GuidelinePage from "../components/guideline/guideline-page.astro";
+import { siteConfig } from "../config/site";
+import { withBasePath } from "../lib/paths";
+---
+
+<GuidelinePage
+  title="Guideline"
+  subtitle={`Everything you need to get to ${siteConfig.event.name}, check in, and find your way around. ${siteConfig.event.dateRange}, ${siteConfig.event.venue}.`}
+  description="Guidelines for IDSW 2026: getting to the venue, checking in, and what to know on the day."
+  canonicalPath="/guideline">
+  <ul class="grid gap-4 md:grid-cols-3">
+    {siteConfig.guidelines.map((item, index) => (
+      <li>
+        <a
+          href={withBasePath(item.href)}
+          class="group block h-full rounded-2xl border border-neutral-200 bg-white p-6 shadow-xs transition-colors hover:border-primary/40 hover:bg-primary/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+          <span class="font-mono text-xs text-primary">{String(index + 1).padStart(2, "0")}</span>
+          <h2 class="font-display mt-1 text-xl font-bold tracking-tight text-neutral-900">{item.name}</h2>
+          <p class="mt-2 text-sm leading-relaxed text-neutral-600">{item.desc}</p>
+          <span class="mt-4 inline-block text-sm font-semibold text-primary group-hover:underline">Read more</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</GuidelinePage>
