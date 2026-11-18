@@ -1,0 +1,210 @@
+---
+import { Image } from "astro:assets";
+import Footer from "../components/sections/footer.astro";
+import { siteConfig } from "../config/site";
+import floorPlan from "../data/images/venue/floor-plan.png";
+import { venueAreas } from "../data/venue-areas";
+import Layout from "../layout.astro";
+import { withBasePath } from "../lib/paths";
+
+const reportSteps = [
+  {
+    title: "Find any IDSW team member",
+    desc: "Crew wear IDSW staff badges or shirts and are spread across the venue. Anyone you can reach will help.",
+  },
+  {
+    title: "Or go to the Help Desk",
+    desc: "If you can, come to the Help Desk. Someone is there throughout the event.",
+  },
+  {
+    title: "Tell us what happened",
+    desc: "Share only what you are comfortable with. You can bring a friend, and you can ask to speak with someone privately.",
+  },
+  {
+    title: "We take it from there",
+    desc: "The team will help you feel safe, and can contact venue security or local authorities if needed.",
+  },
+];
+---
+
+<Layout
+  title="Day Guideline | IDSW 2026"
+  description="Venue map, code of conduct and how to report misbehavior at IDSW 2026, Usmar Ismail Hall, Jakarta."
+  canonicalPath="/day-guideline">
+  <section class="hero-gradient pt-28 pb-12 text-white sm:pt-36 sm:pb-16 md:pt-40 md:pb-20">
+    <div class="container-site">
+      <div class="max-w-3xl">
+        <h1 class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">Day Guideline</h1>
+        <p class="mt-4 text-base leading-relaxed text-white/85 sm:text-lg">
+          Everything you need on the day: where things are, how we treat each other, and who to ask when something feels
+          wrong. {siteConfig.event.dateRange}, {siteConfig.event.venue}.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="border-b border-neutral-200 bg-neutral-50/80">
+    <div class="container-site space-y-16 py-12 md:py-16">
+      <!-- Venue -->
+      <section id="venue" class="scroll-mt-28" aria-labelledby="venue-title">
+        <h2 id="venue-title" class="font-display text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
+          Venue
+        </h2>
+        <p class="mt-2 text-sm text-neutral-600 sm:text-base">Select an area to highlight it on the floor plan.</p>
+
+        <div
+          class="mt-6 grid gap-6 lg:grid-cols-12"
+          data-venue-map
+          data-descriptions={JSON.stringify(Object.fromEntries(venueAreas.map((a) => [a.id, a.description])))}>
+          <div class="lg:col-span-4">
+            <ul class="flex flex-wrap gap-2 lg:flex-col">
+              {venueAreas.map((area) => (
+                <li class="lg:w-full">
+                  <button
+                    type="button"
+                    data-area={area.id}
+                    data-basement={area.basement ? "true" : undefined}
+                    aria-pressed="false"
+                    class="w-full rounded-lg border border-neutral-200 bg-white px-4 py-2.5 text-left text-sm font-semibold text-neutral-700 transition-colors hover:border-red-300 hover:bg-red-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 aria-pressed:border-red-500 aria-pressed:bg-red-50 aria-pressed:text-red-700">
+                    {area.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <p
+              data-area-description
+              aria-live="polite"
+              class="mt-4 min-h-12 rounded-lg border border-neutral-200 bg-white p-3.5 text-sm leading-relaxed text-neutral-600">
+              Pick an area to see what it is.
+            </p>
+          </div>
+
+          <div class="lg:col-span-8">
+            <div class="relative mx-auto max-w-xl overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-xs">
+              <Image src={floorPlan} alt="Top-down floor plan of the IDSW 2026 venue" class="block h-auto w-full" />
+              <div
+                data-basement-overlay
+                hidden
+                aria-hidden="true"
+                class="pointer-events-none absolute inset-0 flex items-start justify-center bg-neutral-600/60 pt-4 backdrop-grayscale">
+                <span class="rounded-full bg-neutral-900/85 px-3 py-1.5 text-xs font-semibold text-white">
+                  Different floor: Basement. Take the lift or stairs down.
+                </span>
+              </div>
+              {venueAreas.map((area) => (
+                <div
+                  data-hotspot={area.id}
+                  data-guide-for={area.guideFor?.join(" ")}
+                  hidden
+                  aria-hidden="true"
+                  class="pointer-events-none absolute"
+                  style={`left:${area.x}%;top:${area.y}%;width:${area.w}%;height:${area.h}%;`}>
+                  <div
+                    class:list={[
+                      "absolute inset-0 animate-pulse rounded-md border-2 border-red-600 bg-red-500/35 shadow-[0_0_0_4px_rgba(239,68,68,0.25)]",
+                      area.basement && "border-dashed",
+                    ]}
+                  />
+                  {area.sign && (
+                    <span
+                      class:list={[
+                        "absolute left-1/2 z-10 -translate-x-1/2 rounded bg-red-600 px-2 py-1 text-[11px] leading-none font-semibold whitespace-nowrap text-white shadow",
+                        area.signPlacement === "inside" ? "top-1.5" : "top-full mt-1.5",
+                      ]}>
+                      {area.sign}
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Code of conduct -->
+      <section id="code-of-conduct" class="scroll-mt-28" aria-labelledby="coc-title">
+        <div class="rounded-2xl border border-blue-200 bg-blue-50/60 p-6 sm:p-8">
+          <h2 id="coc-title" class="font-display text-2xl font-bold tracking-tight text-blue-950 sm:text-3xl">
+            Code of Conduct
+          </h2>
+          <p class="mt-2 max-w-2xl text-sm leading-relaxed text-blue-900/90 sm:text-base">
+            IDSW is a harassment-free conference for everyone: attendees, speakers, sponsors, volunteers and staff. Be
+            respectful, follow crew instructions, and look out for each other.
+          </p>
+          <a
+            href={withBasePath("/code-of-conduct")}
+            class="mt-4 inline-flex items-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90">
+            Read the full Code of Conduct
+          </a>
+        </div>
+      </section>
+
+      <!-- Report misbehavior -->
+      <section id="report" class="scroll-mt-28" aria-labelledby="report-title">
+        <h2 id="report-title" class="font-display text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
+          Report misbehavior
+        </h2>
+        <p class="mt-2 max-w-2xl text-sm text-neutral-600 sm:text-base">
+          If you experience or see harassment or anything that makes you feel unsafe, you do not need to handle it
+          alone. Ask for help.
+        </p>
+
+        <ol class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {reportSteps.map((step, index) => (
+            <li class="rounded-xl border border-neutral-200 bg-white p-5 shadow-xs">
+              <span class="font-mono text-xs text-primary">{String(index + 1).padStart(2, "0")}</span>
+              <h3 class="mt-1 text-sm font-semibold text-neutral-900">{step.title}</h3>
+              <p class="mt-1.5 text-xs leading-relaxed text-neutral-600">{step.desc}</p>
+            </li>
+          ))}
+        </ol>
+
+        <p class="mt-6 text-sm text-neutral-600">
+          Prefer to write? Email
+          <a
+            href="mailto:idsw.admin@perkodi.org?subject=Reporting%20Code%20of%20Conduct%20Violation"
+            class="font-semibold text-primary underline">
+            idsw.admin@perkodi.org
+          </a>
+          with the subject "Reporting Code of Conduct Violation".
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
+
+<script>
+  const root = document.querySelector<HTMLElement>("[data-venue-map]");
+
+  if (root) {
+    const buttons = root.querySelectorAll<HTMLButtonElement>("button[data-area]");
+    const hotspots = root.querySelectorAll<HTMLElement>("[data-hotspot]");
+    const description = root.querySelector<HTMLElement>("[data-area-description]");
+    const descriptions = JSON.parse(root.dataset.descriptions ?? "{}") as Record<string, string>;
+    const placeholder = description?.textContent ?? "";
+
+    const basementOverlay = root.querySelector<HTMLElement>("[data-basement-overlay]");
+
+    const select = (id: string | null) => {
+      buttons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.area === id)));
+      const isBasement = Array.from(buttons).some(
+        (button) => button.dataset.area === id && button.dataset.basement === "true",
+      );
+      if (basementOverlay) basementOverlay.hidden = !isBasement;
+      hotspots.forEach((hotspot) => {
+        const isGuide = isBasement && (hotspot.dataset.guideFor ?? "").split(" ").includes(id ?? "");
+        hotspot.hidden = hotspot.dataset.hotspot !== id && !isGuide;
+      });
+      if (description) description.textContent = id ? (descriptions[id] ?? "") : placeholder;
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const isActive = button.getAttribute("aria-pressed") === "true";
+        select(isActive ? null : (button.dataset.area ?? null));
+      });
+    });
+  }
+</script>
