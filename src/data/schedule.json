@@ -213,16 +213,16 @@
         },
         {
           "start": "13:30",
-          "end": "13:40",
+          "end": "13:50",
           "kind": "intermezzo",
-          "title": "3 years of IDSW",
-          "speaker": "Didik Wicaksono",
+          "title": "Intermezzo - 3 Years of IDSW",
+          "speaker": null,
           "role": null,
           "pending": null
         },
         {
-          "start": "13:45",
-          "end": "14:15",
+          "start": "13:55",
+          "end": "14:25",
           "kind": "talk",
           "title": "Building a Browser Engine with AI Is Harder Than You Think",
           "speaker": "Kresna Satya",
@@ -230,8 +230,8 @@
           "pending": null
         },
         {
-          "start": "14:20",
-          "end": "15:20",
+          "start": "14:30",
+          "end": "15:30",
           "kind": "lightning",
           "title": "Lightning talks",
           "speaker": null,
@@ -265,8 +265,8 @@
           ]
         },
         {
-          "start": "15:20",
-          "end": "16:20",
+          "start": "15:30",
+          "end": "16:30",
           "kind": "coffee",
           "title": "Coffee Break",
           "speaker": null,
