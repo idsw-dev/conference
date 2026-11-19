@@ -75,6 +75,9 @@ function minutesBetween(start: string, end: string) {
                     {session.kind === "keynote" && (
                       <p class="mb-1 text-xs font-semibold tracking-wide text-primary uppercase">Keynote</p>
                     )}
+                    {session.kind === "intermezzo" && (
+                      <p class="mb-1 text-xs font-semibold tracking-wide text-primary uppercase">Intermezzo</p>
+                    )}
                     {slim ? (
                       <p class="flex items-center gap-2 text-sm font-medium text-neutral-600">
                         {BreakIcon && <BreakIcon className="h-4 w-4 shrink-0 text-neutral-400" aria-hidden="true" />}

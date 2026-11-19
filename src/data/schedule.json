@@ -212,6 +212,15 @@
           "pending": null
         },
         {
+          "start": "13:30",
+          "end": "13:40",
+          "kind": "intermezzo",
+          "title": "3 years of IDSW",
+          "speaker": "Didik Wicaksono",
+          "role": null,
+          "pending": null
+        },
+        {
           "start": "13:45",
           "end": "14:15",
           "kind": "talk",
@@ -256,8 +265,8 @@
           ]
         },
         {
-          "start": "15:30",
-          "end": "16:30",
+          "start": "15:20",
+          "end": "16:20",
           "kind": "coffee",
           "title": "Coffee Break",
           "speaker": null,
