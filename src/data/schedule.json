@@ -67,8 +67,7 @@
           "title": "Your Agent is too fast",
           "speaker": "Mohammad Maftuqin Ibnin Tsalis",
           "role": "Head of Engineering Midtrans",
-          "pending": null,
-          "description": "Building with AI gives developers a short attention span. When you run 20-30 agents in parallel, it's impossible to keep up with reviews or track progress. Causing you to drift away from the original goal ."
+          "pending": null
         },
         {
           "start": "12:00",
