@@ -68,8 +68,9 @@ const eventJsonLd = {
     {
       "@type": "Offer",
       name: "Online streaming ticket",
-      url: siteConfig.stream.ticket.url,
-      availability: siteConfig.stream.ticket.onSale ? "https://schema.org/InStock" : "https://schema.org/SoldOut",
+      url: siteConfig.tickets.url,
+      availability: "https://schema.org/InStock",
+      validThrough: siteConfig.event.endDate,
     },
   ],
 };

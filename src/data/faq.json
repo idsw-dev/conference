@@ -4,7 +4,7 @@
     "answer": "Venue tickets are sold out. Check TipTip for online streaming tickets. If someone with a venue ticket can no longer attend, they can pass it to you by emailing idsw.ticketing@perkodi.org with your name.",
     "link": {
       "label": "Check tickets on TipTip",
-      "streamTicket": true
+      "href": "https://tiptip.id/event/68c1a321-c6f7-4fe8-8ac0-38b48136ff33"
     }
   },
   {
@@ -12,7 +12,7 @@
     "answer": "Yes, with an online streaming ticket from TipTip. Both days stream live at stream.idsw.dev.",
     "link": {
       "label": "Check tickets on TipTip",
-      "streamTicket": true
+      "href": "https://tiptip.id/event/68c1a321-c6f7-4fe8-8ac0-38b48136ff33"
     }
   },
   {

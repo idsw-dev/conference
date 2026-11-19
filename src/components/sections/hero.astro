@@ -1,17 +1,11 @@
 ---
 import { withBasePath } from "../../lib/paths";
 import { siteConfig } from "../../config/site";
-import { getEventPhase, type DayWindow } from "../../lib/event-phase";
 import EventCountdown from "../event-countdown.astro";
 import Button from "../ui/button.astro";
 
 const { days, timezone } = siteConfig.event;
-const streamTicket = siteConfig.stream.ticket;
-const windows: DayWindow[] = days.map((day) => [Date.parse(day.start), Date.parse(day.end)]);
-// Build-time guess. Visitors without JavaScript and link previews see this one;
-// the inline script below corrects it before first paint for everyone else.
-const initial = getEventPhase(Date.now(), windows);
-const shows = (phase: string, day?: number) => initial.phase === phase && (day === undefined || initial.day === day);
+const windows = days.map((day) => [Date.parse(day.start), Date.parse(day.end)]);
 const actions =
   "mt-8 flex w-full max-w-sm flex-col items-center gap-3 sm:mt-10 sm:w-auto sm:max-w-none sm:flex-row sm:gap-4";
 ---
@@ -57,34 +51,38 @@ const actions =
       ))}
     </p>
 
-    <div data-phase="before" hidden={!shows("before")} class={actions}>
-      {streamTicket.onSale ? (
-        <Button
-          href={streamTicket.url}
-          variant="secondary"
-          external
-          class="w-full sm:w-auto"
-          capture="stream_ticket_cta"
-          captureLocation="hero">
-          {streamTicket.label}
-        </Button>
-      ) : (
-        <Button
-          href={siteConfig.stream.url}
-          variant="secondary"
-          external
-          class="w-full sm:w-auto"
-          capture="stream_cta"
-          captureLocation="hero">
-          Watch the stream
-        </Button>
-      )}
+    {/* Shown without JavaScript, since it is right at any time. The script hides it. */}
+    <div data-phase="default" class={actions}>
+      <Button
+        href={siteConfig.stream.url}
+        variant="secondary"
+        external
+        class="w-full sm:w-auto"
+        capture="stream_cta"
+        captureLocation="hero">
+        Watch the stream
+      </Button>
       <Button href={withBasePath("/guideline")} variant="outline" class="w-full sm:w-auto">
         Attendee guide
       </Button>
     </div>
 
-    <div data-phase="live" hidden={!shows("live")} class={actions}>
+    <div data-phase="before" hidden class={actions}>
+      <Button
+        href={siteConfig.tickets.url}
+        variant="secondary"
+        external
+        class="w-full sm:w-auto"
+        capture="stream_ticket_cta"
+        captureLocation="hero">
+        Get a streaming ticket
+      </Button>
+      <Button href={withBasePath("/guideline")} variant="outline" class="w-full sm:w-auto">
+        Attendee guide
+      </Button>
+    </div>
+
+    <div data-phase="live" hidden class={actions}>
       <Button
         href={siteConfig.stream.url}
         variant="secondary"
@@ -100,11 +98,7 @@ const actions =
     </div>
 
     {days.slice(1).map((day, index) => (
-      <div
-        data-phase="between"
-        data-day={index + 1}
-        hidden={!shows("between", index + 1)}
-        class="mt-8 flex flex-col items-center sm:mt-10">
+      <div data-phase="between" data-day={index + 1} hidden class="mt-8 flex flex-col items-center sm:mt-10">
         <p class="text-base text-white/80 sm:text-lg">
           {day.label} starts at {day.time.split("–")[0]} {timezone}
         </p>
@@ -119,7 +113,7 @@ const actions =
       </div>
     ))}
 
-    <div data-phase="after" hidden={!shows("after")} class={actions}>
+    <div data-phase="after" hidden class={actions}>
       <Button
         href={siteConfig.stream.url}
         variant="secondary"
@@ -134,15 +128,16 @@ const actions =
       </Button>
     </div>
 
-    <div data-phase="before" hidden={!shows("before")}>
+    <div data-phase="before" hidden>
       <EventCountdown />
     </div>
   </div>
 
   {/*
-    Inline so it runs while the page is parsed, before first paint. A module script
-    runs later and would flash the build-time buttons first. Mirrors getEventPhase
-    in src/lib/event-phase.ts. ?phase=before|live|between|after previews a phase.
+    Picks the phase from the visitor's clock, so the site never needs a rebuild on
+    event days. Inline so it runs while the page is parsed, before first paint; a
+    module script runs later and would flash the default buttons first.
+    ?phase=before|live|between|after previews a phase.
   */}
   <script is:inline define:vars={{ windows }}>
     const hero = document.getElementById("hero");

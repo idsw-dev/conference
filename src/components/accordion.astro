@@ -1,5 +1,5 @@
 ---
-import type { Faq, FaqLink } from "../@types/faq";
+import type { Faq } from "../@types/faq";
 import { siteConfig } from "../config/site";
 import socialMedias from "../data/social-media.json";
 import { withBasePath } from "../lib/paths";
@@ -31,13 +31,10 @@ const linkify = (text: string) =>
     part,
     link: index % 2 === 1 ? autoLinks.find((link) => link.text === part) : undefined,
   }));
-const { ticket } = siteConfig.stream;
-const resolveLink = (link?: FaqLink) => {
-  if (!link) return undefined;
-  if ("streamTicket" in link) return ticket.onSale ? { label: link.label, href: ticket.url } : undefined;
-  return { label: link.label, href: withBasePath(link.href) };
-};
-const items = data.map((item) => ({ ...item, link: resolveLink(item.link) }));
+const items = data.map((item) => ({
+  ...item,
+  link: item.link && { label: item.link.label, href: withBasePath(item.link.href) },
+}));
 const isExternal = (href: string) => href.startsWith("http");
 const linkClass = isLight
   ? "font-medium text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary"

@@ -47,20 +47,14 @@ export const siteConfig = {
       "https://calendar.google.com/calendar/render?action=TEMPLATE&text=IDSW+2026+-+Indonesia+Software+Developer+Conference&dates=20261121T010000Z/20261122T111500Z&details=Indonesia+Software+Developer+Conference+2026.+Indonesia%27s+biggest+community-led+developer+conference.&location=Usmar+Ismail+Hall%2C+Jakarta",
   },
 
-  // Venue tickets are sold out. The URL is the TipTip event page.
+  // TipTip event page. Venue tickets are sold out; TipTip shows whether online
+  // streaming tickets are still on sale.
   tickets: {
     url: ticketsUrl,
   },
 
   stream: {
     url: streamUrl,
-    // Online streaming ticket on TipTip. Setting onSale to false hides the hero
-    // button and the FAQ ticket links. Also update the ticket answers in faq.json.
-    ticket: {
-      onSale: true,
-      url: ticketsUrl,
-      label: "Get a streaming ticket",
-    },
   },
 
   keynotes: [
