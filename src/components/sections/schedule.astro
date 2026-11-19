@@ -14,7 +14,7 @@ const pendingNote: Record<string, string> = {
 };
 
 // Housekeeping rows render slimmer than talks; breaks also get a tint and an icon.
-const slimKinds = new Set(["registration", "opening", "closing", "lunch", "coffee"]);
+const slimKinds = new Set(["registration", "opening", "closing", "intermezzo", "lunch", "coffee"]);
 const breakIcons: Record<string, typeof Coffee> = { lunch: Utensils, coffee: Coffee };
 
 function minutesBetween(start: string, end: string) {
