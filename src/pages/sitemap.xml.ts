@@ -11,7 +11,6 @@ export const GET: APIRoute = ({ site }) => {
     "/access-guideline/",
     "/privacy-policy/",
     "/terms-of-service/",
-    "/stream/",
   ];
   // Previous editions are siblings of this edition, including in archival builds.
   const paths = [...editionPaths.map(withBasePath), "/2025/", "/2024/"];

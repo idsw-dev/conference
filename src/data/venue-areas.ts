@@ -50,7 +50,7 @@ export const venueAreas: VenueArea[] = [
     description:
       "Located in the basement, partially below the dining area. Take the lift or stairs (highlighted on the plan) down from this floor. Dashed outline shows its approximate location.",
     basement: true,
-    sign: "Musholla · Basement",
+    sign: "Basement Musholla",
     signPlacement: "inside",
     x: 17.1,
     y: 33,

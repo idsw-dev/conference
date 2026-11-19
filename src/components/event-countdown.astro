@@ -1,6 +1,6 @@
 ---
 import { siteConfig } from "../config/site";
-import { getTimeLeft } from "../lib/cfp";
+import { getTimeLeft } from "../lib/countdown";
 
 const deadline = new Date(siteConfig.event.startDate).getTime();
 const timeLeft = getTimeLeft(siteConfig.event.startDate);
@@ -55,7 +55,7 @@ const units = [
 </div>
 
 <script>
-  import { getTimeLeft } from "../lib/cfp";
+  import { getTimeLeft } from "../lib/countdown";
 
   const root = document.getElementById("event-countdown");
   if (root) {

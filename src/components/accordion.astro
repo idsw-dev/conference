@@ -1,5 +1,8 @@
 ---
-import type { Faq } from "../@types/faq";
+import type { Faq, FaqLink } from "../@types/faq";
+import { siteConfig } from "../config/site";
+import socialMedias from "../data/social-media.json";
+import { withBasePath } from "../lib/paths";
 
 interface Props {
   data: Faq[];
@@ -8,10 +11,41 @@ interface Props {
 
 const { data, variant = "dark" } = Astro.props;
 const isLight = variant === "light";
+
+// Answers are plain text. These exact strings become links wherever they appear.
+const socialUrl = (name: string) => socialMedias.find((social) => social.name === name)?.url;
+const autoLinks = [
+  { text: new URL(siteConfig.stream.url).host, href: siteConfig.stream.url, capture: "stream_cta" },
+  { text: "@idsw.dev", href: socialUrl("Instagram") },
+  { text: "@idswdev", href: socialUrl("X") },
+  { text: "idsw.ticketing@perkodi.org", href: "mailto:idsw.ticketing@perkodi.org" },
+].filter((link): link is typeof link & { href: string } => Boolean(link.href));
+const escapeRegExp = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+// The lookarounds stop a match inside a longer word, address or URL, e.g. "@idsw.dev" in "partners@idsw.dev".
+const linkPattern = new RegExp(
+  `(?<![\\w.@/-])(${autoLinks.map((link) => escapeRegExp(link.text)).join("|")})(?![\\w-])`,
+);
+// split() with a capture group puts the matched link text at odd indexes.
+const linkify = (text: string) =>
+  text.split(linkPattern).map((part, index) => ({
+    part,
+    link: index % 2 === 1 ? autoLinks.find((link) => link.text === part) : undefined,
+  }));
+const { ticket } = siteConfig.stream;
+const resolveLink = (link?: FaqLink) => {
+  if (!link) return undefined;
+  if ("streamTicket" in link) return ticket.onSale ? { label: link.label, href: ticket.url } : undefined;
+  return { label: link.label, href: withBasePath(link.href) };
+};
+const items = data.map((item) => ({ ...item, link: resolveLink(item.link) }));
+const isExternal = (href: string) => href.startsWith("http");
+const linkClass = isLight
+  ? "font-medium text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary"
+  : "font-medium text-white underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white";
 ---
 
 <div class="flex flex-col gap-3 text-left">
-  {data.map((item, i) => (
+  {items.map((item, i) => (
     <details
       open={i === 0}
       class:list={[
@@ -46,7 +80,30 @@ const isLight = variant === "light";
       </summary>
       <div class="px-4 pb-4 sm:px-5 sm:pb-5">
         <div class:list={["text-sm leading-relaxed sm:text-base", isLight ? "text-neutral-600" : "text-white/80"]}>
-          {item.answer}
+          {linkify(item.answer).map(({ part, link }) =>
+            link ? (
+              <a
+                href={link.href}
+                target={isExternal(link.href) ? "_blank" : undefined}
+                rel={isExternal(link.href) ? "noopener noreferrer" : undefined}
+                class={linkClass}
+                data-ph-event={link.capture}
+                data-ph-location={link.capture ? "faq" : undefined}
+                set:text={part}
+              />
+            ) : (
+              part
+            ),
+          )}
+          {item.link && (
+            <a
+              href={item.link.href}
+              target={isExternal(item.link.href) ? "_blank" : undefined}
+              rel={isExternal(item.link.href) ? "noopener noreferrer" : undefined}
+              class:list={["mt-2 block", linkClass]}
+              set:text={item.link.label}
+            />
+          )}
         </div>
       </div>
     </details>

@@ -9,82 +9,58 @@ import startupLokalLogo from "../data/images/community/startuplokal.png";
 import wpuLogo from "../data/images/community/wpu.png";
 import founderInstituteFoundryLogo from "../data/images/community/founder-institute-x-foundry.svg";
 import blockDevLogo from "../data/images/community/blockdev.png";
-import idsw2024Logo from "../data/images/previous-events/2024-logo.svg";
-import idsw2025Logo from "../data/images/previous-events/2025-logo-blue.png";
-import idsw2025WhiteLogo from "../data/images/previous-events/2025-nav-logo.png";
 import perkodiLogo from "../data/images/organizers/perkodi-logo.svg";
 import perkodiLogoWhite from "../data/images/organizers/perkodi-logo-white.svg";
 
 const ticketsUrl =
   "https://tiptip.id/event/68c1a321-c6f7-4fe8-8ac0-38b48136ff33";
+const streamUrl = "https://stream.idsw.dev/";
+
+// start and end drive the hero's live and between-days states.
+const days = [
+  {
+    label: "Day 1",
+    time: "08.00–18.15",
+    start: "2026-11-21T08:00:00+07:00",
+    end: "2026-11-21T18:15:00+07:00",
+  },
+  {
+    label: "Day 2",
+    time: "09.00–18.15",
+    start: "2026-11-22T09:00:00+07:00",
+    end: "2026-11-22T18:15:00+07:00",
+  },
+] as const;
 
 export const siteConfig = {
   event: {
     name: "IDSW 2026",
     tagline: "The Biggest Community-Led Developer Conference in Indonesia",
     dateRange: "21–22 Nov 2026",
-    days: [
-      { label: "Day 1", time: "08.00–18.15" },
-      { label: "Day 2", time: "09.00–18.15" },
-    ],
+    days,
     timezone: "WIB",
-    startDate: "2026-11-21T08:00:00+07:00",
-    endDate: "2026-11-22T18:15:00+07:00",
+    startDate: days[0].start,
+    endDate: days[days.length - 1].end,
     venue: "Usmar Ismail Hall, Jakarta Selatan",
     venueUrl: "https://maps.google.com/?q=Usmar+Ismail+Hall+Jakarta",
     calendarUrl:
       "https://calendar.google.com/calendar/render?action=TEMPLATE&text=IDSW+2026+-+Indonesia+Software+Developer+Conference&dates=20261121T010000Z/20261122T111500Z&details=Indonesia+Software+Developer+Conference+2026.+Indonesia%27s+biggest+community-led+developer+conference.&location=Usmar+Ismail+Hall%2C+Jakarta",
   },
 
-  phase: "cfp" as const,
-
-  cfp: {
-    enabled: false,
-    url: "https://cfp.idsw.dev/",
-    deadline: "26 September 2026",
-    deadlineIso: "2026-09-26T23:59:59+07:00",
-    formats: [
-      {
-        duration: "30 min",
-        title: "Full session",
-        desc: "Architecture, production systems, or a hard technical lesson on the main stage.",
-      },
-      {
-        duration: "7 min",
-        title: "Lightning talk",
-        desc: "One tool, one technique, or one sharp idea. Then sit down.",
-      },
-    ],
-    topics: [
-      {
-        title: "Product Engineering",
-        desc: "How teams combine product thinking, user needs, and technical execution.",
-      },
-      {
-        title: "Latest Trends",
-        desc: "New tools, practices, and architectures changing how software is built.",
-      },
-      {
-        title: "Technology Leadership",
-        desc: "How technical leaders shape culture, teams, and architecture decisions.",
-      },
-      {
-        title: "In-Depth Software Engineering",
-        desc: "Production systems, performance, reliability, and hard-won lessons.",
-      },
-    ],
-    whySpeak: [
-      "Prep a talk on something you care about.",
-      "Meet people working on the same problems.",
-      "Speaker ticket included.",
-      "Speaker dinner with the rest of the lineup.",
-    ],
+  // Venue tickets are sold out. The URL is the TipTip event page.
+  tickets: {
+    url: ticketsUrl,
   },
 
-  tickets: {
-    enabled: true,
-    url: ticketsUrl,
-    label: "Get a regular ticket",
+  stream: {
+    url: streamUrl,
+    // Online streaming ticket on TipTip. Setting onSale to false hides the hero
+    // button and the FAQ ticket links. Also update the ticket answers in faq.json.
+    ticket: {
+      onSale: true,
+      url: ticketsUrl,
+      label: "Get a streaming ticket",
+    },
   },
 
   keynotes: [
@@ -118,14 +94,6 @@ export const siteConfig = {
         "Technical Architect at Blibli.com and founder of Programmer Zaman Now. With over 15 years of software engineering experience designing high-scale distributed systems and enterprise architectures, Eko is also one of Indonesia's foremost tech educators, having mentored over 300,000 developers across the country.",
     },
   ],
-
-  sponsors: {
-    showSection: true,
-    prospectusUrl: "/IDSW%202026%20-%20Sponsorship%20Proposal.pdf",
-    email: "idsw.sponsor@perkodi.org",
-    contactPerson: "Sidiq Permana",
-    contactPhone: "+62 812-1084-1382",
-  },
 
   partners: [
     {
@@ -211,41 +179,13 @@ export const siteConfig = {
     logoWhite: perkodiLogoWhite,
   },
 
-  previousEvents: [
-    {
-      year: 2024,
-      url: "/2024",
-      label: "IDSW 2024",
-      edition: "Inaugural Edition",
-      dates: "16–17 November 2024",
-      venue: "GetCourse Hall, Jakarta",
-      highlights: "4 Keynotes · 15 Speakers",
-      logo: idsw2024Logo,
-    },
-    {
-      year: 2025,
-      url: "/2025",
-      label: "IDSW 2025",
-      edition: "AI Edition · with SerpApi",
-      dates: "22–23 November 2025",
-      venue: "Usmar Ismail Hall, Jakarta",
-      highlights: "450+ Attendees · 17+ Speakers",
-      logo: idsw2025Logo,
-      logoWhite: idsw2025WhiteLogo,
-    },
-  ],
-
   nav: [
-    { name: "Home", href: "/", external: false },
     { name: "Speakers", href: "/#keynote-speakers", external: false },
     { name: "Schedule", href: "/#schedule", external: false },
-    { name: "CFP", href: "/#cfp", external: false },
     { name: "Sponsors", href: "/#sponsors", external: false },
-    { name: "Previous Events", href: "/#previous-events", external: false },
     { name: "FAQ", href: "/#faq", external: false },
-    { name: "Contact", href: "/#contact", external: false },
     { name: "Guideline", href: "/guideline", external: false },
-    { name: "Tickets", href: ticketsUrl, external: true },
+    { name: "Stream", href: streamUrl, external: true },
   ],
 
   guidelines: [

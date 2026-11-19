@@ -39,31 +39,39 @@ const eventJsonLd = {
   startDate: siteConfig.event.startDate,
   endDate: siteConfig.event.endDate,
   image: ogImageUrl,
-  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
-  location: {
-    "@type": "Place",
-    name: siteConfig.event.venue,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Jakarta Selatan",
-      addressCountry: "ID",
+  location: [
+    {
+      "@type": "Place",
+      name: siteConfig.event.venue,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Jakarta Selatan",
+        addressCountry: "ID",
+      },
     },
-  },
+    { "@type": "VirtualLocation", url: siteConfig.stream.url },
+  ],
   organizer: {
     "@type": "Organization",
     name: "PERKODI",
     url: "https://perkodi.org",
   },
-  ...(siteConfig.tickets.enabled
-    ? {
-        offers: {
-          "@type": "Offer",
-          url: siteConfig.tickets.url,
-          availability: "https://schema.org/InStock",
-        },
-      }
-    : {}),
+  offers: [
+    {
+      "@type": "Offer",
+      name: "On-site ticket",
+      url: siteConfig.tickets.url,
+      availability: "https://schema.org/SoldOut",
+    },
+    {
+      "@type": "Offer",
+      name: "Online streaming ticket",
+      url: siteConfig.stream.ticket.url,
+      availability: siteConfig.stream.ticket.onSale ? "https://schema.org/InStock" : "https://schema.org/SoldOut",
+    },
+  ],
 };
 ---
 

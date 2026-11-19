@@ -28,10 +28,10 @@
           "start": "09:20",
           "end": "09:40",
           "kind": "sponsor",
-          "title": "Sponsor Talk A",
+          "title": "Sponsor talk",
           "speaker": null,
           "role": null,
-          "pending": "speaker"
+          "pending": null
         },
         {
           "start": "09:45",
@@ -64,10 +64,10 @@
           "start": "11:40",
           "end": "12:00",
           "kind": "sponsor",
-          "title": "Sponsor Talk B",
+          "title": "Sponsor talk",
           "speaker": null,
           "role": null,
-          "pending": "speaker"
+          "pending": null
         },
         {
           "start": "12:00",
@@ -127,10 +127,10 @@
           "start": "17:05",
           "end": "18:05",
           "kind": "panel",
-          "title": "Discussion panel",
+          "title": "Panel discussion",
           "speaker": null,
           "role": null,
-          "pending": "subject"
+          "pending": null
         },
         {
           "start": "18:05",
@@ -170,10 +170,10 @@
           "start": "09:40",
           "end": "10:00",
           "kind": "sponsor",
-          "title": "Sponsor Talk C",
+          "title": "Sponsor talk",
           "speaker": null,
           "role": null,
-          "pending": "speaker"
+          "pending": null
         },
         {
           "start": "10:05",
@@ -236,7 +236,7 @@
           "title": "Lightning talks",
           "speaker": null,
           "role": null,
-          "pending": "order",
+          "pending": null,
           "talks": [
             {
               "title": "Task Done, Skill Not",

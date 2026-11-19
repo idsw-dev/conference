@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import { siteConfig } from "../../config/site";
+import idsw2024Logo from "../../data/images/previous-events/2024-logo.svg";
+import idsw2025Logo from "../../data/images/previous-events/2025-nav-logo.png";
 import { ArrowUpRight, Calendar, Layers, MapPin, Users } from "lucide-react";
 
 const cardInteractive =
@@ -30,12 +31,7 @@ const cardInteractive =
           <div class="flex items-start justify-between gap-4">
             <div class="flex items-center gap-3.5 sm:gap-4">
               <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg border border-white/20 bg-white/10 p-2.5 backdrop-blur-sm sm:h-16 sm:w-16">
-                <Image
-                  src={siteConfig.previousEvents[0].logo}
-                  width={128}
-                  alt="IDSW 2024 Logo"
-                  class="h-full w-auto object-contain"
-                />
+                <Image src={idsw2024Logo} width={128} alt="IDSW 2024 Logo" class="h-full w-auto object-contain" />
               </div>
               <div>
                 <h3 class="font-display text-2xl font-bold text-white sm:text-3xl">IDSW 2024</h3>
@@ -59,7 +55,7 @@ const cardInteractive =
             </div>
             <div class="flex items-center gap-2 text-white/60">
               <Layers className="h-3.5 w-3.5 text-[#5cb8ff]" />
-              <span>4 Keynotes · 15 Speakers</span>
+              <span>4 Keynotes, 15 Speakers</span>
             </div>
           </div>
         </div>
@@ -85,7 +81,7 @@ const cardInteractive =
             <div class="flex items-center gap-3.5 sm:gap-4">
               <div class="flex h-14 w-auto max-w-[200px] shrink-0 items-center justify-center rounded-lg border border-white/20 bg-white/15 px-3 py-2 backdrop-blur-sm sm:h-16 sm:max-w-[240px]">
                 <Image
-                  src={siteConfig.previousEvents[1].logoWhite}
+                  src={idsw2025Logo}
                   width={400}
                   alt="IDSW 2025 with SerpApi"
                   class="h-9 w-auto object-contain sm:h-10"
@@ -110,7 +106,7 @@ const cardInteractive =
             </div>
             <div class="flex items-center gap-2 text-white/70">
               <Users className="h-3.5 w-3.5 text-cyan-300" />
-              <span>450+ Attendees · 17+ Speakers</span>
+              <span>450+ Attendees, 17+ Speakers</span>
             </div>
           </div>
         </div>

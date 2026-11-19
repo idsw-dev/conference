@@ -1,12 +1,19 @@
 ---
 import { withBasePath } from "../../lib/paths";
 import { siteConfig } from "../../config/site";
-import { isCfpOpen } from "../../lib/cfp";
-import CfpCountdown from "../cfp-countdown.astro";
+import { getEventPhase, type DayWindow } from "../../lib/event-phase";
 import EventCountdown from "../event-countdown.astro";
 import Button from "../ui/button.astro";
 
-const cfpOpen = isCfpOpen();
+const { days, timezone } = siteConfig.event;
+const streamTicket = siteConfig.stream.ticket;
+const windows: DayWindow[] = days.map((day) => [Date.parse(day.start), Date.parse(day.end)]);
+// Build-time guess. Visitors without JavaScript and link previews see this one;
+// the inline script below corrects it before first paint for everyone else.
+const initial = getEventPhase(Date.now(), windows);
+const shows = (phase: string, day?: number) => initial.phase === phase && (day === undefined || initial.day === day);
+const actions =
+  "mt-8 flex w-full max-w-sm flex-col items-center gap-3 sm:mt-10 sm:w-auto sm:max-w-none sm:flex-row sm:gap-4";
 ---
 
 <section id="hero" class="hero-gradient hero-stage relative overflow-hidden text-white">
@@ -40,43 +47,129 @@ const cfpOpen = isCfpOpen();
     </div>
 
     <p class="mt-3.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-xs leading-relaxed text-white/60 sm:gap-x-9 sm:text-sm">
-      {siteConfig.event.days.map((day) => (
+      {days.map((day) => (
         <span class="inline-flex items-baseline gap-x-2 whitespace-nowrap sm:gap-x-2.5">
           <span class="text-white/40">{day.label}</span>
           <span class="tabular-nums">
-            {day.time} {siteConfig.event.timezone}
+            {day.time} {timezone}
           </span>
         </span>
       ))}
     </p>
 
-    <div class="mt-8 flex w-full max-w-sm flex-col items-center gap-3 sm:mt-10 sm:w-auto sm:max-w-none sm:flex-row sm:gap-4">
-      {siteConfig.tickets.enabled && (
+    <div data-phase="before" hidden={!shows("before")} class={actions}>
+      {streamTicket.onSale ? (
         <Button
-          href={siteConfig.tickets.url}
+          href={streamTicket.url}
           variant="secondary"
           external
           class="w-full sm:w-auto"
-          capture="ticket_cta"
+          capture="stream_ticket_cta"
           captureLocation="hero">
-          {siteConfig.tickets.label}
+          {streamTicket.label}
         </Button>
-      )}
-      {cfpOpen && (
+      ) : (
         <Button
-          href={withBasePath("/#cfp")}
-          variant={siteConfig.tickets.enabled ? "outline" : "secondary"}
-          class="w-full sm:w-auto">
-          Submit a proposal
+          href={siteConfig.stream.url}
+          variant="secondary"
+          external
+          class="w-full sm:w-auto"
+          capture="stream_cta"
+          captureLocation="hero">
+          Watch the stream
         </Button>
       )}
-      {!siteConfig.tickets.enabled && !cfpOpen && (
-        <Button href={withBasePath("/#previous-events")} variant="outline" class="w-full sm:w-auto">
-          See previous events
-        </Button>
-      )}
+      <Button href={withBasePath("/guideline")} variant="outline" class="w-full sm:w-auto">
+        Attendee guide
+      </Button>
     </div>
 
-    {cfpOpen ? <CfpCountdown /> : <EventCountdown />}
+    <div data-phase="live" hidden={!shows("live")} class={actions}>
+      <Button
+        href={siteConfig.stream.url}
+        variant="secondary"
+        external
+        class="w-full sm:w-auto"
+        capture="stream_cta"
+        captureLocation="hero">
+        Watch live
+      </Button>
+      <Button href={withBasePath("/#schedule")} variant="outline" class="w-full sm:w-auto">
+        Today's schedule
+      </Button>
+    </div>
+
+    {days.slice(1).map((day, index) => (
+      <div
+        data-phase="between"
+        data-day={index + 1}
+        hidden={!shows("between", index + 1)}
+        class="mt-8 flex flex-col items-center sm:mt-10">
+        <p class="text-base text-white/80 sm:text-lg">
+          {day.label} starts at {day.time.split("–")[0]} {timezone}
+        </p>
+        <div class="mt-4 flex w-full max-w-sm flex-col items-center gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:gap-4">
+          <Button href={withBasePath("/#schedule")} variant="secondary" class="w-full sm:w-auto">
+            {day.label} schedule
+          </Button>
+          <Button href={withBasePath("/guideline")} variant="outline" class="w-full sm:w-auto">
+            Attendee guide
+          </Button>
+        </div>
+      </div>
+    ))}
+
+    <div data-phase="after" hidden={!shows("after")} class={actions}>
+      <Button
+        href={siteConfig.stream.url}
+        variant="secondary"
+        external
+        class="w-full sm:w-auto"
+        capture="stream_cta"
+        captureLocation="hero">
+        Watch recordings
+      </Button>
+      <Button href={withBasePath("/#previous-events")} variant="outline" class="w-full sm:w-auto">
+        Previous events
+      </Button>
+    </div>
+
+    <div data-phase="before" hidden={!shows("before")}>
+      <EventCountdown />
+    </div>
   </div>
+
+  {/*
+    Inline so it runs while the page is parsed, before first paint. A module script
+    runs later and would flash the build-time buttons first. Mirrors getEventPhase
+    in src/lib/event-phase.ts. ?phase=before|live|between|after previews a phase.
+  */}
+  <script is:inline define:vars={{ windows }}>
+    const hero = document.getElementById("hero");
+    const forced = new URLSearchParams(window.location.search).get("phase");
+    const isForced = ["before", "live", "between", "after"].includes(forced);
+
+    const phaseAt = (now) => {
+      for (let day = 0; day < windows.length; day++) {
+        const [start, end] = windows[day];
+        if (now < start) return { phase: day === 0 ? "before" : "between", day };
+        if (now < end) return { phase: "live", day };
+      }
+      return { phase: "after", day: windows.length };
+    };
+
+    const update = () => {
+      const { phase, day } = isForced ? { phase: forced, day: 1 } : phaseAt(Date.now());
+      hero.querySelectorAll("[data-phase]").forEach((el) => {
+        el.hidden = el.dataset.phase !== phase || (el.dataset.day !== undefined && Number(el.dataset.day) !== day);
+      });
+      return phase;
+    };
+
+    if (update() !== "after" && !isForced) {
+      const id = window.setInterval(() => {
+        if (update() === "after") window.clearInterval(id);
+      }, 30_000);
+    }
+  </script>
 </section>

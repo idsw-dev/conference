@@ -83,7 +83,7 @@ export const busRoutes: AccessRoute[] = [
     badges: ["TJ 9", "TJ 6M"],
     steps: [
       "Take Corridor 9 (Pinang Ranti to Pluit) and get off at Halte Denpasar.",
-      "Transfer to Route 6M (Blok M to Stasiun Manggarai) toward Manggarai. Or cross the skybridge to Halte Underpass Kuningan for Corridor 6 / 6A northbound.",
+      "Transfer to Route 6M (Blok M to Stasiun Manggarai) toward Manggarai. Or take the skybridge to Halte Simpang Kuningan and board Corridor 6 / 6A northbound.",
       "Get off at Halte Rasuna Said and walk to the hall.",
     ],
   },
@@ -91,7 +91,7 @@ export const busRoutes: AccessRoute[] = [
     from: "Transjakarta Corridor 13",
     badges: ["TJ 13", "TJ 13E"],
     steps: [
-      "Direct: take Route 13E (Puri Beta to Flyover Kuningan) and get off at Halte Rasuna Said.",
+      "Direct: take Route 13E (Puri Beta to Flyover Kuningan) and get off at Halte Rasuna Said. Check the TJ app first, as 13E may not run on weekends.",
       "Or take Corridor 13 (CBD Ciledug to Tegal Mampang), get off at Halte Tegal Mampang, and transfer to Corridor 6 / 6A northbound to Halte Rasuna Said.",
       "Walk to the hall.",
     ],
@@ -107,20 +107,20 @@ export const busRoutes: AccessRoute[] = [
   },
   {
     from: "MRT Bendungan Hilir, or KRL Karet / Manggarai",
-    badges: ["MRT", "KRL", "TJ 6M", "TJ 6D"],
+    badges: ["MRT", "KRL", "TJ 6M"],
     steps: [
       "From MRT Bendungan Hilir or KRL Karet, walk to the Karet Sudirman bus stop on Jl. Jend. Sudirman.",
-      "Take Route 6M (Blok M to Manggarai) or 6D (Bundaran Senayan to Stasiun Tebet).",
+      "Take Route 6M (Blok M to Manggarai).",
       "From KRL Manggarai, walk to Halte Transjakarta Manggarai and take Route 6M instead.",
       "Get off at Halte Rasuna Said next to Plaza Festival.",
     ],
   },
   {
     from: "KRL Bogor (Red Line) via Tebet",
-    badges: ["KRL", "TJ 6C", "TJ 6D"],
+    badges: ["KRL", "TJ 6C"],
     steps: [
       "Get off at Stasiun Tebet and go to the Transjakarta hub.",
-      "Take Route 6C (Stasiun Tebet to Kuningan) or 6D (Stasiun Tebet to Bundaran Senayan).",
+      "Take Route 6C (Stasiun Tebet to Kuningan).",
       "Get off at Halte Rasuna Said in front of Plaza Festival.",
     ],
   },
@@ -137,12 +137,12 @@ export const rideHailing = {
 
 export const carFreeDay = {
   title: "Car Free Day on Sunday, 22 November",
-  body: "Car Free Day (CFD) takes place in Kuningan on Sunday, 22 November. We encourage you to use public transport: LRT, or Transjakarta routes 6, 6A and 13.",
+  body: "On Sunday, 22 November, Jl. H.R. Rasuna Said is closed to cars and motorbikes from 05:30 to 09:00 WIB. Cars and ride-hailing cannot drop you at the gate before 09:00, when registration opens. Take the LRT to Rasuna Said, or Transjakarta Corridor 6 / 6A to Halte Rasuna Said, which keep running. If you drive, park at Plaza Festival.",
 };
 
 export const parking = {
   intro:
-    "Parking for motorcycles and cars is available at Usmar Ismail Hall, but space there is limited.",
+    "Usmar Ismail Hall has parking for cars and motorbikes, but it has fewer than 100 spaces.",
   overflow: "We recommend parking at Plaza Festival next door instead.",
 };
 

@@ -3,9 +3,12 @@ import { withBasePath } from "../lib/paths";
 
 interface Props {
   to: string;
+  label?: string;
 }
 
-const destination = withBasePath(Astro.props.to);
+const { to, label = "Continue to Terms of Service" } = Astro.props;
+const isExternal = /^https?:\/\//.test(to);
+const destination = isExternal ? to : withBasePath(to);
 const canonicalUrl = new URL(destination, Astro.site).href;
 ---
 
@@ -18,6 +21,6 @@ const canonicalUrl = new URL(destination, Astro.site).href;
     <title>Redirecting…</title>
   </head>
   <body>
-    <a href={destination}>Continue to Terms of Service</a>
+    <a href={destination}>{label}</a>
   </body>
 </html>
