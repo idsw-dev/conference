@@ -3,7 +3,7 @@
  * image (src/data/images/venue/floor-plan.png, 934x1062), so they scale with it.
  * x/y = top-left corner, w/h = size.
  *
- * NOTE: photo-wall, stairs and the help-desk / check-in-desk split are best guesses from the plan. Verify
+ * NOTE: photo-wall (the area left of the blue strip beside "4 GALERI"), stairs and the help-desk / check-in-desk split are best guesses from the plan. Verify
  * against the real event layout and adjust.
  */
 export type VenueArea = {
@@ -81,10 +81,10 @@ export const venueAreas: VenueArea[] = [
     id: "photo-wall",
     label: "Photo Wall",
     description: "Take a photo with friends and speakers.",
-    x: 33.4,
-    y: 60.5,
-    w: 8.6,
-    h: 8.4,
+    x: 82.5,
+    y: 59,
+    w: 8.5,
+    h: 16,
   },
   {
     id: "toilet-women",
