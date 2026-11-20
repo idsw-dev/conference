@@ -28,9 +28,9 @@
           "start": "09:20",
           "end": "09:40",
           "kind": "sponsor",
-          "title": "Sponsor talk",
-          "speaker": null,
-          "role": null,
+          "title": "Introducing NEO App. A platform for deploying applications through MCP, Git, or source code, without manual server configuration .",
+          "speaker": "Utian Ayuba",
+          "role": "VP of Consulting and Services",
           "pending": null
         },
         {
