@@ -28,10 +28,10 @@
           "start": "09:20",
           "end": "09:40",
           "kind": "sponsor",
-          "title": "Sponsor talk",
-          "speaker": null,
-          "role": null,
-          "pending": null
+          "title": null,
+          "speaker": "Utian Ayuba",
+          "role": "VP of Consulting and Services",
+          "pending": "title"
         },
         {
           "start": "09:45",
