@@ -127,10 +127,15 @@
           "start": "17:05",
           "end": "18:05",
           "kind": "panel",
-          "title": "Panel discussion",
+          "title": "When AI Agents Go Wrong: Failures, Misuse, and Real-World Consequences",
           "speaker": null,
           "role": null,
-          "pending": null
+          "pending": null,
+          "panelists": [
+            "Muqorrobin Marufi Syihab (Robin)",
+            "Mustafa Zaki Assagaf",
+            "Mansur Maturidi Arief"
+          ]
         },
         {
           "start": "18:05",
