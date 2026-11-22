@@ -282,10 +282,10 @@
           "start": "16:30",
           "end": "17:15",
           "kind": "keynote",
-          "title": null,
+          "title": "The Bugs Were Always There",
           "speaker": "Eko Kurniawan Khannedy",
           "role": "Technical Architect at Blibli & Founder of Programmer Zaman Now",
-          "pending": "title"
+          "pending": null
         },
         {
           "start": "17:20",
